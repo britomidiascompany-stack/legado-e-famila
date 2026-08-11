@@ -138,6 +138,22 @@
   footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
   footer .brand2 svg{width:20px; height:20px;}
 
+  /* ---------------- DOC LINKS ---------------- */
+  .doc-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:26px;}
+  .doc-card{
+    display:flex; align-items:flex-start; gap:16px; border:1px solid var(--linha); border-radius:16px;
+    padding:22px 24px; background:var(--bg); text-decoration:none; transition:.15s;
+  }
+  .doc-card:hover{border-color:var(--roxo-light); box-shadow:0 4px 18px rgba(124,58,237,.1);}
+  .doc-card .ic{
+    width:44px; height:44px; border-radius:12px; background:var(--roxo-xlight);
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .doc-card .ic svg{width:22px; height:22px; stroke:var(--roxo-dark);}
+  .doc-card h3{font-size:15.5px; font-weight:600; margin:0 0 5px; color:var(--ink);}
+  .doc-card p{font-size:13px; color:var(--cinza); margin:0 0 10px;}
+  .doc-card .go{font-size:12.5px; font-weight:600; color:var(--roxo);}
+
   @media (max-width:640px){
     .hero{padding:52px 0 60px;}
     .hero h1{font-size:28px;}
@@ -145,6 +161,7 @@
     .acc{grid-template-columns:1fr;}
     .acc .ic{margin-bottom:4px;}
     .strip{flex-direction:column; align-items:flex-start;}
+    .doc-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -355,6 +372,32 @@
         <p>Nos avise pelo WhatsApp assim que concluir — confirmamos o recebimento e já iniciamos a configuração.</p>
       </div>
       <a class="btn" href="mailto:rafael@britomidias.com.br">Confirmar por e-mail</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Documentação técnica</div>
+    <h2>O que já configuramos até aqui</h2>
+    <p class="intro-text">Registro do que já foi implementado nas contas — para consulta sua, ou de qualquer pessoa que assuma a operação no futuro.</p>
+    <div class="doc-grid">
+      <a class="doc-card" href="rastreamento/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div>
+          <h3>Setup de Tracking — GTM Web + Server</h3>
+          <p>Os dois containers do Google Tag Manager configurados (site e servidor via Stape.io), Meta Pixel, GA4, Google Ads e os testes de deduplicação já validados.</p>
+          <span class="go">Ver documentação &rarr;</span>
+        </div>
+      </a>
+      <a class="doc-card" href="instalar-gtm/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        <div>
+          <h3>Instalar o GTM no site</h3>
+          <p>Passo a passo com os códigos prontos para colar no site, caso o container precise ser reinstalado ou movido de plataforma.</p>
+          <span class="go">Ver instruções &rarr;</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
