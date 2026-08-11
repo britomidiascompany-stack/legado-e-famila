@@ -186,6 +186,31 @@
     padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;
   }
 
+  /* UPDATE BADGE */
+  .upd-badge{
+    display:inline-flex; align-items:center; gap:7px; background:var(--verde-light); color:var(--verde);
+    border-radius:100px; padding:6px 13px; font-size:11px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; margin-bottom:14px;
+  }
+  .upd-badge .dot{width:6px; height:6px; border-radius:50%; background:var(--verde);}
+
+  /* AUDIENCE CARDS */
+  .aud-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px;}
+  .aud-card{border:1px solid var(--linha); border-radius:16px; background:#fff; overflow:hidden;}
+  .aud-card-head{padding:16px 20px; border-bottom:1px solid var(--linha); background:var(--bg-soft);}
+  .aud-card-head h4{font-size:14.5px; font-weight:600; margin:0 0 4px; color:var(--ink);}
+  .aud-card-head p{font-size:12.5px; color:var(--cinza); margin:0;}
+  .aud-card-body{padding:14px 20px;}
+  .aud-item{
+    font-family:'Courier New',monospace; font-size:11.5px; color:var(--roxo-dark); background:var(--roxo-xlight);
+    border-radius:8px; padding:9px 12px; margin-bottom:8px; word-break:break-word;
+  }
+  .aud-item:last-child{margin-bottom:0;}
+  .aud-size-tag{
+    display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:600; color:var(--ink);
+    background:var(--bg); border:1px solid var(--linha); border-radius:100px; padding:5px 12px; margin-top:12px;
+  }
+
   /* FOOTER */
   footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
   footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
@@ -334,6 +359,47 @@
       <span class="state-chip">Espírito Santo</span>
       <span class="state-chip">Mato Grosso</span>
     </div>
+  </div>
+</section>
+
+<!-- OTIMIZAÇÃO — SEGMENTOS DE PÚBLICO -->
+<section>
+  <div class="wrap">
+    <div class="upd-badge"><span class="dot"></span>Atualização &middot; 11/08/2026</div>
+    <div class="section-label">Otimização</div>
+    <h2>Sinais de público adicionados ao Advantage+</h2>
+    <p class="intro-text">No mesmo dia da subida, alimentamos a configuração de <b style="color:var(--ink)">Segmentos de público</b> da conta com dados reais de quem já converteu antes — isso dá ao algoritmo do Advantage+ uma referência concreta de "quem é esse público" desde o primeiro dia, em vez de aprender do zero só com o pixel.</p>
+
+    <div class="aud-grid">
+      <div class="aud-card">
+        <div class="aud-card-head">
+          <h4>Público engajado</h4>
+          <p>Interagiram ou viraram lead, mas ainda não compraram</p>
+        </div>
+        <div class="aud-card-body">
+          <div class="aud-item">SITE | LEAD | EVENTO PADRAO | 45D</div>
+          <div class="aud-item">TD - ENVIO LEAD SITE - CURSO SUCESSÃO - 90D</div>
+          <div class="aud-item">LEADS - FORM NATIVO - ABERTURA - 90D</div>
+          <div class="aud-item">LISTA | TODOS OS LEADS DO RD STATION | 11.08.26</div>
+          <div class="aud-size-tag">~3.000+ pessoas</div>
+        </div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-card-head">
+          <h4>Clientes existentes</h4>
+          <p>Já compraram um dos produtos</p>
+        </div>
+        <div class="aud-card-body">
+          <div class="aud-item">LISTA | COMPRADORES MULHERES EM CON. 11.08.26</div>
+          <div class="aud-item">LISTA | COMPRADORES PROGRAMA DE SUC. 11.08.26</div>
+          <div class="aud-size-tag">&lt; 200 pessoas por lista</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nota"><b>Por que listas tão pequenas ajudam:</b> o público de compradores de cada produto não chega a 200 pessoas — pequeno demais pra ser público de veiculação, mas é sinal de altíssima qualidade pro Advantage+: é exatamente o perfil de quem já pagou. Já o público engajado (leads das campanhas anteriores + base do RD Station) passa de 3 mil pessoas, dando mais volume de referência. Juntos, os dois ajudam o algoritmo a reconhecer padrões de conversão mais rápido do que dependendo só do pixel aprendendo em tempo real.</div>
+
+    <div class="nota"><b>Importante:</b> essa configuração de Segmentos de público é feita a nível de conta, não de campanha — o próprio Meta avisa que ela "se aplica a todas as campanhas de vendas nesta conta de anúncios". Ou seja, os sinais passam a beneficiar qualquer campanha Advantage+ futura na conta Legado em Família, não só as duas do PSP.</div>
   </div>
 </section>
 
