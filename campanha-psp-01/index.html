@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descritivo de Campanha — PSP · Legado &amp; Família</title>
+<meta name="description" content="Descritivo das duas primeiras campanhas do Programa de Sucessão Empresarial e Patrimonial (PSP): estrutura, segmentação, criativos e orçamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  code{font-family:'Courier New',Courier,monospace;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 28px;}
+
+  /* BREADCRUMB */
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  /* HERO */
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 76px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:36px; height:36px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:20px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1{font-size:33px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:680px;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:640px; margin:0 0 26px;}
+  .meta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .meta-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; padding:10px 16px;
+  }
+  .meta-badge .label{font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6);}
+  .meta-badge .id{font-size:14px; font-weight:700; font-family:'Courier New',monospace; color:#fff; letter-spacing:.02em;}
+
+  /* SECTIONS */
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:23px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px;}
+  h3{font-size:15px; font-weight:600; margin:0 0 4px;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:700px; margin:0 0 28px;}
+
+  /* WHY BOX */
+  .why-box{border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff;}
+  .why-box p{font-size:13.5px; color:var(--cinza); margin:0 0 12px;}
+  .why-box p:last-child{margin-bottom:0;}
+  .why-box b{color:var(--ink); font-weight:600;}
+
+  /* CAMPAIGN CARDS */
+  .camp-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .camp-card{border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff;}
+  .camp-card .num{
+    display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px;
+    border-radius:8px; background:var(--roxo-xlight); color:var(--roxo-dark); font-weight:700; font-size:12px;
+    margin-bottom:12px;
+  }
+  .camp-card h3{font-size:16px; margin-bottom:8px;}
+  .camp-card .cname{font-family:'Courier New',monospace; font-size:11.5px; color:var(--roxo-dark); background:var(--roxo-xlight); display:inline-block; padding:4px 9px; border-radius:7px; margin-bottom:14px; word-break:break-all;}
+  .camp-card .kv{display:flex; justify-content:space-between; gap:10px; padding:7px 0; font-size:13px; border-bottom:1px dashed var(--linha);}
+  .camp-card .kv:last-child{border-bottom:none;}
+  .camp-card .kv .k{color:var(--cinza);}
+  .camp-card .kv .v{color:var(--ink); font-weight:500; text-align:right;}
+  .camp-card .kv .v a{color:var(--roxo-dark); font-weight:600;}
+
+  /* TOOL PILLS */
+  .tool-row{display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 4px;}
+  .tool{
+    display:inline-flex; align-items:center; gap:8px; background:var(--bg-soft); border:1px solid var(--linha);
+    border-radius:100px; padding:9px 16px; font-size:12.5px; font-weight:500; color:var(--ink);
+  }
+  .tool b{font-weight:600; color:var(--roxo-dark);}
+  .tool .dot{width:7px; height:7px; border-radius:50%; background:var(--verde); flex:none;}
+
+  /* CONFIG TABLE */
+  .cfg-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin-top:24px;}
+  .cfg-row{display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px solid var(--linha); font-size:13.5px;}
+  .cfg-row .k{color:var(--cinza);}
+  .cfg-row .v{color:var(--ink); font-weight:500; text-align:right;}
+
+  /* STATE CHIPS */
+  .state-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .state-chip{
+    background:var(--roxo-xlight); color:var(--roxo-dark); border-radius:100px; padding:7px 14px;
+    font-size:12.5px; font-weight:600;
+  }
+
+  /* NOTA */
+  .nota{
+    border:1px solid var(--linha); border-left:3px solid var(--roxo); border-radius:12px;
+    padding:16px 20px; margin-top:24px; background:#fff; font-size:13.5px; color:var(--cinza);
+  }
+  .nota b{color:var(--ink); font-weight:600;}
+  .nota.warn{border-left-color:var(--ambar); background:var(--ambar-light);}
+  .nota.warn b{color:#78350F;}
+  .nota.warn{color:#78350F;}
+
+  /* AUDIENCE SIZE */
+  .aud-size{
+    display:flex; align-items:baseline; gap:10px; margin-top:18px; padding:18px 22px;
+    background:var(--bg-soft); border-radius:14px; border:1px solid var(--linha);
+  }
+  .aud-size .num{font-size:26px; font-weight:800; color:var(--ink);}
+  .aud-size .txt{font-size:12.5px; color:var(--cinza); max-width:420px;}
+
+  /* CREATIVE TABLE */
+  .table-wrap{border:1px solid var(--linha); border-radius:16px; overflow:hidden; margin-top:22px;}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  thead th{
+    text-align:left; background:var(--bg-soft); color:var(--cinza); font-weight:600; font-size:11px;
+    text-transform:uppercase; letter-spacing:.04em; padding:12px 16px; border-bottom:1px solid var(--linha);
+  }
+  tbody td{padding:12px 16px; border-bottom:1px solid var(--linha); color:var(--ink);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:var(--bg-soft);}
+  td.mono{font-family:'Courier New',monospace; font-size:12px; color:var(--cinza);}
+  td a.dl{color:var(--roxo); font-weight:600; text-decoration:none; white-space:nowrap;}
+  td a.dl:hover{text-decoration:underline;}
+
+  /* TIMELINE / LEARNING PHASE */
+  .steps{display:flex; flex-direction:column; gap:16px; margin-top:24px;}
+  .step{display:grid; grid-template-columns:36px 1fr; gap:14px; align-items:start;}
+  .step .snum{
+    width:36px; height:36px; border-radius:10px; background:var(--roxo-xlight);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:700; color:var(--roxo-dark); flex:none;
+  }
+  .step .scontent h4{font-size:14px; font-weight:600; margin:0 0 4px; padding-top:6px;}
+  .step .scontent p{font-size:13px; color:var(--cinza); margin:0;}
+
+  /* RECOMMENDATION CARDS */
+  .rec-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;}
+  .rec-card{border:1px solid var(--linha); border-radius:16px; padding:22px 24px; background:#fff;}
+  .rec-card .ic{
+    width:36px; height:36px; border-radius:10px; background:var(--roxo-xlight);
+    display:flex; align-items:center; justify-content:center; margin-bottom:12px;
+  }
+  .rec-card .ic svg{width:18px; height:18px; stroke:var(--roxo-dark);}
+  .rec-card h4{font-size:14px; font-weight:600; margin:0 0 6px;}
+  .rec-card p{font-size:12.5px; color:var(--cinza); margin:0;}
+
+  /* STRIP */
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700; color:#fff;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{
+    background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px;
+    padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;
+  }
+
+  /* FOOTER */
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:640px){
+    .hero{padding:44px 0 52px;}
+    .hero h1{font-size:25px;}
+    .camp-grid, .cfg-grid, .rec-grid{grid-template-columns:1fr;}
+    .strip{flex-direction:column; align-items:flex-start;}
+    .table-wrap{overflow-x:auto;}
+    table{min-width:520px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Descritivo de Campanha · PSP</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill">Descritivo de campanha &middot; PSP</div>
+    <h1>Primeiras campanhas — Programa de Sucessão Empresarial e Patrimonial</h1>
+    <p class="lead">Registro de como as duas primeiras campanhas de captação do PSP foram estruturadas: público, segmentação, criativos e orçamento — para alinhamento com a estratégia do cliente e como referência futura.</p>
+    <div class="meta-row">
+      <div class="meta-badge"><div><div class="label">Conta de anúncio</div><div class="id">Legado em Família · 3546375518788148</div></div></div>
+      <div class="meta-badge"><div><div class="label">Subida em</div><div class="id">11/08/2026</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- POR QUE ESSE DOCUMENTO -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Por que esse documento existe</div>
+    <h2>Não documentamos toda otimização — mas documentamos isso</h2>
+    <div class="why-box">
+      <p><b>Nosso processo não registra cada ajuste de campanha.</b> Otimizações do dia a dia (pausar um anúncio fraco, testar um novo público, ajustar lance) fariam qualquer registro virar ruído em poucas semanas.</p>
+      <p>Mas <b>nas primeiras campanhas de uma frente nova</b> — como é o caso aqui — <b>ou em mudanças estruturais grandes e alinhadas com a estratégia do cliente</b>, vale registrar exatamente o que foi montado e por quê. Serve pra você acompanhar, pra gente ter um ponto de referência claro do que foi testado primeiro, e pra qualquer pessoa que entre na conta no futuro entender a lógica sem precisar reconstruir tudo de memória.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUTURA DAS CAMPANHAS -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Estrutura</div>
+    <h2>Duas campanhas, um público, dois destinos</h2>
+    <p class="intro-text">Subimos duas campanhas idênticas em configuração, cada uma levando para uma página diferente — assim conseguimos comparar qual formato de página converte melhor pro mesmo público e mesmos criativos.</p>
+
+    <div class="camp-grid">
+      <div class="camp-card">
+        <div class="num">01</div>
+        <h3>Página normal (institucional)</h3>
+        <div class="cname">[01][PSP][APLICACAO][LEADS][LEAD][P-ADVANTAGE][AUTO][PAGINA V1]</div>
+        <div class="kv"><span class="k">Destino</span><span class="v"><a href="https://programas.legadoefamilia.com/" target="_blank">programas.legadoefamilia.com</a></span></div>
+        <div class="kv"><span class="k">Objetivo</span><span class="v">Leads (Site)</span></div>
+        <div class="kv"><span class="k">Orçamento</span><span class="v">R$ 50,00/dia</span></div>
+        <div class="kv"><span class="k">Status</span><span class="v">Ativa</span></div>
+      </div>
+      <div class="camp-card">
+        <div class="num">02</div>
+        <h3>Página da VSL</h3>
+        <div class="cname">[02][PSP][APLICACAO][LEADS][LEAD][P-ADVANTAGE][AUTO][PAGINA V2-VSL]</div>
+        <div class="kv"><span class="k">Destino</span><span class="v"><a href="https://programas.legadoefamilia.com/sucessao-empresarial-e-patrimonial-membro-empresa-familiar/" target="_blank">.../sucessao-empresarial-e-patrimonial...</a></span></div>
+        <div class="kv"><span class="k">Objetivo</span><span class="v">Leads (Site)</span></div>
+        <div class="kv"><span class="k">Orçamento</span><span class="v">R$ 50,00/dia</span></div>
+        <div class="kv"><span class="k">Status</span><span class="v">Ativa</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIGURAÇÃO TÉCNICA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Configuração técnica</div>
+    <h2>Conta, páginas e conversão</h2>
+
+    <div class="tool-row">
+      <div class="tool"><span class="dot"></span>Página do Facebook <b>Legado e Família</b></div>
+      <div class="tool"><span class="dot"></span>Instagram principal <b>@monique.s.pereira</b></div>
+    </div>
+
+    <div class="cfg-grid">
+      <div class="cfg-row"><span class="k">Local da conversão</span><span class="v">Site</span></div>
+      <div class="cfg-row"><span class="k">Meta de desempenho</span><span class="v">Maximizar o número de leads</span></div>
+      <div class="cfg-row"><span class="k">Conjunto de dados (pixel)</span><span class="v">Pixel Legado e Família Oficial 2025</span></div>
+      <div class="cfg-row"><span class="k">Evento de conversão</span><span class="v">Lead</span></div>
+      <div class="cfg-row"><span class="k">Meta de custo por resultado</span><span class="v">Nenhum</span></div>
+      <div class="cfg-row"><span class="k">Regras de valor</span><span class="v">Desabilitado</span></div>
+      <div class="cfg-row"><span class="k">Modelo de atribuição</span><span class="v">Padrão</span></div>
+      <div class="cfg-row"><span class="k">Recomendação Meta</span><span class="v">Campanha de leads Advantage+ (ativado)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PÚBLICO -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Público</div>
+    <h2>Advantage+, com estados pré-testados</h2>
+    <p class="intro-text">Optamos por deixar o público o mais aberto possível dentro da configuração Advantage — quem decide os micro-ajustes de quem ver o anúncio é o próprio algoritmo do Meta, com base em quem mais tende a virar lead.</p>
+
+    <div class="aud-size">
+      <div class="num">122,5M – 144,1M</div>
+      <div class="txt">Tamanho estimado do público. É a <b style="color:var(--ink)">extensão</b> de pessoas que podem ser alcançadas — não é quanto a gente de fato vai atingir. É por isso que a gente prefere Advantage: deixa essa faixa em aberto para o algoritmo trabalhar.</div>
+    </div>
+
+    <div class="cfg-grid" style="margin-top:22px;">
+      <div class="cfg-row"><span class="k">Idade</span><span class="v">25 a 65 anos</span></div>
+      <div class="cfg-row"><span class="k">Gênero</span><span class="v">Todos, sem segmentação detalhada</span></div>
+      <div class="cfg-row"><span class="k">Exclusões</span><span class="v">Apenas quem já se cadastrou no formulário</span></div>
+      <div class="cfg-row"><span class="k">Configuração</span><span class="v">Advantage+ Audience</span></div>
+    </div>
+
+    <h3 style="margin-top:26px;">Localização</h3>
+    <p class="intro-text" style="margin-bottom:0;">Não segmentamos Brasil inteiro de propósito. Analisamos campanhas de equipes anteriores na conta e identificamos os estados com melhor histórico de resultado — decidimos testar primeiro nessa base validada, antes de expandir a cobertura geográfica.</p>
+    <div class="state-row">
+      <span class="state-chip">Brasília (+40 km)</span>
+      <span class="state-chip">São Paulo</span>
+      <span class="state-chip">Minas Gerais</span>
+      <span class="state-chip">Rio de Janeiro</span>
+      <span class="state-chip">Paraná</span>
+      <span class="state-chip">Santa Catarina</span>
+      <span class="state-chip">Espírito Santo</span>
+      <span class="state-chip">Mato Grosso</span>
+    </div>
+  </div>
+</section>
+
+<!-- CRIATIVOS -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Criativos</div>
+    <h2>7 vídeos, nunca testados como anúncio</h2>
+    <p class="intro-text">Os sete vídeos rodam ativos nas duas campanhas (14 veiculações no total). São conteúdos gravados originalmente para o Instagram da Monique, com bom desempenho orgânico, auditados por ela mesma antes de virarem anúncio — mas é a primeira vez que entram como campanha paga.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Criativo</th><th>Tema</th><th>Duração</th><th>Material</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">ADV01</td><td>História — Ford</td><td>1:07</td><td><a class="dl" href="https://drive.google.com/open?id=11Pe4glVBJA6p9xRYTFxCNuL190id1Poc" target="_blank">Ver no Drive →</a></td></tr>
+          <tr><td class="mono">ADV02</td><td>História — Chico Anysio</td><td>1:00</td><td><a class="dl" href="https://drive.google.com/open?id=10gqgZMoEGgV_Es1-0ySQ38o5KLKKPBkE" target="_blank">Ver no Drive →</a></td></tr>
+          <tr><td class="mono">ADV03</td><td>História — Gugu</td><td>1:05</td><td><a class="dl" href="https://drive.google.com/open?id=1bxze61eWtPp6mAXnukSrLC00FT8T3P5-" target="_blank">Ver no Drive →</a></td></tr>
+          <tr><td class="mono">ADV04</td><td>História — Hermes</td><td>1:02</td><td><a class="dl" href="https://drive.google.com/open?id=1WmHZZIoTkxpThdAo4Uh6LwkDcpRkOGlx" target="_blank">Ver no Drive →</a></td></tr>
+          <tr><td class="mono">ADV05</td><td>História — Matarazzo</td><td>0:56</td><td><a class="dl" href="https://drive.google.com/open?id=1QJRpFNz5oqXoKoeCidYcu74DFSrQaDTQ" target="_blank">Ver no Drive →</a></td></tr>
+          <tr><td class="mono">ADV06</td><td>Pergunta — Remuneração</td><td>1:25</td><td><a class="dl" href="https://drive.google.com/open?id=1mC3msRUNFYP3ET6lU0ctW3qiI3F-XYEZ" target="_blank">Ver no Drive →</a></td></tr>
+          <tr><td class="mono">ADV07</td><td>História — Walmart</td><td>1:20</td><td><a class="dl" href="https://drive.google.com/open?id=1JJ9ROHMf4j3joBj95kZBpJG0tMWP20ip" target="_blank">Ver no Drive →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ORÇAMENTO E APRENDIZADO -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Orçamento &amp; fase de aprendizado</div>
+    <h2>R$ 50/dia por campanha — o que esperar nos primeiros dias</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="snum">1</div>
+        <div class="scontent"><h4>Dias iniciais: pode não sair lead nenhum</h4><p>É normal. O Meta testa entrega entre os 7 criativos para descobrir quais convertem melhor antes de concentrar verba.</p></div>
+      </div>
+      <div class="step">
+        <div class="snum">2</div>
+        <div class="scontent"><h4>O algoritmo concentra em 1 ou 2 vencedores</h4><p>Com R$ 50/dia, a probabilidade real é o Meta colocar a maior parte do orçamento em pouquíssimos criativos — os outros ficam com sobra ou quase nada.</p></div>
+      </div>
+      <div class="step">
+        <div class="snum">3</div>
+        <div class="scontent"><h4>Os 7 seguem ativos por enquanto</h4><p>Deixamos todos ligados para o algoritmo decidir com dados reais, em vez de a gente cortar por achismo antes de ter volume.</p></div>
+      </div>
+      <div class="step">
+        <div class="snum">4</div>
+        <div class="scontent"><h4>Os que não recebem verba viram teste isolado</h4><p>Criativos que o algoritmo praticamente não entrega dentro dessas campanhas podem ganhar uma campanha própria depois, pra serem testados sem competir internamente com os vencedores.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBSERVAÇÕES / RECOMENDAÇÕES -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Observações da Brito Mídias</div>
+    <h2>Pontos de atenção para os próximos dias</h2>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg></div>
+        <h4>As duas campanhas competem entre si</h4>
+        <p>Mesmo público e mesmos 7 criativos, só a página de destino muda — na prática, as duas campanhas disputam o mesmo leilão. Vamos acompanhar a sobreposição de público (Audience Overlap) nos primeiros dias; se o CPM começar a subir por competição interna, o ajuste é diferenciar o público de uma delas ou concentrar tudo na página que converter melhor.</p>
+      </div>
+      <div class="rec-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Não julgar criativo antes de sair da aprendizagem</h4>
+        <p>Cada conjunto de anúncios só sai da fase de aprendizado com um volume mínimo de conversões. Antes disso, custo por lead ainda vai oscilar bastante — checkpoint real de avaliação: 7 dias após o início.</p>
+      </div>
+      <div class="rec-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V9l8-5 8 5v10"/><path d="M9 19v-6h6v6"/></svg></div>
+        <h4>Página normal x VSL: qual converte melhor</h4>
+        <p>É a principal pergunta que essa estrutura responde. Depois do checkpoint, faz sentido puxar o CPL e a taxa de conversão de cada página separadamente para decidir se vale manter as duas ou realocar tudo pra vencedora.</p>
+      </div>
+      <div class="rec-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Estados validados por histórico, não Brasil inteiro</h4>
+        <p>Se o CPL nesses 8 estados ficar bom, o próximo passo natural é testar expansão gradual pra outros estados de perfil parecido — não pular direto pra Brasil inteiro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Alguma dúvida sobre essa estrutura?</h3>
+        <p>Essa página fica registrada aqui como referência do que foi montado nas primeiras campanhas do PSP.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vim%20do%20descritivo%20da%20campanha%20PSP%20e%20tenho%20d%C3%BAvidas." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Central de Estratégia e Resultados &middot; rafael@britomidias.com.br</div>
+  </div>
+</footer>
+
+</body>
+</html>
