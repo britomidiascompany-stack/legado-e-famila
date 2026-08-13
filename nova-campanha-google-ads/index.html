@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova Campanha Google Ads — Sucessão &amp; Mulheres em Conselho · Legado &amp; Família</title>
+<meta name="description" content="Análise completa da conta Google Ads em dois direcionamentos — Programa de Sucessão e Mulheres em Conselho — com o ranking de palavras-chave que já converteram e a proposta da próxima campanha de Pesquisa (Maximizar Conversões, R$75/dia).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+    --verm:#B91C1C; --verm-light:#FEE2E2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  code{font-family:'Courier New',Courier,monospace;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 28px;}
+
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 76px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:36px; height:36px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:20px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1{font-size:32px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:780px;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:700px; margin:0 0 26px;}
+  .meta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .meta-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; padding:10px 16px;
+  }
+  .meta-badge .label{font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6);}
+  .meta-badge .id{font-size:14px; font-weight:700; font-family:'Courier New',monospace; color:#fff; letter-spacing:.02em;}
+
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:24px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px;}
+  h3{font-size:15.5px; font-weight:600; margin:32px 0 4px; color:var(--ink);}
+  h3:first-of-type{margin-top:24px;}
+  h4{font-size:14.5px; font-weight:600; margin:0;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:760px; margin:0 0 8px;}
+
+  /* GROUP HEADER CARD */
+  .group-head{
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    border:1px solid var(--linha); border-radius:16px; padding:22px 26px; background:#fff; margin-top:22px;
+  }
+  .group-head .tag-big{
+    display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px;
+    border-radius:14px; background:var(--roxo-xlight); color:var(--roxo-dark); font-weight:800; font-size:14px; flex:none; text-align:center; line-height:1.1;
+  }
+  .group-head .ginfo{display:flex; align-items:center; gap:16px;}
+  .group-head .gtext p{margin:0; font-size:12.5px; color:var(--cinza);}
+  .group-head .gtext h3{margin:0 0 3px; font-size:16px;}
+  .group-stats{display:flex; gap:22px; flex-wrap:wrap;}
+  .group-stats div{text-align:right;}
+  .group-stats .num{font-size:18px; font-weight:700; color:var(--ink); display:block;}
+  .group-stats .lbl{font-size:10.5px; color:var(--cinza); text-transform:uppercase; letter-spacing:.04em;}
+
+  /* TABLE */
+  .table-title{display:flex; align-items:center; justify-content:space-between; gap:10px; margin:26px 0 0; flex-wrap:wrap;}
+  .table-title h4{margin:0;}
+  .table-title .sub{font-size:12px; color:var(--cinza);}
+  .table-wrap{border:1px solid var(--linha); border-radius:16px; overflow:hidden; margin-top:14px; overflow-x:auto;}
+  table{width:100%; border-collapse:collapse; font-size:12.5px; min-width:640px;}
+  thead th{
+    text-align:left; background:var(--bg-soft); color:var(--cinza); font-weight:600; font-size:10.5px;
+    text-transform:uppercase; letter-spacing:.03em; padding:11px 14px; border-bottom:1px solid var(--linha); white-space:nowrap;
+  }
+  tbody td{padding:10px 14px; border-bottom:1px solid var(--linha); color:var(--ink);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:var(--bg-soft);}
+  td.mono{font-family:'Courier New',monospace; font-size:11.5px; color:var(--cinza);}
+  td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .kw{font-weight:500;}
+  .mtype{display:inline-block; font-size:10.5px; font-weight:600; padding:3px 9px; border-radius:100px; white-space:nowrap; background:var(--roxo-xlight); color:var(--roxo-dark);}
+  .mtype.ampla{background:#DBEAFE; color:#1D4ED8;}
+  .stat-tag{display:inline-block; font-size:10.5px; font-weight:600; padding:3px 9px; border-radius:100px; white-space:nowrap;}
+  .stat-tag.ativa{background:var(--verde-light); color:var(--verde);}
+  .stat-tag.pausada{background:var(--linha); color:var(--cinza);}
+  .camp-tag{display:inline-block; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:6px; font-family:'Courier New',monospace; background:var(--roxo-xlight); color:var(--roxo-dark); white-space:nowrap;}
+  .camp-tag.c2{background:#DBEAFE; color:#1D4ED8;}
+  .camp-tag.c3{background:#D1FAE5; color:#047857;}
+  .camp-tag.c4{background:#FCE7F3; color:#BE185D;}
+
+  /* NOTA */
+  .nota{
+    border:1px solid var(--linha); border-left:3px solid var(--roxo); border-radius:12px;
+    padding:16px 20px; margin-top:22px; background:#fff; font-size:13px; color:var(--cinza);
+  }
+  .nota b{color:var(--ink); font-weight:600;}
+  .nota.warn{border-left-color:var(--ambar); background:var(--ambar-light); color:#78350F;}
+  .nota.warn b{color:#78350F;}
+
+  /* TOTALS GRID */
+  .tot-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px;}
+  .tot-card{border:1px solid var(--linha); border-radius:16px; padding:20px 22px; background:#fff;}
+  .tot-card .plat{font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--roxo); margin-bottom:10px;}
+  .tot-card .big{font-size:22px; font-weight:800; color:var(--ink); margin-bottom:10px;}
+  .tot-card .kv{display:flex; justify-content:space-between; font-size:12.5px; padding:5px 0; border-top:1px dashed var(--linha); color:var(--cinza);}
+  .tot-card .kv b{color:var(--ink); font-weight:600;}
+
+  /* PLAN CARD */
+  .plan-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;}
+  .plan-card{border:1px solid var(--linha); border-radius:16px; padding:22px 24px; background:#fff;}
+  .plan-card .ic{width:36px; height:36px; border-radius:10px; background:var(--roxo-xlight); display:flex; align-items:center; justify-content:center; margin-bottom:12px;}
+  .plan-card .ic svg{width:18px; height:18px; stroke:var(--roxo-dark);}
+  .plan-card h4{margin:0 0 6px;}
+  .plan-card p{font-size:13px; color:var(--cinza); margin:0;}
+  .plan-card ul{margin:10px 0 0; padding-left:18px; font-size:13px; color:var(--cinza);}
+  .plan-card ul li{margin-bottom:4px;}
+  .plan-card ul b{color:var(--ink); font-weight:600;}
+
+  /* CONFIG STRIP (definição da campanha) */
+  .cfg-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:22px;}
+  .cfg-card{border:1px solid var(--linha); border-radius:14px; padding:16px 18px; background:#fff; text-align:center;}
+  .cfg-card small{display:block; color:var(--roxo); font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px;}
+  .cfg-card b{font-size:16px; font-weight:700; color:var(--ink);}
+
+  /* STEPS */
+  .steps{display:flex; flex-direction:column; gap:16px; margin-top:24px;}
+  .step{display:grid; grid-template-columns:36px 1fr; gap:14px; align-items:start;}
+  .step .snum{width:36px; height:36px; border-radius:10px; background:var(--roxo-xlight); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:var(--roxo-dark); flex:none;}
+  .step .scontent h4{padding-top:6px;}
+  .step .scontent p{font-size:13px; color:var(--cinza); margin:0;}
+
+  /* PILL GRID (negativas) */
+  .pill-grid{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .pill-neg{
+    display:inline-flex; align-items:center; gap:6px; border:1px solid var(--verm-light); background:var(--verm-light);
+    color:var(--verm); border-radius:100px; padding:6px 14px; font-size:12px; font-weight:600;
+  }
+  .pill-neg::before{content:"–"; font-weight:800;}
+
+  /* BOLO FOFINHO BOX */
+  .logic-box{
+    border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff; margin-top:22px;
+    display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:flex-start;
+  }
+  .logic-box .emoji{font-size:30px; line-height:1;}
+  .logic-box p{font-size:13.5px; color:var(--cinza); margin:0 0 10px;}
+  .logic-box p:last-child{margin-bottom:0;}
+  .logic-box b{color:var(--ink); font-weight:600;}
+
+  /* STRIP */
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700; color:#fff;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{
+    background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px;
+    padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;
+  }
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:640px){
+    .hero{padding:44px 0 52px;}
+    .hero h1{font-size:24px;}
+    .tot-grid, .plan-grid, .cfg-grid{grid-template-columns:1fr;}
+    .strip{flex-direction:column; align-items:flex-start;}
+    .group-head{flex-direction:column; align-items:flex-start;}
+    .logic-box{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Nova Campanha Google Ads</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill">Análise de conta &middot; Google Ads</div>
+    <h1>Nova campanha Google Ads — Sucessão &amp; Mulheres em Conselho</h1>
+    <p class="lead">Fizemos a análise completa da conta do Google Ads e olhamos dois direcionamentos específicos: as campanhas do <b style="color:#fff">Programa de Sucessão Familiar</b> e as campanhas de <b style="color:#fff">Mulheres em Conselho</b> (grupo FMC4). Abaixo estão as palavras-chave e os resultados de cada um — e, na sequência, a proposta da próxima campanha para os dois produtos.</p>
+    <div class="meta-row">
+      <div class="meta-badge"><div><div class="label">Conta de anúncio</div><div class="id">Legado e Família Educação · 262-044-9076</div></div></div>
+      <div class="meta-badge"><div><div class="label">Período analisado</div><div class="id">21 fev. 2025 — 13 ago. 2026</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- METODOLOGIA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Metodologia</div>
+    <h2>Dois produtos, direcionamentos separados</h2>
+    <p class="intro-text">A conta tem campanhas de Rede de Pesquisa para dois produtos diferentes, misturadas na mesma listagem. Separamos por prefixo do nome — <b style="color:var(--ink)">Sucessão</b> (campanhas <code>[JA][SUCESSÃO]</code> e <code>[SEARCH][SUCESSÃO...]</code>) e <b style="color:var(--ink)">Mulheres em Conselho</b> (campanhas <code>[SEARCH][FMC4]</code>) — e, dentro de cada grupo, ranqueamos <b style="color:var(--ink)">todas as palavras-chave que geraram pelo menos 1 conversão</b> no período, da melhor para a pior.</p>
+    <div class="nota">Todas as campanhas analisadas estão <b>pausadas</b> hoje — nenhuma alteração foi feita na conta durante esse levantamento. Duas campanhas do grupo Mulheres em Conselho (<code>LONG-TAIL MAX CLIQUES</code> e <code>LONG-TAIL MAX CONV</code>) tiveram 0 conversões no período e por isso não aparecem nas tabelas abaixo.</div>
+  </div>
+</section>
+
+<!-- ============ SUCESSÃO ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="group-head">
+      <div class="ginfo">
+        <div class="tag-big">SUC.</div>
+        <div class="gtext">
+          <h3>Programa de Sucessão — 4 campanhas</h3>
+          <p>GERAL · PROFISSIONAL Empresas Familiares · MEMBRO Empresas Familiares · Sucessão Empresarial e Patrimonial 3ª Ed.</p>
+        </div>
+      </div>
+      <div class="group-stats">
+        <div><span class="num">279,44</span><span class="lbl">Conversões</span></div>
+        <div><span class="num">60</span><span class="lbl">Palavras convertidas</span></div>
+        <div><span class="num">4</span><span class="lbl">Campanhas</span></div>
+      </div>
+    </div>
+
+    <div class="table-title"><h4>Ranking completo — todas as palavras com conversão</h4><span class="sub">Ordenado por conversões, depois por menor custo/conversão</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Palavra-chave</th><th>Campanha</th><th>Corresp.</th><th>Status</th><th class="num">Convers.</th><th class="num">Custo/Conv</th><th class="num">Taxa Conv.</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="kw">curso planejamento patrimonial e sucessório</td><td><span class="camp-tag c2">PROF</span></td><td><span class="mtype ampla">Ampla</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">38,17</td><td class="num">R$110,74</td><td class="num">5,29%</td></tr>
+          <tr><td>2</td><td class="kw">"curso planejamento sucessório"</td><td><span class="camp-tag c2">PROF</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">31,57</td><td class="num">R$68,03</td><td class="num">7,93%</td></tr>
+          <tr><td>3</td><td class="kw">planejamento sucessório e patrimonial</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype ampla">Ampla</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">27,50</td><td class="num">R$93,82</td><td class="num">5,72%</td></tr>
+          <tr><td>4</td><td class="kw">"planejamento patrimonial e sucessório"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">23,50</td><td class="num">R$142,26</td><td class="num">4,76%</td></tr>
+          <tr><td>5</td><td class="kw">"curso sucessão familiar"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">12,00</td><td class="num">R$113,09</td><td class="num">6,42%</td></tr>
+          <tr><td>6</td><td class="kw">"Planejamento Sucessório"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">11,00</td><td class="num">R$56,50</td><td class="num">6,32%</td></tr>
+          <tr><td>7</td><td class="kw">"Governança Familiar"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">9,00</td><td class="num">R$40,51</td><td class="num">10,84%</td></tr>
+          <tr><td>8</td><td class="kw">"Planejamento Patrimonial"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">7,43</td><td class="num">R$125,55</td><td class="num">3,39%</td></tr>
+          <tr><td>9</td><td class="kw">"Curso Para Sucessores"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">7,00</td><td class="num">R$38,47</td><td class="num">10,94%</td></tr>
+          <tr><td>10</td><td class="kw">"planejamento sucessório e patrimonial"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">7,00</td><td class="num">R$121,55</td><td class="num">4,52%</td></tr>
+          <tr><td>11</td><td class="kw">"Planejamento Sucessório" (conv.)</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">6,00</td><td class="num">R$122,33</td><td class="num">3,05%</td></tr>
+          <tr><td>12</td><td class="kw">"Empresa familiar"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">5,42</td><td class="num">R$100,68</td><td class="num">4,08%</td></tr>
+          <tr><td>13</td><td class="kw">"Curso Para Herdeiros"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">5,00</td><td class="num">R$49,34</td><td class="num">7,04%</td></tr>
+          <tr><td>14</td><td class="kw">"gestão de empresas familiares"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">4,00</td><td class="num">R$30,13</td><td class="num">14,81%</td></tr>
+          <tr><td>15</td><td class="kw">"Holding familiar"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">4,00</td><td class="num">R$33,17</td><td class="num">6,56%</td></tr>
+          <tr><td>16</td><td class="kw">"curso sucessão empresa familiar"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">4,00</td><td class="num">R$83,48</td><td class="num">10,53%</td></tr>
+          <tr><td>17</td><td class="kw">curso gestão patrimonial (conv.)</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype ampla">Ampla</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">4,00</td><td class="num">R$88,79</td><td class="num">6,56%</td></tr>
+          <tr><td>18</td><td class="kw">"formação em liderança e gestão"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">4,00</td><td class="num">R$130,98</td><td class="num">5,48%</td></tr>
+          <tr><td>19</td><td class="kw">"blindagem patrimonial"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">3,00</td><td class="num">R$12,16</td><td class="num">18,75%</td></tr>
+          <tr><td>20</td><td class="kw">"sucessão familiar no agronegócio"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">3,00</td><td class="num">R$18,42</td><td class="num">50,00%</td></tr>
+          <tr><td>21</td><td class="kw">"Governança Corporativa"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">3,00</td><td class="num">R$53,20</td><td class="num">4,55%</td></tr>
+          <tr><td>22</td><td class="kw">"curso de gestão empresarial"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">3,00</td><td class="num">R$71,58</td><td class="num">6,25%</td></tr>
+          <tr><td>23</td><td class="kw">"planejamento patrimonial e sucessório"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">3,00</td><td class="num">R$96,43</td><td class="num">5,26%</td></tr>
+          <tr><td>24</td><td class="kw">"Sucessão Patrimonial"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">3,00</td><td class="num">R$114,47</td><td class="num">2,63%</td></tr>
+          <tr><td>25</td><td class="kw">curso gestão patrimonial</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype ampla">Ampla</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">3,00</td><td class="num">R$202,07</td><td class="num">2,52%</td></tr>
+          <tr><td>26</td><td class="kw">"planejamento patrimonial e sucessório"</td><td><span class="camp-tag c2">PROF</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,50</td><td class="num">R$185,70</td><td class="num">2,94%</td></tr>
+          <tr><td>27</td><td class="kw">"Acordo de sócios"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">2,00</td><td class="num">R$1,95</td><td class="num">200,00%*</td></tr>
+          <tr><td>28</td><td class="kw">"Família empresária"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,00</td><td class="num">R$8,23</td><td class="num">28,57%</td></tr>
+          <tr><td>29</td><td class="kw">"Curso De Sucessão Familiar"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,00</td><td class="num">R$16,56</td><td class="num">13,33%</td></tr>
+          <tr><td>30</td><td class="kw">"Planejamento sucessório"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,00</td><td class="num">R$21,13</td><td class="num">9,52%</td></tr>
+          <tr><td>31</td><td class="kw">"Governança Familiar" (conv.)</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">2,00</td><td class="num">R$21,19</td><td class="num">14,29%</td></tr>
+          <tr><td>32</td><td class="kw">"curso para herdeiros"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">2,00</td><td class="num">R$30,98</td><td class="num">13,33%</td></tr>
+          <tr><td>33</td><td class="kw">"curso de governança para empresas familiares"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,00</td><td class="num">R$45,12</td><td class="num">13,33%</td></tr>
+          <tr><td>34</td><td class="kw">"Sucessão Empresarial"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,00</td><td class="num">R$97,39</td><td class="num">3,64%</td></tr>
+          <tr><td>35</td><td class="kw">"sucessão de empresa"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,00</td><td class="num">R$136,42</td><td class="num">5,41%</td></tr>
+          <tr><td>36</td><td class="kw">"planejamento patrimonial e sucessório" (conv.)</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,33</td><td class="num">R$347,03</td><td class="num">1,22%</td></tr>
+          <tr><td>37</td><td class="kw">"Empresa familiar"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">1,01</td><td class="num">R$93,93</td><td class="num">2,46%</td></tr>
+          <tr><td>38</td><td class="kw">"curso de governança para empresas"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">1,00</td><td class="num">R$8,20</td><td class="num">100,00%*</td></tr>
+          <tr><td>39</td><td class="kw">"Formação De Sucessores"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$9,05</td><td class="num">25,00%</td></tr>
+          <tr><td>40</td><td class="kw">"protocolo de família"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$22,62</td><td class="num">10,00%</td></tr>
+          <tr><td>41</td><td class="kw">"Formação Para Gestores"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$29,56</td><td class="num">7,14%</td></tr>
+          <tr><td>42</td><td class="kw">"sucessão de empresa" (conv.)</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$34,13</td><td class="num">14,29%</td></tr>
+          <tr><td>43</td><td class="kw">"empreendedorismo familiar"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$34,40</td><td class="num">7,69%</td></tr>
+          <tr><td>44</td><td class="kw">"curso sobre sucessão familiar"</td><td><span class="camp-tag c2">PROF</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$36,30</td><td class="num">14,29%</td></tr>
+          <tr><td>45</td><td class="kw">"sucessão de empresa"</td><td><span class="camp-tag c2">PROF</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">1,00</td><td class="num">R$38,10</td><td class="num">14,29%</td></tr>
+          <tr><td>46</td><td class="kw">"Sucessão empresarial"</td><td><span class="camp-tag c2">PROF</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">1,00</td><td class="num">R$44,39</td><td class="num">16,67%</td></tr>
+          <tr><td>47</td><td class="kw">"curso sucessão empresa familiar"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$53,04</td><td class="num">16,67%</td></tr>
+          <tr><td>48</td><td class="kw">"planejamento sucessório familiar"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$56,87</td><td class="num">4,17%</td></tr>
+          <tr><td>49</td><td class="kw">"curso gestão patrimonial"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$59,84</td><td class="num">7,69%</td></tr>
+          <tr><td>50</td><td class="kw">"Sucessão Empresarial"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$65,81</td><td class="num">3,03%</td></tr>
+          <tr><td>51</td><td class="kw">"curso de governança corporativa"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$75,18</td><td class="num">8,33%</td></tr>
+          <tr><td>52</td><td class="kw">"Herdeiro"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">1,00</td><td class="num">R$86,13</td><td class="num">3,03%</td></tr>
+          <tr><td>53</td><td class="kw">"protocolo de família"</td><td><span class="camp-tag c3">MEMBRO</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$101,16</td><td class="num">5,56%</td></tr>
+          <tr><td>54</td><td class="kw">"gestão de patrimônio familiar"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">1,00</td><td class="num">R$110,08</td><td class="num">2,86%</td></tr>
+          <tr><td>55</td><td class="kw">"planejamento sucessório e patrimonial"</td><td><span class="camp-tag c2">PROF</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$110,26</td><td class="num">4,00%</td></tr>
+          <tr><td>56</td><td class="kw">"planejamento sucessório"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$116,04</td><td class="num">1,85%</td></tr>
+          <tr><td>57</td><td class="kw">"curso de liderança empresarial"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">1,00</td><td class="num">R$149,81</td><td class="num">3,13%</td></tr>
+          <tr><td>58</td><td class="kw">"Proteção Patrimonial"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$161,97</td><td class="num">2,63%</td></tr>
+          <tr><td>59</td><td class="kw">"Holding familiar"</td><td><span class="camp-tag c4">3ªED</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$165,97</td><td class="num">1,28%</td></tr>
+          <tr><td>60</td><td class="kw">"Holding Patrimonial"</td><td><span class="camp-tag">GERAL</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag pausada">Pausada</span></td><td class="num">1,00</td><td class="num">R$436,66</td><td class="num">0,79%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="nota">* Taxas de conversão de 100–200% (linhas 27 e 38) vêm de amostras muito pequenas (1–2 cliques) — não são tendência confiável, só o resultado bruto do período.</div>
+  </div>
+</section>
+
+<!-- ============ MULHERES EM CONSELHO ============ -->
+<section>
+  <div class="wrap">
+    <div class="group-head">
+      <div class="ginfo">
+        <div class="tag-big">FMC4</div>
+        <div class="gtext">
+          <h3>Mulheres em Conselho — 3 campanhas com resultado</h3>
+          <p>Formação em Conselhos · Principais Termos · Tópicos do Curso — 2 outras campanhas do grupo (Long-Tail Max Cliques e Max Conv.) tiveram 0 conversões.</p>
+        </div>
+      </div>
+      <div class="group-stats">
+        <div><span class="num">14,00</span><span class="lbl">Conversões</span></div>
+        <div><span class="num">9</span><span class="lbl">Palavras convertidas</span></div>
+        <div><span class="num">5</span><span class="lbl">Campanhas no grupo</span></div>
+      </div>
+    </div>
+
+    <div class="table-title"><h4>Ranking completo — todas as palavras com conversão</h4></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Palavra-chave</th><th>Campanha</th><th>Corresp.</th><th>Status</th><th class="num">Convers.</th><th class="num">Custo/Conv</th><th class="num">Taxa Conv.</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="kw">"mulheres em conselho"</td><td><span class="camp-tag c4">CONSELHOS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">4,00</td><td class="num">R$9,87</td><td class="num">57,14%</td></tr>
+          <tr><td>2</td><td class="kw">"formação para CEO"</td><td><span class="camp-tag c4">CONSELHOS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,00</td><td class="num">R$32,57</td><td class="num">22,22%</td></tr>
+          <tr><td>3</td><td class="kw">"board academy"</td><td><span class="camp-tag c4">CONSELHOS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">2,00</td><td class="num">R$85,62</td><td class="num">10,53%</td></tr>
+          <tr><td>4</td><td class="kw">"mulheres em conselho"</td><td><span class="camp-tag">PRINCIPAIS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$11,31</td><td class="num">50,00%</td></tr>
+          <tr><td>5</td><td class="kw">"Conselheiro Empresarial"</td><td><span class="camp-tag c4">CONSELHOS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$32,65</td><td class="num">25,00%</td></tr>
+          <tr><td>6</td><td class="kw">"mulheres na liderança"</td><td><span class="camp-tag c2">TÓPICOS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$48,36</td><td class="num">20,00%</td></tr>
+          <tr><td>7</td><td class="kw">"Curso de Conselheiro"</td><td><span class="camp-tag c4">CONSELHOS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$83,82</td><td class="num">11,11%</td></tr>
+          <tr><td>8</td><td class="kw">"Curso de Conselheira"</td><td><span class="camp-tag c4">CONSELHOS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$118,82</td><td class="num">5,88%</td></tr>
+          <tr><td>9</td><td class="kw">"mulheres em cargos de liderança"</td><td><span class="camp-tag">PRINCIPAIS</span></td><td><span class="mtype">Frase</span></td><td><span class="stat-tag ativa">Ativa</span></td><td class="num">1,00</td><td class="num">R$297,66</td><td class="num">5,56%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="nota"><b>Leitura:</b> volume baixo (14 conversões no total), mas o termo de marca "mulheres em conselho" é o mais barato de toda a conta — R$9,87 a R$11,31 por conversão nas duas campanhas em que aparece.</div>
+  </div>
+</section>
+
+<!-- ============ NOVA CAMPANHA ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Próximo passo</div>
+    <h2>Nova campanha — Rede de Pesquisa, Maximizar Conversões</h2>
+    <p class="intro-text">Vamos criar uma campanha nova para cada produto — Sucessão e Mulheres em Conselho — com a mesma definição de base para as duas, começando com orçamento controlado para validar.</p>
+
+    <div class="cfg-grid">
+      <div class="cfg-card"><small>Rede</small><b>Pesquisa</b></div>
+      <div class="cfg-card"><small>Estratégia de lances</small><b>Maximizar Conversões</b></div>
+      <div class="cfg-card"><small>Orçamento por campanha</small><b>R$ 75,00/dia</b></div>
+      <div class="cfg-card"><small>Investimento total/dia</small><b>R$ 150,00</b></div>
+    </div>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V9l8-5 8 5v10"/><path d="M9 19v-6h6v6"/></svg></div>
+        <h4>Campanha 1 — Sucessão</h4>
+        <p>Usa as <b>melhores palavras-chave já validadas</b> nas 4 campanhas históricas — 25 termos, priorizando maior volume de conversão e melhor custo por conversão, sem duplicar a mesma palavra em correspondências diferentes.</p>
+      </div>
+      <div class="plan-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>Campanha 2 — Mulheres em Conselho</h4>
+        <p>Usa as <b>9 palavras já validadas</b> + <b>15 palavras novas para teste</b>, escolhidas analisando o conteúdo da própria página de vendas do curso (lógica do "bolo fofinho" — explicada abaixo).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCESSÃO — PALAVRAS DA NOVA CAMPANHA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Campanha 1</div>
+    <h2>Sucessão — as 25 melhores palavras-chave</h2>
+    <p class="intro-text">Consolidado das 4 campanhas históricas: cada termo aparece uma única vez, na sua melhor versão (maior conversão / menor custo por conversão). Correspondência sugerida é <b style="color:var(--ink)">Frase</b> para a maioria — mantivemos <b style="color:var(--ink)">Ampla</b> só nos 3 termos que já provaram eficiência nesse formato em volume.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Palavra-chave</th><th>Corresp. sugerida</th><th class="num">Convers. histórica</th><th class="num">Custo/Conv</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="kw">curso planejamento patrimonial e sucessório</td><td><span class="mtype ampla">Ampla</span></td><td class="num">38,17</td><td class="num">R$110,74</td></tr>
+          <tr><td>2</td><td class="kw">curso planejamento sucessório</td><td><span class="mtype">Frase</span></td><td class="num">31,57</td><td class="num">R$68,03</td></tr>
+          <tr><td>3</td><td class="kw">planejamento sucessório e patrimonial</td><td><span class="mtype ampla">Ampla</span></td><td class="num">27,50</td><td class="num">R$93,82</td></tr>
+          <tr><td>4</td><td class="kw">planejamento patrimonial e sucessório</td><td><span class="mtype">Frase</span></td><td class="num">23,50</td><td class="num">R$142,26</td></tr>
+          <tr><td>5</td><td class="kw">curso sucessão familiar</td><td><span class="mtype">Frase</span></td><td class="num">12,00</td><td class="num">R$113,09</td></tr>
+          <tr><td>6</td><td class="kw">Planejamento Sucessório</td><td><span class="mtype">Frase</span></td><td class="num">11,00</td><td class="num">R$56,50</td></tr>
+          <tr><td>7</td><td class="kw">Governança Familiar</td><td><span class="mtype">Frase</span></td><td class="num">9,00</td><td class="num">R$40,51</td></tr>
+          <tr><td>8</td><td class="kw">Planejamento Patrimonial</td><td><span class="mtype">Frase</span></td><td class="num">7,43</td><td class="num">R$125,55</td></tr>
+          <tr><td>9</td><td class="kw">Curso Para Sucessores</td><td><span class="mtype">Frase</span></td><td class="num">7,00</td><td class="num">R$38,47</td></tr>
+          <tr><td>10</td><td class="kw">Empresa familiar</td><td><span class="mtype">Frase</span></td><td class="num">5,42</td><td class="num">R$100,68</td></tr>
+          <tr><td>11</td><td class="kw">Curso Para Herdeiros</td><td><span class="mtype">Frase</span></td><td class="num">5,00</td><td class="num">R$49,34</td></tr>
+          <tr><td>12</td><td class="kw">gestão de empresas familiares</td><td><span class="mtype">Frase</span></td><td class="num">4,00</td><td class="num">R$30,13</td></tr>
+          <tr><td>13</td><td class="kw">Holding familiar</td><td><span class="mtype">Frase</span></td><td class="num">4,00</td><td class="num">R$33,17</td></tr>
+          <tr><td>14</td><td class="kw">curso sucessão empresa familiar</td><td><span class="mtype">Frase</span></td><td class="num">4,00</td><td class="num">R$83,48</td></tr>
+          <tr><td>15</td><td class="kw">curso gestão patrimonial</td><td><span class="mtype ampla">Ampla</span></td><td class="num">4,00</td><td class="num">R$88,79</td></tr>
+          <tr><td>16</td><td class="kw">formação em liderança e gestão</td><td><span class="mtype">Frase</span></td><td class="num">4,00</td><td class="num">R$130,98</td></tr>
+          <tr><td>17</td><td class="kw">blindagem patrimonial</td><td><span class="mtype">Frase</span></td><td class="num">3,00</td><td class="num">R$12,16</td></tr>
+          <tr><td>18</td><td class="kw">sucessão familiar no agronegócio</td><td><span class="mtype">Frase</span></td><td class="num">3,00</td><td class="num">R$18,42</td></tr>
+          <tr><td>19</td><td class="kw">Governança Corporativa</td><td><span class="mtype">Frase</span></td><td class="num">3,00</td><td class="num">R$53,20</td></tr>
+          <tr><td>20</td><td class="kw">Sucessão Patrimonial</td><td><span class="mtype">Frase</span></td><td class="num">3,00</td><td class="num">R$114,47</td></tr>
+          <tr><td>21</td><td class="kw">Família empresária</td><td><span class="mtype">Frase</span></td><td class="num">2,00</td><td class="num">R$8,23</td></tr>
+          <tr><td>22</td><td class="kw">Curso De Sucessão Familiar</td><td><span class="mtype">Frase</span></td><td class="num">2,00</td><td class="num">R$16,56</td></tr>
+          <tr><td>23</td><td class="kw">curso de governança para empresas familiares</td><td><span class="mtype">Frase</span></td><td class="num">2,00</td><td class="num">R$45,12</td></tr>
+          <tr><td>24</td><td class="kw">Sucessão Empresarial</td><td><span class="mtype">Frase</span></td><td class="num">2,00</td><td class="num">R$97,39</td></tr>
+          <tr><td>25</td><td class="kw">protocolo de família</td><td><span class="mtype">Frase</span></td><td class="num">1,00</td><td class="num">R$22,62</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- MULHERES EM CONSELHO — LOGICA + PALAVRAS DA NOVA CAMPANHA -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Campanha 2</div>
+    <h2>Mulheres em Conselho — validadas + novas para teste</h2>
+    <p class="intro-text">Além das 9 palavras já validadas no histórico, acrescentamos 15 palavras novas — escolhidas lendo o conteúdo real da página de vendas do curso, para que a busca da pessoa sempre "bata" com o que ela encontra ao clicar.</p>
+
+    <div class="logic-box">
+      <div class="emoji">🎂</div>
+      <div>
+        <p><b>A lógica do "bolo fofinho":</b> se alguém pesquisa "bolo de cenoura fofinho", ela precisa encontrar no Google algo como "aprenda a fazer bolo de cenoura fofinho" — e, ao clicar, a página tem que falar exatamente sobre bolo de cenoura fofinho. Se a promessa do anúncio não bate com o que a pessoa pesquisou, ela sai; se bate, o clique vira ação.</p>
+        <p>Aplicamos a mesma lógica aqui: lemos <a href="https://legadoefamilia.com/curso/formacao-mulheres-em-conselho/" target="_blank">a página da Formação Mulheres em Conselhos</a> (título, os 14 módulos, promessas, público-alvo declarado) e extraímos termos que <b>já estão no conteúdo da página</b> — então quem pesquisa por eles encontra exatamente o que buscou.</p>
+      </div>
+    </div>
+
+    <div class="table-title"><h4>Já validadas</h4><span class="sub">Histórico com conversão — manter na nova campanha</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Palavra-chave</th><th>Corresp. sugerida</th><th class="num">Convers. histórica</th><th class="num">Custo/Conv</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="kw">mulheres em conselho</td><td><span class="mtype">Frase</span></td><td class="num">4,00</td><td class="num">R$9,87</td></tr>
+          <tr><td>2</td><td class="kw">formação para CEO</td><td><span class="mtype">Frase</span></td><td class="num">2,00</td><td class="num">R$32,57</td></tr>
+          <tr><td>3</td><td class="kw">board academy</td><td><span class="mtype">Frase</span></td><td class="num">2,00</td><td class="num">R$85,62</td></tr>
+          <tr><td>4</td><td class="kw">Conselheiro Empresarial</td><td><span class="mtype">Frase</span></td><td class="num">1,00</td><td class="num">R$32,65</td></tr>
+          <tr><td>5</td><td class="kw">mulheres na liderança</td><td><span class="mtype">Frase</span></td><td class="num">1,00</td><td class="num">R$48,36</td></tr>
+          <tr><td>6</td><td class="kw">Curso de Conselheiro</td><td><span class="mtype">Frase</span></td><td class="num">1,00</td><td class="num">R$83,82</td></tr>
+          <tr><td>7</td><td class="kw">Curso de Conselheira</td><td><span class="mtype">Frase</span></td><td class="num">1,00</td><td class="num">R$118,82</td></tr>
+          <tr><td>8</td><td class="kw">mulheres em cargos de liderança</td><td><span class="mtype">Frase</span></td><td class="num">1,00</td><td class="num">R$297,66</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>15 novas — para teste</h4><span class="sub">Extraídas do conteúdo da página de vendas</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Palavra-chave</th><th>Corresp. sugerida</th><th>Onde bate na página</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="kw">curso para conselheiras</td><td><span class="mtype">Frase</span></td><td>Título do curso — "Mulheres em Conselhos" / conselheiras</td></tr>
+          <tr><td>2</td><td class="kw">formação de conselheiras</td><td><span class="mtype">Frase</span></td><td>Nome oficial: "Formação Mulheres em Conselhos"</td></tr>
+          <tr><td>3</td><td class="kw">como se tornar conselheira</td><td><span class="mtype">Frase</span></td><td>Promessa: "passos concretos rumo à sua primeira ou próxima cadeira em conselho"</td></tr>
+          <tr><td>4</td><td class="kw">curso de governança corporativa</td><td><span class="mtype">Frase</span></td><td>Módulo 1 — "O Sistema de Governança Corporativa e o Papel do Conselho"</td></tr>
+          <tr><td>5</td><td class="kw">cadeira no conselho de administração</td><td><span class="mtype">Frase</span></td><td>"Ocupar cadeiras em conselhos" + Módulo 4</td></tr>
+          <tr><td>6</td><td class="kw">conselho consultivo curso</td><td><span class="mtype">Frase</span></td><td>Módulo 4 — "Conselho Consultivo e Conselho de Administração"</td></tr>
+          <tr><td>7</td><td class="kw">protagonismo feminino em conselhos</td><td><span class="mtype">Frase</span></td><td>Módulo 2 — título exato do módulo</td></tr>
+          <tr><td>8</td><td class="kw">curso conselho de administração</td><td><span class="mtype">Frase</span></td><td>Módulo 4</td></tr>
+          <tr><td>9</td><td class="kw">mulheres em cargos de conselho</td><td><span class="mtype">Frase</span></td><td>Público-alvo declarado na página</td></tr>
+          <tr><td>10</td><td class="kw">conselheira de administração curso</td><td><span class="mtype">Frase</span></td><td>Variação de busca do Módulo 4</td></tr>
+          <tr><td>11</td><td class="kw">como entrar em um conselho de administração</td><td><span class="mtype">Frase</span></td><td>Jornada de intenção + promessa de "passos concretos"</td></tr>
+          <tr><td>12</td><td class="kw">curso de governança para mulheres</td><td><span class="mtype">Frase</span></td><td>Combina governança (Módulo 1) + protagonismo feminino (Módulo 2)</td></tr>
+          <tr><td>13</td><td class="kw">mulheres na alta liderança</td><td><span class="mtype">Frase</span></td><td>Público-alvo: "mulheres da alta liderança"</td></tr>
+          <tr><td>14</td><td class="kw">conselho de administração para mulheres</td><td><span class="mtype">Frase</span></td><td>Combinação direta produto + público</td></tr>
+          <tr><td>15</td><td class="kw">documentos para conselho de administração</td><td><span class="mtype">Frase</span></td><td>Módulo 11 — "Documentos Fundamentais para Conselhos" (pautas, atas, regimentos)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="nota">Correspondência de <b>Frase</b> em todas as novas, por segurança — sem histórico de conta ainda, mantemos mais controle sobre quais buscas disparam o anúncio. Depois de validar volume, dá pra testar Ampla nos termos que mais performarem.</div>
+  </div>
+</section>
+
+<!-- PALAVRAS NEGATIVAS -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Para as duas campanhas</div>
+    <h2>Palavras-chave negativas</h2>
+    <p class="intro-text">Lista compartilhada entre Sucessão e Mulheres em Conselho — corta buscas de quem procura conteúdo gratuito, vaga de emprego/concurso, ou outros significados de "conselho" que nada têm a ver com governança corporativa (conselho tutelar, de classe, escolar, municipal).</p>
+    <div class="pill-grid">
+      <span class="pill-neg">gratis</span>
+      <span class="pill-neg">grátis</span>
+      <span class="pill-neg">gratuito</span>
+      <span class="pill-neg">de graça</span>
+      <span class="pill-neg">pdf</span>
+      <span class="pill-neg">resumo</span>
+      <span class="pill-neg">o que é</span>
+      <span class="pill-neg">significado</span>
+      <span class="pill-neg">vaga</span>
+      <span class="pill-neg">vagas</span>
+      <span class="pill-neg">emprego</span>
+      <span class="pill-neg">concurso</span>
+      <span class="pill-neg">concurso público</span>
+      <span class="pill-neg">conselho tutelar</span>
+      <span class="pill-neg">conselho municipal</span>
+      <span class="pill-neg">conselho escolar</span>
+      <span class="pill-neg">conselho de classe</span>
+      <span class="pill-neg">conselho regional</span>
+      <span class="pill-neg">crm</span>
+      <span class="pill-neg">oab</span>
+      <span class="pill-neg">monografia</span>
+      <span class="pill-neg">tcc</span>
+      <span class="pill-neg">apostila</span>
+      <span class="pill-neg">herança</span>
+      <span class="pill-neg">inventário</span>
+      <span class="pill-neg">direito sucessório</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Antes de ativar</div>
+    <h2>Checklist de criação</h2>
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><div class="scontent"><h4>Criar as 2 campanhas na Rede de Pesquisa</h4><p>Objetivo Conversões, estratégia de lances Maximizar Conversões, orçamento R$75,00/dia cada — sem CPA alvo no início, para deixar o algoritmo aprender livre com o histórico de conversão da conta.</p></div></div>
+      <div class="step"><div class="snum">2</div><div class="scontent"><h4>Confirmar página de destino de cada anúncio</h4><p>Sucessão aponta para a página do Programa de Sucessão Empresarial e Patrimonial; Mulheres em Conselho aponta para <code>legadoefamilia.com/curso/formacao-mulheres-em-conselho/</code> — a mesma que embasou as 15 palavras novas.</p></div></div>
+      <div class="step"><div class="snum">3</div><div class="scontent"><h4>Subir as palavras negativas em nível de campanha</h4><p>A lista compartilhada acima entra nas duas campanhas desde o primeiro dia, evitando gasto com buscas fora do público certo.</p></div></div>
+      <div class="step"><div class="snum">4</div><div class="scontent"><h4>Dar fase de aprendizado antes de julgar</h4><p>Igual observamos no histórico: termos como "mulheres em conselho" só mostraram sua real eficiência (R$9,87/conversão) depois de acumular volume — não pausar palavra nova nos primeiros dias por poucos cliques sem conversão.</p></div></div>
+    </div>
+    <div class="nota warn"><b>Ainda não criada:</b> por decisão do Rafael, essa página registra o plano — as campanhas em si ainda não foram montadas no Google Ads. Criação fica para o próximo passo, depois de validar este plano.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Alguma dúvida sobre esse plano?</h3>
+        <p>Essa página fica registrada aqui como referência dos resultados no Google Ads e da proposta das novas campanhas.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vim%20da%20p%C3%A1gina%20de%20Nova%20Campanha%20Google%20Ads%20e%20tenho%20d%C3%BAvidas." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Central de Estratégia e Resultados &middot; rafael@britomidias.com.br</div>
+  </div>
+</footer>
+
+</body>
+</html>
