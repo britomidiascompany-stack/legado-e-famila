@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resultados no LinkedIn — PSP &amp; Mulheres em Conselho · Legado &amp; Família</title>
+<meta name="description" content="Descritivo geral das campanhas rodadas no LinkedIn Ads pela Legado e Família — resultado por campanha, por conjunto e por anúncio — e o plano da nova campanha de Website Conversions para a Formação Mulheres em Conselhos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+    --vermelho:#B91C1C; --vermelho-light:#FEE2E2; --azul:#1D4ED8; --azul-light:#DBEAFE;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  code{font-family:'Courier New',Courier,monospace;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 28px;}
+
+  /* BREADCRUMB */
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap; max-width:1100px;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  /* HERO */
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 76px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:36px; height:36px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:20px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill-row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .hero h1{font-size:33px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:760px;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:680px; margin:0 0 26px;}
+  .meta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .meta-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; padding:10px 16px;
+  }
+  .meta-badge .label{font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6);}
+  .meta-badge .id{font-size:14px; font-weight:700; font-family:'Courier New',monospace; color:#fff; letter-spacing:.02em;}
+
+  /* SECTIONS */
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:23px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px;}
+  h3{font-size:15px; font-weight:600; margin:0 0 4px;}
+  h4{font-size:14px; font-weight:600; margin:0 0 4px;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:760px; margin:0 0 28px;}
+
+  .why-box{border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff;}
+  .why-box p{font-size:13.5px; color:var(--cinza); margin:0 0 12px;}
+  .why-box p:last-child{margin-bottom:0;}
+  .why-box b{color:var(--ink); font-weight:600;}
+
+  /* KPI GRID */
+  .kpi-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:26px;}
+  .kpi{border:1px solid var(--linha); border-radius:16px; padding:20px 20px; background:#fff;}
+  .kpi .v{font-size:26px; font-weight:800; color:var(--ink); letter-spacing:-.01em;}
+  .kpi .l{font-size:12px; color:var(--cinza); margin-top:4px;}
+  .kpi.roxo{background:linear-gradient(135deg,#7C3AED,#5B21B6); border:none;}
+  .kpi.roxo .v, .kpi.roxo .l{color:#fff;}
+  .kpi.roxo .l{color:rgba(255,255,255,.75);}
+
+  .prod-split{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;}
+  .prod-card{border:1px solid var(--linha); border-radius:16px; padding:22px 24px; background:#fff;}
+  .prod-card .tag-top{display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--roxo-dark); background:var(--roxo-xlight); border-radius:100px; padding:5px 12px; margin-bottom:14px;}
+  .prod-card .row{display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed var(--linha); font-size:13.5px;}
+  .prod-card .row:last-child{border-bottom:none;}
+  .prod-card .row .k{color:var(--cinza);}
+  .prod-card .row .v{font-weight:600; color:var(--ink);}
+
+  /* TABLES */
+  .table-wrap{border:1px solid var(--linha); border-radius:16px; overflow:hidden; margin-top:18px;}
+  .table-wrap + .table-wrap{margin-top:22px;}
+  table{width:100%; border-collapse:collapse; font-size:12.8px;}
+  thead th{
+    text-align:left; background:var(--bg-soft); color:var(--cinza); font-weight:600; font-size:10.5px;
+    text-transform:uppercase; letter-spacing:.04em; padding:11px 14px; border-bottom:1px solid var(--linha); white-space:nowrap;
+  }
+  tbody td{padding:11px 14px; border-bottom:1px solid var(--linha); color:var(--ink); vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:var(--bg-soft);}
+  td.num{font-family:'Courier New',monospace; font-size:12px; white-space:nowrap;}
+  td.mono{font-family:'Courier New',monospace; font-size:11.5px; color:var(--cinza);}
+  .table-title{display:flex; align-items:center; justify-content:space-between; gap:10px; margin:26px 0 0; flex-wrap:wrap;}
+  .table-title h4{margin:0;}
+  .table-title .sub{font-size:12px; color:var(--cinza);}
+
+  .badge{display:inline-flex; align-items:center; gap:5px; border-radius:100px; padding:4px 10px; font-size:11px; font-weight:700;}
+  .badge.good{background:var(--verde-light); color:var(--verde);}
+  .badge.warn{background:var(--ambar-light); color:var(--ambar);}
+  .badge.bad{background:var(--vermelho-light); color:var(--vermelho);}
+  .badge.muted{background:var(--bg-soft); color:var(--cinza); border:1px solid var(--linha);}
+  .badge.info{background:var(--azul-light); color:var(--azul);}
+
+  .status-dot{display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600;}
+  .status-dot::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--cinza); flex:none;}
+  .status-dot.paused::before{background:var(--ambar);}
+  .status-dot.deleted::before{background:var(--vermelho);}
+  .status-dot.never::before{background:var(--linha); border:1px solid #C9C3D6;}
+  .status-dot.draft::before{background:var(--azul);}
+
+  .nota{
+    border:1px solid var(--linha); border-left:3px solid var(--roxo); border-radius:12px;
+    padding:16px 20px; margin-top:20px; background:#fff; font-size:13.5px; color:var(--cinza);
+  }
+  .nota b{color:var(--ink); font-weight:600;}
+  .nota.warn{border-left-color:var(--ambar); background:var(--ambar-light); color:#78350F;}
+  .nota.warn b{color:#78350F;}
+  .nota.good{border-left-color:var(--verde); background:var(--verde-light); color:#065F46;}
+  .nota.good b{color:#065F46;}
+
+  /* CHAMPION CARDS */
+  .champ-grid{display:flex; flex-direction:column; gap:12px; margin-top:22px;}
+  .champ{
+    border:1px solid var(--linha); border-radius:16px; padding:18px 22px; background:#fff;
+    display:grid; grid-template-columns:34px 1fr auto; gap:16px; align-items:center;
+  }
+  .champ .rank{
+    width:34px; height:34px; border-radius:10px; background:var(--roxo-xlight); color:var(--roxo-dark);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex:none;
+  }
+  .champ.top .rank{background:linear-gradient(135deg,#7C3AED,#5B21B6); color:#fff;}
+  .champ .info h4{margin:0 0 4px;}
+  .champ .info .meta{font-size:12px; color:var(--cinza);}
+  .champ .stats{text-align:right; flex:none;}
+  .champ .stats .cpa{font-size:17px; font-weight:800; color:var(--roxo-dark);}
+  .champ .stats .conv{font-size:11.5px; color:var(--cinza);}
+  .champ .stats a{display:inline-block; margin-top:8px; font-size:12px; font-weight:600; color:var(--roxo); text-decoration:none;}
+  .champ .stats a:hover{text-decoration:underline;}
+
+  /* NEW CAMPAIGN — CREATIVE SOURCE CARDS */
+  .src-grid{display:flex; flex-direction:column; gap:12px; margin-top:22px;}
+  .src{border:1px solid var(--linha); border-radius:16px; padding:18px 22px; background:#fff; display:grid; grid-template-columns:30px 1fr auto; gap:16px; align-items:center;}
+  .src .n{width:30px; height:30px; border-radius:9px; background:var(--roxo-xlight); color:var(--roxo-dark); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12.5px; flex:none;}
+  .src .info h4{margin:0 0 3px;}
+  .src .info p{margin:0; font-size:12.5px; color:var(--cinza);}
+  .src a.go{font-size:12.5px; font-weight:600; color:var(--roxo); text-decoration:none; white-space:nowrap;}
+  .src a.go:hover{text-decoration:underline;}
+
+  .plan-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;}
+  .plan-card{border:1px solid var(--linha); border-radius:16px; padding:22px 24px; background:#fff;}
+  .plan-card .ic{width:36px; height:36px; border-radius:10px; background:var(--roxo-xlight); display:flex; align-items:center; justify-content:center; margin-bottom:12px;}
+  .plan-card .ic svg{width:18px; height:18px; stroke:var(--roxo-dark);}
+  .plan-card h4{font-size:14.5px; margin:0 0 6px;}
+  .plan-card p{font-size:13px; color:var(--cinza); margin:0;}
+
+  .steps{display:flex; flex-direction:column; gap:16px; margin-top:24px;}
+  .step{display:grid; grid-template-columns:36px 1fr; gap:14px; align-items:start;}
+  .step .snum{width:36px; height:36px; border-radius:10px; background:var(--roxo-xlight); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:var(--roxo-dark); flex:none;}
+  .step .scontent h4{padding-top:6px;}
+  .step .scontent p{font-size:13px; color:var(--cinza); margin:0;}
+
+  /* STRIP */
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700; color:#fff;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px; padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;}
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:760px){
+    .kpi-grid{grid-template-columns:1fr 1fr;}
+    .prod-split, .plan-grid{grid-template-columns:1fr;}
+    .champ, .src{grid-template-columns:1fr; text-align:left;}
+    .champ .stats{text-align:left;}
+  }
+  @media(max-width:640px){
+    .hero{padding:44px 0 52px;}
+    .hero h1{font-size:24px;}
+    .kpi-grid{grid-template-columns:1fr 1fr;}
+    .strip{flex-direction:column; align-items:flex-start;}
+    .table-wrap{overflow-x:auto;}
+    table{min-width:640px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Resultados LinkedIn Ads</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill-row">
+      <div class="pill">Relatório de campanhas · LinkedIn Ads</div>
+    </div>
+    <h1>Resultados no LinkedIn — PSP &amp; Mulheres em Conselho, e o plano da próxima campanha</h1>
+    <p class="lead">Descritivo geral de tudo que já rodou na conta do LinkedIn Ads da Legado &amp; Família: resultado por campanha, por conjunto de anúncios e por criativo — separado pelos dois produtos que efetivamente tiveram campanha ativa. Na sequência, o plano da nova campanha de Website Conversions para a Formação Mulheres em Conselhos.</p>
+    <div class="meta-row">
+      <div class="meta-badge"><div><div class="label">Conta de anúncio</div><div class="id">Legado e Família · 514481980</div></div></div>
+      <div class="meta-badge"><div><div class="label">Período analisado</div><div class="id">Todo o histórico até 13/08/2026</div></div></div>
+      <div class="meta-badge"><div><div class="label">Fonte</div><div class="id">LinkedIn Campaign Manager</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Sobre esse relatório</div>
+    <h2>Duas frentes, uma conta só</h2>
+    <div class="why-box">
+      <p>A conta de anúncios do LinkedIn (<b>Legado e Família</b>, ID 514481980) tem 9 campanhas criadas ao longo do histórico, mas só <b>4 realmente rodaram com verba e geraram dado</b>. As outras 5 nunca saíram do papel — algumas foram deletadas antes de ativar, outras ficaram em rascunho.</p>
+      <p>Olhando o nome e o conteúdo de cada campanha, dá pra separar claramente por produto: <b>só uma campanha foi para a Formação Mulheres em Conselhos</b> (a FMC4) — o resto pertence ao <b>Programa de Sucessão Empresarial e Patrimonial (PSP)</b>.</p>
+      <p>Este documento cobre: visão geral, resultado por campanha, por conjunto de anúncios e por criativo — e depois os criativos que mais performaram no PSP, que servem de base de aprendizado pra próxima campanha, já pensada para a Mulheres em Conselho.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISÃO GERAL -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Visão geral</div>
+    <h2>O que a conta gastou e entregou até aqui</h2>
+    <p class="intro-text">Somando as 4 campanhas que realmente rodaram, nos dois produtos.</p>
+
+    <div class="kpi-grid">
+      <div class="kpi roxo"><div class="v">R$ 8.252,23</div><div class="l">Investido no total</div></div>
+      <div class="kpi"><div class="v">87.240</div><div class="l">Impressões</div></div>
+      <div class="kpi"><div class="v">580</div><div class="l">Cliques · CTR 0,66%</div></div>
+      <div class="kpi"><div class="v">154 + 11</div><div class="l">Conversões (site) + Leads (form nativo)</div></div>
+    </div>
+
+    <div class="prod-split">
+      <div class="prod-card">
+        <div class="tag-top">Mulheres em Conselho</div>
+        <div class="row"><span class="k">Campanha</span><span class="v">FMC4 (única que rodou)</span></div>
+        <div class="row"><span class="k">Investido</span><span class="v">R$ 2.998,97</span></div>
+        <div class="row"><span class="k">Impressões / Cliques</span><span class="v">42.935 / 311</span></div>
+        <div class="row"><span class="k">Conversões</span><span class="v">49</span></div>
+        <div class="row"><span class="k">Custo por conversão</span><span class="v">R$ 61,20</span></div>
+      </div>
+      <div class="prod-card">
+        <div class="tag-top">Programa de Sucessão Patrimonial</div>
+        <div class="row"><span class="k">Campanhas</span><span class="v">Sucessão 3ª Ed. + Leads Conversa + Leads Feed</span></div>
+        <div class="row"><span class="k">Investido</span><span class="v">R$ 5.253,26</span></div>
+        <div class="row"><span class="k">Impressões / Cliques</span><span class="v">44.305 / 269</span></div>
+        <div class="row"><span class="k">Conversões + Leads</span><span class="v">105 + 11</span></div>
+        <div class="row"><span class="k">Melhor custo por resultado</span><span class="v">R$ 25,26 (conversão) · R$ 24,86 (lead)</span></div>
+      </div>
+    </div>
+
+    <div class="nota good"><b>O padrão mais claro do histórico:</b> em toda a conta, campanhas de <b>Website Conversions</b> (levando pra site com pixel) saíram muito mais baratas por resultado do que campanhas de <b>Lead Generation nativo do LinkedIn</b> (formulário/Conversation Ad dentro da própria rede) — é essa a lição que orienta o plano da próxima campanha, lá embaixo.</div>
+  </div>
+</section>
+
+<!-- RESULTADO POR CAMPANHA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Resultado por campanha</div>
+    <h2>As 9 campanhas da conta</h2>
+    <p class="intro-text">Agrupadas por produto. As que nunca ativaram de fato aparecem ao final, só pra registro.</p>
+
+    <div class="table-title"><h4>Mulheres em Conselho</h4><span class="sub">1 campanha com dado</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th>Status</th><th>Investido</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>Conversões</th><th>Custo/conv.</th></tr></thead>
+        <tbody>
+          <tr><td>[FRIO][CAPTAÇÃO DE LEAD][FMC4]<br><span class="mono">ID 737785993 · Website Conversions</span></td><td><span class="status-dot paused">Pausada</span></td><td class="num">R$ 2.998,97</td><td class="num">42.935</td><td class="num">311</td><td class="num">0,72%</td><td class="num">49</td><td class="num">R$ 61,20</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>Programa de Sucessão Patrimonial (PSP)</h4><span class="sub">3 campanhas com dado</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th>Status</th><th>Investido</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>Resultado</th><th>Custo/resultado</th></tr></thead>
+        <tbody>
+          <tr><td>[FRIO][SUCESSÃO EMPRESARIAL 3ª ED]<br><span class="mono">ID 740916753 · Website Conversions</span></td><td><span class="status-dot paused">Pausada</span></td><td class="num">R$ 3.028,92</td><td class="num">40.356</td><td class="num">247</td><td class="num">0,61%</td><td class="num">105 conversões</td><td class="num"><span class="badge good">R$ 25,26</span></td></tr>
+          <tr><td>[TD] - SUCESSÃO - LEADS - CONVERSA<br><span class="mono">ID 750974603 · Lead Generation</span></td><td><span class="status-dot paused">Pausada</span></td><td class="num">R$ 1.442,25</td><td class="num">0*</td><td class="num">0*</td><td class="num">—</td><td class="num">9 leads</td><td class="num"><span class="badge warn">R$ 160,25</span></td></tr>
+          <tr><td>[TD] - SUCESSÃO - LEADS - FEED<br><span class="mono">ID 772845376 · Lead Generation</span></td><td><span class="status-dot paused">Pausada</span></td><td class="num">R$ 782,09</td><td class="num">3.949</td><td class="num">22</td><td class="num">0,56%</td><td class="num">2 leads</td><td class="num"><span class="badge bad">R$ 391,05</span></td></tr>
+          <tr><td>[TD] [AULÃO] [TRÁ] [ABO]<br><span class="mono">ID 750944063 · Website Visits</span></td><td><span class="status-dot never">Nunca ativou</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="intro-text" style="margin-top:10px; font-size:12px;">* Campanhas de Conversation Ad (mensagem privada) não geram impressão/clique no sentido tradicional — a métrica de resultado é só leads.</p>
+
+    <div class="table-title"><h4>Sem dado / não atribuíveis a um produto</h4><span class="sub">4 campanhas — nunca ativaram ou foram deletadas antes de rodar</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th>Status</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td>LISTA DE CARGOS [FRIO]<br><span class="mono">ID 737775673 · Lead Generation</span></td><td><span class="status-dot never">Nunca ativou</span></td><td>Provável Mulheres em Conselho ou PSP — sem investimento, não dá pra confirmar.</td></tr>
+          <tr><td>LISTA DE CARGOS [FRIO]<br><span class="mono">ID 740001703 · Website Conversions</span></td><td><span class="status-dot deleted">Deletada</span></td><td>Mesma observação acima.</td></tr>
+          <tr><td>[FRIO][CAPTAÇÃO DE LEAD][FMC4][VÍDEO]<br><span class="mono">ID 740030903 · Lead Generation</span></td><td><span class="status-dot deleted">Deletada</span></td><td>Pelo nome, seria a versão em vídeo da FMC4 — mas foi apagada antes de gerar qualquer dado.</td></tr>
+          <tr><td>Acelerar grupo de campanhas<br><span class="mono">ID 740060453</span></td><td><span class="status-dot deleted">Deletada</span></td><td>Sem histórico algum registrado — classificada como indefinida, não é possível confirmar a qual produto pertencia.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADO POR CONJUNTO -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Resultado por conjunto</div>
+    <h2>23 conjuntos de anúncios no total</h2>
+    <p class="intro-text">Só os 4 conjuntos das campanhas ativas geraram dado — os das campanhas nunca ativadas ficam de fora dessa lista.</p>
+
+    <div class="table-title"><h4>Mulheres em Conselho — FMC4</h4></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th>Investido</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>Conversões</th><th>Custo/conv.</th></tr></thead>
+        <tbody>
+          <tr><td>FORMAÇÃO MULHERES NO CONSELHO 4 [ESTÁTICOS]</td><td class="num">R$ 1.572,48</td><td class="num">21.829</td><td class="num">153</td><td class="num">0,70%</td><td class="num">39</td><td class="num"><span class="badge good">R$ 40,32</span></td></tr>
+          <tr><td>FORMAÇÃO MULHERES NO CONSELHO 4 [VÍDEO]</td><td class="num">R$ 1.426,49</td><td class="num">21.106</td><td class="num">158</td><td class="num">0,75%</td><td class="num">10</td><td class="num"><span class="badge warn">R$ 142,65</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>PSP — Sucessão Empresarial 3ª Edição</h4></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th>Investido</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>Conversões</th><th>Custo/conv.</th></tr></thead>
+        <tbody>
+          <tr><td>[ESTÁTICO] FRIO [PERSONA 1_PERSONA2_PERSONA3]</td><td class="num">R$ 1.009,23</td><td class="num">18.158</td><td class="num">111</td><td class="num">0,61%</td><td class="num">63</td><td class="num"><span class="badge good">R$ 16,02</span></td></tr>
+          <tr><td>[VÍDEO] FRIO [PERSONA 1_EMPRESARIOS][PERSONA 2_SUCESSORES]</td><td class="num">R$ 362,91</td><td class="num">5.238</td><td class="num">37</td><td class="num">0,71%</td><td class="num">24</td><td class="num"><span class="badge good">R$ 15,12</span></td></tr>
+          <tr><td>[ESTÁTICO] FRIO [PERSONA 4_PERSONA 5]</td><td class="num">R$ 615,23</td><td class="num">11.504</td><td class="num">58</td><td class="num">0,50%</td><td class="num">15</td><td class="num"><span class="badge warn">R$ 41,02</span></td></tr>
+          <tr><td>[ESTÁTICO] QUENTE [RMK_LISTAS] <span class="badge info">remarketing</span></td><td class="num">R$ 665,36</td><td class="num">647</td><td class="num">6</td><td class="num">0,93%</td><td class="num">3</td><td class="num"><span class="badge bad">R$ 221,79</span></td></tr>
+          <tr><td>[VÍDEO] FRIO [NOVA DATA][PERSONA 1_EMP][PERSONA 2_SUC] <span class="badge muted">completo</span></td><td class="num">R$ 209,74</td><td class="num">2.802</td><td class="num">25</td><td class="num">0,89%</td><td class="num">0</td><td class="num">—</td></tr>
+          <tr><td>[ESTÁTICO] FRIO [NOVA DATA][PERSONA 1_2_3] <span class="badge muted">completo</span></td><td class="num">R$ 166,46</td><td class="num">2.007</td><td class="num">10</td><td class="num">0,50%</td><td class="num">0</td><td class="num">—</td></tr>
+          <tr><td>[ESTÁTICO] FRIO [LLA 1% LISTAS] <span class="badge muted">sem verba</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>PSP — Leads Conversa (Sponsored/Message Ad)</h4></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th>Investido</th><th>Leads</th><th>Custo/lead</th></tr></thead>
+        <tbody>
+          <tr><td>COMPETÊNCIAS (sucessão)</td><td class="num">R$ 219,80</td><td class="num">3</td><td class="num"><span class="badge good">R$ 73,27</span></td></tr>
+          <tr><td>CARGOS</td><td class="num">R$ 579,42</td><td class="num">3</td><td class="num"><span class="badge warn">R$ 193,14</span></td></tr>
+          <tr><td>CARGOS + COMPETÊNCIAS (sucessão)</td><td class="num">R$ 207,06</td><td class="num">1</td><td class="num"><span class="badge warn">R$ 207,06</span></td></tr>
+          <tr><td>[CONVERSA] CARGOS + RAMOS/SEGMENTOS</td><td class="num">R$ 84,51</td><td class="num">1</td><td class="num"><span class="badge good">R$ 84,51</span></td></tr>
+          <tr><td>[MENSAGEM] CARGOS + RAMOS/SEGMENTOS</td><td class="num">R$ 200,74</td><td class="num">1</td><td class="num"><span class="badge warn">R$ 200,74</span></td></tr>
+          <tr><td>[MENSAGEM] CARGOS + COMPT + TAMANHO + ANOS EXP</td><td class="num">R$ 150,72</td><td class="num">0</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>PSP — Leads Feed (Sponsored Content)</h4></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th>Investido</th><th>Leads</th><th>Custo/lead</th></tr></thead>
+        <tbody>
+          <tr><td>[FEED] CARGOS - RS, SP, PR, RJ</td><td class="num">R$ 343,19</td><td class="num">2</td><td class="num"><span class="badge good">R$ 171,60</span></td></tr>
+          <tr><td>[FEED] CARGOS + RAMOS/SEGMENTOS</td><td class="num">R$ 281,22</td><td class="num">0</td><td class="num">—</td></tr>
+          <tr><td>[FEED] CARGOS + COMPT + TAMANHO + ANOS EXP</td><td class="num">R$ 157,68</td><td class="num">0</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADO POR ANÚNCIO -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Resultado por anúncio</div>
+    <h2>140 criativos testados — só 30 geraram resultado</h2>
+    <p class="intro-text">A tabela abaixo mostra <b>só os anúncios que converteram ou geraram lead</b> — o resto (110 anúncios) recebeu pouco ou nenhum investimento e não chegou a provar nada. Agrupado por campanha.</p>
+
+    <div class="table-title"><h4>Mulheres em Conselho — FMC4</h4><span class="sub">11 de 33 anúncios com resultado</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Anúncio</th><th>Formato</th><th>Investido</th><th>Conversões</th><th>Custo/conv.</th></tr></thead>
+        <tbody>
+          <tr><td>"A 4ª Edição da Formação Mulheres em Conselhos começa em 01/04!" <span class="mono">AD9_NOVA DATA_2</span></td><td>Imagem</td><td class="num">R$ 803,51</td><td class="num">26</td><td class="num"><span class="badge good">R$ 30,90</span></td></tr>
+          <tr><td>"Se você é Diretora, Executiva, Empresária..." <span class="mono">AD2_VÍDEO_NOVA_DATA</span></td><td>Vídeo</td><td class="num">R$ 669,03</td><td class="num">6</td><td class="num"><span class="badge warn">R$ 111,50</span></td></tr>
+          <tr><td>"A 4ª Edição..." <span class="mono">AD2_NOVA DATA</span></td><td>Imagem</td><td class="num">R$ 101,33</td><td class="num">4</td><td class="num"><span class="badge good">R$ 25,33</span></td></tr>
+          <tr><td>"Se você é Diretora, Executiva..." <span class="mono">AD1_VÍDEO_NOVA_DATA</span></td><td>Vídeo</td><td class="num">R$ 481,06</td><td class="num">2</td><td class="num"><span class="badge bad">R$ 240,53</span></td></tr>
+          <tr><td>"Se você é Diretora, Executiva..." <span class="mono">AD3_VÍDEO_NOVA_DATA</span></td><td>Vídeo</td><td class="num">R$ 172,94</td><td class="num">2</td><td class="num"><span class="badge warn">R$ 86,47</span></td></tr>
+          <tr><td>"Se você é Diretora, Executiva..." (imagem) <span class="mono">AD3_NOVA DATA</span></td><td>Imagem</td><td class="num">R$ 186,72</td><td class="num">2</td><td class="num"><span class="badge warn">R$ 93,36</span></td></tr>
+          <tr><td>"A 4ª Edição..." <span class="mono">AD5_NOVA DATA</span></td><td>Imagem</td><td class="num">R$ 39,91</td><td class="num">2</td><td class="num"><span class="badge good">R$ 19,96</span></td></tr>
+          <tr><td>"A 4ª Edição..." <span class="mono">AD7_NOVA DATA</span></td><td>Imagem</td><td class="num">R$ 83,46</td><td class="num">2</td><td class="num"><span class="badge warn">R$ 41,73</span></td></tr>
+          <tr><td>"A 4ª Edição..." <span class="mono">AD11_NOVA DATA</span></td><td>Imagem</td><td class="num">R$ 119,43</td><td class="num">2</td><td class="num"><span class="badge warn">R$ 59,72</span></td></tr>
+          <tr><td>"Você sabe quais são as responsabilidades..." <span class="mono">AD10</span></td><td>Imagem</td><td class="num">R$ 11,38</td><td class="num">1</td><td class="num"><span class="badge good">R$ 11,38</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>PSP — Sucessão Empresarial 3ª Edição</h4><span class="sub">11 de 71 anúncios com resultado — ranking completo na próxima seção</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Anúncio</th><th>Formato</th><th>Investido</th><th>Conversões</th><th>Custo/conv.</th></tr></thead>
+        <tbody>
+          <tr><td>"O futuro do seu legado começa com uma escolha" <span class="mono">AD_PROFESSORES</span></td><td>Imagem</td><td class="num">R$ 485,38</td><td class="num">58</td><td class="num"><span class="badge good">R$ 8,37</span></td></tr>
+          <tr><td>mesma copy <span class="mono">AD2_VÍDEO</span></td><td>Vídeo</td><td class="num">R$ 118,72</td><td class="num">11</td><td class="num"><span class="badge good">R$ 10,79</span></td></tr>
+          <tr><td>mesma copy <span class="mono">AD1_VÍDEO</span></td><td>Vídeo</td><td class="num">R$ 121,92</td><td class="num">8</td><td class="num"><span class="badge good">R$ 15,24</span></td></tr>
+          <tr><td>mesma copy (público 4/5) <span class="mono">AD_PROFESSORES</span></td><td>Imagem</td><td class="num">R$ 66,59</td><td class="num">7</td><td class="num"><span class="badge good">R$ 9,51</span></td></tr>
+          <tr><td>mesma copy <span class="mono">AD3_VÍDEO</span></td><td>Vídeo</td><td class="num">R$ 108,21</td><td class="num">5</td><td class="num"><span class="badge good">R$ 21,64</span></td></tr>
+          <tr><td>mesma copy <span class="mono">AD2</span></td><td>Imagem</td><td class="num">R$ 220,74</td><td class="num">5</td><td class="num"><span class="badge warn">R$ 44,15</span></td></tr>
+          <tr><td>mesma copy (público 4/5) <span class="mono">AD5</span></td><td>Imagem</td><td class="num">R$ 52,38</td><td class="num">3</td><td class="num"><span class="badge good">R$ 17,46</span></td></tr>
+          <tr><td>mesma copy <span class="mono">AD1_1</span></td><td>Imagem</td><td class="num">R$ 106,20</td><td class="num">3</td><td class="num"><span class="badge warn">R$ 35,40</span></td></tr>
+          <tr><td>mesma copy <span class="mono">AD6</span> <span class="badge info">remarketing</span></td><td>Imagem</td><td class="num">R$ 99,55</td><td class="num">2</td><td class="num"><span class="badge warn">R$ 49,77</span></td></tr>
+          <tr><td>mesma copy (público 4/5) <span class="mono">AD2</span></td><td>Imagem</td><td class="num">R$ 182,38</td><td class="num">2</td><td class="num"><span class="badge bad">R$ 91,19</span></td></tr>
+          <tr><td>mesma copy <span class="mono">AD2</span> <span class="badge info">remarketing</span></td><td>Imagem</td><td class="num">R$ 113,76</td><td class="num">1</td><td class="num"><span class="badge bad">R$ 113,76</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>PSP — Leads Conversa</h4><span class="sub">6 de 18 anúncios com resultado</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Anúncio (Conversation/Message Ad)</th><th>Conjunto</th><th>Investido</th><th>Leads</th><th>Custo/lead</th></tr></thead>
+        <tbody>
+          <tr><td>"Você já parou pra pensar no que pode acontecer se a sucessão não for planejada?"</td><td>COMPETÊNCIAS (sucessão)</td><td class="num">R$ 74,59</td><td class="num">3</td><td class="num"><span class="badge good">R$ 24,86</span></td></tr>
+          <tr><td>mesma pergunta</td><td>CARGOS</td><td class="num">R$ 208,39</td><td class="num">2</td><td class="num"><span class="badge warn">R$ 104,19</span></td></tr>
+          <tr><td>"Você já pensou em como deseja que sua empresa continue?"</td><td>CARGOS</td><td class="num">R$ 201,44</td><td class="num">1</td><td class="num"><span class="badge warn">R$ 201,44</span></td></tr>
+          <tr><td>mesma pergunta</td><td>CARGOS + COMPETÊNCIAS</td><td class="num">R$ 74,07</td><td class="num">1</td><td class="num"><span class="badge good">R$ 74,07</span></td></tr>
+          <tr><td>mesma pergunta (Message Ad)</td><td>[MENSAGEM] CARGOS + RAMOS/SEGMENTOS</td><td class="num">R$ 76,21</td><td class="num">1</td><td class="num"><span class="badge warn">R$ 76,21</span></td></tr>
+          <tr><td>"Você já parou pra pensar..." (Conversa)</td><td>[CONVERSA] CARGOS + RAMOS/SEGMENTOS</td><td class="num">R$ 27,79</td><td class="num">1</td><td class="num"><span class="badge good">R$ 27,79</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>PSP — Leads Feed</h4><span class="sub">2 de 18 anúncios com resultado</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Anúncio</th><th>Conjunto</th><th>Investido</th><th>Leads</th><th>Custo/lead</th></tr></thead>
+        <tbody>
+          <tr><td>"🔑 Prepare sua empresa para um futuro seguro" — imagem 1, empresário</td><td>[FEED] CARGOS - RS,SP,PR,RJ</td><td class="num">R$ 53,05</td><td class="num">1</td><td class="num"><span class="badge good">R$ 53,05</span></td></tr>
+          <tr><td>mesma copy — imagem 8, filho de empresário</td><td>[FEED] CARGOS - RS,SP,PR,RJ</td><td class="num">R$ 50,62</td><td class="num">1</td><td class="num"><span class="badge good">R$ 50,62</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CRIATIVOS CAMPEÕES -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Criativos campeões · Programa de Sucessão Patrimonial</div>
+    <h2>O que provou funcionar — base de aprendizado pra próxima campanha</h2>
+    <p class="intro-text">Dos 71 criativos testados na campanha Sucessão Empresarial 3ª Edição, esses 6 ficaram com custo por conversão <b>abaixo da média da campanha (R$ 25,26)</b> — foram os que sustentaram o resultado.</p>
+
+    <div class="champ-grid">
+      <div class="champ top">
+        <div class="rank">1</div>
+        <div class="info"><h4>"O futuro do seu legado começa com uma escolha: preparar-se!"</h4><div class="meta">AD_PROFESSORES · Imagem única · Público PERSONA 1_2_3</div></div>
+        <div class="stats"><div class="cpa">R$ 8,37</div><div class="conv">58 conversões</div><a href="https://linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7313712993844834304,urn:li:sponsoredCreative:662141413)?actorCompanyId=19220094&amp;viewContext=REVIEWER" target="_blank">Ver post &rarr;</a></div>
+      </div>
+      <div class="champ">
+        <div class="rank">2</div>
+        <div class="info"><h4>mesma copy, público PERSONA 4_5</h4><div class="meta">AD_PROFESSORES · Imagem única</div></div>
+        <div class="stats"><div class="cpa">R$ 9,51</div><div class="conv">7 conversões</div><a href="https://linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7313712993844834304,urn:li:sponsoredCreative:662151493)?actorCompanyId=19220094&amp;viewContext=REVIEWER" target="_blank">Ver post &rarr;</a></div>
+      </div>
+      <div class="champ">
+        <div class="rank">3</div>
+        <div class="info"><h4>mesma copy, versão vídeo</h4><div class="meta">AD2_VÍDEO · Público PERSONA 1_EMPRESARIOS/2_SUCESSORES</div></div>
+        <div class="stats"><div class="cpa">R$ 10,79</div><div class="conv">11 conversões</div><a href="https://linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7318796798297276416,urn:li:sponsoredCreative:663433193)?actorCompanyId=19220094&amp;viewContext=REVIEWER" target="_blank">Ver post &rarr;</a></div>
+      </div>
+      <div class="champ">
+        <div class="rank">4</div>
+        <div class="info"><h4>mesma copy, outra versão em vídeo</h4><div class="meta">AD1_VÍDEO · mesmo público</div></div>
+        <div class="stats"><div class="cpa">R$ 15,24</div><div class="conv">8 conversões</div><a href="https://linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7318796807105314816,urn:li:sponsoredCreative:663423243)?actorCompanyId=19220094&amp;viewContext=REVIEWER" target="_blank">Ver post &rarr;</a></div>
+      </div>
+      <div class="champ">
+        <div class="rank">5</div>
+        <div class="info"><h4>mesma copy, público PERSONA 4_5</h4><div class="meta">AD5 · Imagem única</div></div>
+        <div class="stats"><div class="cpa">R$ 17,46</div><div class="conv">3 conversões</div><a href="https://linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7313219361236774913,urn:li:sponsoredCreative:655780053)?actorCompanyId=19220094&amp;viewContext=REVIEWER" target="_blank">Ver post &rarr;</a></div>
+      </div>
+      <div class="champ">
+        <div class="rank">6</div>
+        <div class="info"><h4>mesma copy, terceira versão em vídeo</h4><div class="meta">AD3_VÍDEO · mesmo público</div></div>
+        <div class="stats"><div class="cpa">R$ 21,64</div><div class="conv">5 conversões</div><a href="https://linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7318796788780482560,urn:li:sponsoredCreative:663460533)?actorCompanyId=19220094&amp;viewContext=REVIEWER" target="_blank">Ver post &rarr;</a></div>
+      </div>
+    </div>
+
+    <div class="nota"><b>Nota:</b> esses 6 criativos ficam registrados aqui como referência do que funcionou no PSP — não entram na campanha nova da Mulheres em Conselho, que usa um outro grupo de peças (próxima seção).</div>
+
+    <div class="table-title"><h4>Melhor criativo de Lead Gen (para comparação)</h4></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Criativo</th><th>Formato</th><th>Conjunto</th><th>Leads</th><th>Custo/lead</th></tr></thead>
+        <tbody>
+          <tr><td>"Você já parou pra pensar no que pode acontecer se a sucessão não for planejada?"</td><td>Conversation Ad (mensagem privada, sem link público)</td><td>COMPETÊNCIAS (sucessão)</td><td class="num">3</td><td class="num"><span class="badge good">R$ 24,86</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMO PASSO: NOVA CAMPANHA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Próximo passo</div>
+    <h2>Nova campanha — Website Conversions para a Formação Mulheres em Conselhos</h2>
+    <p class="intro-text">Com base no que os dados acima mostraram, a próxima campanha da conta vai para um produto diferente (Mulheres em Conselho) usando o formato que mais performou no histórico da conta (Website Conversions).</p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Objetivo: Website Conversions</h4>
+        <p>Não é Lead Generation nativo do LinkedIn. O tráfego vai pro site, onde o typebot capta o lead — exatamente o padrão que, no PSP, custou de 2x a 15x menos por resultado do que os formulários/Conversation Ads nativos.</p>
+      </div>
+      <div class="plan-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V9l8-5 8 5v10"/><path d="M9 19v-6h6v6"/></svg></div>
+        <h4>Produto: Formação Mulheres em Conselhos</h4>
+        <p>5ª edição — única turma de 2026, segundo os posts orgânicos já publicados pela página. Diferente do PSP, ainda não tem um histórico pago próprio validado; essa campanha começa essa validação.</p>
+      </div>
+      <div class="plan-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></div>
+        <h4>Criativos: os 8 posts orgânicos já publicados</h4>
+        <p>Em vez de criar peça nova do zero, a campanha usa <b>Direct Sponsored Content</b> — patrocina os posts que a página já publicou, mantendo curtidas e comentários orgânicos que já têm.</p>
+      </div>
+      <div class="plan-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h4>Por que esses 8 e não os campeões do PSP</h4>
+        <p>Os criativos "O futuro do seu legado..." falam de sucessão patrimonial — mensagem errada pro público de conselheiras. Os 8 posts abaixo já são feitos especificamente sobre a Mulheres em Conselho.</p>
+      </div>
+    </div>
+
+    <div class="table-title"><h4>Os 8 criativos-base (posts a impulsionar)</h4><span class="sub">Direct Sponsored Content</span></div>
+    <div class="src-grid">
+      <div class="src"><div class="n">1</div><div class="info"><h4>Card de divulgação — 5ª Edição</h4><p>Anuncia a formação e apresenta o time completo de instrutoras (Monica Herrero, Giselia Silva, Eliana Fialho Herzog, Valéria Santoro, Eneile Guimarães e outras).</p></div><a class="go" href="https://www.linkedin.com/feed/update/urn:li:activity:7475240459259428864" target="_blank">Ver post &rarr;</a></div>
+      <div class="src"><div class="n">2</div><div class="info"><h4>Vídeo — Katya Hepper (instrutora)</h4><p>Entrevista sobre como a conselheira deve comunicar seu valor no currículo e no LinkedIn logo nos primeiros segundos.</p></div><a class="go" href="https://www.linkedin.com/feed/update/urn:li:activity:7478473106039369728" target="_blank">Ver post &rarr;</a></div>
+      <div class="src"><div class="n">3</div><div class="info"><h4>Vídeo — Eneile (instrutora)</h4><p>Depoimento sobre atuação em conselhos e o papel de preparar novas mulheres pro tema.</p></div><a class="go" href="https://www.linkedin.com/feed/update/urn:li:activity:7480263375604862976" target="_blank">Ver post &rarr;</a></div>
+      <div class="src"><div class="n">4</div><div class="info"><h4>Post — Governança (instrutora)</h4><p>Conteúdo sobre governança corporativa aplicada à atuação em Conselhos.</p></div><a class="go" href="https://www.linkedin.com/feed/update/urn:li:activity:7482879249024978944" target="_blank">Ver post &rarr;</a></div>
+      <div class="src"><div class="n">5</div><div class="info"><h4>Vídeo — Valéria (instrutora)</h4><p>Fala sobre mediação de conflitos e comunicação não-violenta no protagonismo feminino.</p></div><a class="go" href="https://www.linkedin.com/feed/update/urn:li:activity:7483510862935343106" target="_blank">Ver post &rarr;</a></div>
+      <div class="src"><div class="n">6</div><div class="info"><h4>Vídeo — Monica (instrutora)</h4><p>Monica Herrero, ex-CEO da Stefanini Brasil e membro de conselhos — referência de peso no time de instrutoras.</p></div><a class="go" href="https://www.linkedin.com/feed/update/urn:li:activity:7486065298178105344" target="_blank">Ver post &rarr;</a></div>
+      <div class="src"><div class="n">7</div><div class="info"><h4>Vídeo — Giselia (instrutora)</h4><p>Membro do Conselho Fiscal do MAM-SP — depoimento sobre a experiência prática em conselhos fiscais.</p></div><a class="go" href="https://www.linkedin.com/feed/update/urn:li:activity:7488640722187968512" target="_blank">Ver post &rarr;</a></div>
+      <div class="src"><div class="n">8</div><div class="info"><h4>Vídeo — Michelle (instrutora)</h4><p>Fecha o time de depoimentos das instrutoras da 5ª edição.</p></div><a class="go" href="https://www.linkedin.com/feed/update/urn:li:activity:7490774510175174656" target="_blank">Ver post &rarr;</a></div>
+    </div>
+
+    <div class="table-title"><h4>Checklist antes de ativar</h4></div>
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><div class="scontent"><h4>Confirmar o link de destino do typebot</h4><p>Os posts orgânicos já usam <code>lnkd.in/dU-CBB2E</code> como link de inscrição — confirmar se é essa mesma URL (ou uma nova, com UTM) que vai receber o tráfego pago e alimentar o typebot.</p></div></div>
+      <div class="step"><div class="snum">2</div><div class="scontent"><h4>Validar pixel/evento de conversão</h4><p>Igual foi feito no PSP: conferir que o pixel do site está disparando o evento de lead corretamente antes de ligar a verba, pra métrica de custo por conversão vir confiável desde o dia 1.</p></div></div>
+      <div class="step"><div class="snum">3</div><div class="scontent"><h4>Selecionar os posts no Campaign Manager</h4><p>Criar a campanha, escolher Website Conversions como objetivo, e usar Direct Sponsored Content pra puxar os 8 posts acima como anúncios.</p></div></div>
+      <div class="step"><div class="snum">4</div><div class="scontent"><h4>Orçamento inicial e fase de aprendizado</h4><p>Seguindo o padrão do PSP, começar com orçamento controlado e dar alguns dias de fase de aprendizado antes de julgar performance — os 6 criativos campeões do PSP só se destacaram depois de acumular volume.</p></div></div>
+    </div>
+
+    <div class="nota warn"><b>Ainda não criada:</b> por decisão do Rafael, esse documento registra o plano — a campanha em si ainda não foi montada no LinkedIn Campaign Manager. Criação fica para o próximo passo, depois de validar este plano.</div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Alguma dúvida sobre esse relatório?</h3>
+        <p>Essa página fica registrada aqui como referência dos resultados no LinkedIn e do plano da campanha da Mulheres em Conselho.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vim%20do%20relat%C3%B3rio%20de%20LinkedIn%20e%20tenho%20d%C3%BAvidas." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Central de Estratégia e Resultados &middot; rafael@britomidias.com.br</div>
+  </div>
+</footer>
+
+</body>
+</html>
