@@ -127,6 +127,18 @@
   .dest-tag.direto{background:var(--verde-light); color:var(--verde);}
   .dest-tag.diag{background:#DBEAFE; color:#1D4ED8;}
   .dest-tag.outro{background:var(--linha); color:var(--cinza);}
+
+  /* SUBGROUP DIVIDER (TD split by tipo de campanha) */
+  .subgrp{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    margin-top:34px; padding:14px 18px; border-left:3px solid var(--roxo); background:var(--roxo-xlight);
+    border-radius:0 10px 10px 0;
+  }
+  .subgrp h4{margin:0; font-size:14px; font-weight:700; color:var(--roxo-dark);}
+  .subgrp .sub-stats{display:flex; gap:16px; flex-wrap:wrap;}
+  .subgrp .sub-stats span{font-size:11.5px; color:var(--roxo-dark);}
+  .subgrp .sub-stats b{font-weight:700;}
+  .subgrp:first-of-type{margin-top:24px;}
   .dest-tag.sem{background:var(--ambar-light); color:var(--ambar);}
   .grp-tag{
     display:inline-block; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:6px; font-family:'Courier New',monospace;
@@ -321,13 +333,23 @@
         <div class="tag-big">TD</div>
         <div class="gtext">
           <h3>Grupo mais fragmentado — 5 produtos diferentes</h3>
-          <p>Mistura Ebook, curso Mulheres em Conselhos, Masterclass, Live e Sucessão. Cada criativo abaixo indica pra qual produto ele foi feito.</p>
+          <p>Mistura Ebook, curso Mulheres em Conselhos, Masterclass, Live e Sucessão. Aqui abaixo focamos só nas campanhas de Sucessão, separadas pelo tipo de captação: Site (formulário próprio, com landing page) e Formulário nativo do Meta (Naked Form / Forms nativos, preenchido dentro do Facebook/Instagram).</p>
         </div>
       </div>
       <div class="group-stats">
-        <div><span class="num">R$ 25.941,11</span><span class="lbl">Investido</span></div>
-        <div><span class="num">681</span><span class="lbl">Leads</span></div>
-        <div><span class="num">R$ 38,09</span><span class="lbl">CPL médio</span></div>
+        <div><span class="num">R$ 25.941,11</span><span class="lbl">Investido total TD</span></div>
+        <div><span class="num">681</span><span class="lbl">Leads totais TD</span></div>
+        <div><span class="num">R$ 38,09</span><span class="lbl">CPL médio TD</span></div>
+      </div>
+    </div>
+
+    <!-- SUBGRUPO: TD SUCESSÃO — SITE -->
+    <div class="subgrp">
+      <h4>TD · Sucessão — Lead Site</h4>
+      <div class="sub-stats">
+        <span>Investido: <b>R$ 11.185,47</b></span>
+        <span>Leads: <b>101</b></span>
+        <span>CPL médio: <b>R$ 110,75</b></span>
       </div>
     </div>
 
@@ -336,14 +358,11 @@
       <table>
         <thead><tr><th>Campanha</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
         <tbody>
-          <tr><td>[TD] [ABO] [CAPTAÇÃO DE LEAD] [EBOOK - LIVRO 2]</td><td class="num">R$ 641,03</td><td class="num">106</td><td class="num">R$ 6,05</td></tr>
-          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [CBO] - MEMBRO EMPRESAS FAMILIARES</td><td class="num">R$ 1.013,66</td><td class="num">58</td><td class="num">R$ 17,48</td></tr>
-          <tr><td>🟪 [TD][CBO] [FRIO][CAPTAÇÃO DE LEAD][MCMC3] 🔵</td><td class="num">R$ 424,57</td><td class="num">21</td><td class="num">R$ 20,22</td></tr>
-          <tr><td>🟧 [TD][FEED][CBO][FRIO][CAPTAÇÃO DE LEAD][FMC4]</td><td class="num">R$ 523,01</td><td class="num">23</td><td class="num">R$ 22,74</td></tr>
-          <tr><td>🟧 [TD][CBO][FRIO][CAPTAÇÃO DE LEAD][FMC4]</td><td class="num">R$ 1.120,20</td><td class="num">46</td><td class="num">R$ 24,35</td></tr>
-          <tr><td>🟪 [TD][ABO][FRIO][CAPTAÇÃO DE LEAD][MCMC3] 🔵</td><td class="num">R$ 431,22</td><td class="num">16</td><td class="num">R$ 26,95</td></tr>
-          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [ABO] - GERAL</td><td class="num">R$ 1.337,70</td><td class="num">47</td><td class="num">R$ 28,46</td></tr>
-          <tr><td>🟫 [TD][ABO][FRIO][CAPTAÇÃO DE LEAD][LIVE IMERSÃO]</td><td class="num">R$ 787,29</td><td class="num">27</td><td class="num">R$ 29,16</td></tr>
+          <tr><td>[TD] [LEADS - SITE] [SUCESSÃO] [ABO] - MEMBRO EMPRESAS FAMILIARES - REATIVAÇÃO - 19.08</td><td class="num">R$ 1.711,75</td><td class="num">22</td><td class="num">R$ 77,81</td></tr>
+          <tr><td>[TD] [LEADS - SITE] [SUCESSÃO] [ABO] - GERAL - REATIVAÇÃO - 19.08</td><td class="num">R$ 4.577,87</td><td class="num">52</td><td class="num">R$ 88,04</td></tr>
+          <tr><td>[TD] [LEADS - SITE] [SUCESSÃO] [ABO] - PROFISSIONAL EMPRESAS FAMILIARES</td><td class="num">R$ 1.436,56</td><td class="num">12</td><td class="num">R$ 119,71</td></tr>
+          <tr><td>[TD] [LEADS - SITE] [SUCESSÃO] [CBO] - GERAL (unificado) - VÍDEOS - REATIVAÇÃO - 19.08</td><td class="num">R$ 902,99</td><td class="num">7</td><td class="num">R$ 129,00</td></tr>
+          <tr><td>[TD] [LEADS - SITE] [SUCESSÃO] [ABO] - MEMBRO + PROFISSIONAIS EMPRESAS FAMILIARES - VÍDEOS</td><td class="num">R$ 765,79</td><td class="num">4</td><td class="num">R$ 191,45</td></tr>
         </tbody>
       </table>
     </div>
@@ -353,37 +372,100 @@
       <table>
         <thead><tr><th>Conjunto</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
         <tbody>
-          <tr><td>[IG][LEAD_SITE][FRIO][LLA 1%_LISTAS][SUDESTE/SUL/CO][H/M 25-55]</td><td class="num">R$ 388,71</td><td class="num">70</td><td class="num">R$ 5,55</td></tr>
-          <tr><td>[IG][LEAD_SITE][FRIO][LLA 1%_LISTAS][SUDESTE/SUL/CO] — Cópia</td><td class="num">R$ 252,32</td><td class="num">36</td><td class="num">R$ 7,01</td></tr>
-          <tr><td>[FEED][LLA2%_S/INTERESSES_LISTA GERAL][REGIÕES]</td><td class="num">R$ 304,21</td><td class="num">21</td><td class="num">R$ 14,49</td></tr>
-          <tr><td>[CARROSSEL][IG/ST][LLA1%_S/INTERESSES_LISTA GERAL][REGIÕES]</td><td class="num">R$ 59,47</td><td class="num">4</td><td class="num">R$ 14,87</td></tr>
-          <tr><td>[3PT] [EMPREGADORES + CARGOS] - SUDESTE</td><td class="num">R$ 1.013,66</td><td class="num">58</td><td class="num">R$ 17,48</td></tr>
-          <tr><td>[IG/ST][LLA1%_S/INTERESSES_LISTA GERAL][REGIÕES]</td><td class="num">R$ 359,74</td><td class="num">20</td><td class="num">R$ 17,99</td></tr>
-          <tr><td>[IG/ST][C/INTERESSES_LISTA GERAL][REGIÕES]</td><td class="num">R$ 91,58</td><td class="num">5</td><td class="num">R$ 18,32</td></tr>
-          <tr><td>[IG][LLA1%_C_INTERESSES_TD_M_35+]_REGIOES</td><td class="num">R$ 131,39</td><td class="num">7</td><td class="num">R$ 18,77</td></tr>
+          <tr><td>[LAL] [CAMPS ANTERIORES SUCESSÃO + SITES + ENVIO LEADS + FB + IG]</td><td class="num">R$ 1.768,41</td><td class="num">24</td><td class="num">R$ 73,68</td></tr>
+          <tr><td>[3PT] [EMPREGADORES + CARGOS]</td><td class="num">R$ 1.694,70</td><td class="num">22</td><td class="num">R$ 77,03</td></tr>
+          <tr><td>[LAL] [ALUNOS BALGPFC + LEF]</td><td class="num">R$ 1.772,00</td><td class="num">21</td><td class="num">R$ 84,38</td></tr>
+          <tr><td>[3PT] [EMPREGADORES + CARGOS] — vídeos</td><td class="num">R$ 381,71</td><td class="num">4</td><td class="num">R$ 95,43</td></tr>
+          <tr><td>[3PT] [PROFISSIONAIS]</td><td class="num">R$ 1.436,56</td><td class="num">12</td><td class="num">R$ 119,71</td></tr>
+          <tr><td>[RMKT] + [LAL] combinado — vídeos</td><td class="num">R$ 902,99</td><td class="num">7</td><td class="num">R$ 129,00</td></tr>
+          <tr><td>[RMKT] [GERAL - SITE + FB + IG + ENG]</td><td class="num">R$ 1.037,46</td><td class="num">7</td><td class="num">R$ 148,21</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h3>Melhores criativos <span style="font-weight:400; color:var(--cinza); font-size:12.5px;">— produtos misturados, veja o destino de cada um</span></h3>
+    <h3>Melhores criativos</h3>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Criativo</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th><th>Destino</th><th>Link</th></tr></thead>
         <tbody>
-          <tr><td>AD2_ESTATICO_BLACK</td><td class="num">R$ 425,46</td><td class="num">72</td><td class="num">R$ 5,91</td><td><span class="dest-tag outro">Ebook</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKd_M8vmyqlmS8HeWFpmoHZb2_V_gfZNXVkv98ZEOh-bSPdCPsRHIGlun4mKuhD8m2nkrCRYUh6KApZwv_5RjUGzf7SKDjZzlIEDO3CTDm41ZEi733Z1LMnc7IBe5oVf7XlFzddHgKdMry1g9pSYeNmjY1ZcnDvp7tn342-KAE0AuAsEF7UTTomrAS2Rce59kCH_o8nqqjG21IBSo57q5oHIvLyTPDfbp498og_5nQwNQ&t=AQKDeRDiFsQHUZuwzfI">Ver →</a></td></tr>
-          <tr><td>AD2_CARROSSEL_WHITE</td><td class="num">R$ 215,54</td><td class="num">34</td><td class="num">R$ 6,34</td><td><span class="dest-tag outro">Ebook</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKFKLncIRfNrLmUd8XIQua5cGoaPWCq42OgGFF5DIoU24QE_WjDnPfWB-4EMjqX3xIseBXV_F7IEU3vmcAoqMtAIHlJDeLyk5X06NPOZiG5F2KJXN9wX8m7ZQpg8E-rtlFByUUV_VNdgo1XUF4tLL6u4TfwXY1Q_235jhcPkYB63LJGIIk1-q3_RpqDhIWh6OpUtvh66VyaRjY6A-bfLkh6p3ZeEoT1cOjvzokOGONZXQ&t=AQLAdEwo5VlNtqY19dc">Ver →</a></td></tr>
-          <tr><td>AD1_ESTATICO ❌</td><td class="num">R$ 69,08</td><td class="num">5</td><td class="num">R$ 13,82</td><td><span class="dest-tag outro">Mulheres em Conselhos</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
-          <tr><td>criativo - instrutores - imagem - data atualizada</td><td class="num">R$ 316,72</td><td class="num">22</td><td class="num">R$ 14,40</td><td><span class="dest-tag sem">Sucessão · sem link</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJ28VM19fOVHSH65zIP90OxM5C3k3W8xRAwBHeY16VRumcR9zVLPQeLKO7iUxLd20Bb8s03yPOntd823fJAYeANagmlDeRFYqdRpeaz1LEpJfqVai6mZmmTf1cudJhPThvnX25-mSi9I7VSpzlJ-Z28ZKdrFHEuo3CZWm42OvWWSapFJnCewAXVSUcjqSjrKphLtlnWA6GF4gyGhfgetMufNFQqQbkmKUdYz3CHYs4_Kw&t=AQJGDJYgrnnbB0t7Tyc">Ver →</a></td></tr>
-          <tr><td>criativo - instrutores - imagem - profissionais</td><td class="num">R$ 536,22</td><td class="num">36</td><td class="num">R$ 14,90</td><td><span class="dest-tag direto">Sucessão</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQL-LSepjDHizR0n-CB8OGCM337ww52VoxZmZJ0yL063Bt8FbYB5di1We5IT7UGS9ZYVD3ig2HZMW4JCo9YUemYsHq855IS8nGmDfdtJgbhKBaZlSXgJaZoPpis3u5izyl4bq_hQUAjTTcvR7fhPY57Fm4HMIw2a5pHSFm5VSTJIRcs4zkvldWX4tBoqMfuXItWWrUhY04ClwOx6npf7PlvDbO6Rp6pl_38Hf8-wljO6Lg&t=AQL7alB60ohEfco_bFA">Ver →</a></td></tr>
-          <tr><td>AD4_ (Masterclass)</td><td class="num">R$ 85,30</td><td class="num">5</td><td class="num">R$ 17,06</td><td><span class="dest-tag outro">Masterclass MC</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJe1zgXgZ5GF1ax7vYrqB0bONTeywhohE4n3sdAsnRP97w0jIz7GNryrA5ntrXxtG-BvUuqMPvFzaenKwPb_BMmlsZqpp-T1hhbLi1N3JCKyLgfoqgxTFMSqmlvCMmL08zMm980YKBny0DMM3zw-Hk1eklwASXmQ_rIxeZrpYV-zNvekFQgrcw7zRMARJBsuFhxIo1qduh2fGWa2xI1-s6mL6e0cPS_aJ-s4XO8RoBEuQ&t=AQKaA6GGl9wZjb4awIw">Ver →</a></td></tr>
-          <tr><td>AD_INDIVIDUAL (Live)</td><td class="num">R$ 171,28</td><td class="num">10</td><td class="num">R$ 17,13</td><td><span class="dest-tag sem">Live · sem link</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJxXAjs01EFXXJK7P0gkxfdirX_T4JJYur92RyozDJtdM1taPTxWw6USJDyMX3XiyszjMCBLC7DMWrsGZ_6LHJQlZH7eKYgnDFDvGtEw6R1Lv3sW2jjDeyyCFz5sxau91hJhWs8uc-OxoccYbvjrns8ArVJhv7hTXz7AnHK0g_aVWA4PD74OkDmzbRNtaUgWpeuwr88yoiOHcv3QulZsO9l4hHNyf3XIzX76JeJYJk9JA&t=AQLFks9u3DyWOLzUuMM">Ver →</a></td></tr>
-          <tr><td>AD_CARROSSEL 1</td><td class="num">R$ 576,37</td><td class="num">31</td><td class="num">R$ 18,59</td><td><span class="dest-tag outro">Mulheres em Conselhos</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQI0m0968e3WAVoguwhW7BJO_rDGjEuCbKc0HghDKuoBA3k46aFb2WtlBenEn9PL4H0epX7uuWLXcX_cZhmyyXr6mEUPv3U1_x4tyD4vt4coB0xsoBhAo2oTlqZ_VDhWPvytmkihT8zOPdd2SqTB400MifzflnEdzRryCD6Y4vdDgqDIPv2S9o9YwFHn23rYhUNFj7Z0P776m8YvzwTn4ebu8Q2pMx4bwVVgA8ZVJ8GM8A&t=AQJIZ6SFCfO9eRHq-JQ">Ver →</a></td></tr>
-          <tr><td>criativo - instrutores - carrossel - 9 cards</td><td class="num">R$ 246,94</td><td class="num">13</td><td class="num">R$ 19,00</td><td><span class="dest-tag sem">Sucessão · sem link</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQL2k-p6FsuKgEyhZwW4okJIm5Fb9jBpVnPOF-5J_DIaacB-ZOzEI2q40BTK8LDJB2C7TwIuWNMg1wiPiwqnIdgXUAy6KUxarEb0Ymando08tOuqR8vAmdGEo9SinkS-3_oN1R1p5MsdWPTwhoSw6WSuVmGD-eKi3SU_jL47ZfXtfe2-MTHAlP415hki7TojmWJsCljPFM9tNPqH6mr4x6sqPMSNe66BxLrrC2kpINrDWw&t=AQJlZTwGTQN2J8R6-jc">Ver →</a></td></tr>
-          <tr><td>CHECK AD5_CARD ANIMADO 2</td><td class="num">R$ 733,33</td><td class="num">36</td><td class="num">R$ 20,37</td><td><span class="dest-tag outro">Mulheres em Conselhos</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+          <tr><td>criativo - instrutores - imagem - data atualizada - LP FAMÍLIAS</td><td class="num">R$ 73,43</td><td class="num">4</td><td class="num">R$ 18,36</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJsx8yUe5N7m8E4c9o9mpio6IxPX_Kn3zObHAH2aoV1dJFEe5MAMm3ss1ynR8QG9FTk-8VymbJSM8F8JKI7yIv-q9CrvonlF_jyFWsNGMqFHKCvgk9z_WrCi2qwHsbSSHMwuYeG3S_RImSh5EDr1cE9oewhG_3BifCLAp-My7PYj3EibtjV658MNnSnRBfsloryintsAM2INt1J8EZlTh7yUl50TEHKTh87AfjXdC-gmw&t=AQKT62WRmfEKC0JqE58">Ver →</a></td></tr>
+          <tr><td>criativo - famílias empresárias - imagem - 12 - 5 empresas fecham por minuto no Brasil</td><td class="num">R$ 105,81</td><td class="num">5</td><td class="num">R$ 21,16</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKQwvE_mqdNbH1pJeHDur1g-yMyj3N_SqwyHMycR-pIbCNI-FD8KKmFHNy8PVNeu0oAIayX3V95VKAZfAtO5Zo35H6arZpg5hh6AOmSLHVsT-HHFO2JS1LYcIZivtcu9ccjYnpO2nlLa8kNoH6cbL9kOdkRN5BjQKOaTlaPMN9aPOOf6YPvTnAivJDx8uld25NbHjUPgLwb-Jdr1u62av179BdhzuJmb2Ctf1F4gchBGA&t=AQJOQ8lMbXTjwrA9Zxk">Ver →</a></td></tr>
+          <tr><td>criativo - famílias empresárias - imagem - 8 - você è filho de empresário</td><td class="num">R$ 87,71</td><td class="num">3</td><td class="num">R$ 29,24</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJ8qlvSJuCfEVAX1mn771SCnXuAZ-Chj2EpAelniIRZ7Fmtcl8zhok0Kfd0Sq430mA5d6yfwbFlFvYXHUUH24layKd5TZvGw4gtcXlGbvAdwiX-IAroARQqQKLn3M8m1x3B6nyw2GsdHL-RgQtlynWUnOhw3_My2u64_g0AEqski5zlDBwxCW_kIjA0mbo0JEr2HqIg9yG6bdC7GeM2q_q70mTsjkP59crgVCqmkFQkDw&t=AQK-t_lI-zIvYP80ZZU">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - imagem - data atualizada</td><td class="num">R$ 247,91</td><td class="num">8</td><td class="num">R$ 30,99</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIZVlyAytgrLfiRT8Qefnc21pzrcA68lvYRxTrxz4C6b09c_0uMF3ltQFF-gMr_mcwXV68GmoHDYM2agrdWeN5W--uiyTjKfdvQF1V2kmQB_jl3Demwon7nU_N1xiTho2XgGt_aQZ9-_6uTLkzkSQK9X9ukFyD5yr_40rEipjI4bdMgOEYk4WywRbxv8FpMFx3XWIzWUY9DiqM9ySqHWu4_hEOd7S4Lv6JVWNJ2FcwHuA&t=AQLLMZcXGVmHar4BrR8">Ver →</a></td></tr>
+          <tr><td>criativo - profissionais - imagem - 12 - a sucessão mal conduzida quebra a emporesa</td><td class="num">R$ 156,59</td><td class="num">4</td><td class="num">R$ 39,15</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKRHa69if3f4Ay4zgjkX6QKuVsooEAARV_bGtuHjNIUzVabcHdEzxzdh4wMwJt4Ef72-FwwXeT_xQwqCSQfgfnFa7rJejFWXS5evcHTxkj_ds1IfPz6Bnt8pgIrXqMIDme-IcjPDTjJRdvy2aSB7_ByHR9U5et-b6JozC8mlMkzZt8ntHWDGq_KMtqeNTOYgjTS_2w_dF0iQk1xfgg37CTvD6CFA-dPwjSZdXex_u84xQ&t=AQJhrmJb7gUgcd0AzDI">Ver →</a></td></tr>
+          <tr><td>criativo - famílias empresárias - imagem - 4 - inventário não é planejamento</td><td class="num">R$ 223,00</td><td class="num">5</td><td class="num">R$ 44,60</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJDHDKBPZF5vAvRtkWaxQuB2utP_KktYfIqHEe0u2DzYjT-V1rUER4nUSGMTX-uWGYOP1fTpFMxmzK1eRMtLs24YxulsXVfIRhEasPtiuTDWCBkjlEEz_JksAuHblP5CYDVRBzRO-H59DIH2OyRarlKsRzRd4GXhVirRbKEffdjebkC3XilWDQPHHJyq4QJvjr1ftW9UasuwppfREQdijMGFSwWyeEiQaQuE4R0tHrx3g&t=AQIGd3eN5YeQxevuqFE">Ver →</a></td></tr>
+          <tr><td>criativo - famílias empresárias - imagem - 7 - 40% do patrimônio pode sumir</td><td class="num">R$ 146,22</td><td class="num">3</td><td class="num">R$ 48,74</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQLBdVFPAnhsvf-6vETUY1yYooYU5aZA9DLreiACQiyrGwu0twm4_l5PQLdD9ZMphzKxqFG3g3h2sSlzxjz9s0XEyrtD8r2nW-J0EVLhecZYH_d6HPJCuZdsu4am_x8p_mBruxYVlWDpeP5xkYVs4318OY18zUTrDeNewT2M5IyhfFPZx-zDu7tzvhkn8yuVEnCT_EyxAb5PMSH_KIpA_YQkp1v1F5Y9W20MQlS85dzlxA&t=AQKerVhO86EsaTN5ksc">Ver →</a></td></tr>
+          <tr><td>criativo - profissionais - imagem - 11 - advogado, contador, conselheiro</td><td class="num">R$ 200,33</td><td class="num">4</td><td class="num">R$ 50,08</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJJfqqK0AwIu0aMgbwBsVNI7i9bMp6zzaMC8iO-t773YZjdTu3272Qleh_0qJJdMPLzu5Ad9aYt245c8Hrn5mwoHz-ElGzgPEzeTRG35WnEGKQIzTNJXooNchoFbe2Aa7q99sIBWYr9S4saeRQ82EEKG8gJ74qwxS1Y-MY3SXZXRT7u0WaWoFrOxE9rL6DCgvMdkbMfuVGXGO9zNWpzJ8NHubLaXiTXCMV21DWoMbRH0w&t=AQIhAnsBn7qiNOS_N8o">Ver →</a></td></tr>
+          <tr><td>criativo - profissionais - imagem - 11 - advogado, contador, conselheiro</td><td class="num">R$ 159,47</td><td class="num">3</td><td class="num">R$ 53,16</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKzZvphM-_S5DCcz8rOr30bCGeTr5y0DHEFLqkVJ39_jO1q6ZhCay2DXOqIe_O8YFeDXTO709z_tR6S2mV_pRX-2Irg7fGJvFXhZ4-hucrtZLs6jbiE5uhvGXASg032TOBhJb9H1xCWenkEPVkoOj_ecfTqXuwk1xIRR7mWUENZQCrva-MjpiSYNWUwq5U15YeV1PPKflmsxstwMtCsLJtsfLxD0ZL7-EbcPw4EsgMn-A&t=AQKZ-rAr3U1X8Wh7m_A">Ver →</a></td></tr>
+          <tr><td>criativo - famílias empresárias - imagem - 11 - planejamento sucessório</td><td class="num">R$ 256,13</td><td class="num">3</td><td class="num">R$ 85,38</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIZqp148JBt_G6gVb8mU-12LF5WAdV2uCaBmplETz6_TMf4NcxZ6M-crzfZQ075bbpMj02PRDSMr6W3wqLBr-uYXCpwmJXpzjzhQ9DnF6otMHQc-BZd0UkC5suw9_xHGpsGa2FSqM5x2s7ciCTxjPtB5D0zAlPScPL8hwo7PHD4hg3g1sexYY_1e4657P4ScBHBU9Jiihy4YHfmcb7tWc-6f0Edr2r24B5jFLKnpyifRQ&t=AQJl21bLI9rrxiAkm5U">Ver →</a></td></tr>
+          <tr><td>Vídeo 2 - PEF</td><td class="num">R$ 257,45</td><td class="num">3</td><td class="num">R$ 85,82</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKt_3RAjeYO3H4Z0WEyLLViS3x_IQrnqEaraEsz4F1Qnqpq1fmsogfefyNCXNkzDPeYqm5qv8tF5qfXeOxRmSvTTrn5bNLlMIyzr1MMqXmTNZ22wEvVsPt-NM7tGFQQI9_p6XUynhgdlhqdIMA2RwO6KslzPSeo-Pc_Xw9ngtDsir0QPxmtVzJw2jewn4RboyXzR2G1W2Jr0tT58Czqw7m2owhefKN72kYFXWmCfmWSiw&t=AQIOPNv50rcXRL46Ibk">Ver →</a></td></tr>
+          <tr><td>criativo - famílias empresárias - imagem - 10 - família em guerra</td><td class="num">R$ 377,33</td><td class="num">3</td><td class="num">R$ 125,78</td><td><span class="dest-tag direto">Sucessão · Site</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQK2cWm7uPYn5JKPqiY5C_EAY8jjOciVcEyGO3uXZI_z0Tt6IvTVVQQOWZiYXaR9zvCBkO7y79SP5EKqBgU_WpK7tXu4K0906QNVo4xzqJYOkRc26M88oRzMK4DRkMe6wQ0JNumEufZAfOBkiKs9dKSk9yrxAmwy7s_TKDk21piMzjFRQhZ1EcVFGRwNtFXreTewduMgC0U-FQqFRqcHsVTDYrcpAQdeEfj0WYCLGJrhVA&t=AQIVRuAZ5rNOEN6HmW8">Ver →</a></td></tr>
         </tbody>
       </table>
     </div>
-    <div class="nota"><b>Só 3 desses 10 criativos são de Sucessão</b> — os que têm "instrutores" no nome. O resto é de Ebook, Mulheres em Conselhos, Masterclass ou Live — produtos diferentes, não dá pra reaproveitar pro Programa de Sucessão sem trocar completamente a mensagem.</div>
+
+    <!-- SUBGRUPO: TD SUCESSÃO — FORM NATIVO -->
+    <div class="subgrp">
+      <h4>TD · Sucessão — Formulário nativo (Naked Form)</h4>
+      <div class="sub-stats">
+        <span>Investido: <b>R$ 4.549,90</b></span>
+        <span>Leads: <b>149</b></span>
+        <span>CPL médio: <b>R$ 30,54</b></span>
+      </div>
+    </div>
+
+    <h3>Melhores campanhas</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [CBO] - MEMBRO EMPRESAS FAMILIARES</td><td class="num">R$ 1.013,66</td><td class="num">58</td><td class="num">R$ 17,48</td></tr>
+          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [ABO] - GERAL</td><td class="num">R$ 1.337,70</td><td class="num">47</td><td class="num">R$ 28,46</td></tr>
+          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [CBO] - GERAL (unificado) - VÍDEOS</td><td class="num">R$ 774,14</td><td class="num">23</td><td class="num">R$ 33,66</td></tr>
+          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [CBO] - PROFISSIONAL EMPRESAS FAMILIARES</td><td class="num">R$ 521,11</td><td class="num">12</td><td class="num">R$ 43,43</td></tr>
+          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [CBO] - MEMBRO EMPRESAS FAMILIARES - TESTE LAL ALUNOS</td><td class="num">R$ 215,50</td><td class="num">3</td><td class="num">R$ 71,83</td></tr>
+          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [ABO] - MEMBRO + PROFISSIONAIS EMPRESAS FAMILIARES - VÍDEOS</td><td class="num">R$ 687,79</td><td class="num">6</td><td class="num">R$ 114,63</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Melhores conjuntos de anúncios</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><td>[3PT] [EMPREGADORES + CARGOS] - SUDESTE</td><td class="num">R$ 1.013,66</td><td class="num">58</td><td class="num">R$ 17,48</td></tr>
+          <tr><td>[RMKT] [GERAL - SITE + FB + IG + ENG]</td><td class="num">R$ 345,65</td><td class="num">15</td><td class="num">R$ 23,04</td></tr>
+          <tr><td>[LAL] [ALUNOS LEF] - SUDESTE</td><td class="num">R$ 671,90</td><td class="num">28</td><td class="num">R$ 24,00</td></tr>
+          <tr><td>[RMKT] + [LAL] + [LAL] combinado — vídeos</td><td class="num">R$ 774,14</td><td class="num">23</td><td class="num">R$ 33,66</td></tr>
+          <tr><td>[3PT] [PROFISSIONAIS] - SUDESTE</td><td class="num">R$ 521,11</td><td class="num">12</td><td class="num">R$ 43,43</td></tr>
+          <tr><td>[LAL] [CARGOS + RICO] [SUDESTE]</td><td class="num">R$ 215,50</td><td class="num">3</td><td class="num">R$ 71,83</td></tr>
+          <tr><td>[LAL] [CAMPS ANTERIORES SUCESSÃO + SITES + ENVIO LEADS + FB + IG] - SUDESTE</td><td class="num">R$ 320,15</td><td class="num">4</td><td class="num">R$ 80,04</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Melhores criativos</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Criativo</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th><th>Destino</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>criativo - instrutores - imagem - profissionais</td><td class="num">R$ 66,21</td><td class="num">9</td><td class="num">R$ 7,36</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIu98A7tykKovlMwYzR0yXbzUutxTKrbAuwOUjn4q4Hz1ZeB4G7t0j90QZxbU-hqss3pygv4HD1Jn4YoDbbnAI1kcPwIubKUBlONGTnVLxMaOt0YZ6m7FrIhaHEAYh9zPpPZU96HDwT_mSZvPVFW6RMpLOi_jFgPiH5MK_tMvBy6u6BdgIJvRk19skvGRwcYutRgqV2MaEb4RMCkZICqf-X34nECQ4DuAVOov9Qfa7zpw&t=AQJEe9jjTcyCa1xh-Zw">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - imagem - profissionais</td><td class="num">R$ 196,62</td><td class="num">18</td><td class="num">R$ 10,92</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQLfaVZ4-o7YgS03u8S-lwL3rIH5TTMgkquuD0H8PdPAI0E72a5iV6uRJAw10gO85PuFhxfhLKMQz9FRvGDqhSjyfjt776qqNZMxwICzKmQ7oTumbo3F-czv70h24fZvNWgZaPLAyCaGNbeKhD8MRa76apiuLjhT_jimJwgD3AzUDB9LIv59Hlh2NH9TBkE1xglb6J7CtWTJViEzMV23cWhrlCzcEn0eXp8emQXjW3RaWg&t=AQKJJkJU33wY4RR1_Gs">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - imagem - data atualizada</td><td class="num">R$ 174,05</td><td class="num">15</td><td class="num">R$ 11,60</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQLBX_1efgX4dv_fv3DBhI2NACA5S_kcmD1woToJaOIGg8kPaULRNFVf-DQzxjWseOzlQfe82knjXl9JN4ojGwFy4THUzl5ZMiom3Q2j3aqk9DA4Zi6-cNtj5uoqwoaqJXF8PTNNSBPn6pL8iClhvfx3SJL5nL9PYXOPZyqKHUwZa_L2EukIRnx9bUSU4k2mbuflKRPF-xQ7YCAARjA6p6rKMMu0BPFZRAuENQF_exDweA&t=AQKHyOuSf0uxI9ROQqw">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - carrossel - 9 cards</td><td class="num">R$ 131,13</td><td class="num">11</td><td class="num">R$ 11,92</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQK8buU4eJRhRHI4SkI1q3qpMQpAnanKurjKWNWuAfqi9mY83EB1xtAt_TlHLDrsPLOGJu4VGcISBAWHVVMhaZYlAfIOOFFdnKeptZ1Uw6cGkrpGRs-CDVNrDefpdwx0mYOnEDfKdLBBmzirUGy4UGBFsD8ivl3NkxE5RZl2we8nt2aK_ad2OU1j4c2L-xzl05HuiXPp-5aw8VPyyhXxaq8c6bUaDHQWrKkWpzHtuSF53w&t=AQJlwqnx6RaQzVzJ4R4">Ver →</a></td></tr>
+          <tr><td>criativo - profissionais - imagem - 12 - a sucessão mal conduzida quebra a emporesa</td><td class="num">R$ 43,84</td><td class="num">3</td><td class="num">R$ 14,61</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJfPpYGULrKFIEsT9ZetJf1BvprSCoZ0p-0jweYejTcUJIXdJhIacyGt2EoDJfBMV4fImTesQz_C_gYkRJH1MXvYaxnb-wOMBp0ataFslWiujKpgyb4UtiropmiHx1gaaPnmjpZ1Z5Mjw6HQmNrMWb5xs1tYSCVrrAagcyyTFuroEE3MsAySQj6J9EZeoCw-HVAtVB_ujRsFRKLfrAWCClPromdZZzKt5aKE0n1vcXDjg&t=AQI2yduGDkmj7h46EW8">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - imagem - famílias empresárias</td><td class="num">R$ 466,04</td><td class="num">29</td><td class="num">R$ 16,07</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKpZKWhfNUoI0ZX-FtUrNIY6TrFxXLw9IQ3h0WiG17-0Q2Z1CQoxbr91TGWXpCvGtAUNAQ5NdmblEQQyKZ7VcF7hYknciDQzjPsCotni5NUxEBIgOUcEB0KrUF6e_ZVBHKqx6bBwOL0sK_7vPvh9ZPciLWXmkVKZ-uWIazoqGEf8TQTIQG3g-bjpgPArzqHlsLLs6hAawj55oCapv2OZ0ViGTaUMZTd6j1VYfAfr3lEuw&t=AQI255MX_q070cBCfvA">Ver →</a></td></tr>
+          <tr><td>Vídeo 2 - PEF</td><td class="num">R$ 92,89</td><td class="num">5</td><td class="num">R$ 18,58</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQLwn3QGWNKps_Sf10qt988fJWjWvFa65t2NpUdiXS5LPLmyugcr8rc1sAcTOgri4DoCcXUTd0xj1zT6DIPc8TxpiJPhehckCXkweZwk3m-qElPGtgAsOIekvIVaHcDdckRZE4Q9_UaHXk31nTi1jMgCVBJ16kwrk9IAgwzxShQrrGm6AlFZ0l7-vn1keVRbIdHJGArq6aWlqLdWZTU1jb4kzT1aoUW-HRVSxtI8Ci599A&t=AQI9qxETrADffLgac2k">Ver →</a></td></tr>
+          <tr><td>vídeo depoimento - 47"</td><td class="num">R$ 115,60</td><td class="num">6</td><td class="num">R$ 19,27</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKpPIANWtz2Qu07uOzX_qpH8411jwXovGNZEu40WYyG_e--0m5RTL5WpKkdN8BTzEMAEf4200hCGQ5qWKaEHOgeW8pOLrLxE2gvSvTH0okJnggwYA6V2Na4c1rIxhj9smI31A5YJVqtcwF0keZ5uSUFpP9X_u6OCn4IehXBrFB8FnbslGy-8q2p3dQfj8T7EO9nL75mKycdrgaI7-_z-b5puhh3YRGv5vdAddlWrnzs5Q&t=AQK9eVPR3IZmzvsPuuo">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - imagem - data atualizada</td><td class="num">R$ 140,22</td><td class="num">7</td><td class="num">R$ 20,03</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJVFMoGaMm94Xm0NAMfSvKRC2YRLbaow1yvhCnfkzIjn9938-qX1myPdQVr8PK4o956NPTr740gPvwfI7d6kAbtellmMuJB5X8Gy4fIK0jJHfBZSYbUPXlecwaqo7phX__7jgdce03QnyiTxnIH0tfb44Z-hpOec3azcaws1rXp5aFiKvyoaZf5MTZAggfk5BWHFvcAPOre0916JO0mCVQAxZbef73aOIklK4aoerPuag&t=AQKs8knqlIwYhVmanUg">Ver →</a></td></tr>
+          <tr><td>Vídeo 2 - EF</td><td class="num">R$ 95,26</td><td class="num">3</td><td class="num">R$ 31,75</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQLN4LzCud8XLwIbVIqa1maz1sIwm_-eE5lO2JnireizN1HDLooiN5omb7giX1bRnFvhgSC69-FWFGAagBpQiDhAdiR_q8qtVxfNRyXFIW-svfQD9NzN67j6o9osqM-Q7BctkHx_zBi-756zHyj-RCmphBSncKPbP2wFYUcLHTxo5aMhP6OMZQ3PCclNftDqLZ-KiXo5ebyhRxDGSb3npBx8osQ8TxXlGBpoODWmpbUe7g&t=AQJUc7P6szDmhhwgBCQ">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - imagem - profissionais</td><td class="num">R$ 232,34</td><td class="num">7</td><td class="num">R$ 33,19</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQLkkEttM4irg7wRbzn-m06vQH31biqczg9ImhnM7EDNXX4dCzO2HLwFGMOlyzGZR3ziP1SFjJZvIYznHqdhPeQclfGSQ6IlL80w0NXqI98g1XzCpPCqUmgO8fdzVlvv1CPbSVEHog3EMLfs6B7ct4q_vZItyYJwpYAOt-GZufxVDGbZWpbeurfLbTojMciwggBw1dOhFeYTmPloJ_S8ENTf_7k-MCEwhH9HyHQ39UFyaw&t=AQLFHInn6sbc_5QiA2k">Ver →</a></td></tr>
+          <tr><td>Vídeo 4 - EF</td><td class="num">R$ 324,88</td><td class="num">4</td><td class="num">R$ 81,22</td><td><span class="dest-tag sem">Sucessão · Form. nativo</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQI9iH-EfB0PRSURfUcOhXmCUigUc9tnHrJX3DIwtw1OJ807gtfAoz6iVU_SQgewVToqI23kH21NKHQ8Z6DnvgtGlNOA9oF1bK8aMFaT_kl2pJ-0YOsuY2YTQTfOS1TbhgIvYFd730d1xjGyDvSABMMJeyIQXNoJytyPh_YVEa9FGjV2CsWn0m8UPux1reDvP0wfToz808set4iAfqcB_0yoI3PjvYYlm-eQULzuG4lykQ&t=AQK0RjhmS64zJH5jHt0">Ver →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="nota"><b>Site x Formulário nativo:</b> o Site custa quase 4× mais por lead (R$ 110,75 vs R$ 30,54), mas o lead é mais qualificado — passou por uma landing page própria antes de converter. O Formulário nativo é bem mais barato porque o preenchimento acontece dentro do próprio Facebook/Instagram, sem sair do app — reduz fricção, mas o lead chega "mais frio".</div>
   </div>
 </section>
 
