@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Análise de Campanhas de Leads — Meta Ads · Legado &amp; Família</title>
+<meta name="description" content="Análise completa das campanhas de geração de leads na conta Meta Ads: melhores campanhas, conjuntos e criativos dos grupos JA, TD e GS, com recomendação de reaproveitamento para o Programa de Sucessão Empresarial e Patrimonial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  code{font-family:'Courier New',Courier,monospace;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 28px;}
+
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 76px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:36px; height:36px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:20px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1{font-size:33px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:760px;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:680px; margin:0 0 26px;}
+  .meta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .meta-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; padding:10px 16px;
+  }
+  .meta-badge .label{font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6);}
+  .meta-badge .id{font-size:14px; font-weight:700; font-family:'Courier New',monospace; color:#fff; letter-spacing:.02em;}
+
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  section.group-td{background:var(--bg);}
+  section.group-gs{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:24px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px;}
+  h3{font-size:15.5px; font-weight:600; margin:32px 0 4px; color:var(--ink);}
+  h3:first-of-type{margin-top:24px;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:760px; margin:0 0 8px;}
+
+  /* GROUP HEADER CARD */
+  .group-head{
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    border:1px solid var(--linha); border-radius:16px; padding:22px 26px; background:#fff; margin-top:22px;
+  }
+  .group-head .tag-big{
+    display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px;
+    border-radius:14px; background:var(--roxo-xlight); color:var(--roxo-dark); font-weight:800; font-size:16px; flex:none;
+  }
+  .group-head .ginfo{display:flex; align-items:center; gap:16px;}
+  .group-head .gtext p{margin:0; font-size:12.5px; color:var(--cinza);}
+  .group-head .gtext h3{margin:0 0 3px; font-size:16px;}
+  .group-stats{display:flex; gap:22px; flex-wrap:wrap;}
+  .group-stats div{text-align:right;}
+  .group-stats .num{font-size:18px; font-weight:700; color:var(--ink); display:block;}
+  .group-stats .lbl{font-size:10.5px; color:var(--cinza); text-transform:uppercase; letter-spacing:.04em;}
+
+  /* WHY BOX */
+  .why-box{border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff; margin-top:22px;}
+  .why-box p{font-size:13.5px; color:var(--cinza); margin:0 0 12px;}
+  .why-box p:last-child{margin-bottom:0;}
+  .why-box b{color:var(--ink); font-weight:600;}
+
+  /* TOTALS GRID */
+  .tot-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px;}
+  .tot-card{border:1px solid var(--linha); border-radius:16px; padding:20px 22px; background:#fff;}
+  .tot-card .plat{font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--roxo); margin-bottom:10px;}
+  .tot-card .big{font-size:22px; font-weight:800; color:var(--ink); margin-bottom:10px;}
+  .tot-card .kv{display:flex; justify-content:space-between; font-size:12.5px; padding:5px 0; border-top:1px dashed var(--linha); color:var(--cinza);}
+  .tot-card .kv b{color:var(--ink); font-weight:600;}
+
+  /* TABLE */
+  .table-wrap{border:1px solid var(--linha); border-radius:16px; overflow:hidden; margin-top:14px; overflow-x:auto;}
+  table{width:100%; border-collapse:collapse; font-size:12.5px; min-width:640px;}
+  thead th{
+    text-align:left; background:var(--bg-soft); color:var(--cinza); font-weight:600; font-size:10.5px;
+    text-transform:uppercase; letter-spacing:.03em; padding:11px 14px; border-bottom:1px solid var(--linha); white-space:nowrap;
+  }
+  tbody td{padding:11px 14px; border-bottom:1px solid var(--linha); color:var(--ink);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:var(--bg-soft);}
+  td.mono{font-family:'Courier New',monospace; font-size:11.5px; color:var(--cinza);}
+  td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  td a.dl{color:var(--roxo); font-weight:600; text-decoration:none; white-space:nowrap;}
+  td a.dl:hover{text-decoration:underline;}
+  .dest-tag{
+    display:inline-block; font-size:10.5px; font-weight:600; padding:3px 9px; border-radius:100px; white-space:nowrap;
+  }
+  .dest-tag.direto{background:var(--verde-light); color:var(--verde);}
+  .dest-tag.diag{background:#DBEAFE; color:#1D4ED8;}
+  .dest-tag.outro{background:var(--linha); color:var(--cinza);}
+  .dest-tag.sem{background:var(--ambar-light); color:var(--ambar);}
+  .grp-tag{
+    display:inline-block; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:6px; font-family:'Courier New',monospace;
+  }
+  .grp-tag.ja{background:#DBEAFE; color:#1D4ED8;}
+  .grp-tag.td{background:#FCE7F3; color:#BE185D;}
+  .grp-tag.gs{background:#D1FAE5; color:#047857;}
+
+  /* NOTA */
+  .nota{
+    border:1px solid var(--linha); border-left:3px solid var(--roxo); border-radius:12px;
+    padding:16px 20px; margin-top:22px; background:#fff; font-size:13px; color:var(--cinza);
+  }
+  .nota b{color:var(--ink); font-weight:600;}
+  .nota.warn{border-left-color:var(--ambar); background:var(--ambar-light); color:#78350F;}
+  .nota.warn b{color:#78350F;}
+
+  /* STRIP */
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700; color:#fff;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{
+    background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px;
+    padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;
+  }
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:640px){
+    .hero{padding:44px 0 52px;}
+    .hero h1{font-size:25px;}
+    .tot-grid{grid-template-columns:1fr;}
+    .strip{flex-direction:column; align-items:flex-start;}
+    .group-head{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Análise de Campanhas de Leads</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill">Análise de conta &middot; Meta Ads</div>
+    <h1>Análise de campanhas de leads — Meta Ads</h1>
+    <p class="lead">Fizemos uma varredura completa da conta de anúncios, focando nas campanhas de geração de leads já rodadas. Encontramos três grupos distintos de campanhas — cada um vindo de uma fase/gestão diferente da conta — e organizamos os melhores resultados de cada um: campanhas, conjuntos de anúncios e criativos.</p>
+    <div class="meta-row">
+      <div class="meta-badge"><div><div class="label">Conta de anúncio</div><div class="id">Legado em Família · 3546375518788148</div></div></div>
+      <div class="meta-badge"><div><div class="label">Objetivo analisado</div><div class="id">Geração de Leads (OUTCOME_LEADS)</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- METODOLOGIA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Metodologia</div>
+    <h2>Três grupos, três fases diferentes da conta</h2>
+    <p class="intro-text">As campanhas de leads da conta se dividem em três grupos claros, identificados pelo prefixo do nome — cada prefixo corresponde a uma fase distinta de gestão da conta, com padrões de nomenclatura e criativos próprios. Não entramos em quem geriu cada fase; o que importa aqui é <b style="color:var(--ink)">o que funcionou</b> em cada uma, pra sabermos o que vale reaproveitar agora.</p>
+
+    <div class="tot-grid">
+      <div class="tot-card">
+        <div class="plat">JA</div>
+        <div class="big">R$ 39.152,04</div>
+        <div class="kv"><span>Leads</span><b>866</b></div>
+        <div class="kv"><span>CPL médio</span><b>R$ 45,21</b></div>
+        <div class="kv"><span>Campanhas</span><b>10</b></div>
+      </div>
+      <div class="tot-card">
+        <div class="plat">TD</div>
+        <div class="big">R$ 25.941,11</div>
+        <div class="kv"><span>Leads</span><b>681</b></div>
+        <div class="kv"><span>CPL médio</span><b>R$ 38,09</b></div>
+        <div class="kv"><span>Campanhas</span><b>36</b></div>
+      </div>
+      <div class="tot-card">
+        <div class="plat">GS</div>
+        <div class="big">R$ 10.574,23</div>
+        <div class="kv"><span>Leads</span><b>155</b></div>
+        <div class="kv"><span>CPL médio</span><b>R$ 68,22</b></div>
+        <div class="kv"><span>Campanhas</span><b>8</b></div>
+      </div>
+    </div>
+
+    <div class="nota"><b>Como lemos "melhor" aqui:</b> em cada nível (campanha, conjunto, criativo) ranqueamos por menor custo por lead (CPL), exigindo um volume mínimo de leads pra evitar que um resultado de sorte com R$ 20 investidos apareça como "o melhor". Onde havia link de criativo disponível, incluímos — são prévias diretas do Meta e podem expirar; se algum não abrir mais, é só pedir que a gente gera de novo.</div>
+  </div>
+</section>
+
+<!-- ============ GRUPO JA ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="group-head">
+      <div class="ginfo">
+        <div class="tag-big">JA</div>
+        <div class="gtext">
+          <h3>Cadastro direto — campanha de lead "normal"</h3>
+          <p>Todas as campanhas levam para a mesma página: cadastro do curso Sucessão Empresarial e Patrimonial (SEP).</p>
+        </div>
+      </div>
+      <div class="group-stats">
+        <div><span class="num">R$ 39.152,04</span><span class="lbl">Investido</span></div>
+        <div><span class="num">866</span><span class="lbl">Leads</span></div>
+        <div><span class="num">R$ 45,21</span><span class="lbl">CPL médio</span></div>
+      </div>
+    </div>
+
+    <h3>Melhores campanhas</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><td>[JA] [CADASTRO] [CBO] [PROFESSORES] [F] Site</td><td class="num">R$ 1.292,09</td><td class="num">52</td><td class="num">R$ 24,85</td></tr>
+          <tr><td>[JA] [CADASTRO] [ESTADOS] [CBO] [FRIO] Site</td><td class="num">R$ 2.393,14</td><td class="num">94</td><td class="num">R$ 25,46</td></tr>
+          <tr><td>[JA] [CADASTRO] [BLACK] [CBO] [Q] Site</td><td class="num">R$ 619,11</td><td class="num">21</td><td class="num">R$ 29,48</td></tr>
+          <tr><td>[JA] [CADASTRO] [CBO] [F] [TERNO] Site</td><td class="num">R$ 1.805,94</td><td class="num">61</td><td class="num">R$ 29,61</td></tr>
+          <tr><td>[JA] [CADASTRO] [BLACK] [DEZEMBRO] [CBO] [Q] Site</td><td class="num">R$ 192,93</td><td class="num">6</td><td class="num">R$ 32,16</td></tr>
+          <tr><td>[JA] [CADASTRO] [CBO] [F] Forms</td><td class="num">R$ 1.125,22</td><td class="num">31</td><td class="num">R$ 36,30</td></tr>
+          <tr><td>[JA] [CADASTRO] [CBO] [QUENTE] Site</td><td class="num">R$ 11.866,95</td><td class="num">282</td><td class="num">R$ 42,08</td></tr>
+          <tr><td>[JA] [CADASTRO] [CBO] [FRIO] Site</td><td class="num">R$ 12.055,68</td><td class="num">239</td><td class="num">R$ 50,44</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Melhores conjuntos de anúncios</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th>Campanha</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><td>00 - [IG] Interesses | 30-65 | São Paulo</td><td class="mono">ESTADOS FRIO Site</td><td class="num">R$ 1.331,53</td><td class="num">67</td><td class="num">R$ 19,87</td></tr>
+          <tr><td>00 - [IG] Herdeiros | 30-50 | Estados</td><td class="mono">F Forms</td><td class="num">R$ 113,57</td><td class="num">5</td><td class="num">R$ 22,71</td></tr>
+          <tr><td>00 - [IG] Envolvimento 365D | 30-65 | Estados</td><td class="mono">BLACK DEZEMBRO Q</td><td class="num">R$ 143,27</td><td class="num">6</td><td class="num">R$ 23,88</td></tr>
+          <tr><td>00 - Semelhante (BR, 1%) - Lista Alunos Sucessão</td><td class="mono">PROFESSORES F Site</td><td class="num">R$ 1.292,09</td><td class="num">52</td><td class="num">R$ 24,85</td></tr>
+          <tr><td>00 - [IG] Empresarios | 40-65 | Estados</td><td class="mono">F TERNO Site</td><td class="num">R$ 1.777,00</td><td class="num">61</td><td class="num">R$ 29,13</td></tr>
+          <tr><td>00 - [IG] Interesses | 30-65 | Paraná</td><td class="mono">ESTADOS FRIO Site</td><td class="num">R$ 422,05</td><td class="num">14</td><td class="num">R$ 30,15</td></tr>
+          <tr><td>00 - [IG] Envolvimento 365D | 30-65 | Estados</td><td class="mono">BLACK CBO Q</td><td class="num">R$ 574,81</td><td class="num">19</td><td class="num">R$ 30,25</td></tr>
+          <tr><td>00 - Semelhante (BR, 1%) - Lista Alunos Sucessão</td><td class="mono">CBO FRIO Site</td><td class="num">R$ 3.035,95</td><td class="num">98</td><td class="num">R$ 30,98</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Melhores criativos <span style="font-weight:400; color:var(--cinza); font-size:12.5px;">— destino: curso SEP (cadastro)</span></h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Criativo</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>AD23 - [VIDEO] SEGUNDO PESQUISA</td><td class="num">R$ 99,33</td><td class="num">8</td><td class="num">R$ 12,42</td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJFr-mx5ITH5WyU7X5ohOk7ToV0zka9g3jJMThr11OQBjXUe5CpYnoiXeFIzATlelRKiASTvjjaCP80-3jyMjveflX16_tP3jbCYIF4Sg7ZdmzKgsaSPEanvHzSSNS83NB98OW1UeDXpII-TqrMCwd4NSDxchQhjs-A9c5Vf7uw7aVNUujn6L3gWBd--lzWEI_UpFw9YQ1Z-HNPsTsB8dlOftlYNwN50U6b8OG_k-NjkA&t=AQKVbg4QfY2P-gfSCOw">Ver criativo →</a></td></tr>
+          <tr><td>AD04 - [IMAGEM] BLACK FRIDAY</td><td class="num">R$ 92,26</td><td class="num">6</td><td class="num">R$ 15,38</td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIsaicS4c9ugu190Va0phEvplfXOx2AWiGD3LnXq90zufmajhAHnEVKcZAl8wB5drO0S-v48CXg_aCsrpJSDrMvyso6bt4U8HzqyC2RLSRpLi6rUUMV5v84dYspRh0FMyTZShudhWkc2PrR_siBSOoE6VaJJ5WNUAt2wokIMy2xVW_v6Hs-QyOR3A4WeswO5WZj7nANieKy0CWCtjJYr37uqUjsduPtHXACgWnSzLQuYQ&t=AQKT9OjN6nAcqS3DnYo">Ver criativo →</a></td></tr>
+          <tr><td>AD22 - [CARROSSEL] PROFESSORES</td><td class="num">R$ 1.959,95</td><td class="num">111</td><td class="num">R$ 17,66</td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKfY9PPZvl4RVpKK4RDufYNFOl_TvqJDkFt4lB3c-0_nvNtzZSnaRSr-Zi25SA1dSq_lntr-IG8Eqr8KHsLqx5BlS0ZF2LH-fJHe5I35YATsKJ9ljQcc3Ff-5qERZDHLz-Kz44EKqGFvTnES8KAEbIbS7QZgBoKg6r0p8ugpWQ6dBaXdhMb4D0-T9zWbKAaqLnz0Nc-m9yBfHe2HM7Sj9G5d-vzXMhy1R5Y87xRTOb95A&t=AQK1E7auZH9xXalDC6c">Ver criativo →</a></td></tr>
+          <tr><td>AD04 - [VIDEO] BLACK FRIDAY</td><td class="num">R$ 97,56</td><td class="num">5</td><td class="num">R$ 19,51</td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJ9J_ONS4Tu_6aS9oWa_Blwn6gHApCZtLe5kxEUeVEfC4d4tVNNy9dzYMr5W85M4SKlXEzWJL8qp3dNVS5ayGWVljL8eWVWEgv49SG0rvYgGnMP1vGJJ-qkbSVpELwyU1ZmihsyNGmSS0gTTwZJkjoYS0imcffW49Y5BpAn1rwoa2Q3KyjfKrIN0JNb-zkEiWAXvMS2HPGZ_Y31soUkdmJ3RlcZFWGKvN1DDxOgYDYsIw&t=AQKwdj1VpI0i6PP1F2s">Ver criativo →</a></td></tr>
+          <tr><td>AD04 - [VIDEO] REFORMA TRIBUTARIA</td><td class="num">R$ 1.907,29</td><td class="num">90</td><td class="num">R$ 21,19</td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKNn4tBWwWOeOTJnoj_9A1ZGG8byWLjuL10QoR3Coo_9QG-gzMwSbopHVasX4mnRhpMJ1Yvt1OcOErLLWWQR-MlUGnjKeNIXBjro2jjMGdAXMcM84itJSzOIuu6vAzQtbLqGKmu-c6AROFkVEAnVoUoXa4L_GTZTuAY4Q-59yOPFp8rqbfsebEruHzIeyQtRo-ZGKM8EKHXpmAfTkucrHbgVW7AuogrID_VWVuiV4ej_Q&t=AQKuVl7Mhz-jXpdcBYk">Ver criativo →</a></td></tr>
+          <tr><td>AD03 - [CARROSSEL] PROFESSORES</td><td class="num">R$ 175,19</td><td class="num">8</td><td class="num">R$ 21,90</td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKFWUStvPXPxS9lBgU2dcdwucteXmM4mbXSIC9gsaUT-dOTUezY3xuGbTkFamXHu9mgUNAlhX0ADNPa3cd1owcjWUi2Yls-kYL138Ot5fcsoVx2WP1xqYnAs_VBrdUlVMsRA5CjEbxYxxuxeb-BjIQVPQnkoy4e5bAIrMIPHlwiotmwYooX_OShLLFEPPwQf5_TdLL4dVZ409JmYCt47nDJVVMrQfqEwJat8ghD3teNJA&t=AQIw8tZAB0h6KLDUrJg">Ver criativo →</a></td></tr>
+          <tr><td>AD01 - [CARROSSEL] PROFESSORES</td><td class="num">R$ 1.098,94</td><td class="num">46</td><td class="num">R$ 23,89</td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQLh-VFXABc2Zo5h1poVFCKLn75iEjgEcq9Il7MDu0Ph-P6C2TXxL42cCfmyltslOH2Hpb-4NK0tHcfDs4M7MxETBaNjo45drs_gVSGXUHcsIfyTdECmSYYMY8wzqv4Wd43Med9jq8_nVl76dm5ce5Sl2h_bbB5MUpno1PzN84qW7XVZkOUgK6dstF9cEQgGGtQhnMjrmKkSt1yIZiwTIbLgvp1-Dr6-vQJE9BtJi__WEA&t=AQKj_7Mvlv9SVMNuuJA">Ver criativo →</a></td></tr>
+          <tr><td>AD01 - [IMAGEM] HERDEIROS</td><td class="num">R$ 156,21</td><td class="num">6</td><td class="num">R$ 26,04</td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQK8hJ4ORGG8AR3UoqYEnMNbBsbwTNBy0X1vZcw3OpiqEl54RKyquJvalzrfpc488pEvvLH-MY5MoSFAhjR9Fw6roqP7RFmfdT6SFeum7p1ND-nE5i5N4ZwWvPfmNDB_lW8kJMTYpkk01XLOoICEIlsqYMYnhIUs1gcZk6rcoJmWFk4mY8TYwM4orhl7knCv0GxkDzxA-Uk6Mgq7i-ZUl1HY_czUIsgEk3llCMMxt3dnOg&t=AQLwlEd9ud5jcId5cp8">Ver criativo →</a></td></tr>
+          <tr><td>AD04 - [VIDEO] CAIXINHA</td><td class="num">R$ 1.619,93</td><td class="num">59</td><td class="num">R$ 27,46</td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+          <tr><td>AD02 - [VIDEO] [EMPRESARIO] RIO GRANDE DO SUL</td><td class="num">R$ 182,07</td><td class="num">6</td><td class="num">R$ 30,35</td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GRUPO TD ============ -->
+<section class="group-td">
+  <div class="wrap">
+    <div class="group-head">
+      <div class="ginfo">
+        <div class="tag-big">TD</div>
+        <div class="gtext">
+          <h3>Grupo mais fragmentado — 5 produtos diferentes</h3>
+          <p>Mistura Ebook, curso Mulheres em Conselhos, Masterclass, Live e Sucessão. Cada criativo abaixo indica pra qual produto ele foi feito.</p>
+        </div>
+      </div>
+      <div class="group-stats">
+        <div><span class="num">R$ 25.941,11</span><span class="lbl">Investido</span></div>
+        <div><span class="num">681</span><span class="lbl">Leads</span></div>
+        <div><span class="num">R$ 38,09</span><span class="lbl">CPL médio</span></div>
+      </div>
+    </div>
+
+    <h3>Melhores campanhas</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><td>[TD] [ABO] [CAPTAÇÃO DE LEAD] [EBOOK - LIVRO 2]</td><td class="num">R$ 641,03</td><td class="num">106</td><td class="num">R$ 6,05</td></tr>
+          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [CBO] - MEMBRO EMPRESAS FAMILIARES</td><td class="num">R$ 1.013,66</td><td class="num">58</td><td class="num">R$ 17,48</td></tr>
+          <tr><td>🟪 [TD][CBO] [FRIO][CAPTAÇÃO DE LEAD][MCMC3] 🔵</td><td class="num">R$ 424,57</td><td class="num">21</td><td class="num">R$ 20,22</td></tr>
+          <tr><td>🟧 [TD][FEED][CBO][FRIO][CAPTAÇÃO DE LEAD][FMC4]</td><td class="num">R$ 523,01</td><td class="num">23</td><td class="num">R$ 22,74</td></tr>
+          <tr><td>🟧 [TD][CBO][FRIO][CAPTAÇÃO DE LEAD][FMC4]</td><td class="num">R$ 1.120,20</td><td class="num">46</td><td class="num">R$ 24,35</td></tr>
+          <tr><td>🟪 [TD][ABO][FRIO][CAPTAÇÃO DE LEAD][MCMC3] 🔵</td><td class="num">R$ 431,22</td><td class="num">16</td><td class="num">R$ 26,95</td></tr>
+          <tr><td>[TD] [LEADS - FORM NATIVO] [SUCESSÃO] [ABO] - GERAL</td><td class="num">R$ 1.337,70</td><td class="num">47</td><td class="num">R$ 28,46</td></tr>
+          <tr><td>🟫 [TD][ABO][FRIO][CAPTAÇÃO DE LEAD][LIVE IMERSÃO]</td><td class="num">R$ 787,29</td><td class="num">27</td><td class="num">R$ 29,16</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Melhores conjuntos de anúncios</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><td>[IG][LEAD_SITE][FRIO][LLA 1%_LISTAS][SUDESTE/SUL/CO][H/M 25-55]</td><td class="num">R$ 388,71</td><td class="num">70</td><td class="num">R$ 5,55</td></tr>
+          <tr><td>[IG][LEAD_SITE][FRIO][LLA 1%_LISTAS][SUDESTE/SUL/CO] — Cópia</td><td class="num">R$ 252,32</td><td class="num">36</td><td class="num">R$ 7,01</td></tr>
+          <tr><td>[FEED][LLA2%_S/INTERESSES_LISTA GERAL][REGIÕES]</td><td class="num">R$ 304,21</td><td class="num">21</td><td class="num">R$ 14,49</td></tr>
+          <tr><td>[CARROSSEL][IG/ST][LLA1%_S/INTERESSES_LISTA GERAL][REGIÕES]</td><td class="num">R$ 59,47</td><td class="num">4</td><td class="num">R$ 14,87</td></tr>
+          <tr><td>[3PT] [EMPREGADORES + CARGOS] - SUDESTE</td><td class="num">R$ 1.013,66</td><td class="num">58</td><td class="num">R$ 17,48</td></tr>
+          <tr><td>[IG/ST][LLA1%_S/INTERESSES_LISTA GERAL][REGIÕES]</td><td class="num">R$ 359,74</td><td class="num">20</td><td class="num">R$ 17,99</td></tr>
+          <tr><td>[IG/ST][C/INTERESSES_LISTA GERAL][REGIÕES]</td><td class="num">R$ 91,58</td><td class="num">5</td><td class="num">R$ 18,32</td></tr>
+          <tr><td>[IG][LLA1%_C_INTERESSES_TD_M_35+]_REGIOES</td><td class="num">R$ 131,39</td><td class="num">7</td><td class="num">R$ 18,77</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Melhores criativos <span style="font-weight:400; color:var(--cinza); font-size:12.5px;">— produtos misturados, veja o destino de cada um</span></h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Criativo</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th><th>Destino</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>AD2_ESTATICO_BLACK</td><td class="num">R$ 425,46</td><td class="num">72</td><td class="num">R$ 5,91</td><td><span class="dest-tag outro">Ebook</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKd_M8vmyqlmS8HeWFpmoHZb2_V_gfZNXVkv98ZEOh-bSPdCPsRHIGlun4mKuhD8m2nkrCRYUh6KApZwv_5RjUGzf7SKDjZzlIEDO3CTDm41ZEi733Z1LMnc7IBe5oVf7XlFzddHgKdMry1g9pSYeNmjY1ZcnDvp7tn342-KAE0AuAsEF7UTTomrAS2Rce59kCH_o8nqqjG21IBSo57q5oHIvLyTPDfbp498og_5nQwNQ&t=AQKDeRDiFsQHUZuwzfI">Ver →</a></td></tr>
+          <tr><td>AD2_CARROSSEL_WHITE</td><td class="num">R$ 215,54</td><td class="num">34</td><td class="num">R$ 6,34</td><td><span class="dest-tag outro">Ebook</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKFKLncIRfNrLmUd8XIQua5cGoaPWCq42OgGFF5DIoU24QE_WjDnPfWB-4EMjqX3xIseBXV_F7IEU3vmcAoqMtAIHlJDeLyk5X06NPOZiG5F2KJXN9wX8m7ZQpg8E-rtlFByUUV_VNdgo1XUF4tLL6u4TfwXY1Q_235jhcPkYB63LJGIIk1-q3_RpqDhIWh6OpUtvh66VyaRjY6A-bfLkh6p3ZeEoT1cOjvzokOGONZXQ&t=AQLAdEwo5VlNtqY19dc">Ver →</a></td></tr>
+          <tr><td>AD1_ESTATICO ❌</td><td class="num">R$ 69,08</td><td class="num">5</td><td class="num">R$ 13,82</td><td><span class="dest-tag outro">Mulheres em Conselhos</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+          <tr><td>criativo - instrutores - imagem - data atualizada</td><td class="num">R$ 316,72</td><td class="num">22</td><td class="num">R$ 14,40</td><td><span class="dest-tag sem">Sucessão · sem link</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJ28VM19fOVHSH65zIP90OxM5C3k3W8xRAwBHeY16VRumcR9zVLPQeLKO7iUxLd20Bb8s03yPOntd823fJAYeANagmlDeRFYqdRpeaz1LEpJfqVai6mZmmTf1cudJhPThvnX25-mSi9I7VSpzlJ-Z28ZKdrFHEuo3CZWm42OvWWSapFJnCewAXVSUcjqSjrKphLtlnWA6GF4gyGhfgetMufNFQqQbkmKUdYz3CHYs4_Kw&t=AQJGDJYgrnnbB0t7Tyc">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - imagem - profissionais</td><td class="num">R$ 536,22</td><td class="num">36</td><td class="num">R$ 14,90</td><td><span class="dest-tag direto">Sucessão</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQL-LSepjDHizR0n-CB8OGCM337ww52VoxZmZJ0yL063Bt8FbYB5di1We5IT7UGS9ZYVD3ig2HZMW4JCo9YUemYsHq855IS8nGmDfdtJgbhKBaZlSXgJaZoPpis3u5izyl4bq_hQUAjTTcvR7fhPY57Fm4HMIw2a5pHSFm5VSTJIRcs4zkvldWX4tBoqMfuXItWWrUhY04ClwOx6npf7PlvDbO6Rp6pl_38Hf8-wljO6Lg&t=AQL7alB60ohEfco_bFA">Ver →</a></td></tr>
+          <tr><td>AD4_ (Masterclass)</td><td class="num">R$ 85,30</td><td class="num">5</td><td class="num">R$ 17,06</td><td><span class="dest-tag outro">Masterclass MC</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJe1zgXgZ5GF1ax7vYrqB0bONTeywhohE4n3sdAsnRP97w0jIz7GNryrA5ntrXxtG-BvUuqMPvFzaenKwPb_BMmlsZqpp-T1hhbLi1N3JCKyLgfoqgxTFMSqmlvCMmL08zMm980YKBny0DMM3zw-Hk1eklwASXmQ_rIxeZrpYV-zNvekFQgrcw7zRMARJBsuFhxIo1qduh2fGWa2xI1-s6mL6e0cPS_aJ-s4XO8RoBEuQ&t=AQKaA6GGl9wZjb4awIw">Ver →</a></td></tr>
+          <tr><td>AD_INDIVIDUAL (Live)</td><td class="num">R$ 171,28</td><td class="num">10</td><td class="num">R$ 17,13</td><td><span class="dest-tag sem">Live · sem link</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJxXAjs01EFXXJK7P0gkxfdirX_T4JJYur92RyozDJtdM1taPTxWw6USJDyMX3XiyszjMCBLC7DMWrsGZ_6LHJQlZH7eKYgnDFDvGtEw6R1Lv3sW2jjDeyyCFz5sxau91hJhWs8uc-OxoccYbvjrns8ArVJhv7hTXz7AnHK0g_aVWA4PD74OkDmzbRNtaUgWpeuwr88yoiOHcv3QulZsO9l4hHNyf3XIzX76JeJYJk9JA&t=AQLFks9u3DyWOLzUuMM">Ver →</a></td></tr>
+          <tr><td>AD_CARROSSEL 1</td><td class="num">R$ 576,37</td><td class="num">31</td><td class="num">R$ 18,59</td><td><span class="dest-tag outro">Mulheres em Conselhos</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQI0m0968e3WAVoguwhW7BJO_rDGjEuCbKc0HghDKuoBA3k46aFb2WtlBenEn9PL4H0epX7uuWLXcX_cZhmyyXr6mEUPv3U1_x4tyD4vt4coB0xsoBhAo2oTlqZ_VDhWPvytmkihT8zOPdd2SqTB400MifzflnEdzRryCD6Y4vdDgqDIPv2S9o9YwFHn23rYhUNFj7Z0P776m8YvzwTn4ebu8Q2pMx4bwVVgA8ZVJ8GM8A&t=AQJIZ6SFCfO9eRHq-JQ">Ver →</a></td></tr>
+          <tr><td>criativo - instrutores - carrossel - 9 cards</td><td class="num">R$ 246,94</td><td class="num">13</td><td class="num">R$ 19,00</td><td><span class="dest-tag sem">Sucessão · sem link</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQL2k-p6FsuKgEyhZwW4okJIm5Fb9jBpVnPOF-5J_DIaacB-ZOzEI2q40BTK8LDJB2C7TwIuWNMg1wiPiwqnIdgXUAy6KUxarEb0Ymando08tOuqR8vAmdGEo9SinkS-3_oN1R1p5MsdWPTwhoSw6WSuVmGD-eKi3SU_jL47ZfXtfe2-MTHAlP415hki7TojmWJsCljPFM9tNPqH6mr4x6sqPMSNe66BxLrrC2kpINrDWw&t=AQJlZTwGTQN2J8R6-jc">Ver →</a></td></tr>
+          <tr><td>CHECK AD5_CARD ANIMADO 2</td><td class="num">R$ 733,33</td><td class="num">36</td><td class="num">R$ 20,37</td><td><span class="dest-tag outro">Mulheres em Conselhos</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="nota"><b>Só 3 desses 10 criativos são de Sucessão</b> — os que têm "instrutores" no nome. O resto é de Ebook, Mulheres em Conselhos, Masterclass ou Live — produtos diferentes, não dá pra reaproveitar pro Programa de Sucessão sem trocar completamente a mensagem.</div>
+  </div>
+</section>
+
+<!-- ============ GRUPO GS ============ -->
+<section class="group-gs">
+  <div class="wrap">
+    <div class="group-head">
+      <div class="ginfo">
+        <div class="tag-big">GS</div>
+        <div class="gtext">
+          <h3>Diagnóstico, Webinar e VSL</h3>
+          <p>3 ofertas diferentes dentro do mesmo grupo, todas girando em torno do tema sucessão familiar.</p>
+        </div>
+      </div>
+      <div class="group-stats">
+        <div><span class="num">R$ 10.574,23</span><span class="lbl">Investido</span></div>
+        <div><span class="num">155</span><span class="lbl">Leads</span></div>
+        <div><span class="num">R$ 68,22</span><span class="lbl">CPL médio</span></div>
+      </div>
+    </div>
+
+    <h3>Melhores campanhas</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><td>[GS] [LEAD] [WEBINAR] [LAL 1%] [COLLAB] [CBO] - Site - Os Segredos das empresas Centenárias</td><td class="num">R$ 440,71</td><td class="num">18</td><td class="num">R$ 24,48</td></tr>
+          <tr><td>[GS] [LEAD] [CAMPANHA VSL] [CBO] - Ads validados</td><td class="num">R$ 404,62</td><td class="num">7</td><td class="num">R$ 57,80</td></tr>
+          <tr><td>[GS] [LEAD] [DIAGNOSTICO] [FRIO] [COLLAB] [CBO] - Site - Vídeos V2</td><td class="num">R$ 3.893,49</td><td class="num">56</td><td class="num">R$ 69,53</td></tr>
+          <tr><td>[GS] [LEAD] [DIAGNOSTICO] [FRIO] [COLLAB] [CBO] - Site - Novos Ads Diagnostico</td><td class="num">R$ 4.536,61</td><td class="num">65</td><td class="num">R$ 69,79</td></tr>
+          <tr><td>[GS] [LEAD] [ESTÁTICOS] [DIAGNOSTICO] [FRIO] [CBO] - Site - Ads estáticos diagnóstico</td><td class="num">R$ 441,36</td><td class="num">5</td><td class="num">R$ 88,27</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Melhores conjuntos de anúncios</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><td>00 - [AUTO] [BRASIL] [WEBINAR] [LAL 1% COMPRADORES] [COLLAB]</td><td class="num">R$ 440,71</td><td class="num">18</td><td class="num">R$ 24,48</td></tr>
+          <tr><td>00 - [VSL] Semelhante | 30-55 | Estados</td><td class="num">R$ 337,00</td><td class="num">7</td><td class="num">R$ 48,14</td></tr>
+          <tr><td>00 - [AUTO] [ESTADOS] [PUBLICO ABERTO] [COLLAB]</td><td class="num">R$ 1.242,99</td><td class="num">21</td><td class="num">R$ 59,19</td></tr>
+          <tr><td>00 - [AUTO] [ESTADOS] [VIDEOS V2] [PUBLICO ABERTO] [COLLAB]</td><td class="num">R$ 3.893,49</td><td class="num">56</td><td class="num">R$ 69,53</td></tr>
+          <tr><td>00 - [AUTO] [BRASIL] [ADVANTAGE+] [PUBLICO ABERTO] [COLLAB]</td><td class="num">R$ 3.293,62</td><td class="num">44</td><td class="num">R$ 74,86</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Melhores criativos <span style="font-weight:400; color:var(--cinza); font-size:12.5px;">— veja o destino de cada um</span></h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Criativo</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th><th>Destino</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>AD03 - Segredo Dourado (botão azul)</td><td class="num">R$ 111,65</td><td class="num">7</td><td class="num">R$ 15,95</td><td><span class="dest-tag outro">Webinar Centenárias</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+          <tr><td>AD06 - Segredo azul (botão dourado)</td><td class="num">R$ 52,67</td><td class="num">3</td><td class="num">R$ 17,56</td><td><span class="dest-tag outro">Webinar Centenárias</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQK3eocokyA7jn1b5VTAE6ozhi9wqUPXNX75zQC-3zk3iPdT9Cv35aF9Af0y-otPpD97FAVeF9XWK_N0VjrBd-JRiwdJ_5ekwaZCJaV8vL72HFuY3vfD9-g-cjRnbOBt7tagIwSutbw7ntjkC7VhGxS55zmrXsW8BlXGb_OCEBT78cF3_F9kceZZEqCfI6F3W1_ltQ3HYNou2k30kz7NdxL2VXTCRbQO-CeoHNtfEThuJQ&t=AQIHzIBYzRC-lytFX2o">Ver →</a></td></tr>
+          <tr><td>AD07 - O futuro da sua família</td><td class="num">R$ 20,01</td><td class="num">1</td><td class="num">R$ 20,01</td><td><span class="dest-tag diag">Diagnóstico</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKX6FIIP-WNvEWmw7YzN5muTmkANF_71i6_M8jn7IyXOFz9VSX4ucNn_sR_0uMvn-h26eUfGvoM3a1QLv__tueA7Nd_EAy4gBCsMYMDoLuP892vsl_OfRAlOPylZ9plalU7-UW5uTX4PBb0lSIX2BaG-KUqnh8n8vAsbzPJsiYY5Uv3kBNYlrtaqQXh_k3hTX-gkQ2KVdYefC4NEm1AV3JR-9mn5d8FOLTcLIcLobQZAg&t=AQK1LB6WvD8ZD312Xy8">Ver →</a></td></tr>
+          <tr><td>AD02 - Segredo dourado</td><td class="num">R$ 109,94</td><td class="num">4</td><td class="num">R$ 27,49</td><td><span class="dest-tag outro">Webinar Centenárias</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQITF7GWEscp6iLLA4IBkFU9j8RlyQGwGo6Tszrj1A_zuSgHWg6icSKSGfC-foFYAyki_bEsnhF1n7-xzArWAu0-B4fBhTarqfpFb6zZh86wRBOHBPAKgkqj63AIj18wHvOWsIeQfJ5nvLNuqXIe5vGpGTSjhRGQL5BQ2bd37-VM33YfAJktx-Zms4nMyXvPrgXCf9eY2QajgupoNY5ESJV7Kq6SPzt6DXUi8DimZ2g12A&t=AQKYxUDfRkFDoRyRb_I">Ver →</a></td></tr>
+          <tr><td>AD05 - Segredo Dourado (botão azul)</td><td class="num">R$ 29,71</td><td class="num">1</td><td class="num">R$ 29,71</td><td><span class="dest-tag outro">Webinar Centenárias</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIDlfZbvh3HRIDzEu-RL7jJWccsvuIeBiA7eitQtE7cHXr5DjknKf6wAS-Xwmt7g8TBiJIrtTk0S3r-VRDSboRtWzOg354WLpQu7ir8nkYTma5kH6XAh12VBUsA3k-lMnTj5dqfxFYIh8H-IO5kQcPxvCA0w-iNZgoSGIESv11a2NhY2UoC8rYmjfIYCNShmnJcYyem5ypL15j8_WSISU6XvzZj9eeLGsCH24JyqvIF0g&t=AQL9pwvly5j-adr7yfM">Ver →</a></td></tr>
+          <tr><td>AD04 - Segredo Azul</td><td class="num">R$ 99,07</td><td class="num">3</td><td class="num">R$ 33,02</td><td><span class="dest-tag outro">Webinar Centenárias</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQICYLfCK6qFMmzV7DhmxGsjqf0Tw07wRuHW8UPfBNR61GIb2rxDKVQLXSi8aPLuZZXFqOzVp5EPJ1ONV8skVbJNnY8Zan87R7u2NucgLDoYFjkdYW_c-AOHl4_iajmEohixZ5aenNoLSUcCqp4dm3d4aO-RqP9eXk154mQIVNK1Hw80jIa025lGiK8QtRYYQcTDqvCczuCQ4wCCMpH3uObpRiU4U0R0_2I7fjAQsxAFIw&t=AQLZ5c9KWFZtdPkVRWE">Ver →</a></td></tr>
+          <tr><td>AD04 - A CADA DIA (vídeo)</td><td class="num">R$ 35,57</td><td class="num">1</td><td class="num">R$ 35,57</td><td><span class="dest-tag diag">Diagnóstico</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIrLPEIE2v60B1nxjJoHTjS4xFSGu9JYcK2PI9_Rjgq9u4MUNvZ3-zx8_tq3HiWxA7pFUvGwoBNMOf0O7bkWPQA0u__vs49HFe_RGrXLq1Wcy6PMGsxO3tDGVHu2pq_eOqBLIgdwcFeJlk3l0TbCzbTcJAkbDn94PJbsQwZwmTQDicKjIVSdwvSK258V9ki6R3CEZw-Xoeu4Xk1iDEBl2T1hI3n-Eelh1FWjA6xOU6HRg&t=AQKdyl5vvAGltEJW7vg">Ver →</a></td></tr>
+          <tr><td>AD04 - Sua sucessão</td><td class="num">R$ 106,79</td><td class="num">3</td><td class="num">R$ 35,60</td><td><span class="dest-tag diag">Diagnóstico</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQI0kbfct2OPJK5hisVpo6IPQnhXBcU2f6knhD4s1t5ocsw6ostBsdpyNhi9T8ZBctvp9feqOkZmKZAVC8Q67TrdVSyzjGR3zb_77XOLQdywMCTkAfoQQTHzJbs7qu67_YRlsaUSCei-BIozmULAMgfwIfKAMppfSPF3cHdqf-QjeOpzRv8rKwg2MEZFHKbmmg-AuLXLenHB6G8DgCAq7iBYL303E-Lt_B5asdrrdxxNxQ&t=AQIP1-uhca8arjDN8Aw">Ver →</a></td></tr>
+          <tr><td>AD05 - [VSL][CARROSSEL] PROFESSORES</td><td class="num">R$ 349,69</td><td class="num">7</td><td class="num">R$ 49,96</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIIJmtq3UYG8QQlioRTwEXTxIW50fUGoIHC80KY215CB4LpBMxk4lvgWll9NNg_72TWCJjzb4m8mMsHySL2dcCFxVzc1ir6P3GRLH4oD0cPCbJngdhG1CXn4V-oR6rzlIQdPvsaAL-1RthHkEA4pfFRERbXL_EGOLSwx45DlYyBc33JjNXrCsyJ9g7odrm_brRl4S4MyVt3xay0GfUkjCmIXXaVugOQLQgOV9AGwVFZSA&t=AQI6TzRcylOsTGtq_FM">Ver →</a></td></tr>
+          <tr><td>AD04 - [Hook Gugu] Ignorar o tema Sucessão</td><td class="num">R$ 934,03</td><td class="num">18</td><td class="num">R$ 51,89</td><td><span class="dest-tag diag">Diagnóstico</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="nota"><b>Metade dos criativos GS são de outro produto (webinar).</b> Só ficam 5 relacionados a Sucessão de fato: 4 de Diagnóstico (funil mais leve, sem cadastro direto no curso) + 1 que vai direto pro curso (VSL).</div>
+  </div>
+</section>
+
+<!-- RECOMENDAÇÃO FINAL -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Recomendação</div>
+    <h2>Criativos com direcionamento para o Programa de Sucessão</h2>
+    <p class="intro-text">Juntando os três grupos, filtramos só os criativos cujo destino final é sobre <b style="color:var(--ink)">o Programa de Sucessão Empresarial e Patrimonial</b> — seja indo direto pro cadastro do curso, seja pelo funil mais leve do diagnóstico. Ficaram de fora Ebook, Mulheres em Conselhos, Masterclass, Live e Webinar Centenárias — são produtos diferentes, com mensagem própria, que não fazem sentido reaproveitar aqui sem reescrever o criativo do zero.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Criativo</th><th>Grupo</th><th class="num">Investido</th><th class="num">Leads</th><th class="num">CPL</th><th>Destino</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>AD23 - SEGUNDO PESQUISA</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 99,33</td><td class="num">8</td><td class="num">R$ 12,42</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJFr-mx5ITH5WyU7X5ohOk7ToV0zka9g3jJMThr11OQBjXUe5CpYnoiXeFIzATlelRKiASTvjjaCP80-3jyMjveflX16_tP3jbCYIF4Sg7ZdmzKgsaSPEanvHzSSNS83NB98OW1UeDXpII-TqrMCwd4NSDxchQhjs-A9c5Vf7uw7aVNUujn6L3gWBd--lzWEI_UpFw9YQ1Z-HNPsTsB8dlOftlYNwN50U6b8OG_k-NjkA&t=AQKVbg4QfY2P-gfSCOw">Ver →</a></td></tr>
+          <tr><td>2</td><td>criativo - instrutores - imagem - data atualizada</td><td><span class="grp-tag td">TD</span></td><td class="num">R$ 316,72</td><td class="num">22</td><td class="num">R$ 14,40</td><td><span class="dest-tag sem">Sem link</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJ28VM19fOVHSH65zIP90OxM5C3k3W8xRAwBHeY16VRumcR9zVLPQeLKO7iUxLd20Bb8s03yPOntd823fJAYeANagmlDeRFYqdRpeaz1LEpJfqVai6mZmmTf1cudJhPThvnX25-mSi9I7VSpzlJ-Z28ZKdrFHEuo3CZWm42OvWWSapFJnCewAXVSUcjqSjrKphLtlnWA6GF4gyGhfgetMufNFQqQbkmKUdYz3CHYs4_Kw&t=AQJGDJYgrnnbB0t7Tyc">Ver →</a></td></tr>
+          <tr><td>3</td><td>criativo - instrutores - imagem - profissionais</td><td><span class="grp-tag td">TD</span></td><td class="num">R$ 536,22</td><td class="num">36</td><td class="num">R$ 14,90</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQL-LSepjDHizR0n-CB8OGCM337ww52VoxZmZJ0yL063Bt8FbYB5di1We5IT7UGS9ZYVD3ig2HZMW4JCo9YUemYsHq855IS8nGmDfdtJgbhKBaZlSXgJaZoPpis3u5izyl4bq_hQUAjTTcvR7fhPY57Fm4HMIw2a5pHSFm5VSTJIRcs4zkvldWX4tBoqMfuXItWWrUhY04ClwOx6npf7PlvDbO6Rp6pl_38Hf8-wljO6Lg&t=AQL7alB60ohEfco_bFA">Ver →</a></td></tr>
+          <tr><td>4</td><td>AD04 - IMAGEM BLACK FRIDAY</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 92,26</td><td class="num">6</td><td class="num">R$ 15,38</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIsaicS4c9ugu190Va0phEvplfXOx2AWiGD3LnXq90zufmajhAHnEVKcZAl8wB5drO0S-v48CXg_aCsrpJSDrMvyso6bt4U8HzqyC2RLSRpLi6rUUMV5v84dYspRh0FMyTZShudhWkc2PrR_siBSOoE6VaJJ5WNUAt2wokIMy2xVW_v6Hs-QyOR3A4WeswO5WZj7nANieKy0CWCtjJYr37uqUjsduPtHXACgWnSzLQuYQ&t=AQKT9OjN6nAcqS3DnYo">Ver →</a></td></tr>
+          <tr><td>5</td><td>AD22 - CARROSSEL PROFESSORES</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 1.959,95</td><td class="num">111</td><td class="num">R$ 17,66</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKfY9PPZvl4RVpKK4RDufYNFOl_TvqJDkFt4lB3c-0_nvNtzZSnaRSr-Zi25SA1dSq_lntr-IG8Eqr8KHsLqx5BlS0ZF2LH-fJHe5I35YATsKJ9ljQcc3Ff-5qERZDHLz-Kz44EKqGFvTnES8KAEbIbS7QZgBoKg6r0p8ugpWQ6dBaXdhMb4D0-T9zWbKAaqLnz0Nc-m9yBfHe2HM7Sj9G5d-vzXMhy1R5Y87xRTOb95A&t=AQK1E7auZH9xXalDC6c">Ver →</a></td></tr>
+          <tr><td>6</td><td>criativo - instrutores - carrossel - 9 cards</td><td><span class="grp-tag td">TD</span></td><td class="num">R$ 246,94</td><td class="num">13</td><td class="num">R$ 19,00</td><td><span class="dest-tag sem">Sem link</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQL2k-p6FsuKgEyhZwW4okJIm5Fb9jBpVnPOF-5J_DIaacB-ZOzEI2q40BTK8LDJB2C7TwIuWNMg1wiPiwqnIdgXUAy6KUxarEb0Ymando08tOuqR8vAmdGEo9SinkS-3_oN1R1p5MsdWPTwhoSw6WSuVmGD-eKi3SU_jL47ZfXtfe2-MTHAlP415hki7TojmWJsCljPFM9tNPqH6mr4x6sqPMSNe66BxLrrC2kpINrDWw&t=AQJlZTwGTQN2J8R6-jc">Ver →</a></td></tr>
+          <tr><td>7</td><td>AD04 - VIDEO BLACK FRIDAY</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 97,56</td><td class="num">5</td><td class="num">R$ 19,51</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQJ9J_ONS4Tu_6aS9oWa_Blwn6gHApCZtLe5kxEUeVEfC4d4tVNNy9dzYMr5W85M4SKlXEzWJL8qp3dNVS5ayGWVljL8eWVWEgv49SG0rvYgGnMP1vGJJ-qkbSVpELwyU1ZmihsyNGmSS0gTTwZJkjoYS0imcffW49Y5BpAn1rwoa2Q3KyjfKrIN0JNb-zkEiWAXvMS2HPGZ_Y31soUkdmJ3RlcZFWGKvN1DDxOgYDYsIw&t=AQKwdj1VpI0i6PP1F2s">Ver →</a></td></tr>
+          <tr><td>8</td><td>AD07 - O futuro da sua família</td><td><span class="grp-tag gs">GS</span></td><td class="num">R$ 20,01</td><td class="num">1</td><td class="num">R$ 20,01</td><td><span class="dest-tag diag">Diagnóstico</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKX6FIIP-WNvEWmw7YzN5muTmkANF_71i6_M8jn7IyXOFz9VSX4ucNn_sR_0uMvn-h26eUfGvoM3a1QLv__tueA7Nd_EAy4gBCsMYMDoLuP892vsl_OfRAlOPylZ9plalU7-UW5uTX4PBb0lSIX2BaG-KUqnh8n8vAsbzPJsiYY5Uv3kBNYlrtaqQXh_k3hTX-gkQ2KVdYefC4NEm1AV3JR-9mn5d8FOLTcLIcLobQZAg&t=AQK1LB6WvD8ZD312Xy8">Ver →</a></td></tr>
+          <tr><td>9</td><td>AD04 - VIDEO REFORMA TRIBUTARIA</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 1.907,29</td><td class="num">90</td><td class="num">R$ 21,19</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKNn4tBWwWOeOTJnoj_9A1ZGG8byWLjuL10QoR3Coo_9QG-gzMwSbopHVasX4mnRhpMJ1Yvt1OcOErLLWWQR-MlUGnjKeNIXBjro2jjMGdAXMcM84itJSzOIuu6vAzQtbLqGKmu-c6AROFkVEAnVoUoXa4L_GTZTuAY4Q-59yOPFp8rqbfsebEruHzIeyQtRo-ZGKM8EKHXpmAfTkucrHbgVW7AuogrID_VWVuiV4ej_Q&t=AQKuVl7Mhz-jXpdcBYk">Ver →</a></td></tr>
+          <tr><td>10</td><td>AD03 - CARROSSEL PROFESSORES</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 175,19</td><td class="num">8</td><td class="num">R$ 21,90</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQKFWUStvPXPxS9lBgU2dcdwucteXmM4mbXSIC9gsaUT-dOTUezY3xuGbTkFamXHu9mgUNAlhX0ADNPa3cd1owcjWUi2Yls-kYL138Ot5fcsoVx2WP1xqYnAs_VBrdUlVMsRA5CjEbxYxxuxeb-BjIQVPQnkoy4e5bAIrMIPHlwiotmwYooX_OShLLFEPPwQf5_TdLL4dVZ409JmYCt47nDJVVMrQfqEwJat8ghD3teNJA&t=AQIw8tZAB0h6KLDUrJg">Ver →</a></td></tr>
+          <tr><td>11</td><td>AD01 - CARROSSEL PROFESSORES</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 1.098,94</td><td class="num">46</td><td class="num">R$ 23,89</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQLh-VFXABc2Zo5h1poVFCKLn75iEjgEcq9Il7MDu0Ph-P6C2TXxL42cCfmyltslOH2Hpb-4NK0tHcfDs4M7MxETBaNjo45drs_gVSGXUHcsIfyTdECmSYYMY8wzqv4Wd43Med9jq8_nVl76dm5ce5Sl2h_bbB5MUpno1PzN84qW7XVZkOUgK6dstF9cEQgGGtQhnMjrmKkSt1yIZiwTIbLgvp1-Dr6-vQJE9BtJi__WEA&t=AQKj_7Mvlv9SVMNuuJA">Ver →</a></td></tr>
+          <tr><td>12</td><td>AD01 - IMAGEM HERDEIROS</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 156,21</td><td class="num">6</td><td class="num">R$ 26,04</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQK8hJ4ORGG8AR3UoqYEnMNbBsbwTNBy0X1vZcw3OpiqEl54RKyquJvalzrfpc488pEvvLH-MY5MoSFAhjR9Fw6roqP7RFmfdT6SFeum7p1ND-nE5i5N4ZwWvPfmNDB_lW8kJMTYpkk01XLOoICEIlsqYMYnhIUs1gcZk6rcoJmWFk4mY8TYwM4orhl7knCv0GxkDzxA-Uk6Mgq7i-ZUl1HY_czUIsgEk3llCMMxt3dnOg&t=AQLwlEd9ud5jcId5cp8">Ver →</a></td></tr>
+          <tr><td>13</td><td>AD04 - VIDEO CAIXINHA</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 1.619,93</td><td class="num">59</td><td class="num">R$ 27,46</td><td><span class="dest-tag direto">Curso SEP</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+          <tr><td>14</td><td>AD02 - EMPRESARIO RIO GRANDE DO SUL</td><td><span class="grp-tag ja">JA</span></td><td class="num">R$ 182,07</td><td class="num">6</td><td class="num">R$ 30,35</td><td><span class="dest-tag direto">Curso SEP</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+          <tr><td>15</td><td>AD04 - A CADA DIA (vídeo)</td><td><span class="grp-tag gs">GS</span></td><td class="num">R$ 35,57</td><td class="num">1</td><td class="num">R$ 35,57</td><td><span class="dest-tag diag">Diagnóstico</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIrLPEIE2v60B1nxjJoHTjS4xFSGu9JYcK2PI9_Rjgq9u4MUNvZ3-zx8_tq3HiWxA7pFUvGwoBNMOf0O7bkWPQA0u__vs49HFe_RGrXLq1Wcy6PMGsxO3tDGVHu2pq_eOqBLIgdwcFeJlk3l0TbCzbTcJAkbDn94PJbsQwZwmTQDicKjIVSdwvSK258V9ki6R3CEZw-Xoeu4Xk1iDEBl2T1hI3n-Eelh1FWjA6xOU6HRg&t=AQKdyl5vvAGltEJW7vg">Ver →</a></td></tr>
+          <tr><td>16</td><td>AD04 - Sua sucessão</td><td><span class="grp-tag gs">GS</span></td><td class="num">R$ 106,79</td><td class="num">3</td><td class="num">R$ 35,60</td><td><span class="dest-tag diag">Diagnóstico</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQI0kbfct2OPJK5hisVpo6IPQnhXBcU2f6knhD4s1t5ocsw6ostBsdpyNhi9T8ZBctvp9feqOkZmKZAVC8Q67TrdVSyzjGR3zb_77XOLQdywMCTkAfoQQTHzJbs7qu67_YRlsaUSCei-BIozmULAMgfwIfKAMppfSPF3cHdqf-QjeOpzRv8rKwg2MEZFHKbmmg-AuLXLenHB6G8DgCAq7iBYL303E-Lt_B5asdrrdxxNxQ&t=AQIP1-uhca8arjDN8Aw">Ver →</a></td></tr>
+          <tr><td>17</td><td>AD05 - VSL CARROSSEL PROFESSORES</td><td><span class="grp-tag gs">GS</span></td><td class="num">R$ 349,69</td><td class="num">7</td><td class="num">R$ 49,96</td><td><span class="dest-tag direto">Curso SEP</span></td><td><a class="dl" target="_blank" href="https://business.facebook.com/ads/api/preview_iframe.php?d=AQIIJmtq3UYG8QQlioRTwEXTxIW50fUGoIHC80KY215CB4LpBMxk4lvgWll9NNg_72TWCJjzb4m8mMsHySL2dcCFxVzc1ir6P3GRLH4oD0cPCbJngdhG1CXn4V-oR6rzlIQdPvsaAL-1RthHkEA4pfFRERbXL_EGOLSwx45DlYyBc33JjNXrCsyJ9g7odrm_brRl4S4MyVt3xay0GfUkjCmIXXaVugOQLQgOV9AGwVFZSA&t=AQI6TzRcylOsTGtq_FM">Ver →</a></td></tr>
+          <tr><td>18</td><td>AD04 - [Hook Gugu] Ignorar o tema Sucessão</td><td><span class="grp-tag gs">GS</span></td><td class="num">R$ 934,03</td><td class="num">18</td><td class="num">R$ 51,89</td><td><span class="dest-tag diag">Diagnóstico</span></td><td style="color:var(--cinza);">Prévia em imagem</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="nota warn"><b>Próximo passo:</b> essa é a lista completa pra avaliação. Depois que você revisar cada criativo e decidir quais reaproveitar nas novas campanhas do Programa de Sucessão, a gente atualiza essa página com a decisão final — marcando quais foram aprovados, quais precisam de edição e quais ficam de fora.</div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Alguma dúvida sobre os números?</h3>
+        <p>Essa página fica registrada aqui como base pra decidir os criativos das próximas campanhas do Programa de Sucessão.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vim%20da%20an%C3%A1lise%20de%20campanhas%20de%20leads%20e%20tenho%20d%C3%BAvidas." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Central de Estratégia e Resultados &middot; rafael@britomidias.com.br</div>
+  </div>
+</footer>
+
+</body>
+</html>
