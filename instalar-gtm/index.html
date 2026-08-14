@@ -275,13 +275,66 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
     <p class="intro-text">Selecione abaixo a plataforma do seu site para ver as instruções específicas.</p>
 
     <div class="tabs">
-      <button class="tab active" onclick="showTab('wordpress', this)">WordPress</button>
+      <button class="tab active" onclick="showTab('rdstation', this)">RD Station Pages</button>
+      <button class="tab" onclick="showTab('wordpress', this)">WordPress</button>
       <button class="tab" onclick="showTab('elementor', this)">Elementor Pro</button>
       <button class="tab" onclick="showTab('ia', this)">Site com IA / Outros</button>
     </div>
 
+    <!-- RD STATION PAGES -->
+    <div class="tab-panel active" id="tab-rdstation">
+      <div class="steps">
+
+        <div class="step">
+          <div class="snum">1</div>
+          <div class="scontent">
+            <h3>Abra a instalação do Tag Manager</h3>
+            <p>Dentro do RD Station Pages, entre no menu <b>Marketing</b> e procure a opção <b>"Instalar o Google Tag Manager"</b> (normalmente dentro de Configurações/Integrações).</p>
+            <div class="path">Marketing <span>›</span> Instalar o Google Tag Manager</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum">2</div>
+          <div class="scontent">
+            <h3>Cole o Código 1 no campo do &lt;head&gt;</h3>
+            <p>Vai abrir uma janela chamada <b>"Instalar o Google Tag Manager"</b>, com um aviso pra copiar o código e colar em todas as páginas do site. No campo <b>"Cole este código o mais alto possível no &lt;head&gt; da página"</b>, cole o Código 1 (lá em cima).</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum">3</div>
+          <div class="scontent">
+            <h3>Cole o Código 2 no campo do &lt;body&gt;</h3>
+            <p>Logo abaixo, no campo <b>"Cole este código imediatamente após a tag de abertura &lt;body&gt;"</b>, cole o Código 2 (o segundo lá em cima).</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum">4</div>
+          <div class="scontent">
+            <h3>Teste o site (opcional)</h3>
+            <p>No campo <b>"Teste seu site"</b>, cole a URL do site (ex: <span class="inline-code">https://legadoemfamilia.com.br</span>) e clique em <b>Testar</b>. O próprio RD Station confirma se o GTM foi encontrado.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum">5</div>
+          <div class="scontent">
+            <h3>Salve e avise a gente</h3>
+            <p>Feche a janela e confirme que os campos ficaram salvos. Depois manda mensagem pra gente confirmar que o GTM está funcionando no site.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="nota" style="margin-top:28px;">
+        <b>O RD Station Pages já entrega os dois campos prontos</b> — não precisa editar nada no código, só copiar e colar exatamente como está aqui em cima, um em cada campo.
+      </div>
+    </div>
+
     <!-- WORDPRESS -->
-    <div class="tab-panel active" id="tab-wordpress">
+    <div class="tab-panel" id="tab-wordpress">
       <div class="steps">
 
         <div class="step">
