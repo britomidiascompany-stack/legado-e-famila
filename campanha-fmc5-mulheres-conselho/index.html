@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descritivo de Campanha — FMC5 · Legado &amp; Família</title>
+<meta name="description" content="Setup completo da campanha FMC5 (Website Conversions) para a Formação Mulheres em Conselhos: estrutura, público (incluído e excluído), criativos e orçamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+    --vermelho:#B91C1C; --vermelho-light:#FEE2E2; --azul:#1D4ED8; --azul-light:#DBEAFE;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  code{font-family:'Courier New',Courier,monospace;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 28px;}
+
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 76px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:36px; height:36px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:20px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1{font-size:33px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:680px;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:640px; margin:0 0 26px;}
+  .meta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .meta-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; padding:10px 16px;
+  }
+  .meta-badge .label{font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6);}
+  .meta-badge .id{font-size:14px; font-weight:700; font-family:'Courier New',monospace; color:#fff; letter-spacing:.02em;}
+
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:23px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px;}
+  h3{font-size:15px; font-weight:600; margin:0 0 4px;}
+  h4{font-size:14px; font-weight:600; margin:0 0 4px;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:760px; margin:0 0 28px;}
+
+  .why-box{border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff;}
+  .why-box p{font-size:13.5px; color:var(--cinza); margin:0 0 12px;}
+  .why-box p:last-child{margin-bottom:0;}
+  .why-box b{color:var(--ink); font-weight:600;}
+
+  .camp-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .camp-card{border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff;}
+  .camp-card .num{
+    display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px;
+    border-radius:8px; background:var(--roxo-xlight); color:var(--roxo-dark); font-weight:700; font-size:12px;
+    margin-bottom:12px;
+  }
+  .camp-card h3{font-size:16px; margin-bottom:8px;}
+  .camp-card .cname{font-family:'Courier New',monospace; font-size:11px; color:var(--roxo-dark); background:var(--roxo-xlight); display:inline-block; padding:4px 9px; border-radius:7px; margin-bottom:14px; word-break:break-all;}
+  .camp-card .kv{display:flex; justify-content:space-between; gap:10px; padding:7px 0; font-size:13px; border-bottom:1px dashed var(--linha);}
+  .camp-card .kv:last-child{border-bottom:none;}
+  .camp-card .kv .k{color:var(--cinza);}
+  .camp-card .kv .v{color:var(--ink); font-weight:500; text-align:right;}
+
+  .cfg-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin-top:24px;}
+  .cfg-row{display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px solid var(--linha); font-size:13.5px;}
+  .cfg-row .k{color:var(--cinza);}
+  .cfg-row .v{color:var(--ink); font-weight:500; text-align:right;}
+
+  .attr-block{border:1px solid var(--linha); border-radius:16px; padding:22px 24px; background:#fff; margin-top:16px;}
+  .attr-block .op{display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-radius:100px; padding:4px 11px; margin-bottom:12px;}
+  .attr-block.inc .op{background:var(--verde-light); color:var(--verde);}
+  .attr-block.exc .op{background:var(--vermelho-light); color:var(--vermelho);}
+  .attr-block .rule{font-size:12px; color:var(--cinza); margin-bottom:14px;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    display:inline-flex; align-items:center; font-size:12.5px; font-weight:500; border-radius:100px;
+    padding:6px 13px; border:1px solid var(--linha); background:var(--bg-soft); color:var(--ink);
+  }
+  .attr-block.inc .chip{background:var(--verde-light); border-color:transparent; color:#065F46; font-weight:600;}
+  .attr-block.exc .chip{background:var(--vermelho-light); border-color:transparent; color:#7F1D1D; font-size:11.5px;}
+  .attr-and{display:flex; align-items:center; gap:10px; margin:14px 0; font-size:11px; font-weight:700; letter-spacing:.1em; color:var(--roxo); text-transform:uppercase;}
+  .attr-and::before, .attr-and::after{content:""; flex:1; height:1px; background:var(--linha);}
+
+  .table-wrap{border:1px solid var(--linha); border-radius:16px; overflow:hidden; margin-top:22px;}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  thead th{
+    text-align:left; background:var(--bg-soft); color:var(--cinza); font-weight:600; font-size:11px;
+    text-transform:uppercase; letter-spacing:.04em; padding:12px 16px; border-bottom:1px solid var(--linha);
+  }
+  tbody td{padding:12px 16px; border-bottom:1px solid var(--linha); color:var(--ink);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:var(--bg-soft);}
+  td.num{font-family:'Courier New',monospace; font-size:12px; white-space:nowrap;}
+  td a.dl{color:var(--roxo); font-weight:600; text-decoration:none; white-space:nowrap;}
+  td a.dl:hover{text-decoration:underline;}
+
+  .badge{display:inline-flex; align-items:center; gap:5px; border-radius:100px; padding:4px 10px; font-size:11px; font-weight:700;}
+  .badge.good{background:var(--verde-light); color:var(--verde);}
+  .badge.warn{background:var(--ambar-light); color:var(--ambar);}
+  .badge.bad{background:var(--vermelho-light); color:var(--vermelho);}
+  .badge.muted{background:var(--bg-soft); color:var(--cinza); border:1px solid var(--linha);}
+  .badge.info{background:var(--azul-light); color:var(--azul);}
+
+  .steps{display:flex; flex-direction:column; gap:16px; margin-top:24px;}
+  .step{display:grid; grid-template-columns:36px 1fr; gap:14px; align-items:start;}
+  .step .snum{
+    width:36px; height:36px; border-radius:10px; background:var(--roxo-xlight);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:700; color:var(--roxo-dark); flex:none;
+  }
+  .step.ok .snum{background:var(--verde-light); color:var(--verde);}
+  .step.pending .snum{background:var(--ambar-light); color:var(--ambar);}
+  .step .scontent h4{font-size:14px; font-weight:600; margin:0 0 4px; padding-top:6px;}
+  .step .scontent p{font-size:13px; color:var(--cinza); margin:0;}
+
+  .nota{
+    border:1px solid var(--linha); border-left:3px solid var(--roxo); border-radius:12px;
+    padding:16px 20px; margin-top:20px; background:#fff; font-size:13.5px; color:var(--cinza);
+  }
+  .nota b{color:var(--ink); font-weight:600;}
+  .nota.warn{border-left-color:var(--ambar); background:var(--ambar-light); color:#78350F;}
+  .nota.warn b{color:#78350F;}
+
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700; color:#fff;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px; padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;}
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:640px){
+    .hero{padding:44px 0 52px;}
+    .hero h1{font-size:25px;}
+    .camp-grid, .cfg-grid{grid-template-columns:1fr;}
+    .strip{flex-direction:column; align-items:flex-start;}
+    .table-wrap{overflow-x:auto;}
+    table{min-width:520px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Descritivo de Campanha · FMC5</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill">Descritivo de campanha &middot; FMC5</div>
+    <h1>Primeira campanha — Formação Mulheres em Conselhos (5ª Edição)</h1>
+    <p class="lead">Registro completo do setup da campanha FMC5 no LinkedIn Ads: estrutura, público (todos os critérios incluídos e excluídos), criativos e orçamento — para o time entender exatamente como essa primeira campanha foi montada.</p>
+    <div class="meta-row">
+      <div class="meta-badge"><div><div class="label">Conta de anúncio</div><div class="id">Legado e Família · 514481980</div></div></div>
+      <div class="meta-badge"><div><div class="label">Campanha</div><div class="id">ID 1208171463</div></div></div>
+      <div class="meta-badge"><div><div class="label">Status</div><div class="id">Pausada</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- POR QUE ESSE DOCUMENTO -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Por que esse documento existe</div>
+    <h2>A primeira campanha de um produto novo merece registro</h2>
+    <div class="why-box">
+      <p><b>Essa é a primeira campanha paga rodando para a Formação Mulheres em Conselhos</b> — diferente do Programa de Sucessão Patrimonial, que já tinha histórico. Vale documentar exatamente como o público, os criativos e a estrutura foram montados, pra qualquer pessoa do time entender a lógica sem precisar reconstruir tudo de memória, e pra servir de referência quando a próxima campanha for montada.</p>
+      <p>Esse documento cobre <b>só a campanha FMC5</b> — o histórico completo de resultados do LinkedIn (PSP + FMC4) fica no <a href="../relatorio-linkedin/">relatório de resultados</a>, que continua sendo o documento de referência pra performance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUTURA -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Estrutura</div>
+    <h2>Uma campanha, dois conjuntos — imagem e vídeo</h2>
+    <p class="intro-text">Os dois conjuntos têm o público idêntico. Foram separados porque o conjunto de imagem usa Auto-Targeting, que no LinkedIn não permite formato de vídeo — por isso o vídeo precisou de um conjunto próprio.</p>
+
+    <div class="camp-grid">
+      <div class="camp-card">
+        <div class="num">01</div>
+        <h3>Conjunto Imagem</h3>
+        <div class="cname">00 | JOB TITLES SET DE DECISORES 1 | M | 25-55 | ESTADOS [...] | IMAGEM</div>
+        <div class="kv"><span class="k">ID</span><span class="v">878332773</span></div>
+        <div class="kv"><span class="k">Formato</span><span class="v">Sponsored Content (imagem)</span></div>
+        <div class="kv"><span class="k">Orçamento</span><span class="v">R$ 25,00/dia</span></div>
+        <div class="kv"><span class="k">Anúncios</span><span class="v">2 de 2 planejados</span></div>
+        <div class="kv"><span class="k">Status</span><span class="v">Pausado (on hold)</span></div>
+      </div>
+      <div class="camp-card">
+        <div class="num">02</div>
+        <h3>Conjunto Vídeo</h3>
+        <div class="cname">00 | JOB TITLES SET DE DECISORES 1 | M | 25-55 | ESTADOS [...] | VÍDEO</div>
+        <div class="kv"><span class="k">ID</span><span class="v">878292703</span></div>
+        <div class="kv"><span class="k">Formato</span><span class="v">Sponsored Video</span></div>
+        <div class="kv"><span class="k">Orçamento</span><span class="v">R$ 25,00/dia</span></div>
+        <div class="kv"><span class="k">Anúncios</span><span class="v">0 de 6 planejados</span></div>
+        <div class="kv"><span class="k">Status</span><span class="v">Rascunho — vazio</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIGURAÇÃO TÉCNICA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Configuração técnica</div>
+    <h2>Objetivo, lance e agendamento</h2>
+    <div class="cfg-grid">
+      <div class="cfg-row"><span class="k">Objetivo da campanha</span><span class="v">Website Conversions</span></div>
+      <div class="cfg-row"><span class="k">Estratégia de lance</span><span class="v">Maximum delivery</span></div>
+      <div class="cfg-row"><span class="k">Orçamento</span><span class="v">R$ 25,00/dia por conjunto (R$ 50,00/dia total)</span></div>
+      <div class="cfg-row"><span class="k">Agendamento</span><span class="v">Contínuo, a partir de 14-15/08/2026</span></div>
+      <div class="cfg-row"><span class="k">Brand safety</span><span class="v">Nenhuma categoria excluída</span></div>
+      <div class="cfg-row"><span class="k">Conversão selecionada</span><span class="v">FMC5 | LEAD TYPEBOT (Google Tag Manager)</span></div>
+    </div>
+    <div class="nota warn"><b>Atenção:</b> a conversão <code>FMC5 | LEAD TYPEBOT</code> só está selecionada corretamente no conjunto <b>Vídeo</b>. O conjunto <b>Imagem</b> (o que já rodou e gastou verba) ainda está com duas conversões antigas e inativas da FMC4 marcadas — precisa trocar antes de reativar.</div>
+  </div>
+</section>
+
+<!-- PÚBLICO -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Público</div>
+    <h2>Todos os critérios usados — idênticos nos dois conjuntos</h2>
+    <p class="intro-text">O público é montado em camadas: localização, idioma, e depois três blocos de inclusão combinados com <b>E</b> (a pessoa precisa bater em todos os três) — cargo, idade e gênero. Por fim, uma lista de exclusão filtra cargos irrelevantes que o Auto-Targeting/Audience Expansion tende a trazer.</p>
+
+    <div class="cfg-grid" style="margin-top:0;">
+      <div class="cfg-row"><span class="k">Localização (recente ou permanente)</span><span class="v">Minas Gerais, Mato Grosso, Rio de Janeiro, Santa Catarina, Brasília-DF, Goiás, Paraná, São Paulo, Espírito Santo (Brasil)</span></div>
+      <div class="cfg-row"><span class="k">Idioma do perfil</span><span class="v">Português</span></div>
+      <div class="cfg-row"><span class="k">Audience Expansion</span><span class="v">Ativado</span></div>
+    </div>
+
+    <div class="attr-block inc">
+      <div class="op">Incluir · QUALQUER dos cargos abaixo</div>
+      <div class="rule">Cargo atual (Job Titles — Current)</div>
+      <div class="chip-row">
+        <span class="chip">Executive</span><span class="chip">Board Member</span><span class="chip">Managing Director</span>
+        <span class="chip">Chief Executive Director</span><span class="chip">Partner</span><span class="chip">Account Executive</span>
+        <span class="chip">Chief Operating Officer</span><span class="chip">Director</span><span class="chip">Executive Director</span>
+        <span class="chip">Chief Financial Officer</span><span class="chip">Chief Executive Officer</span><span class="chip">Director of Operations</span>
+      </div>
+    </div>
+
+    <div class="attr-and">E</div>
+
+    <div class="attr-block inc">
+      <div class="op">Incluir · QUALQUER das idades abaixo</div>
+      <div class="rule">Idade do membro (Member Age)</div>
+      <div class="chip-row">
+        <span class="chip">25 a 34 anos</span><span class="chip">35 a 54 anos</span><span class="chip">55+ anos</span>
+      </div>
+    </div>
+
+    <div class="attr-and">E</div>
+
+    <div class="attr-block inc">
+      <div class="op">Incluir · Gênero</div>
+      <div class="rule">Gênero do membro (Member Gender)</div>
+      <div class="chip-row">
+        <span class="chip">Feminino</span>
+      </div>
+    </div>
+
+    <div class="table-title" style="margin-top:26px;"><h4>Cargos excluídos — lista completa (38 cargos)</h4></div>
+    <div class="attr-block exc" style="margin-top:12px;">
+      <div class="op">Excluir · QUALQUER dos cargos abaixo</div>
+      <div class="rule">Cargo atual (Job Titles — Current) · filtra ruído de Vendas, Marketing, Publicidade e Educação que o Auto-Targeting/Expansion tende a trazer</div>
+      <div class="chip-row">
+        <span class="chip">Account Manager</span><span class="chip">Education Manager</span><span class="chip">Sales Executive</span>
+        <span class="chip">Director of Special Education</span><span class="chip">High School Principal</span><span class="chip">Director of Religious Education</span>
+        <span class="chip">National Sales Director</span><span class="chip">Sales Manager</span><span class="chip">Sales Engineer</span>
+        <span class="chip">Director Sales Operations</span><span class="chip">Middle School Principal</span><span class="chip">Sales Consultant</span>
+        <span class="chip">Senior Advertising Executive</span><span class="chip">Senior Sales Director</span><span class="chip">Director of Sales Marketing</span>
+        <span class="chip">Elementary School Principal</span><span class="chip">Sales Specialist</span><span class="chip">Director of Marketing And Public Relations</span>
+        <span class="chip">Marketing Advertising Executive</span><span class="chip">Sales And Marketing Specialist</span><span class="chip">Special Education Paraeducator</span>
+        <span class="chip">Advertising Sales Account Executive</span><span class="chip">Advertising Sales Account Manager</span><span class="chip">Special Education Specialist</span>
+        <span class="chip">Publishing Director</span><span class="chip">Advertising Sales Manager</span><span class="chip">Advertising Account Executive</span>
+        <span class="chip">Sales Development Director</span><span class="chip">Advertising Executive</span><span class="chip">Sales Director</span>
+        <span class="chip">Salesperson</span><span class="chip">Marketing Director</span><span class="chip">Regional Sales Director</span>
+        <span class="chip">Director of Public Relations</span><span class="chip">Director of Education</span><span class="chip">Assistant Director of Education</span>
+        <span class="chip">Advertising Sales Executive</span><span class="chip">Special Education Teacher</span><span class="chip">School Principal</span>
+      </div>
+    </div>
+
+    <div class="nota"><b>Tamanho do público estimado:</b> 270.000+ pessoas, segundo o forecast do próprio LinkedIn — dentro do esperado pra uma segmentação de cargos de liderança feminina nesses 8 estados.</div>
+  </div>
+</section>
+
+<!-- CRIATIVOS -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Criativos</div>
+    <h2>2 anúncios rodando, 6 vídeos ainda pendentes</h2>
+    <p class="intro-text">Os anúncios são <b>Direct Sponsored Content</b> — posts que a página já publicou organicamente, agora impulsionados como anúncio pago. O link de inscrição fica escrito dentro do próprio texto do post, não num campo separado de Destination URL (por isso o Campaign Manager mostra um aviso de "falta Destination URL" — é esperado nesse formato, não é erro).</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Anúncio</th><th>Formato</th><th>Conjunto</th><th>ID do anúncio</th></tr></thead>
+        <tbody>
+          <tr><td>"Uma carreira executiva sólida, anos de liderança e profundo conhecimento de um setor são ativos importantes..."</td><td>Imagem (post texto longo)</td><td>IMAGEM</td><td class="num">1478975813</td></tr>
+          <tr><td>Card de divulgação 5ª Edição — "Você está pronta para ocupar espaços onde decisões estratégicas são tomadas?"</td><td>Imagem (post texto longo)</td><td>IMAGEM</td><td class="num">1479096143</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="nota">O conjunto <b>Vídeo</b> está criado mas vazio — faltam subir os vídeos das instrutoras (Katya, Eneile, Valéria, Monica, Giselia, Michelle) e o post de Governança. Lista completa dos 8 criativos-base planejados está no <a href="../relatorio-linkedin/">relatório de resultados</a>.</div>
+  </div>
+</section>
+
+<!-- PENDÊNCIAS -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Antes de ligar de verdade</div>
+    <h2>O que falta pra essa campanha rodar</h2>
+    <div class="steps">
+      <div class="step ok"><div class="snum">✓</div><div class="scontent"><h4>Estrutura, público e orçamento montados</h4><p>Os dois conjuntos, com todos os critérios de público documentados acima, já estão configurados e prontos.</p></div></div>
+      <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Trocar a conversão selecionada no conjunto Imagem</h4><p>Trocar <code>[LEAD][FMC4][TYP]</code> e <code>LEAD - FMC4</code> (antigas, inativas) por <code>FMC5 | LEAD TYPEBOT</code> — o conjunto Vídeo já está correto.</p></div></div>
+      <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Instalar a tag do LinkedIn na página de obrigado</h4><p><code>cursos.legadoefamilia.com/programa-de-sucessao-typ</code> (RD Station) não tem nenhuma tag do LinkedIn — confirmado pela análise de rede da página. Sem isso, zero conversão é contabilizada.</p></div></div>
+      <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Duas liberações pendentes do LinkedIn</h4><p>Autorização de página (já enviada) e liberação de campanhas de vídeo pela página — necessárias pra ativar o conjunto Vídeo.</p></div></div>
+      <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Subir os 6 vídeos das instrutoras</h4><p>Completar o conjunto Vídeo, hoje vazio.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Alguma dúvida sobre esse setup?</h3>
+        <p>Essa página fica registrada aqui como referência de como a primeira campanha da Mulheres em Conselho foi montada.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vim%20do%20descritivo%20da%20campanha%20FMC5%20e%20tenho%20d%C3%BAvidas." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Central de Estratégia e Resultados &middot; rafael@britomidias.com.br</div>
+  </div>
+</footer>
+
+</body>
+</html>
