@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descritivo de Campanha — Google Ads · Legado &amp; Família</title>
+<meta name="description" content="Descritivo da primeira campanha de Pesquisa no Google Ads do Programa de Sucessão: estrutura em 3 conjuntos de anúncios, palavras-chave, criativos, negativas e rastreamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+    --verm:#B91C1C; --verm-light:#FEE2E2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  code{font-family:'Courier New',Courier,monospace;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 76px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:36px; height:36px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:20px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1{font-size:32px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:720px;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:660px; margin:0 0 26px;}
+  .meta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .meta-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; padding:10px 16px;
+  }
+  .meta-badge .label{font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6);}
+  .meta-badge .id{font-size:14px; font-weight:700; font-family:'Courier New',monospace; color:#fff; letter-spacing:.02em;}
+
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:23px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px;}
+  h3{font-size:16px; font-weight:600; margin:0 0 4px;}
+  h4{font-size:14px; font-weight:600; margin:0 0 4px;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:740px; margin:0 0 28px;}
+
+  .why-box{border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff;}
+  .why-box p{font-size:13.5px; color:var(--cinza); margin:0 0 12px;}
+  .why-box p:last-child{margin-bottom:0;}
+  .why-box b{color:var(--ink); font-weight:600;}
+
+  .cfg-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:22px;}
+  .cfg-card{border:1px solid var(--linha); border-radius:14px; padding:16px 18px; background:#fff; text-align:center;}
+  .cfg-card small{display:block; color:var(--roxo); font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px;}
+  .cfg-card b{font-size:15px; font-weight:700; color:var(--ink);}
+
+  /* AD GROUP CARDS */
+  .grp-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:24px;}
+  .grp-card{border:1px solid var(--linha); border-radius:16px; padding:22px 24px; background:#fff;}
+  .grp-card .num{
+    display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px;
+    border-radius:8px; background:var(--roxo-xlight); color:var(--roxo-dark); font-weight:700; font-size:12px;
+    margin-bottom:12px;
+  }
+  .grp-card h3{font-size:15.5px; margin-bottom:6px;}
+  .grp-card .cname{font-family:'Courier New',monospace; font-size:10.5px; color:var(--roxo-dark); background:var(--roxo-xlight); display:inline-block; padding:4px 9px; border-radius:7px; margin-bottom:12px; word-break:break-all;}
+  .grp-card p{font-size:12.5px; color:var(--cinza); margin:0 0 12px;}
+  .grp-card .kv{display:flex; justify-content:space-between; gap:10px; padding:6px 0; font-size:12.5px; border-top:1px dashed var(--linha);}
+  .grp-card .kv .k{color:var(--cinza);}
+  .grp-card .kv .v{color:var(--ink); font-weight:600; text-align:right;}
+
+  /* KEYWORD PILLS */
+  .kw-block{margin-top:22px;}
+  .kw-block-title{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; flex-wrap:wrap;}
+  .kw-block-title h4{margin:0;}
+  .kw-block-title .cnt{font-size:12px; color:var(--cinza);}
+  .pill-grid{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill-kw{
+    display:inline-flex; align-items:center; gap:6px; border:1px solid var(--linha); background:var(--bg-soft);
+    color:var(--ink); border-radius:100px; padding:6px 13px; font-size:12px; font-weight:500;
+  }
+  .pill-kw.dup{border-color:#FDE68A; background:#FFFBEB; color:#92400E;}
+  .pill-kw code{font-size:10.5px; color:var(--roxo-dark); font-weight:700; margin-right:2px;}
+
+  /* AD PREVIEW CARD */
+  .ad-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px;}
+  .ad-card{border:1px solid var(--linha); border-radius:16px; background:#fff; overflow:hidden;}
+  .ad-card.warn{border-color:#FDE68A;}
+  .ad-card-head{padding:14px 20px; border-bottom:1px solid var(--linha); background:var(--bg-soft); display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .ad-card-head h4{margin:0; font-size:14px;}
+  .qual-tag{font-size:10.5px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:4px 11px; border-radius:100px;}
+  .qual-tag.bom{background:var(--verde-light); color:var(--verde);}
+  .qual-tag.medio{background:var(--ambar-light); color:var(--ambar);}
+  .qual-tag.ruim{background:var(--verm-light); color:var(--verm);}
+  .ad-card-body{padding:18px 20px;}
+  .ad-headlines{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;}
+  .ad-headlines span{background:var(--roxo-xlight); color:var(--roxo-dark); font-size:11.5px; font-weight:600; padding:5px 10px; border-radius:8px;}
+  .ad-desc{font-size:12.5px; color:var(--cinza); margin:0 0 8px; padding-left:12px; border-left:2px solid var(--linha);}
+
+  /* NOTA */
+  .nota{
+    border:1px solid var(--linha); border-left:3px solid var(--roxo); border-radius:12px;
+    padding:16px 20px; margin-top:22px; background:#fff; font-size:13.5px; color:var(--cinza);
+  }
+  .nota b{color:var(--ink); font-weight:600;}
+  .nota.warn{border-left-color:var(--ambar); background:var(--ambar-light); color:#78350F;}
+  .nota.warn b{color:#78350F;}
+
+  /* FINDINGS */
+  .find-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;}
+  .find-card{border:1px solid #FDE68A; background:#FFFBEB; border-radius:16px; padding:20px 22px;}
+  .find-card .ic{
+    width:32px; height:32px; border-radius:9px; background:#FEF3C7;
+    display:flex; align-items:center; justify-content:center; margin-bottom:10px;
+  }
+  .find-card .ic svg{width:16px; height:16px; stroke:#92400E;}
+  .find-card h4{font-size:13.5px; color:#78350F; margin:0 0 6px;}
+  .find-card p{font-size:12.5px; color:#92400E; margin:0;}
+
+  /* TRACKING SUMMARY */
+  .track-row{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 4px;}
+  .track-pill{
+    display:inline-flex; align-items:center; gap:8px; background:var(--bg-soft); border:1px solid var(--linha);
+    border-radius:100px; padding:9px 16px; font-size:12.5px; font-weight:500; color:var(--ink);
+  }
+  .track-pill b{font-weight:600; color:var(--roxo-dark);}
+  .track-pill .dot{width:7px; height:7px; border-radius:50%; background:var(--verde); flex:none;}
+
+  /* STRIP */
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700; color:#fff;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{
+    background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px;
+    padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;
+  }
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:780px){
+    .grp-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:640px){
+    .hero{padding:44px 0 52px;}
+    .hero h1{font-size:24px;}
+    .cfg-grid, .ad-grid, .find-grid{grid-template-columns:1fr;}
+    .strip{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Descritivo de Campanha · Google Ads</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill">Descritivo de campanha &middot; Google Ads</div>
+    <h1>Nova campanha de Pesquisa — Programa de Sucessão, 3 públicos numa campanha só</h1>
+    <p class="lead">Registro de como a primeira campanha de Google Ads do Programa de Sucessão foi estruturada: um único orçamento de R$75/dia dividido em 3 conjuntos de anúncios (Geral, Membro de Empresa Familiar e Profissional de Empresa Familiar), com as palavras-chave, os anúncios e as negativas de cada um — e como o rastreamento de conversão está montado por trás.</p>
+    <div class="meta-row">
+      <div class="meta-badge"><div><div class="label">Conta de anúncio</div><div class="id">Legado e Família Educação · 262-044-9076</div></div></div>
+      <div class="meta-badge"><div><div class="label">Subida em</div><div class="id">15/08/2026</div></div></div>
+      <div class="meta-badge"><div><div class="label">Orçamento</div><div class="id">R$ 75,00/dia</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- POR QUE JUNTAR NUMA CAMPANHA SÓ -->
+<section>
+  <div class="wrap">
+    <div class="section-label">A decisão</div>
+    <h2>Por que 1 campanha com 3 conjuntos, e não 3 campanhas separadas</h2>
+    <div class="why-box">
+      <p><b>No histórico da conta, as 3 melhores campanhas do Programa de Sucessão eram justamente essas três frentes rodando separadas</b> — GERAL, MEMBRO EMPRESAS FAMILIARES e PROFISSIONAL EMPRESAS FAMILIARES — cada uma com seu próprio orçamento e ângulo de mensagem (genérico, familiar/herdeiro, e consultor/profissional).</p>
+      <p>Só que, com o orçamento atual de R$75/dia pro Programa de Sucessão inteiro, dividir em 3 campanhas ficaria fino demais pra cada uma sair da fase de aprendizado com volume — R$25/dia por campanha é pouco pro Maximizar Conversões aprender rápido. <b>Optamos por juntar os 3 públicos numa campanha só, em conjuntos de anúncios separados</b>, e deixar o próprio leilão do Google decidir, em tempo real, qual conjunto está performando melhor pra cada busca — em vez de fixar isso manualmente como fizemos no histórico.</p>
+      <p>Dentro de uma mesma campanha, cada conjunto de anúncios ainda tem sua própria lista de palavras-chave e seu próprio anúncio — o Google escolhe qual conjunto (e qual anúncio) mostrar pra cada busca com base em relevância e Índice de Qualidade, não em orçamento fixo por público.</p>
+    </div>
+
+    <div class="cfg-grid">
+      <div class="cfg-card"><small>Rede</small><b>Pesquisa</b></div>
+      <div class="cfg-card"><small>Estratégia de lances</small><b>Maximizar Conversões</b></div>
+      <div class="cfg-card"><small>Orçamento total/dia</small><b>R$ 75,00</b></div>
+      <div class="cfg-card"><small>Local / Idioma</small><b>Brasil · Todos</b></div>
+    </div>
+    <div class="nota">Nome da campanha na conta: <code>[01][GOADS][SEARCH][PSP][APLICACAO][LEAD][KEYWORDS][PESQUISA][PAGINA-V1]</code> — ativa desde 15/08/2026, ainda na fase de aprendizado de lances.</div>
+  </div>
+</section>
+
+<!-- OS 3 CONJUNTOS -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Estrutura</div>
+    <h2>Os 3 conjuntos de anúncios</h2>
+    <p class="intro-text">Cada conjunto mira o mesmo público de idade (25–65, homens e mulheres) e o mesmo destino, mas com uma lista de palavras-chave e um anúncio próprios, no ângulo de mensagem que já provou funcionar pra aquele perfil no histórico da conta.</p>
+
+    <div class="grp-grid">
+      <div class="grp-card">
+        <div class="num">01</div>
+        <h3>Geral</h3>
+        <div class="cname">00|KEYWORDS-GERAL|HM|25-65|PAGINA-V1</div>
+        <p>Ângulo amplo/genérico — mensagem que funciona pra qualquer pessoa buscando sobre sucessão, sem recorte de papel familiar.</p>
+        <div class="kv"><span class="k">Palavras-chave</span><span class="v">17</span></div>
+        <div class="kv"><span class="k">Anúncios ativos</span><span class="v">2</span></div>
+      </div>
+      <div class="grp-card">
+        <div class="num">02</div>
+        <h3>Membro de Empresa Familiar</h3>
+        <div class="cname">00|KEYWORDS-MEMBRO-EMPRESA-FAMILIAR|HM|25-65|PAGINA-V1</div>
+        <p>Ângulo família/herdeiro — falava com quem está dentro da empresa familiar pensando na própria sucessão.</p>
+        <div class="kv"><span class="k">Palavras-chave</span><span class="v">7</span></div>
+        <div class="kv"><span class="k">Anúncios ativos</span><span class="v">1</span></div>
+      </div>
+      <div class="grp-card">
+        <div class="num">03</div>
+        <h3>Profissional de Empresa Familiar</h3>
+        <div class="cname">00|KEYWORDS-PROFISSIONAL-EMPRESA-FAMILIAR|HM|25-65|PAGINA-V1</div>
+        <p>Ângulo consultor/profissional — fala com quem quer se formar pra orientar famílias empresárias.</p>
+        <div class="kv"><span class="k">Palavras-chave</span><span class="v">7</span></div>
+        <div class="kv"><span class="k">Anúncios ativos</span><span class="v">1</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PALAVRAS-CHAVE -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Palavras-chave</div>
+    <h2>31 no total, todas em correspondência de frase ou ampla</h2>
+    <p class="intro-text">Nenhuma em correspondência exata. A maioria em <b style="color:var(--ink)">Frase</b>, com <code>curso planejamento patrimonial e sucessório</code> e <code>curso gestão patrimonial</code> em <b style="color:var(--ink)">Ampla</b> em mais de um conjunto.</p>
+
+    <div class="kw-block">
+      <div class="kw-block-title"><h4>Geral — 17 palavras</h4><span class="cnt">nenhuma em Ampla exceto a marcada</span></div>
+      <div class="pill-grid">
+        <span class="pill-kw"><code>Ampla</code>curso gestão patrimonial</span>
+        <span class="pill-kw">planejamento sucessório</span>
+        <span class="pill-kw dup">sucessão em empresas familiares</span>
+        <span class="pill-kw">administração de empresas familiares</span>
+        <span class="pill-kw">empreendedorismo familiar</span>
+        <span class="pill-kw">curso de governança corporativa</span>
+        <span class="pill-kw dup">sucessão de empresa</span>
+        <span class="pill-kw">sucessão de empresa familiar</span>
+        <span class="pill-kw">sucessão em empresa familiar</span>
+        <span class="pill-kw">processo de sucessão familiar</span>
+        <span class="pill-kw dup">planejamento patrimonial e sucessório</span>
+        <span class="pill-kw">Planejamento Sucessório</span>
+        <span class="pill-kw">sucessão familiar no agronegócio</span>
+        <span class="pill-kw dup">planejamento sucessório e patrimonial</span>
+        <span class="pill-kw">sucessão no agronegócio</span>
+        <span class="pill-kw dup">curso sobre sucessão familiar</span>
+        <span class="pill-kw">IBGC cursos</span>
+      </div>
+    </div>
+
+    <div class="kw-block">
+      <div class="kw-block-title"><h4>Membro de Empresa Familiar — 7 palavras</h4><span class="cnt">idênticas às da Profissional ⚠</span></div>
+      <div class="pill-grid">
+        <span class="pill-kw dup">curso planejamento sucessório</span>
+        <span class="pill-kw dup">sucessão de empresa</span>
+        <span class="pill-kw dup">planejamento patrimonial e sucessório</span>
+        <span class="pill-kw dup">Sucessão empresarial</span>
+        <span class="pill-kw dup"><code>Ampla</code>curso planejamento patrimonial e sucessório</span>
+        <span class="pill-kw dup">planejamento sucessório e patrimonial</span>
+        <span class="pill-kw dup">curso sobre sucessão familiar</span>
+      </div>
+    </div>
+
+    <div class="kw-block">
+      <div class="kw-block-title"><h4>Profissional de Empresa Familiar — 7 palavras</h4><span class="cnt">idênticas às da Membro ⚠</span></div>
+      <div class="pill-grid">
+        <span class="pill-kw dup">curso planejamento sucessório</span>
+        <span class="pill-kw dup">sucessão de empresa</span>
+        <span class="pill-kw dup">planejamento patrimonial e sucessório</span>
+        <span class="pill-kw dup">Sucessão empresarial</span>
+        <span class="pill-kw dup"><code>Ampla</code>curso planejamento patrimonial e sucessório</span>
+        <span class="pill-kw dup">planejamento sucessório e patrimonial</span>
+        <span class="pill-kw dup">curso sobre sucessão familiar</span>
+      </div>
+    </div>
+
+    <div class="nota warn"><b>Ponto de atenção:</b> os conjuntos Membro e Profissional foram configurados com exatamente as <b>mesmas 7 palavras-chave</b> — e 4 delas (destacadas em amarelo acima) também aparecem no conjunto Geral. Como os 3 conjuntos estão na mesma campanha, isso faz com que eles disputem entre si pela mesma busca; o Google só mostra um deles por vez, mas a performance de cada palavra fica fragmentada entre até 3 conjuntos em vez de concentrada em um só. Vale revisar e diferenciar as listas antes da campanha sair da fase de aprendizado.</div>
+  </div>
+</section>
+
+<!-- ANÚNCIOS -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Anúncios</div>
+    <h2>1 anúncio responsivo por conjunto (a Geral tem 2)</h2>
+    <p class="intro-text">Títulos, descrição e frases de destaque de cada anúncio ativo. As frases de destaque são as mesmas 7, compartilhadas em nível de conta entre os 3 conjuntos.</p>
+
+    <div class="ad-grid">
+      <div class="ad-card">
+        <div class="ad-card-head"><h4>Geral</h4><span class="qual-tag medio">Qualidade: Médio</span></div>
+        <div class="ad-card-body">
+          <div class="ad-headlines">
+            <span>Planejamento sucessório</span><span>Curso de Sucessão Familiar</span><span>Prepare o Herdeiro Ideal</span>
+            <span>Sucessão com Segurança</span><span>Transição Familiar Segura</span><span>Formação para Sucessores</span>
+            <span>Liderança Empresarial</span><span>Assuma a Liderança com Clareza</span><span>Herdeiros Bem Preparados</span>
+            <span>Planeje a Transição Hoje</span><span>+ mais títulos</span>
+          </div>
+          <p class="ad-desc">Prepare sua família para o futuro com clareza, estratégia e liderança. Curso completo de sucessão...</p>
+        </div>
+      </div>
+
+      <div class="ad-card warn">
+        <div class="ad-card-head"><h4>Membro de Empresa Familiar</h4><span class="qual-tag ruim">Qualidade: Ruim</span></div>
+        <div class="ad-card-body">
+          <div class="ad-headlines">
+            <span>Curso planejamento sucessório</span><span>Formação em sucessão</span><span>Planeje a sucessão</span>
+          </div>
+          <p class="ad-desc">Aprenda a orientar famílias empresárias com segurança e metodologia prática. Curso completo...</p>
+        </div>
+      </div>
+
+      <div class="ad-card">
+        <div class="ad-card-head"><h4>Profissional de Empresa Familiar</h4><span class="qual-tag bom">Qualidade: Bom</span></div>
+        <div class="ad-card-body">
+          <div class="ad-headlines">
+            <span>Formação em sucessão</span><span>Curso planejamento sucessório</span><span>Curso para Consultor Familiar</span>
+          </div>
+          <p class="ad-desc">Forme-se para guiar a sucessão em empresas familiares com excelência. Aprenda a orientar...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nota"><b>Frases de destaque (compartilhadas):</b> Sucessão sem conflitos · Formação para herdeiros · Prepare sua transição · Curso 100% online · Para empresas familiares · Estratégia de sucessão · Evite erros na sucessão</div>
+
+    <div class="nota warn"><b>Ponto de atenção:</b> o anúncio do conjunto <b>Membro de Empresa Familiar</b> está usando a mesma cópia do conjunto <b>Profissional</b> — fala em "orientar famílias empresárias" e "metodologia" (ângulo consultor), quando o esperado pra esse conjunto era o ângulo família/herdeiro. O próprio Google marcou a qualidade desse anúncio como <b>Ruim</b>. Vale revisar o texto pra falar diretamente com quem está dentro da família, não com quem quer aconselhar famílias.</div>
+  </div>
+</section>
+
+<!-- NEGATIVAS -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Palavras-chave negativas</div>
+    <h2>92 negativas — bem mais do que a lista inicial discutida</h2>
+    <p class="intro-text">Além da lista compartilhada (conteúdo gratuito, vagas/concurso, herança/inventário), a campanha subiu com uma lista bem mais extensa, misturando negativas em nível de campanha (correspondência exata, bloqueando termos bem específicos de "holding patrimonial" e associações) com negativas em nível de conjunto (correspondência ampla, repetidas nos 3 conjuntos — como "apostila" e "árvore genealógica"). Amostra:</p>
+    <div class="pill-grid">
+      <span class="pill-kw">[abertura de holding patrimonial]</span>
+      <span class="pill-kw">[abrir holding patrimonial]</span>
+      <span class="pill-kw">[acordo de sócios]</span>
+      <span class="pill-kw">[arquitetura do planejamento sucessório]</span>
+      <span class="pill-kw">[associacao brasileira de governanca familiar]</span>
+      <span class="pill-kw">apostila</span>
+      <span class="pill-kw">árvore genealógica</span>
+      <span class="pill-kw">gratis · grátis · gratuito</span>
+      <span class="pill-kw">herança · inventário</span>
+      <span class="pill-kw">vaga · vagas · emprego</span>
+    </div>
+    <div class="nota">Lista completa (92 termos) fica na conta, em <b>Palavras-chave → Palavras-chave negativas</b> da campanha — não reproduzimos tudo aqui pra não virar ruído; essa página é pra dar o panorama, não substituir a conta.</div>
+  </div>
+</section>
+
+<!-- RASTREAMENTO -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Rastreamento</div>
+    <h2>Como a conversão dessa campanha é medida</h2>
+    <p class="intro-text">A campanha está configurada para otimizar por duas metas de conversão específicas — não por todas as metas da conta:</p>
+    <div class="track-row">
+      <div class="track-pill"><span class="dot"></span>Meta: <b>Contato</b></div>
+      <div class="track-pill"><span class="dot"></span>Meta: <b>Enviar formulário de lead</b></div>
+      <div class="track-pill"><span class="dot"></span>Lances: <b>Maximizar Conversões</b></div>
+    </div>
+    <div class="why-box" style="margin-top:20px;">
+      <p>Essas duas metas são alimentadas pelo mesmo container de tracking que já documentamos pra conta inteira: a tag <b>Lead</b> do container GTM Web (<code>GTM-NDPCSCS</code>) dispara no envio do formulário em <code>programas.legadoefamilia.com</code>, e a tag <b>Vinculador de Conversões</b> associa esse envio ao clique do anúncio pelo <code>gclid</code> — sem precisar de nenhum parâmetro de URL configurado manualmente na campanha (o campo "Opções de URL" dela está vazio de propósito, o rastreamento roda por trás via tag, não por UTM na URL).</p>
+      <p>Ou seja: alguém clica no anúncio → o Google Ads guarda o <code>gclid</code> daquele clique → a pessoa preenche o formulário na página → a tag Lead dispara → o Vinculador de Conversões casa esse lead com o clique original → a conversão aparece na campanha certa, no conjunto certo.</p>
+    </div>
+    <div class="nota">Detalhamento completo do setup de tracking (os dois containers, Meta Pixel, GA4, testes de deduplicação) está na página <a href="../rastreamento/">Setup de Tracking — GTM Web + Server</a>.</div>
+  </div>
+</section>
+
+<!-- PONTOS DE ATENÇÃO -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Observações da Brito Mídias</div>
+    <h2>4 pontos pra revisar nos próximos dias</h2>
+    <div class="find-grid">
+      <div class="find-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg></div>
+        <h4>Membro e Profissional com as mesmas 7 palavras</h4>
+        <p>Os dois conjuntos competem entre si por exatamente as mesmas buscas dentro da própria campanha. Vale diferenciar as listas — cada conjunto deveria ter palavras que reflitam o próprio ângulo.</p>
+      </div>
+      <div class="find-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div>
+        <h4>Anúncio da Membro com o texto errado</h4>
+        <p>Está usando a cópia "consultor" da Profissional em vez de falar com quem está dentro da família. Qualidade marcada como Ruim pelo próprio Google — o de maior prioridade pra corrigir dos quatro pontos.</p>
+      </div>
+      <div class="find-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div>
+        <h4>Conjunto Geral com 2 anúncios idênticos</h4>
+        <p>As duas entradas têm o mesmo título e a mesma descrição. Não atrapalha a veiculação, mas vale remover a duplicata pra manter a conta limpa.</p>
+      </div>
+      <div class="find-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h4>Verificação de serviços financeiros pendente</h4>
+        <p>A conta está com um aviso do Google pedindo verificação de serviços financeiros — termos como "planejamento patrimonial" e "holding" podem cair nessa política. Se não for concluída, a performance dos anúncios pode ser limitada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Alguma dúvida sobre essa campanha?</h3>
+        <p>Essa página fica registrada aqui como referência de como a primeira campanha de Google Ads do Programa de Sucessão foi montada.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vim%20do%20descritivo%20da%20campanha%20Google%20Ads%20e%20tenho%20d%C3%BAvidas." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Central de Estratégia e Resultados &middot; rafael@britomidias.com.br</div>
+  </div>
+</footer>
+
+</body>
+</html>
