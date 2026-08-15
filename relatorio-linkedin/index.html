@@ -541,9 +541,53 @@
 <!-- PRÓXIMO PASSO: NOVA CAMPANHA -->
 <section>
   <div class="wrap">
-    <div class="section-label">Próximo passo</div>
-    <h2>Nova campanha — Website Conversions para a Formação Mulheres em Conselhos</h2>
-    <p class="intro-text">Com base no que os dados acima mostraram, a próxima campanha da conta vai para um produto diferente (Mulheres em Conselho) usando o formato que mais performou no histórico da conta (Website Conversions).</p>
+    <div class="section-label">Campanha em andamento</div>
+    <h2>FMC5 — Website Conversions para a Formação Mulheres em Conselhos</h2>
+    <p class="intro-text">Com base no que os dados acima mostraram, a campanha nova foi criada nesse mesmo padrão — Website Conversions, produto Mulheres em Conselho — e já está montada na conta. Está <b>pausada</b> por decisão do Rafael até resolver duas pendências (ver nota ao final desta seção).</p>
+
+    <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="kpi"><div class="v" style="font-size:14px; font-family:'Courier New',monospace; line-height:1.4;">[01][FMC5][APLICAÇÃO]<br>[LEAD CONVERSION][PÁGINA V1]</div><div class="l">Nome da campanha · ID 1208171463</div></div>
+      <div class="kpi"><div class="v">Pausada</div><div class="l">R$ 12,29 gastos até pausar · 1.021 impr. · 12 cliques</div></div>
+      <div class="kpi"><div class="v">2 conjuntos</div><div class="l">1 imagem (rodou) + 1 vídeo (rascunho vazio)</div></div>
+    </div>
+
+    <div class="table-title"><h4>Estrutura dos 2 conjuntos de anúncios</h4></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conjunto</th><th>Formato</th><th>Orçamento</th><th>Status</th><th>Anúncios</th></tr></thead>
+        <tbody>
+          <tr><td>00 | JOB TITLES SET DE DECISORES 1 | M | 25-55 | ESTADOS [...] | <b>IMAGEM</b><br><span class="mono">ID 878332773</span></td><td>Sponsored Content (imagem/texto)</td><td class="num">R$ 25,00/dia</td><td><span class="badge warn">Pausado (on hold)</span></td><td class="num">2 de 2 planejados</td></tr>
+          <tr><td>00 | JOB TITLES SET DE DECISORES 1 | M | 25-55 | ESTADOS [...] | <b>VÍDEO</b><br><span class="mono">ID 878292703</span></td><td>Sponsored Video</td><td class="num">R$ 25,00/dia</td><td><span class="badge muted">Rascunho — vazio</span></td><td class="num">0 de 6 planejados</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-title"><h4>Público — igual nos dois conjuntos</h4></div>
+    <div class="prod-split">
+      <div class="prod-card">
+        <div class="tag-top">Incluído</div>
+        <div class="row"><span class="k">Localização</span><span class="v">MG, MT, RJ, SC, Brasília-DF, GO, PR, SP, ES (Brasil)</span></div>
+        <div class="row"><span class="k">Idioma do perfil</span><span class="v">Português</span></div>
+        <div class="row"><span class="k">Segmentação</span><span class="v">Auto-Targeting + Audience Expansion ativado</span></div>
+      </div>
+      <div class="prod-card">
+        <div class="tag-top">Excluído</div>
+        <div class="row"><span class="k">Cargos filtrados</span><span class="v">~38 cargos de Vendas, Marketing, Publicidade e Educação (Sales Manager, Marketing Director, School Principal etc.)</span></div>
+        <div class="row"><span class="k">Por quê</span><span class="v">Filtra ruído que o Auto-Targeting/Expansion tende a trazer, mantendo o foco em decisoras de verdade</span></div>
+      </div>
+    </div>
+    <p class="intro-text" style="margin-top:10px; font-size:12px;">Como o conjunto de imagem usa Auto-Targeting, o LinkedIn não permite formato de vídeo/carrossel nele — por isso o vídeo precisou virar um conjunto separado, com o mesmo público e mesmo orçamento.</p>
+
+    <div class="table-title"><h4>Anúncios já adicionados</h4><span class="sub">2 de 8 posts orgânicos planejados — os 6 vídeos das instrutoras ainda faltam subir</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Anúncio</th><th>Formato</th><th>Conjunto</th></tr></thead>
+        <tbody>
+          <tr><td>"Uma carreira executiva sólida, anos de liderança..."</td><td>Imagem (post texto longo)</td><td>IMAGEM</td></tr>
+          <tr><td>Card de divulgação — 5ª Edição ("Você está pronta para ocupar espaços...")</td><td>Imagem (post texto longo)</td><td>IMAGEM</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="plan-grid">
       <div class="plan-card">
@@ -598,15 +642,17 @@
     </div>
     <div class="nota"><b>Total com essa adição:</b> 15 criativos candidatos pro teste da campanha nova (8 posts orgânicos + 7 recriados da FMC4) — todos já validados por resultado real de campanha ou engajamento orgânico, nenhum é aposta às cegas.</div>
 
-    <div class="table-title"><h4>Checklist antes de ativar</h4></div>
+    <div class="table-title"><h4>Checklist antes de ligar de verdade</h4></div>
     <div class="steps">
-      <div class="step"><div class="snum">1</div><div class="scontent"><h4>Confirmar o link de destino do typebot</h4><p>Os posts orgânicos já usam <code>lnkd.in/dU-CBB2E</code> como link de inscrição — confirmar se é essa mesma URL (ou uma nova, com UTM) que vai receber o tráfego pago e alimentar o typebot.</p></div></div>
-      <div class="step"><div class="snum">2</div><div class="scontent"><h4>Validar pixel/evento de conversão</h4><p>Igual foi feito no PSP: conferir que o pixel do site está disparando o evento de lead corretamente antes de ligar a verba, pra métrica de custo por conversão vir confiável desde o dia 1.</p></div></div>
-      <div class="step"><div class="snum">3</div><div class="scontent"><h4>Selecionar os posts no Campaign Manager</h4><p>Criar a campanha, escolher Website Conversions como objetivo, e usar Direct Sponsored Content pra puxar os 8 posts orgânicos como anúncios — e subir os 7 criativos da FMC4 já reeditados (imagens novas / vídeos com a imagem do evento trocada).</p></div></div>
-      <div class="step"><div class="snum">4</div><div class="scontent"><h4>Orçamento inicial e fase de aprendizado</h4><p>Seguindo o padrão do PSP, começar com orçamento controlado e dar alguns dias de fase de aprendizado antes de julgar performance — os 6 criativos campeões do PSP só se destacaram depois de acumular volume.</p></div></div>
+      <div class="step"><div class="snum">✓</div><div class="scontent"><h4>Campanha montada no Campaign Manager</h4><p>Objetivo Website Conversions, 2 conjuntos (imagem ativo com 2 anúncios, vídeo em rascunho), R$25/dia cada, público de decisoras nos 8 estados definidos. Feito — só falta ligar.</p></div></div>
+      <div class="step"><div class="snum">!</div><div class="scontent"><h4>Conversão nova criada no GTM — mas só selecionada em 1 dos 2 conjuntos</h4><p><code>FMC5 | LEAD TYPEBOT</code>, categoria Lead, via Google Tag Manager — já existe na conta (criada 15/08/2026). O conjunto <b>VÍDEO</b> já está com ela selecionada certinho. O conjunto <b>IMAGEM</b> (o que já rodou e tem os 2 anúncios) ainda está escutando duas conversões antigas e inativas da FMC4 — precisa trocar antes de reativar.</p></div></div>
+      <div class="step"><div class="snum">!</div><div class="scontent"><h4>Instalar a tag do LinkedIn na página de obrigado</h4><p>A página <code>cursos.legadoefamilia.com/programa-de-sucessao-typ</code> (hospedada no RD Station) não tem nenhuma tag do LinkedIn rodando — confirmado analisando as requisições de rede da página: tem Google Ads, GA4, Meta Pixel e RD Station, mas zero do LinkedIn. Sem isso, nenhuma conversão vai ser contabilizada, mesmo com tudo o mais certo.</p></div></div>
+      <div class="step"><div class="snum">!</div><div class="scontent"><h4>Duas liberações pendentes do lado do LinkedIn</h4><p>Autorização de página aguardando aprovação (já enviada pelo responsável) e liberação de campanhas de vídeo pela página do LinkedIn — assim que essas duas saírem, dá pra ativar o conjunto de vídeo.</p></div></div>
+      <div class="step"><div class="snum">5</div><div class="scontent"><h4>Subir os 6 vídeos das instrutoras que faltam</h4><p>O conjunto VÍDEO está criado mas vazio — faltam os vídeos de Eneile, Valéria, Monica, Giselia e Michelle, além do post de Governança (que pode entrar no conjunto IMAGEM). Ver lista completa dos 8 criativos-base acima.</p></div></div>
+      <div class="step"><div class="snum">6</div><div class="scontent"><h4>(Opcional) Recriar os 7 criativos antigos da FMC4</h4><p>Depois que o básico estiver rodando, adicionar os 7 criativos reeditados da tabela acima reforça o teste com peças já validadas por resultado real.</p></div></div>
     </div>
 
-    <div class="nota warn"><b>Ainda não criada:</b> por decisão do Rafael, esse documento registra o plano — a campanha em si ainda não foi montada no LinkedIn Campaign Manager. Criação fica para o próximo passo, depois de validar este plano.</div>
+    <div class="nota warn"><b>Por que está pausada:</b> a campanha já está montada e pronta na estrutura, mas o Rafael optou por manter pausada até resolver a tag do LinkedIn na página de obrigado (sem ela, zero conversão é contabilizada) e as duas liberações pendentes do LinkedIn (autorização de página + campanhas de vídeo). Assim que a tag entrar no ar, é só trocar a conversão selecionada no conjunto e ligar.</div>
   </div>
 </section>
 
