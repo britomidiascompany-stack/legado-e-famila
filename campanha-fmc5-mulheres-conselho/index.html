@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Descritivo de Campanha — FMC5 · Legado &amp; Família</title>
+<title>LinkedIn — Descritivo de Campanha FMC5 · Legado &amp; Família</title>
 <meta name="description" content="Setup completo da campanha FMC5 (Website Conversions) para a Formação Mulheres em Conselhos: estrutura, público (incluído e excluído), criativos e orçamento.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -183,7 +183,7 @@
   <div class="wrap">
     <a href="../">Legado &amp; Família × Brito Mídias</a>
     <span>/</span>
-    <span style="color:#fff">Descritivo de Campanha · FMC5</span>
+    <span style="color:#fff">LinkedIn · Descritivo de Campanha · FMC5</span>
   </div>
 </div>
 
@@ -203,7 +203,7 @@
       <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
     </div>
     <div class="pill">Descritivo de campanha &middot; FMC5</div>
-    <h1>Primeira campanha — Formação Mulheres em Conselhos (5ª Edição)</h1>
+    <h1>LinkedIn — Primeira campanha — Formação Mulheres em Conselhos (5ª Edição)</h1>
     <p class="lead">Registro completo do setup da campanha FMC5 no LinkedIn Ads: estrutura, público (todos os critérios incluídos e excluídos), criativos e orçamento — para o time entender exatamente como essa primeira campanha foi montada.</p>
     <div class="meta-row">
       <div class="meta-badge"><div><div class="label">Conta de anúncio</div><div class="id">Legado e Família · 514481980</div></div></div>
@@ -218,6 +218,7 @@
   <div class="wrap">
     <div class="section-label">Por que esse documento existe</div>
     <h2>A primeira campanha de um produto novo merece registro</h2>
+    <div class="nota warn" style="margin-top:0; margin-bottom:20px;"><b>Por que está tudo pausado:</b> a campanha (e o conjunto Imagem, com os 2 anúncios já criados) está pausada porque falta corrigir a tag de conversão do LinkedIn — e essa correção só pode ser feita depois que o novo container do Google Tag Manager for adicionado na página de obrigado dentro do RD Station. Sem isso, nenhuma conversão é contabilizada, então a campanha não é reativada.</div>
     <div class="why-box">
       <p><b>Essa é a primeira campanha paga rodando para a Formação Mulheres em Conselhos</b> — diferente do Programa de Sucessão Patrimonial, que já tinha histórico. Vale documentar exatamente como o público, os criativos e a estrutura foram montados, pra qualquer pessoa do time entender a lógica sem precisar reconstruir tudo de memória, e pra servir de referência quando a próxima campanha for montada.</p>
       <p>Esse documento cobre <b>só a campanha FMC5</b> — o histórico completo de resultados do LinkedIn (PSP + FMC4) fica no <a href="../relatorio-linkedin/">relatório de resultados</a>, que continua sendo o documento de referência pra performance.</p>
@@ -270,7 +271,7 @@
       <div class="cfg-row"><span class="k">Brand safety</span><span class="v">Nenhuma categoria excluída</span></div>
       <div class="cfg-row"><span class="k">Conversão selecionada</span><span class="v">FMC5 | LEAD TYPEBOT (Google Tag Manager)</span></div>
     </div>
-    <div class="nota warn"><b>Atenção:</b> a conversão <code>FMC5 | LEAD TYPEBOT</code> só está selecionada corretamente no conjunto <b>Vídeo</b>. O conjunto <b>Imagem</b> (o que já rodou e gastou verba) ainda está com duas conversões antigas e inativas da FMC4 marcadas — precisa trocar antes de reativar.</div>
+    <div class="nota warn"><b>Atenção:</b> a conversão <code>FMC5 | LEAD TYPEBOT</code> só está selecionada corretamente no conjunto <b>Vídeo</b>. O conjunto <b>Imagem</b> (o que já rodou e gastou verba) ainda está com duas conversões antigas e inativas da FMC4 marcadas — precisa trocar antes de reativar. Mas mesmo trocando, a conversão continua zerada enquanto a tag do LinkedIn não estiver na página de obrigado (ver nota abaixo) — por isso os dois conjuntos seguem pausados.</div>
   </div>
 </section>
 
@@ -371,7 +372,7 @@
     <div class="steps">
       <div class="step ok"><div class="snum">✓</div><div class="scontent"><h4>Estrutura, público e orçamento montados</h4><p>Os dois conjuntos, com todos os critérios de público documentados acima, já estão configurados e prontos.</p></div></div>
       <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Trocar a conversão selecionada no conjunto Imagem</h4><p>Trocar <code>[LEAD][FMC4][TYP]</code> e <code>LEAD - FMC4</code> (antigas, inativas) por <code>FMC5 | LEAD TYPEBOT</code> — o conjunto Vídeo já está correto.</p></div></div>
-      <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Instalar a tag do LinkedIn na página de obrigado</h4><p><code>cursos.legadoefamilia.com/programa-de-sucessao-typ</code> (RD Station) não tem nenhuma tag do LinkedIn — confirmado pela análise de rede da página. Sem isso, zero conversão é contabilizada.</p></div></div>
+      <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Instalar a tag do LinkedIn na página de obrigado — bloqueio principal</h4><p><code>cursos.legadoefamilia.com/programa-de-sucessao-typ</code> (RD Station) não tem nenhuma tag do LinkedIn — confirmado pela análise de rede da página. Sem isso, zero conversão é contabilizada, e é por isso que a campanha (incluindo o conjunto Imagem, já criado) continua pausada. Essa correção só pode ser feita depois que o novo container do Google Tag Manager for adicionado no RD Station.</p></div></div>
       <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Duas liberações pendentes do LinkedIn</h4><p>Autorização de página (já enviada) e liberação de campanhas de vídeo pela página — necessárias pra ativar o conjunto Vídeo.</p></div></div>
       <div class="step pending"><div class="snum">!</div><div class="scontent"><h4>Subir os 6 vídeos das instrutoras</h4><p>Completar o conjunto Vídeo, hoje vazio.</p></div></div>
     </div>
