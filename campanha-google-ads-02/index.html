@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descritivo de Campanha — Google Ads Mulheres em Conselho · Legado &amp; Família</title>
+<meta name="description" content="Descritivo da campanha de Pesquisa no Google Ads da Formação Mulheres em Conselho: 1 conjunto de anúncios focado em conselheiras, palavras-chave, anúncio, negativas e rastreamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+    --verm:#B91C1C; --verm-light:#FEE2E2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  code{font-family:'Courier New',Courier,monospace;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 76px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:36px; height:36px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:20px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1{font-size:32px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:720px;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:660px; margin:0 0 26px;}
+  .meta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .meta-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; padding:10px 16px;
+  }
+  .meta-badge .label{font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6);}
+  .meta-badge .id{font-size:14px; font-weight:700; font-family:'Courier New',monospace; color:#fff; letter-spacing:.02em;}
+
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:23px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px;}
+  h3{font-size:16px; font-weight:600; margin:0 0 4px;}
+  h4{font-size:14px; font-weight:600; margin:0 0 4px;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:740px; margin:0 0 28px;}
+
+  .why-box{border:1px solid var(--linha); border-radius:16px; padding:24px 26px; background:#fff;}
+  .why-box p{font-size:13.5px; color:var(--cinza); margin:0 0 12px;}
+  .why-box p:last-child{margin-bottom:0;}
+  .why-box b{color:var(--ink); font-weight:600;}
+
+  .cfg-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:22px;}
+  .cfg-card{border:1px solid var(--linha); border-radius:14px; padding:16px 18px; background:#fff; text-align:center;}
+  .cfg-card small{display:block; color:var(--roxo); font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px;}
+  .cfg-card b{font-size:15px; font-weight:700; color:var(--ink);}
+
+  /* GROUP CARD (single) */
+  .grp-card{border:1px solid var(--linha); border-radius:16px; padding:22px 24px; background:#fff; margin-top:22px;}
+  .grp-card .num{
+    display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px;
+    border-radius:8px; background:var(--roxo-xlight); color:var(--roxo-dark); font-weight:700; font-size:12px;
+    margin-bottom:12px;
+  }
+  .grp-card h3{font-size:15.5px; margin-bottom:6px;}
+  .grp-card .cname{font-family:'Courier New',monospace; font-size:10.5px; color:var(--roxo-dark); background:var(--roxo-xlight); display:inline-block; padding:4px 9px; border-radius:7px; margin-bottom:12px; word-break:break-all;}
+  .grp-card p{font-size:12.5px; color:var(--cinza); margin:0 0 12px;}
+  .grp-card .kv-row{display:flex; gap:24px; flex-wrap:wrap; padding-top:8px; border-top:1px dashed var(--linha);}
+  .grp-card .kv{font-size:12.5px;}
+  .grp-card .kv .k{color:var(--cinza); margin-right:6px;}
+  .grp-card .kv .v{color:var(--ink); font-weight:600;}
+
+  /* KEYWORD PILLS */
+  .kw-block{margin-top:22px;}
+  .kw-block-title{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; flex-wrap:wrap;}
+  .kw-block-title h4{margin:0;}
+  .kw-block-title .cnt{font-size:12px; color:var(--cinza);}
+  .pill-grid{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill-kw{
+    display:inline-flex; align-items:center; gap:6px; border:1px solid var(--linha); background:var(--bg-soft);
+    color:var(--ink); border-radius:100px; padding:6px 13px; font-size:12px; font-weight:500;
+  }
+  .pill-kw.dup{border-color:#FDE68A; background:#FFFBEB; color:#92400E;}
+  .pill-kw code{font-size:10.5px; color:var(--roxo-dark); font-weight:700; margin-right:2px;}
+
+  /* AD PREVIEW CARD */
+  .ad-card{border:1px solid var(--linha); border-radius:16px; background:#fff; overflow:hidden; margin-top:22px;}
+  .ad-card-head{padding:14px 20px; border-bottom:1px solid var(--linha); background:var(--bg-soft); display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .ad-card-head h4{margin:0; font-size:14px;}
+  .qual-tag{font-size:10.5px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:4px 11px; border-radius:100px;}
+  .qual-tag.bom{background:var(--verde-light); color:var(--verde);}
+  .qual-tag.medio{background:var(--ambar-light); color:var(--ambar);}
+  .qual-tag.ruim{background:var(--verm-light); color:var(--verm);}
+  .ad-card-body{padding:20px 22px;}
+  .ad-headlines{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;}
+  .ad-headlines span{background:var(--roxo-xlight); color:var(--roxo-dark); font-size:11.5px; font-weight:600; padding:5px 10px; border-radius:8px;}
+  .ad-desc{font-size:12.5px; color:var(--cinza); margin:0 0 8px; padding-left:12px; border-left:2px solid var(--linha);}
+
+  /* NOTA */
+  .nota{
+    border:1px solid var(--linha); border-left:3px solid var(--roxo); border-radius:12px;
+    padding:16px 20px; margin-top:22px; background:#fff; font-size:13.5px; color:var(--cinza);
+  }
+  .nota b{color:var(--ink); font-weight:600;}
+  .nota.warn{border-left-color:var(--ambar); background:var(--ambar-light); color:#78350F;}
+  .nota.warn b{color:#78350F;}
+
+  /* FINDINGS */
+  .find-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;}
+  .find-card{border:1px solid #FDE68A; background:#FFFBEB; border-radius:16px; padding:20px 22px;}
+  .find-card .ic{
+    width:32px; height:32px; border-radius:9px; background:#FEF3C7;
+    display:flex; align-items:center; justify-content:center; margin-bottom:10px;
+  }
+  .find-card .ic svg{width:16px; height:16px; stroke:#92400E;}
+  .find-card h4{font-size:13.5px; color:#78350F; margin:0 0 6px;}
+  .find-card p{font-size:12.5px; color:#92400E; margin:0;}
+
+  /* TRACKING SUMMARY */
+  .track-row{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 4px;}
+  .track-pill{
+    display:inline-flex; align-items:center; gap:8px; background:var(--bg-soft); border:1px solid var(--linha);
+    border-radius:100px; padding:9px 16px; font-size:12.5px; font-weight:500; color:var(--ink);
+  }
+  .track-pill b{font-weight:600; color:var(--roxo-dark);}
+  .track-pill .dot{width:7px; height:7px; border-radius:50%; background:var(--verde); flex:none;}
+  .track-pill .dot.pend{background:var(--ambar);}
+
+  /* STRIP */
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700; color:#fff;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{
+    background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px;
+    padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;
+  }
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:640px){
+    .hero{padding:44px 0 52px;}
+    .hero h1{font-size:24px;}
+    .cfg-grid, .find-grid{grid-template-columns:1fr;}
+    .strip{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Descritivo de Campanha · Google Ads · Mulheres em Conselho</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill">Descritivo de campanha &middot; Google Ads</div>
+    <h1>Nova campanha de Pesquisa — Formação Mulheres em Conselho</h1>
+    <p class="lead">Registro de como a campanha de Google Ads da Formação Mulheres em Conselho foi estruturada: R$75/dia na rede de Pesquisa, um único conjunto de anúncios focado só em mulheres de 25 a 65 anos — com as palavras-chave, o anúncio e as negativas usadas, e o estágio atual do rastreamento de conversão.</p>
+    <div class="meta-row">
+      <div class="meta-badge"><div><div class="label">Conta de anúncio</div><div class="id">Legado e Família Educação · 262-044-9076</div></div></div>
+      <div class="meta-badge"><div><div class="label">Status</div><div class="id">Ativada · aprendizado de lances</div></div></div>
+      <div class="meta-badge"><div><div class="label">Orçamento</div><div class="id">R$ 75,00/dia</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- A DECISÃO -->
+<section>
+  <div class="wrap">
+    <div class="section-label">A decisão</div>
+    <h2>Por que o foco saiu de "mulher líder" e foi pra "conselheira"</h2>
+    <div class="why-box">
+      <p>No histórico da conta, o ângulo mais genérico de liderança feminina — termos como <b>Formação para CEO</b>, <b>Board Academy</b>, <b>Mulheres na liderança</b>, <b>mulheres em cargos de liderança</b>, <b>curso de governança corporativa</b>, <b>curso de governança mulheres</b> e <b>mulheres na alta liderança</b> — trazia um público bem mais amplo e menos qualificado do que buscas específicas por formação de conselheira. <b>A própria cliente pediu pra tirar esses termos.</b></p>
+      <p>Com base nisso, as palavras-chave positivas ficaram focadas em quem já busca especificamente por conselho de administração, conselheira, certificação e formação nesse sentido — e os termos genéricos de liderança que a cliente pediu pra tirar viraram <b>palavras-chave negativas em nível de campanha</b>, bloqueando eles de acionar o anúncio mesmo que apareçam em buscas parecidas.</p>
+      <p>É uma campanha de nicho único, então não fez sentido dividir em vários conjuntos de anúncios como na campanha do Programa de Sucessão — aqui é 1 campanha, 1 conjunto de anúncios, 1 público: mulheres, 25 a 65 anos.</p>
+    </div>
+
+    <div class="cfg-grid">
+      <div class="cfg-card"><small>Rede</small><b>Pesquisa</b></div>
+      <div class="cfg-card"><small>Estratégia de lances</small><b>Maximizar Conversões</b></div>
+      <div class="cfg-card"><small>Orçamento/dia</small><b>R$ 75,00</b></div>
+      <div class="cfg-card"><small>Público</small><b>Mulheres · 25-65</b></div>
+    </div>
+
+    <div class="grp-card">
+      <div class="num">01</div>
+      <h3>Geral</h3>
+      <div class="cname">00|KEYWORDS-GERAL|M|25-65|PAGINA-V1</div>
+      <p>Único conjunto de anúncios da campanha — mesma lista de palavras-chave e o mesmo anúncio pra todo o público-alvo.</p>
+      <div class="kv-row">
+        <div class="kv"><span class="k">Palavras-chave</span><span class="v">14</span></div>
+        <div class="kv"><span class="k">Anúncios ativos</span><span class="v">1</span></div>
+        <div class="kv"><span class="k">Negativas</span><span class="v">26</span></div>
+      </div>
+    </div>
+
+    <div class="nota">Nome da campanha na conta: <code>[01][GOADS][SEARCH][FMC][APLICACAO][LEAD][KEYWORDS][PESQUISA][PAGINA-V1]</code> — ativa, status atual "Estratégia de lances com aprendizado em andamento".</div>
+  </div>
+</section>
+
+<!-- PALAVRAS-CHAVE -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Palavras-chave</div>
+    <h2>14 palavras-chave, quase todas em correspondência de frase</h2>
+    <p class="intro-text">13 em <b style="color:var(--ink)">Frase</b> (entre aspas) e 1 em <b style="color:var(--ink)">Ampla</b> — nenhuma em correspondência exata.</p>
+
+    <div class="pill-grid">
+      <span class="pill-kw">"educação executiva"</span>
+      <span class="pill-kw">"conselheiro consultivo"</span>
+      <span class="pill-kw">"formação de conselheiros"</span>
+      <span class="pill-kw">"formação para conselheiras"</span>
+      <span class="pill-kw">"curso de formação de conselheira de administração"</span>
+      <span class="pill-kw">"mulher conselheira"</span>
+      <span class="pill-kw">"conselheira de administração"</span>
+      <span class="pill-kw">"mulheres em conselhos de administração"</span>
+      <span class="pill-kw">"curso para conselheira"</span>
+      <span class="pill-kw">"capacitação para conselheiras"</span>
+      <span class="pill-kw"><code>Ampla</code>conselho de administração para mulheres</span>
+      <span class="pill-kw">"vaga de conselheira"</span>
+      <span class="pill-kw">"certificação conselheira de administração"</span>
+      <span class="pill-kw">"cargo de conselheira"</span>
+    </div>
+
+    <div class="nota warn"><b>Observação:</b> na chamada foram citados 17 termos, mas só 14 estão de fato ativos na conta. Os 3 que não entraram — <b>mulheres na liderança corporativa</b>, <b>mulheres em cargos de liderança</b> e <b>formação executiva feminina</b> — batem com o mesmo ângulo genérico de liderança que a cliente pediu pra tirar (dois deles, inclusive, coincidem quase literalmente com termos da lista de negativas). Faz sentido que tenham ficado de fora, mas vale confirmar se foi intencional.</div>
+  </div>
+</section>
+
+<!-- ANÚNCIO -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Anúncio</div>
+    <h2>1 anúncio responsivo — 15 títulos, 4 descrições, 6 frases de destaque</h2>
+    <p class="intro-text">Único anúncio ativo no conjunto, testando 15 variações de título e 4 de descrição — o Google combina automaticamente e aprende qual combinação performa melhor.</p>
+
+    <div class="ad-card">
+      <div class="ad-card-head"><h4>Geral</h4></div>
+      <div class="ad-card-body">
+        <div class="ad-headlines">
+          <span>Formação Mulheres Conselho</span><span>Mulheres em Conselhos</span><span>Liderança Feminina</span>
+          <span>Formação de Conselheiras</span><span>Conselheira de Alto Nível</span><span>Certificação para Conselho</span>
+          <span>Mulheres na Liderança</span><span>Conselheira Consultiva</span><span>Cargo de Conselheira</span>
+          <span>Networking Executivo</span><span>Tomada de Decisão</span><span>Governança no Feminino</span>
+          <span>Conselho de Administração</span><span>Mulheres Cargos de Liderança</span><span>Vagas em Conselhos</span>
+        </div>
+        <p class="ad-desc">Programa de Formação e Certificação para Conselheiras. Networking de alto nível.</p>
+        <p class="ad-desc">Desenvolva as competências pra assumir uma cadeira de conselheira de alto nível.</p>
+        <p class="ad-desc">Aprenda com quem já ocupa cadeiras em conselhos. Turmas exclusivas para mulheres.</p>
+        <p class="ad-desc">Formação prática, networking qualificado e certificação reconhecida no mercado.</p>
+      </div>
+    </div>
+
+    <div class="nota"><b>Frases de destaque:</b> Turmas Exclusivas · Certificação Reconhecida · Networking de Alto Nível · Mentoria Especializada · Vagas Limitadas · Foco em Mulheres Líderes</div>
+  </div>
+</section>
+
+<!-- NEGATIVAS -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Palavras-chave negativas</div>
+    <h2>26 negativas, todas em nível de Campanha</h2>
+    <p class="intro-text">Todas em correspondência ampla, aplicadas na campanha inteira (não tem por conjunto, já que só existe um).</p>
+
+    <div class="pill-grid">
+      <span class="pill-kw dup">alta liderança</span>
+      <span class="pill-kw">barato</span>
+      <span class="pill-kw dup">board academy</span>
+      <span class="pill-kw dup">ceo</span>
+      <span class="pill-kw">como</span>
+      <span class="pill-kw">custo benefício</span>
+      <span class="pill-kw">de graça</span>
+      <span class="pill-kw">dicas</span>
+      <span class="pill-kw">download</span>
+      <span class="pill-kw">ganha</span>
+      <span class="pill-kw dup">governança corporativa</span>
+      <span class="pill-kw">gratuito</span>
+      <span class="pill-kw">guia</span>
+      <span class="pill-kw dup">liderança</span>
+      <span class="pill-kw">livro</span>
+      <span class="pill-kw">master</span>
+      <span class="pill-kw">o que é</span>
+      <span class="pill-kw">passos</span>
+      <span class="pill-kw">PDF</span>
+      <span class="pill-kw">phd</span>
+      <span class="pill-kw">por onde começar</span>
+      <span class="pill-kw">pós</span>
+      <span class="pill-kw">quanto</span>
+      <span class="pill-kw">quero</span>
+      <span class="pill-kw">universidade</span>
+      <span class="pill-kw">valor</span>
+    </div>
+
+    <div class="nota">Os 21 termos em branco acima foram os citados na chamada. Os 5 destacados em amarelo (<b>alta liderança</b>, <b>board academy</b>, <b>ceo</b>, <b>governança corporativa</b>, <b>liderança</b>) não foram citados verbalmente, mas batem exatamente com os termos genéricos de liderança que a cliente pediu pra tirar — sinal de que a limpeza da lista foi bem aplicada na conta, cobrindo tanto a versão exata quanto os pedaços soltos desses termos.</div>
+  </div>
+</section>
+
+<!-- RASTREAMENTO -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Rastreamento</div>
+    <h2>Ainda no rastreamento da equipe anterior — troca prevista pra segunda-feira</h2>
+    <p class="intro-text">Diferente da campanha do Programa de Sucessão, essa campanha ainda não está rodando com o container GTM da Brito Mídias.</p>
+    <div class="track-row">
+      <div class="track-pill"><span class="dot pend"></span>Rastreamento atual: <b>configuração da equipe anterior</b></div>
+      <div class="track-pill"><span class="dot"></span>Lances: <b>Maximizar Conversões</b></div>
+    </div>
+    <div class="why-box" style="margin-top:20px;">
+      <p>O rastreamento de conversão dessa campanha está completo e funcionando — só que ainda com a implementação feita pela equipe que cuidava da conta antes da Brito Mídias assumir. Na segunda-feira, o GTM da Brito Mídias vai ser instalado na página de obrigado da landing page no RD Station, substituindo essa implementação anterior.</p>
+      <p>Essa troca não deve mudar o funcionamento da campanha em si — palavras-chave, anúncio e negativas continuam os mesmos. A diferença é só de quem está com a mão no rastreamento: depois da troca, a Brito Mídias passa a ter visibilidade e controle direto sobre as tags de conversão dessa campanha, do mesmo jeito que já tem nas outras.</p>
+    </div>
+    <div class="nota">O container GTM Web/Server que a Brito Mídias já usa nas outras campanhas da conta está documentado na página <a href="../rastreamento/">Setup de Tracking — GTM Web + Server</a> — é esse mesmo setup que vai substituir a implementação atual aqui.</div>
+  </div>
+</section>
+
+<!-- OBSERVAÇÕES -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Observações da Brito Mídias</div>
+    <h2>Pontos pra acompanhar nos próximos dias</h2>
+    <div class="find-grid">
+      <div class="find-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg></div>
+        <h4>3 termos citados não estão ativos</h4>
+        <p>"Mulheres na liderança corporativa", "mulheres em cargos de liderança" e "formação executiva feminina" não estão na lista real de palavras-chave. Parecem ter ficado de fora por seguir o mesmo corte do ângulo genérico de liderança — vale só confirmar se foi intencional.</p>
+      </div>
+      <div class="find-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h4>Negativas cobrem mais que o combinado</h4>
+        <p>Além dos 21 termos discutidos, a conta tem mais 5 negativas ("alta liderança", "board academy", "ceo", "governança corporativa", "liderança") que reforçam exatamente o corte pedido pela cliente. Boa prática, sem ação necessária.</p>
+      </div>
+      <div class="find-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div>
+        <h4>Troca de GTM prevista pra segunda-feira</h4>
+        <p>Rastreamento funcionando, mas ainda na configuração da equipe anterior. Acompanhar a instalação do GTM da Brito Mídias na página de obrigado do RD Station pra garantir que a transição não gere gap de dados.</p>
+      </div>
+      <div class="find-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div>
+        <h4>Um único anúncio, sem variação pra testar</h4>
+        <p>Só existe uma entrada de anúncio responsivo no conjunto. Depois que a campanha sair da fase de aprendizado, vale considerar subir uma segunda variação pra comparar performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Alguma dúvida sobre essa campanha?</h3>
+        <p>Essa página fica registrada aqui como referência de como a campanha de Google Ads da Formação Mulheres em Conselho foi montada.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vim%20do%20descritivo%20da%20campanha%20Mulheres%20em%20Conselho%20e%20tenho%20d%C3%BAvidas." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Central de Estratégia e Resultados &middot; rafael@britomidias.com.br</div>
+  </div>
+</footer>
+
+</body>
+</html>
