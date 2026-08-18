@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teste de Públicos — Envolvimento 365D × P-Advantage · Legado &amp; Família</title>
+<meta name="description" content="Comparativo entre os dois públicos ativos na 8ª edição do Programa de Sucessão Empresarial e Patrimonial: Envolvimento 365 dias (quente) e P-Advantage + sugestão de público quente, com os mesmos 6 criativos rodando nos dois para leitura comparável.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 28px;}
+
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 76px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:36px; height:36px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:20px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .pill .dot{width:6px; height:6px; border-radius:50%; background:#34D399; box-shadow:0 0 0 3px rgba(52,211,153,.25);}
+  .hero h1{font-size:33px; font-weight:800; letter-spacing:-.02em; margin:0 0 14px; max-width:760px;}
+  .hero p.lead{font-size:15.5px; font-weight:300; color:rgba(255,255,255,.78); max-width:640px; margin:0;}
+  .hero-meta{display:flex; gap:28px; margin-top:34px; flex-wrap:wrap;}
+  .hero-meta div{font-size:12px;}
+  .hero-meta div span{display:block; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; margin-bottom:4px;}
+  .hero-meta div b{font-size:14.5px; font-weight:600;}
+
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12.5px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:14px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:25px; font-weight:700; margin:0 0 10px; letter-spacing:-.01em;}
+  .intro{color:var(--cinza); font-size:14.5px; max-width:760px; margin:0 0 8px;}
+
+  .why-box{border:1px solid var(--linha); border-radius:16px; padding:22px 24px; background:#fff; margin-top:22px;}
+  .why-box b{color:var(--ink); font-weight:600;}
+
+  .tot-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:22px;}
+  .tot-card{border:1px solid var(--linha); border-radius:16px; padding:18px 20px; background:#fff;}
+  .tot-card .plat{font-size:10.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--roxo); margin-bottom:9px;}
+  .tot-card .big{font-size:22px; font-weight:800; color:var(--ink); margin-bottom:2px;}
+  .tot-card .sub{font-size:11.5px; color:var(--cinza);}
+
+  .campaign-card{border:1px solid var(--linha); border-radius:20px; overflow:hidden; margin-top:22px; background:#fff;}
+  .campaign-head{padding:24px 26px; display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;}
+  .campaign-head.a{background:linear-gradient(135deg,#5B21B6 0%,#7C3AED 100%); color:#fff;}
+  .campaign-head.b{background:linear-gradient(135deg,#3B0F73 0%,#17111F 100%); color:#fff;}
+  .campaign-head h3{font-size:19px; font-weight:700; margin:0 0 6px;}
+  .campaign-head p{font-size:12.5px; color:rgba(255,255,255,.78); margin:0; max-width:480px;}
+  .campaign-tag{display:inline-flex; align-items:center; gap:6px; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; background:rgba(255,255,255,.14); padding:5px 12px; border-radius:100px; margin-bottom:10px;}
+  .campaign-stats{display:flex; gap:26px; flex-wrap:wrap;}
+  .campaign-stats div{text-align:right;}
+  .campaign-stats span{display:block; font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.6); margin-bottom:3px;}
+  .campaign-stats b{font-size:19px; font-weight:800;}
+  .campaign-body{padding:22px 26px 26px;}
+  .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;}
+  .chip{border:1px solid var(--linha); border-radius:100px; padding:6px 13px; font-size:12px; font-weight:600; color:var(--ink); background:var(--bg-soft); font-family:'Courier New',monospace;}
+
+  .table-wrap{border:1px solid var(--linha); border-radius:16px; overflow:hidden; margin-top:14px; overflow-x:auto;}
+  table{width:100%; border-collapse:collapse; font-size:12.5px; min-width:680px;}
+  thead th{
+    text-align:left; background:var(--bg-soft); color:var(--cinza); font-weight:600; font-size:10.5px;
+    text-transform:uppercase; letter-spacing:.03em; padding:11px 14px; border-bottom:1px solid var(--linha); white-space:nowrap;
+  }
+  tbody td{padding:11px 14px; border-bottom:1px solid var(--linha); color:var(--ink); vertical-align:middle;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:var(--bg-soft);}
+  td.mono{font-family:'Courier New',monospace; font-size:11.5px; color:var(--cinza);}
+  td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  td a.dl{color:var(--roxo); font-weight:600; text-decoration:none; white-space:nowrap;}
+  td a.dl:hover{text-decoration:underline;}
+  .fmt-tag{display:inline-block; font-size:10.5px; font-weight:600; padding:3px 9px; border-radius:100px; white-space:nowrap;}
+  .fmt-tag.carrossel{background:var(--roxo-xlight); color:var(--roxo-dark);}
+  .fmt-tag.imagem{background:#DBEAFE; color:#1D4ED8;}
+  .fmt-tag.video{background:var(--ambar-light); color:var(--ambar);}
+  .rank{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:6px; background:var(--roxo-xlight); color:var(--roxo-dark); font-weight:700; font-size:11px;}
+
+  .next-box{border:1px dashed var(--roxo-light); border-radius:16px; padding:22px 24px; background:var(--roxo-xlight); margin-top:22px;}
+  .next-box .section-label{color:var(--roxo-dark);}
+  .next-box .section-label::before{background:var(--roxo-dark);}
+  .next-box ol{margin:10px 0 0; padding-left:20px; color:var(--ink); font-size:13.5px;}
+  .next-box li{margin-bottom:6px;}
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+  footer a{color:rgba(255,255,255,.6);}
+
+  @media (max-width:820px){
+    .tot-grid{grid-template-columns:repeat(2,1fr);}
+    table{min-width:560px;}
+  }
+  @media (max-width:560px){
+    .tot-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:26px;}
+    .campaign-stats{gap:16px;}
+    .campaign-stats div{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Teste de Públicos — 8ª Edição</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill"><span class="dot"></span> CAMPANHAS ATIVAS DESDE 17/08/2026</div>
+    <h1>Teste de públicos — 8ª edição do Programa de Sucessão Empresarial e Patrimonial</h1>
+    <p class="lead">Duas campanhas rodando em paralelo, com os <b style="color:#fff">mesmos 6 criativos</b>, para comparar
+      diretamente o público de <b style="color:#fff">Envolvimento 365 dias (quente)</b> — que já provou resultado em
+      edições anteriores — contra o <b style="color:#fff">P-Advantage combinado a sugestão de público quente</b>,
+      testando se a IA da Meta melhora a qualificação do lead.</p>
+    <div class="hero-meta">
+      <div><span>Cliente</span><b>Legado &amp; Família</b></div>
+      <div><span>Início</span><b>17 de agosto de 2026</b></div>
+      <div><span>Orçamento — Envolvimento 365D</span><b>R$ 50 / dia</b></div>
+      <div><span>Próxima leitura</span><b>19 de agosto de 2026</b></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Por que testar</div>
+    <h2>A estrutura já provou resultado — a pergunta agora é o público</h2>
+    <p class="intro">A campanha de Envolvimento 365 dias usa uma estrutura muito parecida com a de lançamentos
+      anteriores do PSP, que já gerou <b>203 leads a R$ 37,03</b> de custo por lead. Pegamos os criativos que mais
+      performaram nesse histórico, adaptamos as datas e a numeração da edição (agora 8ª edição, início em setembro/2026,
+      9 encontros, 27 horas de conteúdo) e — nos que eram Carrossel — refizemos a edição das artes. Ao lado dela,
+      colocamos a mesma leva de criativos rodando num público P-Advantage + sugestão de público quente, pra enxergar,
+      com controle real de variável, se a otimização automática da Meta entrega leads mais qualificados que o público
+      quente manual.</p>
+
+    <div class="why-box">
+      <div class="section-label" style="margin-bottom:8px;">Histórico usado como base</div>
+      <p style="margin:0; font-size:13.5px; color:var(--cinza);">
+        Estrutura equivalente, campanhas anteriores do público de Envolvimento 365D: <b>203 leads</b> a
+        <b>R$ 37,03</b> de custo por lead. Os 6 criativos abaixo foram os que mais geraram lead nesse histórico —
+        são eles que estão rodando agora nas duas campanhas novas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Histórico por criativo</div>
+    <h2>Os 6 criativos escolhidos para o teste</h2>
+    <p class="intro">Performance histórica (campanhas anteriores, público de Envolvimento 365 dias) que justificou a
+      escolha desses criativos para o teste dos dois públicos na 8ª edição.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Criativo</th>
+            <th>Formato</th>
+            <th class="num">Leads (histórico)</th>
+            <th class="num">Custo por lead</th>
+            <th>Ver criativo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank">1</span></td>
+            <td class="mono">ADC22_PSP_INSTRUTORES</td>
+            <td><span class="fmt-tag carrossel">Carrossel</span></td>
+            <td class="num"><b>73</b></td>
+            <td class="num">R$ 15,79</td>
+            <td><a class="dl" href="https://drive.google.com/drive/folders/1M39-b3meYAKrTVrZgRHseedgByhF3zcN" target="_blank" rel="noopener">Drive ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="rank">2</span></td>
+            <td class="mono">ADI37_PSP_INVENTARIO NAO E PLANEJAMENTO</td>
+            <td><span class="fmt-tag imagem">Imagem</span></td>
+            <td class="num"><b>30</b></td>
+            <td class="num">R$ 36,00</td>
+            <td><a class="dl" href="https://www.instagram.com/p/DcKKiUrMG8p/" target="_blank" rel="noopener">Instagram ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="rank">3</span></td>
+            <td class="mono">ADI09_PSP_INVENTARIO NAO E PLANEJAMENTO</td>
+            <td><span class="fmt-tag imagem">Imagem</span></td>
+            <td class="num"><b>29</b></td>
+            <td class="num">R$ 48,00</td>
+            <td><a class="dl" href="https://www.instagram.com/p/DcJfvezM2TA/" target="_blank" rel="noopener">Instagram ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="rank">4</span></td>
+            <td class="mono">ADI30_PSP_INVENTARIO NAO E PLANEJAMENTO</td>
+            <td><span class="fmt-tag imagem">Imagem</span></td>
+            <td class="num"><b>24</b></td>
+            <td class="num">R$ 33,00</td>
+            <td><a class="dl" href="https://www.instagram.com/p/DcJfw9hs2uB/" target="_blank" rel="noopener">Instagram ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="rank">5</span></td>
+            <td class="mono">ADV24_PSP_SEGUNDO PESQUISA</td>
+            <td><span class="fmt-tag video">Vídeo</span></td>
+            <td class="num"><b>13</b></td>
+            <td class="num">R$ 28,79</td>
+            <td><a class="dl" href="https://www.instagram.com/p/DcJf6FWMEFb/" target="_blank" rel="noopener">Instagram ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="rank">6</span></td>
+            <td class="mono">ADC01_PSP_INSTRUTORES</td>
+            <td><span class="fmt-tag carrossel">Carrossel</span></td>
+            <td class="num"><b>8</b></td>
+            <td class="num">R$ 22,43</td>
+            <td><a class="dl" href="https://drive.google.com/drive/folders/1cp-iRMgHP4_n2T6vc0BwIwLEQ_iQpiw5" target="_blank" rel="noopener">Drive ↗</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Campanhas ativas</div>
+    <h2>Os dois públicos em teste, lado a lado</h2>
+    <p class="intro">Mesmos criativos, mesmo objetivo (Lead no site), rodando em paralelo desde 17/08/2026 — a
+      diferença entre as duas é exclusivamente o público.</p>
+
+    <div class="campaign-card">
+      <div class="campaign-head a">
+        <div>
+          <div class="campaign-tag">Público 1 · Já validado</div>
+          <h3>Envolvimento 365 dias — Público Quente</h3>
+          <p>Estrutura equivalente à que gerou 203 leads a R$ 37,03 em edições anteriores do PSP. Orçamento de
+            R$ 50/dia para reconfirmar a performance com os criativos e a copy da 8ª edição.</p>
+        </div>
+        <div class="campaign-stats">
+          <div><span>Orçamento diário</span><b>R$ 50</b></div>
+          <div><span>Criativos</span><b>6</b></div>
+        </div>
+      </div>
+      <div class="campaign-body">
+        <div class="section-label" style="font-size:11px;">Criativos rodando</div>
+        <div class="chips">
+          <span class="chip">ADC01_PSP_INSTRUTORES</span>
+          <span class="chip">ADC22_PSP_INSTRUTORES</span>
+          <span class="chip">ADI09_PSP_INVENTARIO...</span>
+          <span class="chip">ADI37_PSP_INVENTARIO...</span>
+          <span class="chip">ADI30_PSP_INVENTARIO...</span>
+          <span class="chip">ADV24_PSP_SEGUNDO PESQUISA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="campaign-card">
+      <div class="campaign-head b">
+        <div>
+          <div class="campaign-tag">Público 2 · Em teste</div>
+          <h3>P-Advantage + Sugestão de Público Quente</h3>
+          <p>Mesma leva de criativos, agora com a otimização automática de público da Meta somada à sugestão de
+            público quente — hipótese: pode melhorar a qualificação do lead frente ao público manual.</p>
+        </div>
+        <div class="campaign-stats">
+          <div><span>Criativos</span><b>6</b></div>
+          <div><span>Objetivo</span><b>Comparar</b></div>
+        </div>
+      </div>
+      <div class="campaign-body">
+        <div class="section-label" style="font-size:11px;">Criativos rodando (idênticos ao público 1)</div>
+        <div class="chips">
+          <span class="chip">ADC01_PSP_INSTRUTORES</span>
+          <span class="chip">ADC22_PSP_INSTRUTORES</span>
+          <span class="chip">ADV24_PSP_SEGUNDO PESQUISA</span>
+          <span class="chip">ADI37_PSP_INVENTARIO...</span>
+          <span class="chip">ADI30_PSP_INVENTARIO...</span>
+          <span class="chip">ADI09_PSP_INVENTARIO...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="next-box">
+      <div class="section-label">Próximos passos</div>
+      <ol>
+        <li>Deixar as duas campanhas rodando sem interferência até completar ao menos 24–48h de aprendizado.</li>
+        <li>No dia <b>19/08/2026</b>, puxar métricas reais (leads, CPL, CTR) das duas por criativo e por público.</li>
+        <li>Comparar CPL do público Envolvimento 365D contra o P-Advantage com os mesmos 6 criativos.</li>
+        <li>Escalar orçamento no público vencedor e pausar/realocar verba do outro.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      BM MÍDIAS
+    </div>
+    <div>Central de Estratégia e Resultados · <a href="mailto:rafael@britomidias.com.br">rafael@britomidias.com.br</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
