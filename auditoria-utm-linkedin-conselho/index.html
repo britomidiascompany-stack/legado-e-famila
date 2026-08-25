@@ -1,0 +1,371 @@
+<title>Funil LinkedIn — Mulheres em Conselhos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --ok:#059669; --ok-bg:#D1FAE5; --ok-line:#A7F3D0;
+    --alerta:#B45309; --alerta-bg:#FEF3C7; --alerta-line:#FDE68A;
+    --critico:#DC2626; --critico-bg:#FEE2E2; --critico-line:#FECACA;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+  code, .mono{font-family:'Courier New',Courier,monospace;}
+
+  /* HERO */
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 56px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:34px; height:34px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:19px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1{font-size:34px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:620px; text-wrap:balance;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:600px; margin:0 0 28px;}
+
+  .verdict{
+    display:flex; gap:16px; align-items:flex-start;
+    background:rgba(220,38,38,.14); border:1px solid rgba(252,165,165,.35);
+    border-radius:16px; padding:20px 22px; max-width:640px;
+  }
+  .verdict .dot{width:10px;height:10px;border-radius:50%;background:#FCA5A5; flex:none; margin-top:6px; box-shadow:0 0 0 4px rgba(252,165,165,.18);}
+  .verdict h3{margin:0 0 6px; font-size:15px; font-weight:700; color:#fff;}
+  .verdict p{margin:0; font-size:13.5px; color:rgba(255,255,255,.78);}
+
+  /* SECTIONS */
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:23px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px; text-wrap:balance;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:680px; margin:0 0 28px;}
+
+  /* CARDS GRID */
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; margin-bottom:24px;}
+  .mini-card{border:1px solid var(--linha); border-radius:14px; padding:16px 18px; background:#fff;}
+  .mini-card small{display:block; color:var(--roxo); font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px;}
+  .mini-card b{font-size:21px; font-weight:700; font-variant-numeric:tabular-nums; display:block;}
+  .mini-card.zero b{color:var(--critico);}
+
+  .status-row{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:28px;}
+  .badge{display:inline-flex; align-items:center; gap:7px; border-radius:100px; padding:7px 14px; font-size:12.5px; font-weight:600;}
+  .badge.critico{background:var(--critico-bg); color:var(--critico); border:1px solid var(--critico-line);}
+  .badge.ok{background:var(--ok-bg); color:var(--ok); border:1px solid var(--ok-line);}
+  .badge .bdot{width:7px;height:7px;border-radius:50%;background:currentColor;}
+
+  /* FUNNEL */
+  .funnel{display:grid; grid-template-columns:repeat(4,1fr); gap:0; align-items:stretch; margin-bottom:8px;}
+  .fstage{position:relative; padding:0 14px;}
+  .fstage:not(:first-child)::before{
+    content:"→"; position:absolute; left:-4px; top:38px; color:var(--roxo-light); font-size:18px; font-weight:700;
+  }
+  .fcard{border:1px solid var(--linha); border-radius:14px; padding:18px 16px; background:#fff; height:100%; display:flex; flex-direction:column; gap:8px;}
+  .fnum{width:26px;height:26px;border-radius:8px;background:var(--roxo-xlight); color:var(--roxo-dark);
+    display:flex;align-items:center;justify-content:center; font-size:12px; font-weight:700;}
+  .fcard h4{margin:0; font-size:14px; font-weight:600;}
+  .fcard p{margin:0; font-size:12px; color:var(--cinza); flex:1;}
+  .ftag{align-self:flex-start; font-size:10.5px; font-weight:600; letter-spacing:.04em; padding:4px 9px; border-radius:100px;}
+  .ftag.ok{background:var(--ok-bg); color:var(--ok);}
+  .ftag.critico{background:var(--critico-bg); color:var(--critico);}
+  .ftag.neutro{background:var(--roxo-xlight); color:var(--roxo-dark);}
+
+  /* URL EVIDENCE */
+  .url-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;}
+  .url-card{border:1px solid var(--linha); border-radius:14px; overflow:hidden; background:#fff;}
+  .url-card .uc-head{padding:14px 18px; background:var(--bg-soft); border-bottom:1px solid var(--linha); font-size:12.5px; font-weight:600; color:var(--ink);}
+  .url-card .uc-body{padding:16px 18px;}
+  .url-card .copy-text{font-size:13px; color:var(--cinza); margin:0 0 12px; line-height:1.55;}
+  .url-box{background:var(--bg-soft); border:1px dashed var(--linha); border-radius:10px; padding:10px 12px; font-size:12px; word-break:break-all; color:var(--ink);}
+  .url-box .miss{color:var(--critico); font-weight:600;}
+
+  /* TABLE */
+  .table-wrap{overflow-x:auto; border:1px solid var(--linha); border-radius:14px;}
+  table{width:100%; border-collapse:collapse; font-size:13px; min-width:680px;}
+  thead th{
+    text-align:left; padding:12px 16px; background:var(--bg-soft); color:var(--cinza);
+    font-size:10.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; border-bottom:1px solid var(--linha); white-space:nowrap;
+  }
+  tbody td{padding:11px 16px; border-bottom:1px solid var(--linha); vertical-align:middle;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr.is-test{opacity:.55;}
+  .src-pill{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:600; padding:4px 10px; border-radius:100px; white-space:nowrap;}
+  .src-pill.google{background:#E8F0FE; color:#1A56DB;}
+  .src-pill.none{background:var(--critico-bg); color:var(--critico);}
+  .test-chip{font-size:10px; font-weight:600; color:var(--cinza); background:var(--linha); padding:2px 7px; border-radius:100px; margin-left:6px;}
+
+  /* NOTA / DIAGNÓSTICO */
+  .diag-list{display:flex; flex-direction:column; gap:14px; margin-top:22px;}
+  .diag-item{display:grid; grid-template-columns:40px 1fr; gap:16px; border:1px solid var(--linha); border-radius:14px; padding:18px 20px; background:#fff;}
+  .diag-item .di-icon{width:40px;height:40px;border-radius:11px; background:var(--critico-bg); color:var(--critico);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px;}
+  .diag-item h4{margin:0 0 6px; font-size:14.5px; font-weight:600;}
+  .diag-item p{margin:0; font-size:13.5px; color:var(--cinza);}
+  .diag-item .fix{margin-top:8px; padding:9px 13px; background:var(--ok-bg); border-radius:9px; font-size:12.5px; color:#065F46;}
+  .diag-item .fix b{color:#064E3B;}
+
+  /* STRIP */
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{
+    background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px;
+    padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;
+  }
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:30px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:760px){
+    .hero{padding:46px 0 44px;}
+    .hero h1{font-size:26px;}
+    .funnel{grid-template-columns:1fr; gap:14px;}
+    .fstage:not(:first-child)::before{content:"↓"; left:16px; top:-14px;}
+    .url-cards{grid-template-columns:1fr;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .strip{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill">Auditoria de funil · LinkedIn Ads · Agosto/2026</div>
+    <h1>Formação Mulheres em Conselhos — de onde vêm os leads do Typebot?</h1>
+    <p class="lead">Rastreamento do caminho anúncio → landing page → Typebot → planilha, pra confirmar se algum lead de agosto veio da campanha do LinkedIn (FMC5).</p>
+
+    <div class="verdict">
+      <div class="dot"></div>
+      <div>
+        <h3>Não dá pra confirmar nenhum lead vindo do LinkedIn</h3>
+        <p>Não é que não veio ninguém — é que <b style="color:#fff">não existe UTM nas URLs dos anúncios</b> pra provar isso. Os 2 leads com origem identificada em agosto vieram do Google Ads. O resto está sem rastro nenhum de origem.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAMPANHA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Etapa 1 · o anúncio</div>
+    <h2>Campanha do LinkedIn em agosto</h2>
+    <p class="intro-text"><span class="mono">[01][FMC5][APLICACAO][LEAD CONVERSION][PAGINA V1]</span> · código 1208171463 · período 01–25/08/2026</p>
+
+    <div class="status-row">
+      <span class="badge critico"><span class="bdot"></span>Não veiculada — forma de pagamento obrigatória</span>
+    </div>
+
+    <div class="cards">
+      <div class="mini-card"><small>Investido</small><b>R$186,01</b></div>
+      <div class="mini-card"><small>Impressões</small><b>12.697</b></div>
+      <div class="mini-card"><small>Cliques</small><b>100</b></div>
+      <div class="mini-card"><small>CTR médio</small><b>0,79%</b></div>
+      <div class="mini-card"><small>CPC médio</small><b>R$1,86</b></div>
+      <div class="mini-card zero"><small>Conversões</small><b>0</b></div>
+      <div class="mini-card zero"><small>Leads (nativo)</small><b>0</b></div>
+    </div>
+
+    <div class="diag-item" style="grid-template-columns:40px 1fr;">
+      <div class="di-icon">!</div>
+      <div>
+        <h4>A conta está bloqueada por pagamento</h4>
+        <p>A conta de anúncios está restrita porque trocou de administrador de cobrança — precisa de um cartão novo cadastrado na Central de Cobrança do LinkedIn pra voltar a veicular. Os 100 cliques de agosto são de antes do bloqueio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNIL -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">O caminho</div>
+    <h2>Funil completo: do clique no LinkedIn até a planilha</h2>
+    <p class="intro-text">Cada etapa do caminho que a pessoa percorre — e onde o rastro de "veio do LinkedIn" se perde.</p>
+
+    <div class="funnel">
+      <div class="fstage">
+        <div class="fcard">
+          <div class="fnum">1</div>
+          <h4>Anúncio no LinkedIn</h4>
+          <p>2 criativos ativos, formato feed. Link encurtado (lnkd.in) no corpo do post.</p>
+          <span class="ftag neutro">100 cliques em ago.</span>
+        </div>
+      </div>
+      <div class="fstage">
+        <div class="fcard">
+          <div class="fnum">2</div>
+          <h4>Landing page</h4>
+          <p>Duas URLs diferentes, uma por criativo — nenhuma com parâmetro de origem.</p>
+          <span class="ftag critico">Sem UTM</span>
+        </div>
+      </div>
+      <div class="fstage">
+        <div class="fcard">
+          <div class="fnum">3</div>
+          <h4>Typebot</h4>
+          <p>Formulário de qualificação. Só grava utm_source/medium/campaign se a URL de entrada já vier com eles.</p>
+          <span class="ftag critico">Nada pra herdar</span>
+        </div>
+      </div>
+      <div class="fstage">
+        <div class="fcard">
+          <div class="fnum">4</div>
+          <h4>Planilha de respostas</h4>
+          <p>13 respostas em agosto. Campos de UTM em branco na maioria — impossível separar LinkedIn de direto/orgânico.</p>
+          <span class="ftag critico">Origem invisível</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="url-cards">
+      <div class="url-card">
+        <div class="uc-head">Anúncio 1 · "Uma carreira executiva sólida..."</div>
+        <div class="uc-body">
+          <p class="copy-text">Link do post: <span class="mono">lnkd.in/dU-CBB2E</span> → resolve para:</p>
+          <div class="url-box">https://legadoefamilia.com/curso/formacao-mulheres-em-conselho/<br><span class="miss">— nenhum parâmetro utm_ na URL —</span></div>
+        </div>
+      </div>
+      <div class="url-card">
+        <div class="uc-head">Anúncio 2 · "Você está pronta para ocupar espaços..."</div>
+        <div class="uc-body">
+          <p class="copy-text">Link do post: <span class="mono">lnkd.in/dxxA6zvM</span> → resolve para:</p>
+          <div class="url-box">https://programas.legadoefamilia.com/formacao-mulheres-em-conselhos/<br><span class="miss">— nenhum parâmetro utm_ na URL —</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANILHA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Etapa 4 · a planilha</div>
+    <h2>As 13 respostas do Typebot em agosto</h2>
+    <p class="intro-text">Coluna "Origem" é o que dá pra provar a partir das UTMs gravadas — não o que a pessoa realmente viu. Linhas esmaecidas são testes internos da equipe (e-mails/nomes de teste), não leads reais.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Nome</th><th>Origem identificada (UTM)</th><th>Termo de busca</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>25 ago, 08:40</td><td>Desire Oliveira</td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr><td>24 ago, 16:10</td><td>Aline Galdino</td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr><td>24 ago, 16:08</td><td>Aline Galdino</td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr><td>18 ago, 13:45</td><td>Aline Venturini</td><td><span class="src-pill google">Google Ads · GOADS-LEF-FMC</span></td><td>"formação de conselheiros"</td></tr>
+          <tr><td>17 ago, 20:10</td><td>Carolina Scheid</td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr class="is-test"><td>17 ago, 15:18</td><td>Dyegfo <span class="test-chip">teste</span></td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr class="is-test"><td>17 ago, 15:14</td><td>dyego <span class="test-chip">teste</span></td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr><td>16 ago, 19:15</td><td>Roberta Calderoni</td><td><span class="src-pill google">Google Ads · GOADS-LEF-FMC</span></td><td>"formação de conselheiros"</td></tr>
+          <tr class="is-test"><td>15 ago, 11:48</td><td>Rafael Teste <span class="test-chip">teste</span></td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr class="is-test"><td>14 ago, 20:38</td><td>Rafael Teste <span class="test-chip">teste</span></td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr class="is-test"><td>14 ago, 20:22</td><td>Rafael <span class="test-chip">incompleto</span></td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr class="is-test"><td>14 ago, 09:11</td><td>Rafael Teste <span class="test-chip">teste</span></td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+          <tr class="is-test"><td>13 ago, 09:15</td><td>dyego <span class="test-chip">teste</span></td><td><span class="src-pill none">Sem UTM</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cards" style="margin-top:24px;">
+      <div class="mini-card"><small>Respostas reais (ago)</small><b>6</b></div>
+      <div class="mini-card"><small>Testes internos</small><b>7</b></div>
+      <div class="mini-card ok" style="border-color:#A7F3D0;"><small>Confirmadas Google Ads</small><b style="color:var(--ok);">2</b></div>
+      <div class="mini-card zero"><small>Confirmadas LinkedIn</small><b>0</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Diagnóstico</div>
+    <h2>Por que o LinkedIn não aparece na planilha</h2>
+    <p class="intro-text">Duas causas reais, independentes uma da outra — as duas precisam ser corrigidas.</p>
+
+    <div class="diag-list">
+      <div class="diag-item">
+        <div class="di-icon">1</div>
+        <div>
+          <h4>As URLs de destino dos dois anúncios não têm UTM</h4>
+          <p>Mesmo que uma pessoa clique no anúncio do LinkedIn, preencha o Typebot e caia na planilha, os campos utm_source/utm_medium/utm_campaign vão ficar em branco — exatamente como estão hoje. Não tem como diferenciar esse lead de alguém que chegou direto ou por busca orgânica.</p>
+          <div class="fix"><b>Correção:</b> aplicar o padrão de UTM do LinkedIn (utm_source=LKADS-LEF-FMC5, utm_campaign, utm_medium por conjunto/anúncio) nas duas URLs de destino, dentro do Campaign Manager.</div>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="di-icon">2</div>
+        <div>
+          <h4>A campanha está parada desde o bloqueio de pagamento</h4>
+          <p>Com a conta restrita, os anúncios pararam de ser exibidos. Não tem cliques novos entrando agora — os 100 cliques registrados são de antes do bloqueio.</p>
+          <div class="fix"><b>Correção:</b> cadastrar um cartão novo na Central de Cobrança do LinkedIn pra reativar a veiculação.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Sem essas duas correções, ficamos cegos de novo</h3>
+        <p>Mesmo reativando a campanha, sem UTM nas URLs a gente nunca vai conseguir provar quantos leads o LinkedIn realmente trouxe.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vamos%20corrigir%20a%20UTM%20e%20o%20pagamento%20da%20campanha%20do%20LinkedIn%20-%20Muheres%20em%20Conselhos." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Auditoria de funil · Formação Mulheres em Conselhos · Legado &amp; Família</div>
+  </div>
+</footer>
