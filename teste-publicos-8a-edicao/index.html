@@ -185,9 +185,9 @@
       a gente decidir o próximo passo com histórico à vista, não da memória.</p>
     <div class="hero-meta">
       <div><span>Cliente</span><b>Legado &amp; Família</b></div>
-      <div><span>Testes registrados</span><b>2</b></div>
-      <div><span>Em andamento</span><b>1</b></div>
-      <div><span>Atualizado em</span><b>18 de agosto de 2026</b></div>
+      <div><span>Testes registrados</span><b>3</b></div>
+      <div><span>Em andamento</span><b>0</b></div>
+      <div><span>Atualizado em</span><b>26 de agosto de 2026</b></div>
     </div>
   </div>
 </header>
@@ -201,21 +201,106 @@
 
     <div class="log">
 
-      <!-- ===================== TESTE 2 — MAIS RECENTE — EM ANDAMENTO ===================== -->
+      <!-- ===================== DIAGNÓSTICO — MAIS RECENTE ===================== -->
       <div class="log-entry">
-        <div class="log-head live">
+        <div class="log-head" style="background:linear-gradient(135deg,#B91C1C 0%,#7C3AED 100%);">
           <div>
-            <div class="log-status"><span class="dot"></span> Em andamento</div>
-            <h3>Teste de público — Envolvimento 365D × P-Advantage + público quente</h3>
-            <div class="log-period">Período: <b>17/08/2026</b> até agora · próxima leitura em <b>19/08/2026</b></div>
+            <div class="log-status" style="background:rgba(255,255,255,.16);"><span class="dot" style="background:#F59E0B; box-shadow:0 0 0 3px rgba(245,158,11,.28);"></span> Diagnóstico</div>
+            <h3>Rastreamento — Meta × Typebot</h3>
+            <div class="log-period">Período analisado: <b>11/08/2026</b> até <b>26/08/2026</b> · cruzamento entre todas as campanhas PSP ativas e as respostas do Typebot</div>
           </div>
         </div>
         <div class="log-body">
           <div class="log-stats">
-            <div class="log-stat"><span>Investimento até agora</span><b>—</b><small>leitura em 19/08</small></div>
-            <div class="log-stat"><span>Leads até agora</span><b>—</b><small>leitura em 19/08</small></div>
-            <div class="log-stat"><span>Custo por lead</span><b>—</b><small>leitura em 19/08</small></div>
-            <div class="log-stat"><span>Orçamento — Envolv. 365D</span><b>R$ 50/dia</b></div>
+            <div class="log-stat"><span>Investido no período</span><b>R$ 995,77</b><small>campanhas [01],[02],[05],[11]</small></div>
+            <div class="log-stat"><span>Leads — Meta</span><b>3</b><small>atribuídos pelo pixel</small></div>
+            <div class="log-stat"><span>Respostas — Typebot</span><b>5</b><small>4 completas + 1 incompleta</small></div>
+            <div class="log-stat"><span>Gap mínimo</span><b>1 lead</b><small>completo no Typebot, não contado no Meta</small></div>
+          </div>
+
+          <div class="log-row">
+            <div class="log-field">
+              <span class="lbl">Campanhas cruzadas</span>
+              <div class="val">[01] Página V1 · [02] Página V2-VSL · [05] Envolvimento 365D · [11] P-Advantage</div>
+            </div>
+            <div class="log-field">
+              <span class="lbl">Fontes comparadas</span>
+              <div class="val">Lead atribuído (Meta Ads) <small>vs.</small> Resposta registrada (Typebot)</div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Nome</th>
+                  <th>Cidade / UF</th>
+                  <th>Situação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">25/08 · 13:32</td>
+                  <td>dyego</td>
+                  <td>fdwrfs / MT</td>
+                  <td><span class="fmt-tag" style="background:#FEE2E2; color:#B91C1C;">Incompleto</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">25/08 · 13:10</td>
+                  <td>Artur Paz Leal</td>
+                  <td>Criciúma / SC</td>
+                  <td><span class="fmt-tag" style="background:var(--verde-light); color:var(--verde);">Completo</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">18/08 · 20:52</td>
+                  <td>Henrique Webber Baseggio</td>
+                  <td>Porto Alegre / RS</td>
+                  <td><span class="fmt-tag" style="background:var(--verde-light); color:var(--verde);">Completo</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">13/08 · 20:03</td>
+                  <td>Gustavo de Barros Pedroso</td>
+                  <td>São Paulo / SP</td>
+                  <td><span class="fmt-tag" style="background:var(--verde-light); color:var(--verde);">Completo</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">13/08 · 13:59</td>
+                  <td>Larissa Riva Roman</td>
+                  <td>Porto Alegre / RS</td>
+                  <td><span class="fmt-tag" style="background:var(--verde-light); color:var(--verde);">Completo</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="log-obs" style="border-color:#B91C1C; background:#FEE2E2;">
+            <span class="lbl" style="color:#B91C1C;">Observação</span>
+            <p>O Typebot registrou <b>4 respostas completas</b> dentro do período em que as campanhas PSP estiveram
+              no ar — o Meta atribuiu apenas <b>3 leads</b>. O ponto mais provável é o <b>disparo do evento de
+              conversão na página de obrigado</b>: se ela não carrega totalmente, se o pixel demora a disparar ou se
+              o Typebot redireciona antes do evento terminar de enviar, o lead existe de verdade mas não chega ao
+              Meta — e o algoritmo otimiza com menos da metade dos resultados reais. Isso afeta a leitura de
+              <b>todos</b> os testes acima: os custos por lead exibidos são o piso, não o real.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== TESTE 2 — Envolvimento 365D × P-Advantage — CONCLUÍDO ===================== -->
+      <div class="log-entry">
+        <div class="log-head done">
+          <div>
+            <div class="log-status done"><span class="dot"></span> Concluído</div>
+            <h3>Teste de público — Envolvimento 365D × P-Advantage + público quente</h3>
+            <div class="log-period">Período: <b>17/08/2026</b> até <b>26/08/2026</b> · campanhas [05] e [11], pausadas ao final do teste</div>
+          </div>
+        </div>
+        <div class="log-body">
+          <div class="log-stats">
+            <div class="log-stat"><span>Investimento total</span><b>R$ 478,30</b><small>R$ 249,34 (365D) + R$ 228,96 (P-Advantage)</small></div>
+            <div class="log-stat"><span>Leads</span><b>1</b><small>0 em Envolvimento 365D + 1 em P-Advantage</small></div>
+            <div class="log-stat"><span>Custo por lead</span><b>R$ 478,30</b><small>único lead rastreado, na campanha P-Advantage</small></div>
+            <div class="log-stat"><span>Rastreamento</span><b>Sob suspeita</b><small>ver diagnóstico acima</small></div>
           </div>
 
           <div class="log-row">
@@ -244,7 +329,11 @@
             <p>Público quente entrou porque já tem histórico validado: campanhas equivalentes de Envolvimento 365D
               já geraram <b>203 leads a R$ 37,03</b> de custo por lead. P-Advantage entrou ao lado, com os mesmíssimos
               criativos, pra testar se a otimização automática de público da Meta qualifica o lead melhor que o
-              público quente montado manualmente — sem trocar criativo, sem trocar página, só o público muda.</p>
+              público quente montado manualmente — sem trocar criativo, sem trocar página, só o público muda.
+              No resultado, <b>Envolvimento 365D não gerou nenhum lead rastreado</b> e <b>P-Advantage gerou 1</b>,
+              mas o volume dos dois é baixo demais pra declarar vencedor — e, como o diagnóstico acima mostra, parte
+              dos leads reais deste período pode não ter sido contada pelo Meta. Antes de repetir esse teste com mais
+              orçamento, o rastreamento da página de obrigado precisa estar corrigido.</p>
           </div>
 
           <details class="hist">
@@ -377,9 +466,9 @@
     <div class="next-box">
       <div class="section-label">Próximos passos</div>
       <ol>
-        <li>Deixar o teste de público (Envolvimento 365D × P-Advantage) rodando sem interferência até completar ao menos 24–48h de aprendizado.</li>
-        <li>No dia <b>19/08/2026</b>, puxar leads e CPL reais por público e atualizar a entrada dele aqui em cima.</li>
-        <li>Corrigir o rastreamento da página de obrigado antes de repetir qualquer teste de página.</li>
+        <li>Auditar o disparo do pixel/evento de Lead na página de obrigado (<code>programas.legadoefamilia.com</code>) — confirmar se ele dispara antes de qualquer redirecionamento do Typebot.</li>
+        <li>Implementar a Conversions API (CAPI) como redundância server-side, pra não depender só do pixel no navegador.</li>
+        <li>Só repetir o teste de público com orçamento maior depois do rastreamento corrigido — do jeito que está, os dois lados podem estar recebendo mais leads do que o Meta mostra.</li>
         <li>Ao lançar o próximo teste, adicionar uma nova entrada no topo desta página — a estrutura do card é sempre a mesma: status, período, investimento, leads, custo por lead, público, página, criativos e observação.</li>
       </ol>
     </div>
