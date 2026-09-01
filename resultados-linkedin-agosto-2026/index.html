@@ -1,0 +1,475 @@
+<title>Resultados LinkedIn — Mulheres em Conselhos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --preto:#0A0A0A; --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --ok:#059669; --ok-bg:#D1FAE5; --ok-line:#A7F3D0;
+    --alerta:#B45309; --alerta-bg:#FEF3C7; --alerta-line:#FDE68A;
+    --critico:#DC2626; --critico-bg:#FEE2E2; --critico-line:#FECACA;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  code, .mono{font-family:'Courier New',Courier,monospace;}
+
+  /* HERO */
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:64px 0 56px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .brand svg{width:34px; height:34px;}
+  .brand .word{display:flex; align-items:center; gap:11px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:16px;}
+  .brand .word .bar{width:2px; height:19px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:16px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1{font-size:34px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:660px; text-wrap:balance;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:600px; margin:0 0 28px;}
+
+  .verdict{
+    display:flex; gap:16px; align-items:flex-start;
+    background:rgba(5,150,105,.14); border:1px solid rgba(167,243,208,.35);
+    border-radius:16px; padding:20px 22px; max-width:660px;
+  }
+  .verdict .dot{width:10px;height:10px;border-radius:50%;background:#6EE7B7; flex:none; margin-top:6px; box-shadow:0 0 0 4px rgba(110,231,183,.18);}
+  .verdict h3{margin:0 0 6px; font-size:15px; font-weight:700; color:#fff;}
+  .verdict p{margin:0; font-size:13.5px; color:rgba(255,255,255,.78);}
+
+  /* SECTIONS */
+  section{padding:52px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:12px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  h2{font-size:23px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px; text-wrap:balance;}
+  .intro-text{color:var(--cinza); font-size:14px; max-width:700px; margin:0 0 28px;}
+
+  /* CARDS GRID */
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(125px,1fr)); gap:12px; margin-bottom:8px;}
+  .mini-card{border:1px solid var(--linha); border-radius:14px; padding:16px 18px; background:#fff;}
+  .mini-card small{display:block; color:var(--roxo); font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px;}
+  .mini-card b{font-size:20px; font-weight:700; font-variant-numeric:tabular-nums; display:block;}
+  .mini-card.ok{border-color:var(--ok-line); background:var(--ok-bg);}
+  .mini-card.ok small{color:var(--ok);}
+  .mini-card.ok b{color:#065F46;}
+  .caption-note{font-size:12px; color:var(--cinza); margin:10px 0 24px;}
+
+  /* LEAD CARDS */
+  .lead-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .lead-card{border:1px solid var(--ok-line); border-radius:16px; padding:20px 22px; background:#fff; position:relative;}
+  .lead-card .lc-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;}
+  .lead-card h4{margin:0; font-size:16px; font-weight:700;}
+  .lead-card .lc-date{font-size:11.5px; color:var(--cinza); font-variant-numeric:tabular-nums;}
+  .lead-card .lc-badge{display:inline-flex; align-items:center; gap:6px; background:var(--ok-bg); color:var(--ok); font-size:11px; font-weight:600; padding:4px 10px; border-radius:100px; margin-bottom:14px;}
+  .lead-card dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 12px; font-size:12.5px;}
+  .lead-card dt{color:var(--cinza);}
+  .lead-card dd{margin:0; font-weight:500;}
+  .lead-card .lc-goal{margin-top:14px; padding:10px 13px; background:var(--bg-soft); border-radius:9px; font-size:12.5px; color:var(--cinza); font-style:italic;}
+
+  /* RANKING TABLE */
+  .table-wrap{overflow-x:auto; border:1px solid var(--linha); border-radius:14px;}
+  table{width:100%; border-collapse:collapse; font-size:13px; min-width:760px;}
+  thead th{
+    text-align:left; padding:12px 16px; background:var(--bg-soft); color:var(--cinza);
+    font-size:10.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; border-bottom:1px solid var(--linha); white-space:nowrap;
+  }
+  thead th.num, tbody td.num{text-align:right;}
+  tbody td{padding:11px 16px; border-bottom:1px solid var(--linha); vertical-align:middle; font-variant-numeric:tabular-nums;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr.winner{background:var(--ok-bg);}
+  tbody tr.loser{opacity:.72;}
+  tbody tr.fresh{opacity:.55;}
+  .creative-name{font-variant-numeric:normal; max-width:280px;}
+  .creative-name .id{display:block; font-size:10.5px; color:var(--cinza); font-family:'Courier New',monospace; margin-top:2px;}
+  .status-chip{display:inline-flex; align-items:center; gap:5px; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:100px; white-space:nowrap;}
+  .status-chip.win{background:var(--ok); color:#fff;}
+  .status-chip.kill{background:var(--critico-bg); color:var(--critico);}
+  .status-chip.watch{background:var(--roxo-xlight); color:var(--roxo-dark);}
+
+  /* OPT LIST */
+  .opt-list{display:flex; flex-direction:column; gap:14px; margin-top:22px;}
+  .opt-item{display:grid; grid-template-columns:40px 1fr; gap:16px; border:1px solid var(--linha); border-radius:14px; padding:18px 20px; background:#fff;}
+  .opt-item .oi-icon{width:40px;height:40px;border-radius:11px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex:none;}
+  .opt-item.p1 .oi-icon{background:var(--critico-bg); color:var(--critico);}
+  .opt-item.p2 .oi-icon{background:var(--alerta-bg); color:var(--alerta);}
+  .opt-item.p3 .oi-icon{background:var(--ok-bg); color:var(--ok);}
+  .opt-item h4{margin:0 0 6px; font-size:14.5px; font-weight:600;}
+  .opt-item p{margin:0; font-size:13.5px; color:var(--cinza);}
+  .opt-item .impact{margin-top:8px; padding:8px 13px; background:var(--bg-soft); border-radius:9px; font-size:12px; color:var(--ink); display:inline-block;}
+  .opt-item .impact b{color:var(--roxo-dark);}
+
+  .prio-tag{font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:2px 8px; border-radius:100px; margin-left:8px; vertical-align:middle;}
+  .p1 .prio-tag{background:var(--critico-bg); color:var(--critico);}
+  .p2 .prio-tag{background:var(--alerta-bg); color:var(--alerta);}
+  .p3 .prio-tag{background:var(--ok-bg); color:var(--ok);}
+
+  /* FUNNEL STEPS */
+  .gap-note{
+    display:flex; gap:14px; align-items:flex-start; border:1px dashed var(--linha); border-radius:14px;
+    padding:16px 18px; background:var(--bg-soft); margin-bottom:24px;
+  }
+  .gap-note .gn-icon{width:32px; height:32px; border-radius:9px; background:var(--roxo-xlight); color:var(--roxo-dark);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex:none;}
+  .gap-note p{margin:0; font-size:13px; color:var(--cinza);}
+  .gap-note b{color:var(--ink);}
+
+  .funnel-steps{display:flex; flex-direction:column; gap:2px; margin-bottom:28px;}
+  .fstep{display:grid; grid-template-columns:230px 1fr 90px; align-items:center; gap:16px; padding:10px 0;}
+  .fstep .fs-label{font-size:13px; font-weight:500;}
+  .fstep .fs-label small{display:block; font-size:11px; color:var(--cinza); font-weight:400;}
+  .fstep .fs-track{height:10px; border-radius:6px; background:var(--linha); overflow:hidden;}
+  .fstep .fs-fill{height:100%; border-radius:6px; background:linear-gradient(90deg,#7C3AED,#5B21B6);}
+  .fstep .fs-num{text-align:right; font-size:14px; font-weight:700; font-variant-numeric:tabular-nums;}
+  .fstep .fs-num small{display:block; font-size:10.5px; font-weight:500; color:var(--cinza);}
+  .fstep.sub .fs-label{padding-left:18px; font-size:12.5px; color:var(--cinza);}
+  .fstep.sub .fs-fill{background:var(--roxo-light);}
+
+  .drop-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px;}
+  .drop-card{border:1px solid var(--critico-line); border-radius:14px; padding:18px 20px; background:#fff;}
+  .drop-card .dc-num{font-size:26px; font-weight:800; color:var(--critico);}
+  .drop-card .dc-label{font-size:13px; font-weight:600; margin:2px 0 8px;}
+  .drop-card p{margin:0; font-size:12.5px; color:var(--cinza);}
+  .drop-card ul{margin:10px 0 0; padding-left:18px; font-size:12px; color:var(--cinza);}
+  .drop-card li{margin-bottom:3px;}
+
+  /* STRIP */
+  .strip{
+    background:linear-gradient(90deg,#7C3AED,#5B21B6); border-radius:18px; padding:26px 28px;
+    color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .strip div h3{margin:0 0 5px; font-size:16px; font-weight:700;}
+  .strip div p{margin:0; font-size:13px; color:rgba(255,255,255,.85); max-width:520px;}
+  .strip a.btn{
+    background:#fff; color:var(--roxo-dark); text-decoration:none; font-weight:600; font-size:13px;
+    padding:11px 20px; border-radius:10px; white-space:nowrap; flex-shrink:0;
+  }
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:30px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+
+  @media(max-width:760px){
+    .hero{padding:46px 0 44px;}
+    .hero h1{font-size:26px;}
+    .lead-cards{grid-template-columns:1fr;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .strip{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill">LinkedIn Ads · Legado &amp; Família · Últimos 30 dias (até 01/09/2026)</div>
+    <h1>Formação Mulheres em Conselhos — os 2 leads do LinkedIn, identificados</h1>
+    <p class="lead">Dados puxados direto da conta via Stract e cruzados com as respostas do Typebot. Agora que a UTM está funcionando, dá pra ver exatamente quem converteu e qual anúncio trouxe.</p>
+
+    <div class="verdict">
+      <div class="dot"></div>
+      <div>
+        <h3>2 conversões confirmadas — as duas vieram do mesmo anúncio</h3>
+        <p>Laura Gallucci e Hellen Lisboa. As duas clicaram no <b style="color:#fff">mesmo criativo</b>, dentro da campanha "JOB TITLES SET DE DECISORES", a CPA de R$25,55 — enquanto outros 5 anúncios rodando em paralelo gastaram R$386 sem gerar nenhuma conversão.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESUMO CONTA -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Visão geral</div>
+    <h2>A conta inteira, últimos 30 dias</h2>
+    <p class="intro-text">Dados oficiais da API do LinkedIn Ads (via Stract), conta 514481980 · Legado e Família.</p>
+
+    <div class="cards">
+      <div class="mini-card"><small>Investido</small><b>R$437,83</b></div>
+      <div class="mini-card"><small>Impressões</small><b>24.398</b></div>
+      <div class="mini-card"><small>Cliques</small><b>231</b></div>
+      <div class="mini-card"><small>CTR</small><b>0,95%</b></div>
+      <div class="mini-card"><small>CPC médio</small><b>R$1,90</b></div>
+      <div class="mini-card ok"><small>Conversões</small><b>2</b></div>
+    </div>
+    <p class="caption-note">CPA médio da conta: R$218,91 (puxado pra cima pelos anúncios que não converteram — veja o comparativo por criativo abaixo).</p>
+  </div>
+</section>
+
+<!-- OS 2 LEADS -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Quem bateu o lead</div>
+    <h2>As 2 pessoas que converteram vindo do LinkedIn</h2>
+    <p class="intro-text">Identificadas cruzando o <span class="mono">utm_source=LKADS-LEF-FMC5</span> da planilha do Typebot com o dia do clique no LinkedIn. E-mails parcialmente ocultos aqui por ser um relatório público.</p>
+
+    <div class="lead-cards">
+      <div class="lead-card">
+        <div class="lc-top">
+          <h4>Laura Gallucci</h4>
+          <span class="lc-date">30/ago, 08:24</span>
+        </div>
+        <span class="lc-badge">✓ LinkedIn confirmado</span>
+        <dl>
+          <dt>Contato</dt><dd>laura.g***@gmail.com</dd>
+          <dt>Cargo</dt><dd>Consultora / profissional independente</dd>
+          <dt>Área</dt><dd>Estratégia e Gestão</dd>
+          <dt>Liderança</dt><dd>Mais de 20 anos</dd>
+          <dt>Em conselho</dt><dd>Já participei de comitês</dd>
+        </dl>
+        <div class="lc-goal">"Quero desenvolver competências em governança e atuação em conselhos"</div>
+      </div>
+      <div class="lead-card">
+        <div class="lc-top">
+          <h4>Hellen Lisboa</h4>
+          <span class="lc-date">01/set, 09:46</span>
+        </div>
+        <span class="lc-badge">✓ LinkedIn confirmado</span>
+        <dl>
+          <dt>Contato</dt><dd>hellen-l***@hotmail.com</dd>
+          <dt>Cargo</dt><dd>Gerência ou liderança sênior</dd>
+          <dt>Área</dt><dd>Operações</dd>
+          <dt>Liderança</dt><dd>Mais de 20 anos</dd>
+          <dt>Em conselho</dt><dd>Ainda não</dd>
+        </dl>
+        <div class="lc-goal">"Quero fazer uma transição da carreira executiva para uma carreira como conselheira"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNIL TYPEBOT -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Etapa por etapa</div>
+    <h2>Onde as pessoas travam no Typebot</h2>
+    <p class="intro-text">Reconstruído direto da planilha de respostas — o Typebot grava até onde a pessoa chegou, mesmo quem não terminou. Últimos 30 dias, <b>todas as origens</b> (não só LinkedIn) — 41 pessoas começaram.</p>
+
+    <div class="gap-note">
+      <div class="gn-icon">i</div>
+      <p><b>O que falta pra fechar o funil por completo:</b> GA4 não está conectado no Stract, então não dá pra ver quantas pessoas <i>chegaram na landing page</i> antes de abrir o Typebot — só a partir de quem já digitou alguma coisa. Pra fechar essa primeira ponta, precisa do GA4 conectado ou do acesso ao painel de Analytics nativo do Typebot.</p>
+    </div>
+
+    <div class="funnel-steps">
+      <div class="fstep">
+        <div class="fs-label">Abriu o Typebot e deu o nome</div>
+        <div class="fs-track"><div class="fs-fill" style="width:100%"></div></div>
+        <div class="fs-num">41 <small>100%</small></div>
+      </div>
+      <div class="fstep">
+        <div class="fs-label">Preencheu e-mail</div>
+        <div class="fs-track"><div class="fs-fill" style="width:90%"></div></div>
+        <div class="fs-num">37 <small>90%</small></div>
+      </div>
+      <div class="fstep">
+        <div class="fs-label">Preencheu telefone</div>
+        <div class="fs-track"><div class="fs-fill" style="width:88%"></div></div>
+        <div class="fs-num">36 <small>97%</small></div>
+      </div>
+      <div class="fstep">
+        <div class="fs-label">Respondeu "Início = Sim"</div>
+        <div class="fs-track"><div class="fs-fill" style="width:83%"></div></div>
+        <div class="fs-num">34 <small>94%</small></div>
+      </div>
+      <div class="fstep">
+        <div class="fs-label">Escolheu o perfil (escopo)</div>
+        <div class="fs-track"><div class="fs-fill" style="width:80%"></div></div>
+        <div class="fs-num">33 <small>97%</small></div>
+      </div>
+      <div class="fstep sub">
+        <div class="fs-label">→ trilha "executiva / profissional"</div>
+        <div class="fs-track"><div class="fs-fill" style="width:63%"></div></div>
+        <div class="fs-num">26</div>
+      </div>
+      <div class="fstep sub">
+        <div class="fs-label">→ trilha "família empresária"</div>
+        <div class="fs-track"><div class="fs-fill" style="width:17%"></div></div>
+        <div class="fs-num">7</div>
+      </div>
+      <div class="fstep">
+        <div class="fs-label">Completou as perguntas de qualificação</div>
+        <div class="fs-track"><div class="fs-fill" style="width:73%"></div></div>
+        <div class="fs-num">30 <small>91%</small></div>
+      </div>
+      <div class="fstep">
+        <div class="fs-label">Completou o formulário inteiro <small>última pergunta respondida</small></div>
+        <div class="fs-track"><div class="fs-fill" style="width:73%"></div></div>
+        <div class="fs-num">30 <small>73% do total</small></div>
+      </div>
+    </div>
+
+    <div class="drop-cards">
+      <div class="drop-card">
+        <div class="dc-num">8 pessoas</div>
+        <div class="dc-label">Maior perda: travam em "qual é o seu perfil?"</div>
+        <p>Deram nome/contato e sumiram bem na pergunta que decide a trilha (executiva × família empresária) — quase 1 em cada 5 que começou. É o maior buraco do funil inteiro.</p>
+      </div>
+      <div class="drop-card">
+        <div class="dc-num">2 pessoas</div>
+        <div class="dc-label">Travam na última pergunta, quase terminando</div>
+        <p>Marina Furtado (28/ago) e Jô Mazzarolo (27/ago) responderam tudo e pararam exatamente na pergunta final de objetivo — a um passo de completar.</p>
+      </div>
+    </div>
+    <p class="caption-note">Dentro de quem escolheu "família empresária" (7), 1 pulou o campo opcional de nome da empresa — o resto do grupo foi até o fim sem perder ninguém. Dentro de "executiva/profissional" (26), fluxo limpo até a pergunta final. Os 2 leads confirmados do LinkedIn (Laura e Hellen) completaram o formulário inteiro.</p>
+  </div>
+</section>
+
+<!-- RANKING CRIATIVOS -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Por anúncio</div>
+    <h2>Qual criativo realmente performou</h2>
+    <p class="intro-text">10 variações de anúncio rodando em paralelo. Uma trouxe as 2 conversões; as outras 9 só consumiram orçamento.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Criativo</th><th class="num">Impr.</th><th class="num">Cliques</th><th class="num">Gasto</th><th class="num">Conv.</th><th class="num">CPA</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr class="winner">
+            <td class="creative-name">"...setembro de 2026! 🎯" <i>(2 espaços no fim)</i><span class="id">1501577733 · JOB TITLES 34-55 IMAGEM</span></td>
+            <td class="num">2.937</td><td class="num">29</td><td class="num">R$51,10</td><td class="num">2</td><td class="num">R$25,55</td>
+            <td><span class="status-chip win">Escalar</span></td>
+          </tr>
+          <tr class="loser">
+            <td class="creative-name">"...setembro de 2026! 🎯" <i>(sem espaço)</i><span class="id">1501600093 · JOB TITLES 34-55 IMAGEM</span></td>
+            <td class="num">3.535</td><td class="num">49</td><td class="num">R$92,89</td><td class="num">0</td><td class="num">—</td>
+            <td><span class="status-chip kill">Pausar</span></td>
+          </tr>
+          <tr class="loser">
+            <td class="creative-name">" ...setembro de 2026! 🎯" <i>(espaço no início)</i><span class="id">1501595113 · JOB TITLES 34-55 IMAGEM</span></td>
+            <td class="num">1.395</td><td class="num">18</td><td class="num">R$25,22</td><td class="num">0</td><td class="num">—</td>
+            <td><span class="status-chip kill">Pausar</span></td>
+          </tr>
+          <tr class="loser">
+            <td class="creative-name">" ...Setembro de 2026! 🎯" <i>(S maiúsculo)</i><span class="id">1501449353 · JOB TITLES 34-55 IMAGEM</span></td>
+            <td class="num">1.359</td><td class="num">13</td><td class="num">R$22,03</td><td class="num">0</td><td class="num">—</td>
+            <td><span class="status-chip kill">Pausar</span></td>
+          </tr>
+          <tr class="loser">
+            <td class="creative-name">"Você está pronta para ocupar espaços..." <i>(anúncio antigo)</i><span class="id">1479096143 · JOB TITLES 34-55 IMAGEM</span></td>
+            <td class="num">6.618</td><td class="num">44</td><td class="num">R$90,20</td><td class="num">0</td><td class="num">—</td>
+            <td><span class="status-chip kill">Pausar</span></td>
+          </tr>
+          <tr class="loser">
+            <td class="creative-name">"Uma carreira executiva sólida..." <i>(anúncio antigo)</i><span class="id">1478975813 · JOB TITLES 34-55 IMAGEM</span></td>
+            <td class="num">8.497</td><td class="num">78</td><td class="num">R$155,65</td><td class="num">0</td><td class="num">—</td>
+            <td><span class="status-chip kill">Pausar</span></td>
+          </tr>
+          <tr class="fresh">
+            <td class="creative-name">"...será a única turma de 2026." <i>(4 variações de teste)</i><span class="id">campanha VIDEO 25-55 · recém-lançada</span></td>
+            <td class="num">40</td><td class="num">0</td><td class="num">R$0,52</td><td class="num">0</td><td class="num">—</td>
+            <td><span class="status-chip watch">Aguardar</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption-note">⚠️ Amostra pequena (2 conversões em 231 cliques) — ainda não dá pra cravar que essa variação específica é estruturalmente melhor. Mas é a única com resultado até agora, e as "gêmeas" que só mudam espaço/maiúscula não são um teste A/B real — é orçamento fragmentado sem aprendizado novo.</p>
+  </div>
+</section>
+
+<!-- OTIMIZAÇÕES -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Próximos passos</div>
+    <h2>Otimizações recomendadas</h2>
+
+    <div class="opt-list">
+      <div class="opt-item p1">
+        <div class="oi-icon">1</div>
+        <div>
+          <h4>Pausar os 2 anúncios antigos (FMC4)<span class="prio-tag">Alta prioridade</span></h4>
+          <p>"Uma carreira executiva sólida..." e "Você está pronta para ocupar espaços..." juntos consumiram <b>R$245,85 — 56% do orçamento do período</b> — com 122 cliques e zero conversão. Já rodam há meses; fadiga de criativo é o mais provável.</p>
+          <div class="impact">Libera <b>~R$246</b> pra redirecionar pro anúncio que converteu.</div>
+        </div>
+      </div>
+      <div class="opt-item p2">
+        <div class="oi-icon">2</div>
+        <div>
+          <h4>Parar de rodar variações "gêmeas" do mesmo texto<span class="prio-tag">Média prioridade</span></h4>
+          <p>3 variações praticamente idênticas (só mudando espaço em branco e maiúscula) gastaram R$140,14 juntas sem converter. Isso não é um teste A/B — é a mesma mensagem competindo consigo mesma no leilão. Concentre num único texto por conceito e use o orçamento sobrando pra testar mensagens <b>de verdade diferentes</b>.</p>
+        </div>
+      </div>
+      <div class="opt-item p3">
+        <div class="oi-icon">3</div>
+        <div>
+          <h4>Escalar o anúncio vencedor<span class="prio-tag">Alta prioridade</span></h4>
+          <p>CPA de R$25,55 é excelente pro produto. Aumentar o orçamento diário desse criativo específico enquanto ele continuar performando — com o dinheiro liberado dos itens 1 e 2.</p>
+        </div>
+      </div>
+      <div class="opt-item p3">
+        <div class="oi-icon">4</div>
+        <div>
+          <h4>Dar tempo pra campanha de vídeo</h4>
+          <p>A campanha em vídeo (público 25-55) é muito recente — só R$0,52 gastos até agora. Ainda não dá pra avaliar. Deixe rodar mais alguns dias antes de decidir.</p>
+        </div>
+      </div>
+      <div class="opt-item p2">
+        <div class="oi-icon">5</div>
+        <div>
+          <h4>Corrigir a UTM dinâmica que ainda não resolve</h4>
+          <p>O <span class="mono">utm_source=LKADS-LEF-FMC5</span> está funcionando, mas <span class="mono">utm_campaign</span>, <span class="mono">utm_content</span> e <span class="mono">utm_medium</span> estão gravando o texto literal "CAMPAIGN_NAME" / "CREATIVE_NAME" / "CAMPAIGN_GROUP_NAME" em vez do nome real — sinal de que esses parâmetros foram digitados como texto fixo em vez de configurados como valor dinâmico no Campaign Manager.</p>
+          <div class="impact">Sem essa correção, dá pra saber <b>que</b> veio do LinkedIn, mas não <b>qual anúncio</b> — só descobrimos dessa vez cruzando com a data/hora manualmente.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <h3>Redistribuir o orçamento agora</h3>
+        <p>Pausando os 3 perdedores e os 2 anúncios antigos, sobra ~R$386 pra escalar o único anúncio que já provou que funciona.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vamos%20pausar%20os%20an%C3%BAncios%20que%20n%C3%A3o%20converteram%20e%20escalar%20o%20vencedor%20da%20campanha%20do%20LinkedIn." target="_blank">Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Resultados LinkedIn Ads · Formação Mulheres em Conselhos · Legado &amp; Família · dados via Stract</div>
+  </div>
+</footer>
