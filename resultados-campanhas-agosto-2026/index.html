@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resultados Consolidados — Google, Meta e LinkedIn · Legado &amp; Família</title>
+<meta name="description" content="Sucessão e Formação Mulheres em Conselho nas três plataformas pagas — últimos 7 e 30 dias, com o que cada plataforma reporta e os leads reais confirmados no TypeBot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --verde:#059669; --verde-light:#D1FAE5; --ambar:#B45309; --ambar-light:#FEF3C7;
+    --vermelho:#B91C1C; --vermelho-light:#FEE2E2;
+    --google:#4285F4; --google-light:#E8F0FE; --meta:#1877F2; --meta-light:#E7F0FE; --linkedin:#0A66C2; --linkedin-light:#E1EFFB;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Poppins',sans-serif; font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--roxo);}
+  code{font-family:'Courier New',Courier,monospace;}
+  .tab{font-variant-numeric:tabular-nums;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+
+  .crumb{background:var(--ink); padding:12px 0;}
+  .crumb .wrap{display:flex; align-items:center; gap:8px; font-size:12.5px; flex-wrap:wrap;}
+  .crumb a{color:rgba(255,255,255,.65); text-decoration:none;}
+  .crumb a:hover{color:#fff;}
+  .crumb span{color:rgba(255,255,255,.35);}
+
+  .hero{
+    position:relative; overflow:hidden; color:#fff; padding:56px 0 56px;
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),
+      linear-gradient(150deg, #0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+  }
+  .hero .grid{
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(circle at 60% 20%, #000 30%, transparent 75%);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:28px;}
+  .brand svg{width:32px; height:32px;}
+  .brand .word{display:flex; align-items:center; gap:10px; font-weight:300;}
+  .brand .word b{font-weight:800; font-size:15px;}
+  .brand .word .bar{width:2px; height:18px; background:rgba(255,255,255,.5);}
+  .brand .word span{font-size:15px; letter-spacing:.22em;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px; border:1px solid #A78BFA; color:#EDE9FE;
+    border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; margin-bottom:18px;
+  }
+  .pill .dot{width:6px; height:6px; border-radius:50%; background:#34D399; box-shadow:0 0 0 3px rgba(52,211,153,.25);}
+  .hero h1{font-size:29px; font-weight:800; letter-spacing:-.02em; line-height:1.22; margin:0 0 12px; max-width:760px;}
+  .hero p.lead{font-size:14.5px; font-weight:300; color:rgba(255,255,255,.82); max-width:700px; margin:0 0 22px;}
+  .hero-meta{display:flex; gap:26px; margin-top:8px; flex-wrap:wrap;}
+  .hero-meta div span{display:block; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; margin-bottom:4px;}
+  .hero-meta div b{font-size:14.5px; font-weight:600;}
+
+  section{padding:44px 0;}
+  section.soft{background:var(--bg-soft);}
+  .section-label{
+    display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--roxo); margin-bottom:10px;
+  }
+  .section-label::before{content:""; width:30px; height:2px; background:var(--roxo); border-radius:2px;}
+  .section-label.suc{color:var(--roxo-dark);}
+  .section-label.fmc{color:#BE185D;}
+  .section-label.fmc::before{background:#BE185D;}
+  h2{font-size:21px; font-weight:700; letter-spacing:-.01em; margin:0 0 8px;}
+  h3{font-size:16px; font-weight:600; margin:0 0 4px;}
+  .intro{color:var(--cinza); font-size:13.5px; max-width:740px; margin:0 0 22px;}
+
+  .period-toggle{display:flex; gap:10px; margin-bottom:6px;}
+  .period-toggle a{
+    font-size:12px; font-weight:600; padding:8px 16px; border-radius:100px; text-decoration:none;
+    border:1px solid var(--linha); color:var(--cinza);
+  }
+  .period-toggle a.active{background:var(--roxo); color:#fff; border-color:var(--roxo);}
+
+  /* PRODUCT x PLATFORM GRID */
+  .prod-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:20px;}
+  .prod-card{border:1px solid var(--linha); border-radius:16px; padding:18px 20px; background:var(--bg);}
+  .prod-card .ptag{display:inline-flex; align-items:center; gap:7px; font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:100px; margin-bottom:12px;}
+  .prod-card.g .ptag{background:var(--google-light); color:var(--google);}
+  .prod-card.m .ptag{background:var(--meta-light); color:var(--meta);}
+  .prod-card.l .ptag{background:var(--linkedin-light); color:var(--linkedin);}
+  .prod-card .big{font-size:23px; font-weight:800; color:var(--ink); font-variant-numeric:tabular-nums;}
+  .prod-card .capl{font-size:11px; color:var(--cinza); margin-bottom:12px;}
+  .prod-kv{display:flex; justify-content:space-between; padding:6px 0; border-top:1px dashed var(--linha); font-size:12px;}
+  .prod-kv .k{color:var(--cinza);} .prod-kv .v{font-weight:600; color:var(--ink); font-variant-numeric:tabular-nums;}
+  .prod-kv .v.zero{color:var(--vermelho);}
+  .prod-kv .v.good{color:var(--verde);}
+  .prod-kv .v.warn{color:var(--ambar);}
+
+  /* STAT ROW */
+  .stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:22px;}
+  .stat-card{border:1px solid var(--linha); border-radius:16px; padding:18px 20px; background:var(--bg);}
+  .stat-card span{font-size:10.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--roxo); display:block; margin-bottom:9px;}
+  .stat-card b{font-size:23px; font-weight:800; color:var(--ink); display:block; font-variant-numeric:tabular-nums;}
+  .stat-card small{font-size:11.5px; color:var(--cinza); display:block; margin-top:4px;}
+  .stat-card.crit b{color:var(--vermelho);}
+  .stat-card.win b{color:var(--verde);}
+
+  .nota{
+    border:1px solid var(--linha); border-left:3px solid var(--roxo); border-radius:12px;
+    padding:15px 18px; margin-top:18px; background:var(--bg); font-size:13px; color:var(--cinza);
+  }
+  .nota b{color:var(--ink); font-weight:600;}
+  .nota.warn{border-left-color:var(--ambar); background:var(--ambar-light); color:var(--ink);}
+  .nota.crit{border-left-color:var(--vermelho); background:var(--vermelho-light); color:var(--ink);}
+
+  .doc-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px;}
+  .doc-card{border:1px solid var(--linha); border-radius:14px; padding:18px 20px; background:var(--bg); text-decoration:none; display:block; transition:border-color .15s;}
+  .doc-card:hover{border-color:var(--roxo-light);}
+  .doc-card h4{margin:0 0 5px; font-size:14px; color:var(--ink); font-weight:600;}
+  .doc-card p{margin:0; font-size:12.5px; color:var(--cinza);}
+  .doc-card .go{font-size:12px; font-weight:600; color:var(--roxo); margin-top:8px; display:block;}
+
+  @media (max-width:820px){ .prod-grid{grid-template-columns:1fr;} .stat-grid{grid-template-columns:repeat(2,1fr);} .doc-grid{grid-template-columns:1fr;} }
+  @media (max-width:480px){ .stat-grid{grid-template-columns:1fr;} .hero h1{font-size:23px;} }
+
+  footer{background:var(--ink); color:rgba(255,255,255,.6); padding:28px 0; font-size:12.5px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer .brand2{display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:13px;}
+  footer .brand2 svg{width:18px; height:18px;}
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="../">Legado &amp; Família × Brito Mídias</a>
+    <span>/</span>
+    <span style="color:#fff">Resultados Consolidados · Google, Meta &amp; LinkedIn</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid"></div>
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="pill"><span class="dot"></span> GOOGLE · META · LINKEDIN</div>
+    <h1>Sucessão e Mulheres em Conselho, nas três plataformas, últimos 7 e 30 dias</h1>
+    <p class="lead">Painel único pra consulta rápida: o que cada plataforma diz, e o que o TypeBot confirma como lead
+      real. Todas as campanhas puxadas ao vivo em 01/09/2026.</p>
+    <div class="hero-meta">
+      <div><span>Cliente</span><b>Legado &amp; Família</b></div>
+      <div><span>Atualizado em</span><b>01/09/2026</b></div>
+      <div><span>Investido · 7 dias</span><b>R$ 2.258,24</b></div>
+      <div><span>Investido · 30 dias</span><b>R$ 3.921,55</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 7 DIAS ===================== -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Consulta rápida</div>
+    <h2>Últimos 7 dias (25/08 – 01/09)</h2>
+    <p class="intro">O período mais relevante pra reunião — mostra o ritmo atual de cada campanha, não a média do mês.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><span>Investido (7d)</span><b class="tab">R$ 2.258,24</b><small>Google + Meta + LinkedIn</small></div>
+      <div class="stat-card win"><span>Leads reais (TypeBot, 7d)</span><b class="tab">33</b><small>descontando testes internos</small></div>
+      <div class="stat-card"><span>CPL real blended (7d)</span><b class="tab">R$ 68,43</b><small>investido ÷ leads reais</small></div>
+      <div class="stat-card crit"><span>FMC no Google, 7d</span><b class="tab">0 leads</b><small>R$8,00 gastos, campanha quase parada</small></div>
+    </div>
+
+    <h3 style="margin-top:30px;">Sucessão Empresarial e Patrimonial</h3>
+    <div class="prod-grid">
+      <div class="prod-card g">
+        <span class="ptag">Google Ads</span>
+        <div class="big tab">R$ 699,97</div>
+        <div class="capl">JA GERAL + JA PROFISSIONAL, ativas há ~7 dias</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">120</span></div>
+        <div class="prod-kv"><span class="k">Conversões (Google)</span><span class="v tab zero">0</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab good">11</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">R$ 63,63</span></div>
+      </div>
+      <div class="prod-card m">
+        <span class="ptag">Meta Ads</span>
+        <div class="big tab">R$ 1.329,28</div>
+        <div class="capl">[TERNO] + [QUENTE] Site — 100% do gasto da semana</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">173</span></div>
+        <div class="prod-kv"><span class="k">"Resultados" (Meta)</span><span class="v tab">14</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab good">20</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">R$ 66,46</span></div>
+      </div>
+      <div class="prod-card l">
+        <span class="ptag">LinkedIn Ads</span>
+        <div class="big tab">R$ 220,99</div>
+        <div class="capl">Job Titles Decisores · homens 34-55</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">105</span></div>
+        <div class="prod-kv"><span class="k">Conversões no site (LinkedIn)</span><span class="v tab">2</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab warn">0**</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">—</span></div>
+      </div>
+    </div>
+    <div class="nota">Sucessão nos 7 dias: <b>R$ 2.250,24 investidos, 31 leads reais confirmados</b> (Google + Meta), CPL real de <b>R$ 72,59</b>.</div>
+
+    <h3 style="margin-top:34px;">Formação Mulheres em Conselho (FMC)</h3>
+    <div class="prod-grid">
+      <div class="prod-card g">
+        <span class="ptag">Google Ads</span>
+        <div class="big tab">R$ 8,00</div>
+        <div class="capl">campanha ativa, ritmo quase parado essa semana</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">3</span></div>
+        <div class="prod-kv"><span class="k">Conversões (Google)</span><span class="v tab zero">0</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab zero">0</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">—</span></div>
+      </div>
+      <div class="prod-card m">
+        <span class="ptag">Meta Ads</span>
+        <div class="big tab">R$ 0,00</div>
+        <div class="capl">nenhuma campanha ativa pro FMC hoje</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">0</span></div>
+        <div class="prod-kv"><span class="k">"Resultados" (Meta)</span><span class="v tab">0</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab zero">0</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">—</span></div>
+      </div>
+      <div class="prod-card l">
+        <span class="ptag">LinkedIn Ads</span>
+        <div class="big tab">R$ 220,99**</div>
+        <div class="capl">tag do lead diverge da campanha ativa — ver nota</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">105**</span></div>
+        <div class="prod-kv"><span class="k">Conversões no site (LinkedIn)</span><span class="v tab">2</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab good">2</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">R$ 110,50**</span></div>
+      </div>
+    </div>
+    <div class="nota warn">**Os 2 leads do FMC no TypeBot chegaram com a tag <code>LKADS-LEF-FMC5</code>, mas a única campanha ativa
+      no LinkedIn agora é a de <b>decisores homens</b> (não é uma campanha de FMC). O número de conversões bate exatamente
+      (2 no LinkedIn = 2 no TypeBot) — o mais provável é que a página de destino ainda tenha a tag antiga do FMC5
+      hardcoded, e esses 2 leads sejam, na real, do público de homens. Vale corrigir a UTM antes de decidir orçamento
+      com base nesse número.</div>
+  </div>
+</section>
+
+<!-- ===================== 30 DIAS ===================== -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Panorama do mês</div>
+    <h2>Últimos 30 dias (02/08 – 01/09)</h2>
+    <p class="intro">Mesma leitura, período maior — mostra o que já rodou e foi pausado ao longo do mês, não só o ritmo atual.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><span>Investido (30d)</span><b class="tab">R$ 3.921,55</b><small>Google + Meta + LinkedIn</small></div>
+      <div class="stat-card win"><span>Leads reais (TypeBot, 30d)</span><b class="tab">52</b><small>descontando testes internos</small></div>
+      <div class="stat-card"><span>CPL real blended (30d)</span><b class="tab">R$ 75,41</b><small>investido ÷ leads reais</small></div>
+      <div class="stat-card crit"><span>Conversões que as plataformas veem</span><b class="tab">19</b><small>0 Google + 17 Meta + 2 LinkedIn — 63% a menos que o real</small></div>
+    </div>
+
+    <h3 style="margin-top:30px;">Sucessão Empresarial e Patrimonial</h3>
+    <div class="prod-grid">
+      <div class="prod-card g">
+        <span class="ptag">Google Ads</span>
+        <div class="big tab">R$ 1.014,93</div>
+        <div class="capl">JA GERAL + JA PROFISSIONAL + 01-PSP (pausada)</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">176</span></div>
+        <div class="prod-kv"><span class="k">Conversões (Google)</span><span class="v tab zero">0</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab good">16</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">R$ 63,43</span></div>
+      </div>
+      <div class="prod-card m">
+        <span class="ptag">Meta Ads</span>
+        <div class="big tab">R$ 2.325,05</div>
+        <div class="capl">2 ativas + 4 P-ADVANTAGE pausadas no meio do mês</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">462</span></div>
+        <div class="prod-kv"><span class="k">"Resultados" (Meta)</span><span class="v tab">17</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab good">32</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">R$ 72,66</span></div>
+      </div>
+      <div class="prod-card l">
+        <span class="ptag">LinkedIn Ads</span>
+        <div class="big tab">R$ 407,00</div>
+        <div class="capl">Job Titles Decisores · homens 34-55</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">205</span></div>
+        <div class="prod-kv"><span class="k">Conversões no site (LinkedIn)</span><span class="v tab">2</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab warn">0**</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">—</span></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:34px;">Formação Mulheres em Conselho (FMC)</h3>
+    <div class="prod-grid">
+      <div class="prod-card g">
+        <span class="ptag">Google Ads</span>
+        <div class="big tab">R$ 174,57</div>
+        <div class="capl">+ R$100/dia de orçamento ativado sem gastar (FMC4)</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">16</span></div>
+        <div class="prod-kv"><span class="k">Conversões (Google)</span><span class="v tab zero">0</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab good">2</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">R$ 87,28</span></div>
+      </div>
+      <div class="prod-card m">
+        <span class="ptag">Meta Ads</span>
+        <div class="big tab">R$ 0,00</div>
+        <div class="capl">nenhuma campanha ativa pro FMC no mês</div>
+        <div class="prod-kv"><span class="k">Cliques</span><span class="v tab">0</span></div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab zero">0</span></div>
+      </div>
+      <div class="prod-card l">
+        <span class="ptag">LinkedIn Ads</span>
+        <div class="big tab">R$ 407,00**</div>
+        <div class="capl">tag do lead diverge da campanha ativa — ver nota acima</div>
+        <div class="prod-kv"><span class="k">Leads reais (TypeBot)</span><span class="v tab good">2</span></div>
+        <div class="prod-kv"><span class="k">CPL real</span><span class="v tab">R$ 203,50**</span></div>
+      </div>
+    </div>
+    <div class="nota">Detalhamento completo de otimização de palavra-chave e orçamento do Google Ads (30 dias) está no
+      <a href="../resultados-google-ads-agosto-2026/">relatório específico</a>.</div>
+  </div>
+</section>
+
+<!-- LINKS -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Aprofundar</div>
+    <h2>Relatórios específicos por plataforma</h2>
+    <div class="doc-grid">
+      <a class="doc-card" href="../resultados-google-ads-agosto-2026/">
+        <h4>Google Ads — Sucessão &amp; FMC</h4>
+        <p>Otimização de palavra-chave, achados de estrutura de campanha, cruzamento completo com o TypeBot.</p>
+        <span class="go">Ver relatório &rarr;</span>
+      </a>
+      <a class="doc-card" href="../resultados-linkedin-agosto-2026/">
+        <h4>LinkedIn Ads — Mulheres em Conselhos</h4>
+        <p>Funil etapa por etapa, por anúncio, últimos 30 dias.</p>
+        <span class="go">Ver relatório &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand2">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+      </svg>
+      Brito Mídias
+    </div>
+    <div>Central de Estratégia e Resultados &middot; dados puxados ao vivo do Google Ads, Meta Ads, LinkedIn Ads e TypeBot em 01/09/2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
