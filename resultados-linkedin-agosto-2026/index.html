@@ -42,13 +42,13 @@
     border-radius:100px; padding:6px 14px; font-size:11px; font-weight:600; letter-spacing:.14em;
     text-transform:uppercase; margin-bottom:20px;
   }
-  .hero h1{font-size:34px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:660px; text-wrap:balance;}
-  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:600px; margin:0 0 28px;}
+  .hero h1{font-size:33px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin:0 0 14px; max-width:680px; text-wrap:balance;}
+  .hero p.lead{font-size:15px; font-weight:300; color:rgba(255,255,255,.82); max-width:620px; margin:0 0 28px;}
 
   .verdict{
     display:flex; gap:16px; align-items:flex-start;
     background:rgba(5,150,105,.14); border:1px solid rgba(167,243,208,.35);
-    border-radius:16px; padding:20px 22px; max-width:660px;
+    border-radius:16px; padding:20px 22px; max-width:680px;
   }
   .verdict .dot{width:10px;height:10px;border-radius:50%;background:#6EE7B7; flex:none; margin-top:6px; box-shadow:0 0 0 4px rgba(110,231,183,.18);}
   .verdict h3{margin:0 0 6px; font-size:15px; font-weight:700; color:#fff;}
@@ -75,37 +75,57 @@
   .mini-card.ok b{color:#065F46;}
   .caption-note{font-size:12px; color:var(--cinza); margin:10px 0 24px;}
 
-  /* LEAD CARDS */
-  .lead-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-  .lead-card{border:1px solid var(--ok-line); border-radius:16px; padding:20px 22px; background:#fff; position:relative;}
-  .lead-card .lc-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;}
-  .lead-card h4{margin:0; font-size:16px; font-weight:700;}
-  .lead-card .lc-date{font-size:11.5px; color:var(--cinza); font-variant-numeric:tabular-nums;}
-  .lead-card .lc-badge{display:inline-flex; align-items:center; gap:6px; background:var(--ok-bg); color:var(--ok); font-size:11px; font-weight:600; padding:4px 10px; border-radius:100px; margin-bottom:14px;}
-  .lead-card dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 12px; font-size:12.5px;}
-  .lead-card dt{color:var(--cinza);}
-  .lead-card dd{margin:0; font-weight:500;}
-  .lead-card .lc-goal{margin-top:14px; padding:10px 13px; background:var(--bg-soft); border-radius:9px; font-size:12.5px; color:var(--cinza); font-style:italic;}
+  /* SOURCE NOTE */
+  .source-note{
+    display:flex; gap:14px; align-items:flex-start; border:1px solid var(--roxo-xlight); border-radius:14px;
+    padding:16px 18px; background:var(--roxo-xlight); margin-bottom:28px;
+  }
+  .source-note .sn-icon{width:32px; height:32px; border-radius:9px; background:#fff; color:var(--roxo-dark);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex:none;}
+  .source-note p{margin:0; font-size:13px; color:var(--roxo-dark);}
+  .source-note b{color:var(--ink);}
 
-  /* RANKING TABLE */
+  /* MINI FUNNEL (3 steps) */
+  .mini-funnel{display:flex; align-items:stretch; gap:0; margin-bottom:8px;}
+  .mf-step{flex:1; position:relative; padding:0 10px;}
+  .mf-step:not(:first-child)::before{
+    content:"→"; position:absolute; left:-2px; top:36px; color:var(--roxo-light); font-size:20px; font-weight:700;
+  }
+  .mf-card{border:1px solid var(--linha); border-radius:16px; padding:22px 18px; background:#fff; text-align:center;}
+  .mf-card.win{border-color:var(--ok-line); background:var(--ok-bg);}
+  .mf-num{font-size:34px; font-weight:800; letter-spacing:-.02em; font-variant-numeric:tabular-nums;}
+  .mf-card.win .mf-num{color:#065F46;}
+  .mf-label{font-size:12.5px; font-weight:600; color:var(--cinza); margin-top:4px;}
+  .mf-card.win .mf-label{color:#065F46;}
+  .mf-pct{font-size:11px; color:var(--roxo-dark); font-weight:600; margin-top:6px;}
+
+  /* LEADS TABLE */
   .table-wrap{overflow-x:auto; border:1px solid var(--linha); border-radius:14px;}
-  table{width:100%; border-collapse:collapse; font-size:13px; min-width:760px;}
+  table{width:100%; border-collapse:collapse; font-size:13px; min-width:720px;}
   thead th{
     text-align:left; padding:12px 16px; background:var(--bg-soft); color:var(--cinza);
     font-size:10.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; border-bottom:1px solid var(--linha); white-space:nowrap;
   }
   thead th.num, tbody td.num{text-align:right;}
-  tbody td{padding:11px 16px; border-bottom:1px solid var(--linha); vertical-align:middle; font-variant-numeric:tabular-nums;}
+  tbody td{padding:11px 16px; border-bottom:1px solid var(--linha); vertical-align:middle;}
   tbody tr:last-child td{border-bottom:none;}
-  tbody tr.winner{background:var(--ok-bg);}
-  tbody tr.loser{opacity:.72;}
-  tbody tr.fresh{opacity:.55;}
-  .creative-name{font-variant-numeric:normal; max-width:280px;}
-  .creative-name .id{display:block; font-size:10.5px; color:var(--cinza); font-family:'Courier New',monospace; margin-top:2px;}
+  tbody tr.incompleto{background:var(--critico-bg);}
+  .date-cell{font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--cinza); font-size:12.5px;}
   .status-chip{display:inline-flex; align-items:center; gap:5px; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:100px; white-space:nowrap;}
-  .status-chip.win{background:var(--ok); color:#fff;}
-  .status-chip.kill{background:var(--critico-bg); color:var(--critico);}
-  .status-chip.watch{background:var(--roxo-xlight); color:var(--roxo-dark);}
+  .status-chip.completo{background:var(--ok-bg); color:var(--ok);}
+  .status-chip.incompleto{background:var(--critico-bg); color:var(--critico);}
+  .creative-tag{font-size:11px; font-family:'Courier New',monospace; color:var(--roxo-dark); background:var(--roxo-xlight); padding:3px 8px; border-radius:6px;}
+  .creative-tag.unknown{color:var(--cinza); background:var(--bg-soft);}
+
+  /* WINNER CALLOUT */
+  .winner-callout{
+    border:1px solid var(--ok-line); border-radius:16px; padding:24px 26px; background:var(--ok-bg);
+    display:flex; gap:20px; align-items:center; flex-wrap:wrap; margin-bottom:24px;
+  }
+  .winner-callout .wc-num{font-size:40px; font-weight:800; color:#065F46; letter-spacing:-.02em;}
+  .winner-callout .wc-text{flex:1; min-width:240px;}
+  .winner-callout h4{margin:0 0 4px; font-size:15px; font-weight:700; color:#065F46;}
+  .winner-callout p{margin:0; font-size:13px; color:#065F46;}
 
   /* OPT LIST */
   .opt-list{display:flex; flex-direction:column; gap:14px; margin-top:22px;}
@@ -118,40 +138,10 @@
   .opt-item p{margin:0; font-size:13.5px; color:var(--cinza);}
   .opt-item .impact{margin-top:8px; padding:8px 13px; background:var(--bg-soft); border-radius:9px; font-size:12px; color:var(--ink); display:inline-block;}
   .opt-item .impact b{color:var(--roxo-dark);}
-
   .prio-tag{font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:2px 8px; border-radius:100px; margin-left:8px; vertical-align:middle;}
   .p1 .prio-tag{background:var(--critico-bg); color:var(--critico);}
   .p2 .prio-tag{background:var(--alerta-bg); color:var(--alerta);}
   .p3 .prio-tag{background:var(--ok-bg); color:var(--ok);}
-
-  /* FUNNEL STEPS */
-  .gap-note{
-    display:flex; gap:14px; align-items:flex-start; border:1px dashed var(--linha); border-radius:14px;
-    padding:16px 18px; background:var(--bg-soft); margin-bottom:24px;
-  }
-  .gap-note .gn-icon{width:32px; height:32px; border-radius:9px; background:var(--roxo-xlight); color:var(--roxo-dark);
-    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex:none;}
-  .gap-note p{margin:0; font-size:13px; color:var(--cinza);}
-  .gap-note b{color:var(--ink);}
-
-  .funnel-steps{display:flex; flex-direction:column; gap:2px; margin-bottom:28px;}
-  .fstep{display:grid; grid-template-columns:230px 1fr 90px; align-items:center; gap:16px; padding:10px 0;}
-  .fstep .fs-label{font-size:13px; font-weight:500;}
-  .fstep .fs-label small{display:block; font-size:11px; color:var(--cinza); font-weight:400;}
-  .fstep .fs-track{height:10px; border-radius:6px; background:var(--linha); overflow:hidden;}
-  .fstep .fs-fill{height:100%; border-radius:6px; background:linear-gradient(90deg,#7C3AED,#5B21B6);}
-  .fstep .fs-num{text-align:right; font-size:14px; font-weight:700; font-variant-numeric:tabular-nums;}
-  .fstep .fs-num small{display:block; font-size:10.5px; font-weight:500; color:var(--cinza);}
-  .fstep.sub .fs-label{padding-left:18px; font-size:12.5px; color:var(--cinza);}
-  .fstep.sub .fs-fill{background:var(--roxo-light);}
-
-  .drop-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px;}
-  .drop-card{border:1px solid var(--critico-line); border-radius:14px; padding:18px 20px; background:#fff;}
-  .drop-card .dc-num{font-size:26px; font-weight:800; color:var(--critico);}
-  .drop-card .dc-label{font-size:13px; font-weight:600; margin:2px 0 8px;}
-  .drop-card p{margin:0; font-size:12.5px; color:var(--cinza);}
-  .drop-card ul{margin:10px 0 0; padding-left:18px; font-size:12px; color:var(--cinza);}
-  .drop-card li{margin-bottom:3px;}
 
   /* STRIP */
   .strip{
@@ -172,9 +162,10 @@
 
   @media(max-width:760px){
     .hero{padding:46px 0 44px;}
-    .hero h1{font-size:26px;}
-    .lead-cards{grid-template-columns:1fr;}
+    .hero h1{font-size:25px;}
     .cards{grid-template-columns:repeat(2,1fr);}
+    .mini-funnel{flex-direction:column; gap:14px;}
+    .mf-step:not(:first-child)::before{content:"↓"; left:16px; top:-14px;}
     .strip{flex-direction:column; align-items:flex-start;}
   }
 </style>
@@ -194,209 +185,126 @@
       </svg>
       <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
     </div>
-    <div class="pill">LinkedIn Ads · Legado &amp; Família · Últimos 30 dias (até 01/09/2026)</div>
-    <h1>Formação Mulheres em Conselhos — os 2 leads do LinkedIn, identificados</h1>
-    <p class="lead">Dados puxados direto da conta via Stract e cruzados com as respostas do Typebot. Agora que a UTM está funcionando, dá pra ver exatamente quem converteu e qual anúncio trouxe.</p>
+    <div class="pill">LinkedIn Ads · Legado &amp; Família · 01/ago – 10/set/2026</div>
+    <h1>Formação Mulheres em Conselhos — quem realmente entrou, vindo do LinkedIn</h1>
+    <p class="lead">Contagem 100% baseada na planilha do Typebot (não no painel do LinkedIn) — é quem de fato clicou, abriu o formulário e respondeu.</p>
 
     <div class="verdict">
       <div class="dot"></div>
       <div>
-        <h3>2 conversões confirmadas — as duas vieram do mesmo anúncio</h3>
-        <p>Laura Gallucci e Hellen Lisboa. As duas clicaram no <b style="color:#fff">mesmo criativo</b>, dentro da campanha "JOB TITLES SET DE DECISORES", a CPA de R$25,55 — enquanto outros 5 anúncios rodando em paralelo gastaram R$386 sem gerar nenhuma conversão.</p>
+        <h3>17 pessoas entraram pelo LinkedIn — 14 completaram o cadastro inteiro</h3>
+        <p>15 delas deixaram contato (e-mail + telefone). Praticamente todo mundo depois do dia 5/set veio do <b style="color:#fff">mesmo anúncio</b>: "ADI06_FMC_25Aug2026".</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- RESUMO CONTA -->
+<!-- INVESTIMENTO -->
 <section>
   <div class="wrap">
-    <div class="section-label">Visão geral</div>
-    <h2>A conta inteira, últimos 30 dias</h2>
-    <p class="intro-text">Dados oficiais da API do LinkedIn Ads (via Stract), conta 514481980 · Legado e Família.</p>
+    <div class="section-label">Investimento</div>
+    <h2>O que foi investido no período</h2>
+    <p class="intro-text">Dados de entrega da API do LinkedIn Ads (via Stract), conta 514481980 · Legado e Família — 01/ago a 10/set/2026.</p>
 
     <div class="cards">
-      <div class="mini-card"><small>Investido</small><b>R$437,83</b></div>
-      <div class="mini-card"><small>Impressões</small><b>24.398</b></div>
-      <div class="mini-card"><small>Cliques</small><b>231</b></div>
-      <div class="mini-card"><small>CTR</small><b>0,95%</b></div>
-      <div class="mini-card"><small>CPC médio</small><b>R$1,90</b></div>
-      <div class="mini-card ok"><small>Conversões</small><b>2</b></div>
+      <div class="mini-card"><small>Investido</small><b>R$979,76</b></div>
+      <div class="mini-card"><small>Impressões</small><b>80.656</b></div>
+      <div class="mini-card"><small>Cliques</small><b>826</b></div>
+      <div class="mini-card"><small>CTR</small><b>1,02%</b></div>
+      <div class="mini-card"><small>CPC médio</small><b>R$1,19</b></div>
     </div>
-    <p class="caption-note">CPA médio da conta: R$218,91 (puxado pra cima pelos anúncios que não converteram — veja o comparativo por criativo abaixo).</p>
-  </div>
-</section>
-
-<!-- OS 2 LEADS -->
-<section class="soft">
-  <div class="wrap">
-    <div class="section-label">Quem bateu o lead</div>
-    <h2>As 2 pessoas que converteram vindo do LinkedIn</h2>
-    <p class="intro-text">Identificadas cruzando o <span class="mono">utm_source=LKADS-LEF-FMC5</span> da planilha do Typebot com o dia do clique no LinkedIn. E-mails parcialmente ocultos aqui por ser um relatório público.</p>
-
-    <div class="lead-cards">
-      <div class="lead-card">
-        <div class="lc-top">
-          <h4>Laura Gallucci</h4>
-          <span class="lc-date">30/ago, 08:24</span>
-        </div>
-        <span class="lc-badge">✓ LinkedIn confirmado</span>
-        <dl>
-          <dt>Contato</dt><dd>laura.g***@gmail.com</dd>
-          <dt>Cargo</dt><dd>Consultora / profissional independente</dd>
-          <dt>Área</dt><dd>Estratégia e Gestão</dd>
-          <dt>Liderança</dt><dd>Mais de 20 anos</dd>
-          <dt>Em conselho</dt><dd>Já participei de comitês</dd>
-        </dl>
-        <div class="lc-goal">"Quero desenvolver competências em governança e atuação em conselhos"</div>
-      </div>
-      <div class="lead-card">
-        <div class="lc-top">
-          <h4>Hellen Lisboa</h4>
-          <span class="lc-date">01/set, 09:46</span>
-        </div>
-        <span class="lc-badge">✓ LinkedIn confirmado</span>
-        <dl>
-          <dt>Contato</dt><dd>hellen-l***@hotmail.com</dd>
-          <dt>Cargo</dt><dd>Gerência ou liderança sênior</dd>
-          <dt>Área</dt><dd>Operações</dd>
-          <dt>Liderança</dt><dd>Mais de 20 anos</dd>
-          <dt>Em conselho</dt><dd>Ainda não</dd>
-        </dl>
-        <div class="lc-goal">"Quero fazer uma transição da carreira executiva para uma carreira como conselheira"</div>
-      </div>
-    </div>
+    <p class="caption-note">Esses são números de entrega do anúncio (o que o LinkedIn cobrou e mostrou) — o resultado de conversão vem só da planilha do Typebot, na seção abaixo.</p>
   </div>
 </section>
 
 <!-- FUNIL TYPEBOT -->
-<section>
+<section class="soft">
   <div class="wrap">
-    <div class="section-label">Etapa por etapa</div>
-    <h2>Onde as pessoas travam no Typebot</h2>
-    <p class="intro-text">Reconstruído direto da planilha de respostas — o Typebot grava até onde a pessoa chegou, mesmo quem não terminou. Últimos 30 dias, <b>todas as origens</b> (não só LinkedIn) — 41 pessoas começaram.</p>
+    <div class="section-label">Resultado real</div>
+    <h2>O que aconteceu depois do clique — direto do Typebot</h2>
 
-    <div class="gap-note">
-      <div class="gn-icon">i</div>
-      <p><b>O que falta pra fechar o funil por completo:</b> GA4 não está conectado no Stract, então não dá pra ver quantas pessoas <i>chegaram na landing page</i> antes de abrir o Typebot — só a partir de quem já digitou alguma coisa. Pra fechar essa primeira ponta, precisa do GA4 conectado ou do acesso ao painel de Analytics nativo do Typebot.</p>
+    <div class="source-note">
+      <div class="sn-icon">i</div>
+      <p><b>Essa contagem não usa o número de conversão do LinkedIn.</b> É 100% baseada em quem tem <span class="mono">utm_source=LKADS-LEF-FMC5</span> gravado na resposta do Typebot — ou seja, gente de verdade que clicou e chegou na página.</p>
     </div>
 
-    <div class="funnel-steps">
-      <div class="fstep">
-        <div class="fs-label">Abriu o Typebot e deu o nome</div>
-        <div class="fs-track"><div class="fs-fill" style="width:100%"></div></div>
-        <div class="fs-num">41 <small>100%</small></div>
+    <div class="mini-funnel">
+      <div class="mf-step">
+        <div class="mf-card">
+          <div class="mf-num">17</div>
+          <div class="mf-label">Entraram no Typebot</div>
+        </div>
       </div>
-      <div class="fstep">
-        <div class="fs-label">Preencheu e-mail</div>
-        <div class="fs-track"><div class="fs-fill" style="width:90%"></div></div>
-        <div class="fs-num">37 <small>90%</small></div>
+      <div class="mf-step">
+        <div class="mf-card">
+          <div class="mf-num">15</div>
+          <div class="mf-label">Deixaram contato</div>
+          <div class="mf-pct">88% de quem entrou</div>
+        </div>
       </div>
-      <div class="fstep">
-        <div class="fs-label">Preencheu telefone</div>
-        <div class="fs-track"><div class="fs-fill" style="width:88%"></div></div>
-        <div class="fs-num">36 <small>97%</small></div>
-      </div>
-      <div class="fstep">
-        <div class="fs-label">Respondeu "Início = Sim"</div>
-        <div class="fs-track"><div class="fs-fill" style="width:83%"></div></div>
-        <div class="fs-num">34 <small>94%</small></div>
-      </div>
-      <div class="fstep">
-        <div class="fs-label">Escolheu o perfil (escopo)</div>
-        <div class="fs-track"><div class="fs-fill" style="width:80%"></div></div>
-        <div class="fs-num">33 <small>97%</small></div>
-      </div>
-      <div class="fstep sub">
-        <div class="fs-label">→ trilha "executiva / profissional"</div>
-        <div class="fs-track"><div class="fs-fill" style="width:63%"></div></div>
-        <div class="fs-num">26</div>
-      </div>
-      <div class="fstep sub">
-        <div class="fs-label">→ trilha "família empresária"</div>
-        <div class="fs-track"><div class="fs-fill" style="width:17%"></div></div>
-        <div class="fs-num">7</div>
-      </div>
-      <div class="fstep">
-        <div class="fs-label">Completou as perguntas de qualificação</div>
-        <div class="fs-track"><div class="fs-fill" style="width:73%"></div></div>
-        <div class="fs-num">30 <small>91%</small></div>
-      </div>
-      <div class="fstep">
-        <div class="fs-label">Completou o formulário inteiro <small>última pergunta respondida</small></div>
-        <div class="fs-track"><div class="fs-fill" style="width:73%"></div></div>
-        <div class="fs-num">30 <small>73% do total</small></div>
+      <div class="mf-step">
+        <div class="mf-card win">
+          <div class="mf-num">14</div>
+          <div class="mf-label">Completaram tudo</div>
+          <div class="mf-pct">82% de quem entrou</div>
+        </div>
       </div>
     </div>
-
-    <div class="drop-cards">
-      <div class="drop-card">
-        <div class="dc-num">8 pessoas</div>
-        <div class="dc-label">Maior perda: travam em "qual é o seu perfil?"</div>
-        <p>Deram nome/contato e sumiram bem na pergunta que decide a trilha (executiva × família empresária) — quase 1 em cada 5 que começou. É o maior buraco do funil inteiro.</p>
-      </div>
-      <div class="drop-card">
-        <div class="dc-num">2 pessoas</div>
-        <div class="dc-label">Travam na última pergunta, quase terminando</div>
-        <p>Marina Furtado (28/ago) e Jô Mazzarolo (27/ago) responderam tudo e pararam exatamente na pergunta final de objetivo — a um passo de completar.</p>
-      </div>
-    </div>
-    <p class="caption-note">Dentro de quem escolheu "família empresária" (7), 1 pulou o campo opcional de nome da empresa — o resto do grupo foi até o fim sem perder ninguém. Dentro de "executiva/profissional" (26), fluxo limpo até a pergunta final. Os 2 leads confirmados do LinkedIn (Laura e Hellen) completaram o formulário inteiro.</p>
+    <p class="caption-note">CPA real sobre quem deixou contato (15): <b>R$65,32</b>. CPA sobre quem completou o formulário inteiro (14): <b>R$69,98</b>.</p>
   </div>
 </section>
 
-<!-- RANKING CRIATIVOS -->
-<section class="soft">
+<!-- LISTA COMPLETA -->
+<section>
   <div class="wrap">
-    <div class="section-label">Por anúncio</div>
-    <h2>Qual criativo realmente performou</h2>
-    <p class="intro-text">10 variações de anúncio rodando em paralelo. Uma trouxe as 2 conversões; as outras 9 só consumiram orçamento.</p>
+    <div class="section-label">Etapa por etapa</div>
+    <h2>As 17 pessoas, uma por uma</h2>
+    <p class="intro-text">Ordenado do mais recente pro mais antigo. Linhas em vermelho não deixaram contato completo ou não terminaram.</p>
 
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Criativo</th><th class="num">Impr.</th><th class="num">Cliques</th><th class="num">Gasto</th><th class="num">Conv.</th><th class="num">CPA</th><th>Status</th></tr>
+          <tr><th>Data</th><th>Nome</th><th>Status</th><th>Criativo</th></tr>
         </thead>
         <tbody>
-          <tr class="winner">
-            <td class="creative-name">"...setembro de 2026! 🎯" <i>(2 espaços no fim)</i><span class="id">1501577733 · JOB TITLES 34-55 IMAGEM</span></td>
-            <td class="num">2.937</td><td class="num">29</td><td class="num">R$51,10</td><td class="num">2</td><td class="num">R$25,55</td>
-            <td><span class="status-chip win">Escalar</span></td>
-          </tr>
-          <tr class="loser">
-            <td class="creative-name">"...setembro de 2026! 🎯" <i>(sem espaço)</i><span class="id">1501600093 · JOB TITLES 34-55 IMAGEM</span></td>
-            <td class="num">3.535</td><td class="num">49</td><td class="num">R$92,89</td><td class="num">0</td><td class="num">—</td>
-            <td><span class="status-chip kill">Pausar</span></td>
-          </tr>
-          <tr class="loser">
-            <td class="creative-name">" ...setembro de 2026! 🎯" <i>(espaço no início)</i><span class="id">1501595113 · JOB TITLES 34-55 IMAGEM</span></td>
-            <td class="num">1.395</td><td class="num">18</td><td class="num">R$25,22</td><td class="num">0</td><td class="num">—</td>
-            <td><span class="status-chip kill">Pausar</span></td>
-          </tr>
-          <tr class="loser">
-            <td class="creative-name">" ...Setembro de 2026! 🎯" <i>(S maiúsculo)</i><span class="id">1501449353 · JOB TITLES 34-55 IMAGEM</span></td>
-            <td class="num">1.359</td><td class="num">13</td><td class="num">R$22,03</td><td class="num">0</td><td class="num">—</td>
-            <td><span class="status-chip kill">Pausar</span></td>
-          </tr>
-          <tr class="loser">
-            <td class="creative-name">"Você está pronta para ocupar espaços..." <i>(anúncio antigo)</i><span class="id">1479096143 · JOB TITLES 34-55 IMAGEM</span></td>
-            <td class="num">6.618</td><td class="num">44</td><td class="num">R$90,20</td><td class="num">0</td><td class="num">—</td>
-            <td><span class="status-chip kill">Pausar</span></td>
-          </tr>
-          <tr class="loser">
-            <td class="creative-name">"Uma carreira executiva sólida..." <i>(anúncio antigo)</i><span class="id">1478975813 · JOB TITLES 34-55 IMAGEM</span></td>
-            <td class="num">8.497</td><td class="num">78</td><td class="num">R$155,65</td><td class="num">0</td><td class="num">—</td>
-            <td><span class="status-chip kill">Pausar</span></td>
-          </tr>
-          <tr class="fresh">
-            <td class="creative-name">"...será a única turma de 2026." <i>(4 variações de teste)</i><span class="id">campanha VIDEO 25-55 · recém-lançada</span></td>
-            <td class="num">40</td><td class="num">0</td><td class="num">R$0,52</td><td class="num">0</td><td class="num">—</td>
-            <td><span class="status-chip watch">Aguardar</span></td>
-          </tr>
+          <tr><td class="date-cell">08/set, 13:58</td><td>Alana</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr class="incompleto"><td class="date-cell">06/set, 06:24</td><td>Gisele Souza</td><td><span class="status-chip incompleto">Só nome</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">05/set, 20:16</td><td>Amanda Carlini</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">05/set, 19:40</td><td>Deisy Dantas</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">05/set, 19:10</td><td>Selma Regina dos Santos</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">05/set, 19:08</td><td>Iramaia Maximo</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr class="incompleto"><td class="date-cell">05/set, 15:15</td><td>Fernanda Dominiquini</td><td><span class="status-chip incompleto">Parou antes do fim</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">05/set, 14:20</td><td>Sandra De Caro</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">05/set, 12:21</td><td>Thamires Cardoso</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">05/set, 10:12</td><td>Sandra Silva</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">05/set, 08:31</td><td>Izonete Fagundes</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag">ADI06_FMC_25Aug2026</span></td></tr>
+          <tr><td class="date-cell">02/set, 15:43</td><td>Luciana grande</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag unknown">não gravado *</span></td></tr>
+          <tr class="incompleto"><td class="date-cell">02/set, 15:31</td><td>Claudia</td><td><span class="status-chip incompleto">Só nome</span></td><td><span class="creative-tag unknown">não gravado *</span></td></tr>
+          <tr><td class="date-cell">02/set, 12:36</td><td>Fernanda Florentino</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag unknown">não gravado *</span></td></tr>
+          <tr><td class="date-cell">01/set, 14:54</td><td>Juliana Kuhn</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag unknown">não gravado *</span></td></tr>
+          <tr><td class="date-cell">01/set, 09:46</td><td>Hellen Lisboa</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag unknown">não gravado *</span></td></tr>
+          <tr><td class="date-cell">30/ago, 08:24</td><td>Laura Gallucci</td><td><span class="status-chip completo">Completo</span></td><td><span class="creative-tag unknown">não gravado *</span></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="caption-note">⚠️ Amostra pequena (2 conversões em 231 cliques) — ainda não dá pra cravar que essa variação específica é estruturalmente melhor. Mas é a única com resultado até agora, e as "gêmeas" que só mudam espaço/maiúscula não são um teste A/B real — é orçamento fragmentado sem aprendizado novo.</p>
+    <p class="caption-note">* Essas 6 pessoas entraram antes da correção da UTM dinâmica (que passou a funcionar em 05/set) — sabemos que vieram do LinkedIn, mas o nome do criativo não ficou gravado certinho na época.</p>
+  </div>
+</section>
+
+<!-- CRIATIVO VENCEDOR -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Por anúncio</div>
+    <h2>Um criativo só está puxando (quase) tudo</h2>
+
+    <div class="winner-callout">
+      <div class="wc-num">11 de 11</div>
+      <div class="wc-text">
+        <h4>"ADI06_FMC_25Aug2026" — 100% das entradas identificadas desde 05/set</h4>
+        <p>Desde que a UTM passou a gravar o nome certo do anúncio, nenhuma outra variação trouxe uma única pessoa — só essa.</p>
+      </div>
+    </div>
+    <p class="caption-note">Isso reforça o que já tínhamos visto antes: as outras variações de texto (só mudando espaço/maiúscula) e os anúncios antigos do FMC4 não estão convertendo. Vale concentrar o orçamento nesse criativo específico.</p>
   </div>
 </section>
 
@@ -404,44 +312,28 @@
 <section>
   <div class="wrap">
     <div class="section-label">Próximos passos</div>
-    <h2>Otimizações recomendadas</h2>
+    <h2>O que fazer com isso</h2>
 
     <div class="opt-list">
       <div class="opt-item p1">
         <div class="oi-icon">1</div>
         <div>
-          <h4>Pausar os 2 anúncios antigos (FMC4)<span class="prio-tag">Alta prioridade</span></h4>
-          <p>"Uma carreira executiva sólida..." e "Você está pronta para ocupar espaços..." juntos consumiram <b>R$245,85 — 56% do orçamento do período</b> — com 122 cliques e zero conversão. Já rodam há meses; fadiga de criativo é o mais provável.</p>
-          <div class="impact">Libera <b>~R$246</b> pra redirecionar pro anúncio que converteu.</div>
+          <h4>Escalar o "ADI06_FMC_25Aug2026" com prioridade<span class="prio-tag">Alta prioridade</span></h4>
+          <p>É o único anúncio, entre todas as variações testadas, que está trazendo gente até o Typebot. Aumentar o orçamento diário dele enquanto ele continuar performando.</p>
         </div>
       </div>
       <div class="opt-item p2">
         <div class="oi-icon">2</div>
         <div>
-          <h4>Parar de rodar variações "gêmeas" do mesmo texto<span class="prio-tag">Média prioridade</span></h4>
-          <p>3 variações praticamente idênticas (só mudando espaço em branco e maiúscula) gastaram R$140,14 juntas sem converter. Isso não é um teste A/B — é a mesma mensagem competindo consigo mesma no leilão. Concentre num único texto por conceito e use o orçamento sobrando pra testar mensagens <b>de verdade diferentes</b>.</p>
+          <h4>Investigar a pergunta onde a Fernanda Dominiquini travou<span class="prio-tag">Média prioridade</span></h4>
+          <p>Ela deixou contato mas parou 2 perguntas antes do fim (na de experiência com conselho). Vale conferir se essa pergunta tem algum problema de UX/clareza — pode estar derrubando outras pessoas fora da amostra do LinkedIn também.</p>
         </div>
       </div>
       <div class="opt-item p3">
         <div class="oi-icon">3</div>
         <div>
-          <h4>Escalar o anúncio vencedor<span class="prio-tag">Alta prioridade</span></h4>
-          <p>CPA de R$25,55 é excelente pro produto. Aumentar o orçamento diário desse criativo específico enquanto ele continuar performando — com o dinheiro liberado dos itens 1 e 2.</p>
-        </div>
-      </div>
-      <div class="opt-item p3">
-        <div class="oi-icon">4</div>
-        <div>
-          <h4>Dar tempo pra campanha de vídeo</h4>
-          <p>A campanha em vídeo (público 25-55) é muito recente — só R$0,52 gastos até agora. Ainda não dá pra avaliar. Deixe rodar mais alguns dias antes de decidir.</p>
-        </div>
-      </div>
-      <div class="opt-item p2">
-        <div class="oi-icon">5</div>
-        <div>
-          <h4>Corrigir a UTM dinâmica que ainda não resolve</h4>
-          <p>O <span class="mono">utm_source=LKADS-LEF-FMC5</span> está funcionando, mas <span class="mono">utm_campaign</span>, <span class="mono">utm_content</span> e <span class="mono">utm_medium</span> estão gravando o texto literal "CAMPAIGN_NAME" / "CREATIVE_NAME" / "CAMPAIGN_GROUP_NAME" em vez do nome real — sinal de que esses parâmetros foram digitados como texto fixo em vez de configurados como valor dinâmico no Campaign Manager.</p>
-          <div class="impact">Sem essa correção, dá pra saber <b>que</b> veio do LinkedIn, mas não <b>qual anúncio</b> — só descobrimos dessa vez cruzando com a data/hora manualmente.</div>
+          <h4>Contatar rápido quem completou</h4>
+          <p>14 pessoas responderam tudo entre 30/ago e 08/set. Prioridade de contato: as 11 mais recentes (05–08/set), que ainda estão "quentes".</p>
         </div>
       </div>
     </div>
@@ -449,14 +341,14 @@
 </section>
 
 <!-- CTA -->
-<section>
+<section class="soft">
   <div class="wrap">
     <div class="strip">
       <div>
-        <h3>Redistribuir o orçamento agora</h3>
-        <p>Pausando os 3 perdedores e os 2 anúncios antigos, sobra ~R$386 pra escalar o único anúncio que já provou que funciona.</p>
+        <h3>17 pessoas reais, prontas pra trabalhar</h3>
+        <p>Lista completa com contato de 15 delas, priorizada pelas mais recentes.</p>
       </div>
-      <a class="btn" href="https://wa.me/5587988731863?text=Vamos%20pausar%20os%20an%C3%BAncios%20que%20n%C3%A3o%20converteram%20e%20escalar%20o%20vencedor%20da%20campanha%20do%20LinkedIn." target="_blank">Falar com a Brito Mídias</a>
+      <a class="btn" href="https://wa.me/5587988731863?text=Vamos%20priorizar%20o%20contato%20dos%2015%20leads%20do%20LinkedIn%20e%20escalar%20o%20an%C3%BAncio%20ADI06_FMC_25Aug2026." target="_blank">Falar com a Brito Mídias</a>
     </div>
   </div>
 </section>
@@ -470,6 +362,6 @@
       </svg>
       Brito Mídias
     </div>
-    <div>Resultados LinkedIn Ads · Formação Mulheres em Conselhos · Legado &amp; Família · dados via Stract</div>
+    <div>Resultados LinkedIn Ads · Formação Mulheres em Conselhos · Legado &amp; Família · dados do Typebot</div>
   </div>
 </footer>
