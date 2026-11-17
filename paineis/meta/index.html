@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Meta Ads · Legado e Família</title>
+<style>html,body{margin:0;padding:0;background:#fff}[hidden]{display:none!important}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="data.js"></script>
+<script src="../dash.js"></script>
+</head>
+<body>
+<div id="dash-root">
+<meta name="dash-one-writer">
+<link rel="stylesheet" href="poppins.css">
+<style>
+#dash-root{--dash-gutter:0}
+.lf{--roxo:#7C3AED;--roxo-dark:#5B21B6;--roxo-deep:#3B0F73;--roxo-light:#A78BFA;--roxo-xlight:#EDE9FE;--ink:#141018;--cinza:#5B5566;--linha:#E7E3EE;--bg:#FFFFFF;--soft:#FAF9FC;--ok:#15803D;
+  font-family:'Poppins',sans-serif;font-weight:300;font-size:15px;line-height:1.6;color:var(--ink);background:var(--bg);display:grid;font-variant-numeric:tabular-nums;color-scheme:light;--pad:max(24px,calc((100% - 1180px)/2))}
+.lf b{font-weight:600}
+.lf-head{position:relative;overflow:hidden;color:#fff;padding:44px var(--pad) 48px;display:grid;gap:14px;background:radial-gradient(1100px 500px at 78% -10%,rgba(124,58,237,.55),transparent 60%),linear-gradient(150deg,#0A0A0A 0%,#17111F 45%,#3B0F73 100%)}
+.lf-head::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%)}
+.lf-head>*{position:relative}
+.lf-brand{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.lf-brand svg{width:36px;height:36px;flex:none}
+.lf-word{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:300}
+.lf .lf-word b{font-weight:800}
+.lf-bar{width:2px;height:24px;background:rgba(255,255,255,.55)}
+.lf-word span{letter-spacing:.22em}
+.lf-eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo-light)}
+.lf-title{font-size:clamp(30px,5vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:0;text-wrap:balance}
+.lf-sub{margin:0;font-size:17px;max-width:68ch;color:#fff}
+.lf .lf-sub b{color:var(--roxo-light);font-weight:600}
+.lf-filters{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;background:var(--bg);border-bottom:1px solid var(--linha);padding:12px var(--pad)}
+.lf-group{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.lf-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo)}
+.lf-chip{font:inherit;font-size:12px;font-weight:500;padding:5px 13px;border:1px solid var(--roxo-light);border-radius:100px;background:transparent;color:var(--roxo-dark);cursor:pointer}
+.lf-chip:hover{background:var(--roxo-xlight)}
+.lf-chip.on{background:linear-gradient(90deg,#7C3AED,#5B21B6);color:#fff;border-color:transparent}
+.lf-chip:focus-visible,.lf-date:focus-visible{outline:2px solid var(--roxo);outline-offset:2px}
+.lf-date{font:inherit;font-size:12px;font-weight:400;padding:5px 9px;border:1px solid var(--linha);border-radius:10px;background:var(--bg);color:var(--ink)}
+.lf-sec{display:grid;gap:18px;padding:44px var(--pad);min-width:0}
+.lf-sec.soft{background:var(--soft)}
+.lf-seclabel{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo)}
+.lf-seclabel::before{content:"";width:34px;height:2px;background:var(--roxo);border-radius:2px}
+.lf-h2{font-size:clamp(22px,3vw,28px);font-weight:700;line-height:1.2;margin:-8px 0 0}
+.lf-h3{font-size:15px;font-weight:600;margin:0}
+.lf-note{font-size:13px;color:var(--cinza);margin:0;max-width:82ch}
+.lf-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10.5rem),1fr));gap:12px}
+.lf-kpi{background:var(--soft);border:1px solid var(--linha);border-radius:14px;padding:16px 18px;display:grid;gap:4px;align-content:start;min-width:0}
+.lf-kpi.lead{background:linear-gradient(135deg,#5B21B6 0%,#7C3AED 100%);border-color:transparent;color:#fff}
+.lf-kpi.lead .lf-label,.lf-kpi.lead .lf-delta{color:#EDE9FE}
+.lf-kpi-n{font-size:clamp(22px,2.6vw,30px);font-weight:700;line-height:1.15;overflow-wrap:anywhere}
+.lf-delta{font-size:12px;font-weight:400;color:var(--cinza)}
+.lf-card{background:var(--bg);border:1px solid var(--linha);border-radius:16px;padding:20px;display:grid;gap:12px;min-width:0;align-content:start}
+.lf-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:14px}
+.lf-scroll{overflow-x:auto}
+.lf-table{width:100%;border-collapse:collapse;font-size:13px}
+.lf-table th{text-align:right;color:var(--roxo);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-bottom:1px solid var(--linha);white-space:nowrap}
+.lf-table td{text-align:right;padding:11px 10px;border-bottom:1px solid var(--linha);white-space:nowrap;font-weight:400}
+.lf-table th:first-child,.lf-table td:first-child{text-align:left;white-space:normal;min-width:13rem;position:sticky;left:0;background:var(--bg)}
+.lf-table tbody tr:last-child td{border-bottom:0}
+.lf-table tfoot td{font-weight:600;border-top:2px solid var(--linha);border-bottom:0}
+.lf-grp td,.lf-table .lf-grp td:first-child{background:var(--roxo-xlight);color:var(--roxo-dark);text-align:left;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-bottom:0}
+.lf-nome{display:block;font-weight:500}
+.lf-st{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cinza)}
+.lf-st.on{color:var(--ok)}
+.lf-chart{position:relative;min-height:230px}
+.lf-chart svg{display:block}
+.lf-legend{display:flex;gap:6px 18px;flex-wrap:wrap;font-size:12.5px;color:var(--cinza)}
+.lf-legend span{display:inline-flex;align-items:center}
+.lf-sw{display:inline-block;width:.65rem;height:.65rem;border-radius:3px;margin-right:.4rem}
+.lf-tip{position:absolute;background:#fff;border:1px solid var(--linha);border-radius:10px;padding:6px 10px;font-size:12px;font-weight:400;pointer-events:none;white-space:nowrap;z-index:2}
+.lf-tip small{display:block;color:var(--cinza);font-size:inherit}
+.lf-funnel{display:grid;gap:10px}
+.lf-fstep{display:grid;gap:3px}
+.lf-ftop{display:flex;justify-content:space-between;gap:12px;font-size:13px}
+.lf-ftop b{font-weight:600}
+.lf-ftrack{height:12px;background:var(--roxo-xlight);border-radius:6px;overflow:hidden}
+.lf-ftrack i{display:block;height:100%;background:linear-gradient(90deg,#7C3AED,#5B21B6);border-radius:6px;min-width:2px}
+.lf-frate{font-size:11.5px;color:var(--cinza)}
+.lf-lista{display:grid;gap:12px}
+.lf-pt{display:flex;justify-content:space-between;gap:12px;font-size:13px;margin-bottom:3px}
+.lf-pilha{display:flex;height:26px;border-radius:7px;overflow:hidden;background:var(--linha)}
+.lf-pilha i{display:flex;align-items:center;justify-content:center;height:100%;min-width:0;overflow:hidden;font-style:normal;font-size:11px;font-weight:600;color:var(--ink);cursor:default}
+.lf-pilha i.lf-c4,.lf-pilha i.lf-c5{color:#fff}
+.lf-pilha i:hover{filter:brightness(.92)}
+.lf-lista{position:relative}
+.lf-pilha.fina{height:10px;border-radius:5px;background:var(--roxo-xlight)}
+.lf-c0{background:#E7E3EE}.lf-c1{background:#C9C3D4}.lf-c2{background:#DDD6FE}.lf-c3{background:#A78BFA}.lf-c4{background:#7C3AED}.lf-c5{background:#3B0F73}
+.lf-gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:12px 22px;margin:0;font-size:13px}
+.lf-gloss div{display:grid;gap:1px}
+.lf-gloss dt{font-weight:600}
+.lf-gloss dd{margin:0;color:var(--cinza)}
+.lf-fbar{display:contents}
+.lf-hide{display:none!important}
+.lf-foot{background:#141018;color:#fff;padding:26px var(--pad);display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;font-size:12.5px}
+.lf-foot .lf-brand{margin:0}
+.lf-foot p{margin:0;color:#D6D0E0}
+[data-dash-source-state=refreshing]{opacity:.5;transition:opacity .2s}
+</style>
+<div class="lf">
+  <header class="lf-head" id="topo">
+    <div class="lf-brand"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon><polygon points="50,33 65,59 35,59"></polygon><line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line><line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line><line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line><line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line><line x1="10" y1="27" x2="50" y2="33"></line></svg><span class="lf-word"><b>BM</b><i class="lf-bar"></i><span>MÍDIAS</span></span></div>
+    <div class="lf-eyebrow">Central de Estratégia e Resultados</div>
+    <h1 class="lf-title">Meta Ads · Legado e Família</h1>
+    <p class="lf-sub lf-so-cad"><b data-draw="v" data-k="pessoas" data-source="leads">—</b> pessoas cadastradas de <b data-draw="v" data-k="ini">—</b> a <b data-draw="v" data-k="fim">—</b>, com custo médio de <b data-draw="v" data-k="custo" data-source="diario leads">—</b> por cadastro.</p>
+    <p class="lf-sub lf-so-dist" hidden><b data-draw="dv" data-k="seguidores" data-source="posts">—</b> novos seguidores de <b data-draw="v" data-k="ini">—</b> a <b data-draw="v" data-k="fim">—</b>, com custo médio de <b data-draw="dv" data-k="custo_seg" data-source="posts">—</b> por seguidor.</p>
+  </header>
+
+  <div class="lf-filters" id="filtros">
+    <div class="lf-group">
+      <span class="lf-label">Período</span>
+      <button class="lf-chip lf-per" type="button" data-i="2026-09-01" data-f="2026-11-17">Tudo</button>
+      <button class="lf-chip lf-per" type="button" data-i="2026-09-01" data-f="2026-09-30">Setembro</button>
+      <button class="lf-chip lf-per" type="button" data-i="2026-10-01" data-f="2026-10-31">Outubro</button>
+      <button class="lf-chip lf-per" type="button" data-i="2026-11-01" data-f="2026-11-17">Novembro</button>
+    </div>
+    <div class="lf-group">
+      <label class="lf-label" for="lf-inicio">De</label>
+      <input class="lf-date lf-inicio" id="lf-inicio" type="date" min="2026-09-01" max="2026-11-17">
+      <label class="lf-label" for="lf-fim">até</label>
+      <input class="lf-date lf-fim" id="lf-fim" type="date" min="2026-09-01" max="2026-11-17">
+    </div>
+    <div class="lf-group">
+      <span class="lf-label">Campanha</span>
+      <button class="lf-chip lf-prog" type="button" data-v="todos">Todas</button>
+      <button class="lf-chip lf-prog" type="button" data-v="Sucessão">Programa de Sucessão</button>
+      <button class="lf-chip lf-prog" type="button" data-v="Evento">Evento presencial</button>
+      <button class="lf-chip lf-prog" type="button" data-v="Distribuição">Distribuição de conteúdo</button>
+    </div>
+    <div class="lf-group lf-grp-versao">
+      <span class="lf-label">Versão</span>
+      <button class="lf-chip lf-ver" type="button" data-v="todas">Todas</button>
+      <button class="lf-chip lf-ver" type="button" data-v="Formulário">Formulário nativo</button>
+      <button class="lf-chip lf-ver" type="button" data-v="Typebot">Typebot</button>
+    </div>
+  </div>
+
+  <section class="lf-sec" id="visao">
+    <div class="lf-seclabel">Visão consolidada</div>
+    <div class="lf-kpis">
+      <div class="lf-kpi lead"><span class="lf-label">Pessoas cadastradas</span><span class="lf-kpi-n" data-draw="v" data-k="pessoas" data-source="leads">—</span><span class="lf-delta">Formulário + Typebot</span></div>
+      <div class="lf-kpi"><span class="lf-label">Custo por cadastro</span><span class="lf-kpi-n" data-draw="v" data-k="custo" data-source="diario leads">—</span><span class="lf-delta">Campanhas de cadastro</span></div>
+      <div class="lf-kpi"><span class="lf-label">Investimento</span><span class="lf-kpi-n" data-draw="v" data-k="invest" data-source="diario">—</span><span class="lf-delta">Com imposto de 13,83%</span></div>
+      <div class="lf-kpi"><span class="lf-label">Alcance</span><span class="lf-kpi-n" data-draw="v" data-k="alcance" data-source="alcance diario">—</span><span class="lf-delta">Pessoas diferentes</span></div>
+      <div class="lf-kpi"><span class="lf-label">Frequência</span><span class="lf-kpi-n" data-draw="v" data-k="freq" data-source="alcance diario">—</span><span class="lf-delta">Vezes por pessoa</span></div>
+    </div>
+    <div class="lf-card">
+      <h3 class="lf-h3">Cadastros por semana</h3>
+      <div class="lf-chart" data-draw="semanas" data-source="leads"></div>
+      <div class="lf-legend"><span><i class="lf-sw lf-c4"></i>Formulário no Meta</span><span><i class="lf-sw lf-c3"></i>Site + Typebot</span></div>
+    </div>
+  </section>
+
+  <section class="lf-sec soft" id="campanhas">
+    <div class="lf-seclabel">Campanhas</div>
+    <h2 class="lf-h2">Como cada campanha está performando</h2>
+    <div class="lf-card">
+      <div class="lf-scroll" data-source="diario campanhas leads alcance">
+        <table class="lf-table">
+          <thead><tr><th>Campanha</th><th>Investimento</th><th>Alcance</th><th>Frequência</th><th>CPM</th><th>CTR</th><th>CPC</th><th>Custo vis. página</th><th>Connect rate</th><th>Conversões</th><th>Custo conversão</th><th>Typebot</th><th>Custo Typebot</th></tr></thead>
+          <tbody data-draw="tabela"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="lf-note">Campanhas de formulário não passam por página, por isso não têm custo por visualização nem connect rate. Nelas, a coluna Typebot mostra quem clicou no botão final e abriu o Typebot: são as mesmas pessoas do formulário e não somam de novo.</p>
+    <p class="lf-note lf-nota-alc" hidden>O alcance deste período é uma estimativa. Nos botões Tudo, Setembro, Outubro e Novembro ele é o número exato do Meta.</p>
+    <div class="lf-grid2 lf-funis">
+      <div class="lf-card lf-f-form"><h3 class="lf-h3">Caminho do formulário</h3><div class="lf-funnel" data-draw="funil" data-t="Formulário" data-source="diario campanhas"></div></div>
+      <div class="lf-card lf-f-tb"><h3 class="lf-h3">Caminho do site + Typebot</h3><div class="lf-funnel" data-draw="funil" data-t="Site + Typebot" data-source="diario campanhas leads"></div></div>
+    </div>
+  </section>
+
+  <section class="lf-sec" id="anuncios">
+    <div class="lf-seclabel">Criativos</div>
+    <h2 class="lf-h2">Anúncios que mais trouxeram conversões</h2>
+    <div class="lf-card">
+      <div class="lf-scroll" data-source="anuncios campanhas">
+        <table class="lf-table">
+          <thead><tr><th>Anúncio</th><th>Investimento</th><th>Conversões</th><th>Custo conversão</th></tr></thead>
+          <tbody data-draw="anuncios"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="lf-sec soft" id="qualidade">
+    <div class="lf-seclabel">Qualidade</div>
+    <h2 class="lf-h2">Quem está chegando no Programa de Sucessão</h2>
+    <p class="lf-note">Com base nas respostas de cada pessoa. O Typebot pergunta a renda pessoal. O formulário do Meta pergunta o faturamento da empresa ou do negócio, porque o Meta não permite perguntar renda. As faixas são iguais, mas a pergunta é diferente.</p>
+    <div class="lf-card">
+      <div class="lf-scroll" data-source="leads diario campanhas">
+        <table class="lf-table">
+          <thead><tr><th>Caminho</th><th>Cadastros</th><th>Responderam a faixa</th><th>R$ 10 mil ou mais</th><th>% do total</th><th>% de quem respondeu</th><th>Investimento</th><th>Custo por pessoa de R$ 10 mil ou mais</th></tr></thead>
+          <tbody data-draw="qualidade"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="lf-grid2">
+      <div class="lf-card">
+        <h3 class="lf-h3">Faixa de renda ou faturamento</h3>
+        <div class="lf-lista" data-draw="faixas" data-source="leads"></div>
+        <div class="lf-legend"><span><i class="lf-sw lf-c0"></i>Não respondeu</span><span><i class="lf-sw lf-c1"></i>Sem renda ou faturamento</span><span><i class="lf-sw lf-c2"></i>Até R$ 10 mil</span><span><i class="lf-sw lf-c3"></i>R$ 10 mil a R$ 50 mil</span><span><i class="lf-sw lf-c4"></i>R$ 50 mil a R$ 100 mil</span><span><i class="lf-sw lf-c5"></i>Acima de R$ 100 mil</span></div>
+      </div>
+      <div class="lf-card">
+        <h3 class="lf-h3">Perfil</h3>
+        <div class="lf-lista" data-draw="perfis" data-source="leads"></div>
+        <div class="lf-legend"><span><i class="lf-sw lf-c4"></i>Membro de empresa familiar</span><span><i class="lf-sw lf-c3"></i>Profissional que atua com empresa familiar</span><span><i class="lf-sw lf-c0"></i>Não respondeu</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lf-sec" id="evento">
+    <div class="lf-seclabel">Evento Master Club</div>
+    <h2 class="lf-h2">Quem está se cadastrando no evento</h2>
+    <div class="lf-grid2">
+      <div class="lf-card"><h3 class="lf-h3">Relação com a empresa</h3><div class="lf-lista" data-draw="evento" data-d="relacao" data-source="leads"></div></div>
+      <div class="lf-card"><h3 class="lf-h3">Funcionários na empresa</h3><div class="lf-lista" data-draw="evento" data-d="funcionarios" data-source="leads"></div></div>
+    </div>
+  </section>
+
+  <section class="lf-sec" id="typebot">
+    <div class="lf-seclabel">Typebot</div>
+    <h2 class="lf-h2">Todas as entradas no Typebot</h2>
+    <p class="lf-note">Mostra todas as pessoas que entraram nos fluxos do Programa de Sucessão e do Evento, de qualquer origem. Depois de setembro as campanhas do Meta passaram para o formulário, então as entradas vindas do Meta caem. Google e LinkedIn têm investimento próprio, fora deste painel. Sem origem identificada são entradas sem UTM.</p>
+    <div class="lf-card">
+      <div class="lf-scroll" data-source="leads">
+        <table class="lf-table">
+          <thead><tr><th>Origem</th><th>Setembro</th><th>Outubro</th><th>Novembro</th><th>No período escolhido</th></tr></thead>
+          <tbody data-draw="tb_origens"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="lf-sec soft" id="distribuicao">
+    <div class="lf-seclabel">Distribuição de conteúdo</div>
+    <h2 class="lf-h2">Seguidores e visitas ao perfil da Monique</h2>
+    <div class="lf-kpis">
+      <div class="lf-kpi lead"><span class="lf-label">Novos seguidores</span><span class="lf-kpi-n" data-draw="dv" data-k="seguidores" data-source="posts">—</span><span class="lf-delta">Vindos dos anúncios</span></div>
+      <div class="lf-kpi"><span class="lf-label">Custo por seguidor</span><span class="lf-kpi-n" data-draw="dv" data-k="custo_seg" data-source="posts">—</span><span class="lf-delta">Com imposto de 13,83%</span></div>
+      <div class="lf-kpi"><span class="lf-label">Visitas ao perfil</span><span class="lf-kpi-n" data-draw="dv" data-k="visitas" data-source="posts">—</span><span class="lf-delta">Pessoas que abriram o perfil</span></div>
+      <div class="lf-kpi"><span class="lf-label">Custo por visita</span><span class="lf-kpi-n" data-draw="dv" data-k="custo_vis" data-source="posts">—</span><span class="lf-delta">Com imposto de 13,83%</span></div>
+      <div class="lf-kpi"><span class="lf-label">Investimento</span><span class="lf-kpi-n" data-draw="dv" data-k="invest" data-source="posts">—</span><span class="lf-delta">Com imposto de 13,83%</span></div>
+    </div>
+    <div class="lf-card">
+      <div class="lf-scroll" data-source="posts">
+        <table class="lf-table">
+          <thead><tr><th>Conteúdo</th><th>Investimento</th><th>Visitas ao perfil</th><th>Custo por visita</th><th>Seguidores</th><th>Custo por seguidor</th><th>Visita que virou seguidor</th></tr></thead>
+          <tbody data-draw="posts"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="lf-sec soft" id="glossario">
+    <div class="lf-seclabel">Glossário</div>
+    <dl class="lf-gloss">
+      <div><dt>Alcance</dt><dd>Pessoas diferentes que viram o anúncio.</dd></div>
+      <div><dt>Frequência</dt><dd>Quantas vezes, em média, cada pessoa viu.</dd></div>
+      <div><dt>CPM</dt><dd>Custo para mostrar o anúncio mil vezes.</dd></div>
+      <div><dt>CTR</dt><dd>De cada 100 vezes que o anúncio apareceu, quantas viraram clique no link.</dd></div>
+      <div><dt>CPC</dt><dd>Custo de cada clique no link.</dd></div>
+      <div><dt>Custo vis. página</dt><dd>Custo de cada pessoa que chegou a abrir a página.</dd></div>
+      <div><dt>Connect rate</dt><dd>De quem clicou, quantos a página realmente carregou.</dd></div>
+      <div><dt>Conversões</dt><dd>Cadastros registrados pelo Meta, no formulário ou na página.</dd></div>
+      <div><dt>Seguidores</dt><dd>Pessoas que começaram a seguir o perfil depois de ver o anúncio.</dd></div>
+      <div><dt>Typebot</dt><dd>Pessoas que entraram na conversa do Typebot vindas da campanha.</dd></div>
+    </dl>
+  </section>
+
+  <footer class="lf-foot">
+    <div class="lf-brand"><span class="lf-word"><b>BM</b><i class="lf-bar"></i><span>MÍDIAS</span></span></div>
+    <p>Dados da planilha de acompanhamento, dos formulários e do Meta, atualizados em 17/11/2026.</p>
+  </footer>
+</div>
+
+<script>
+const IMPOSTO = 1.1383;
+const brl = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'});
+const brl0 = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL', maximumFractionDigits: 0});
+const int = new Intl.NumberFormat('pt-BR');
+const dec = new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const pct = new Intl.NumberFormat('pt-BR', {style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1});
+const pct0 = new Intl.NumberFormat('pt-BR', {style: 'percent', maximumFractionDigits: 0});
+const f = (fmt, v) => (v === null || v === undefined || !Number.isFinite(v) ? '—' : fmt.format(v));
+const dataBR = (s) => (s ? s.slice(8, 10) + '/' + s.slice(5, 7) + '/' + s.slice(0, 4) : '—');
+const div = (a, b) => (b ? a / b : null);
+const ALTAS = ['R$ 10 mil a R$ 50 mil', 'R$ 50 mil a R$ 100 mil', 'Acima de R$ 100 mil'];
+const CAMINHOS = [['Site + Typebot', 'typebot'], ['Formulário', 'form']];
+const caminhosAtivos = () => { const v = dash.params().versao ?? 'todas'; return CAMINHOS.filter(([c]) => v === 'todas' || (v === 'Formulário') === (c === 'Formulário')); };
+const NOVO = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt !== undefined) e.textContent = txt; return e; };
+
+const pronto = (...ids) => ids.every((id) => dash.data(id).status === 'ok');
+const filtro = () => { const p = dash.params(); return {prog: p.programa ?? 'todos', ver: p.versao ?? 'todas'}; };
+const noPeriodo = (r) => { const p = dash.params(); return r.data >= p.inicio && r.data <= p.fim; };
+const alcanceDe = (id, dias) => {
+  const p = dash.params(), linhas = dash.data('alcance').data;
+  const exato = linhas.some((a) => a.inicio === p.inicio && a.fim === p.fim);
+  if (exato) return {v: linhas.find((a) => a.inicio === p.inicio && a.fim === p.fim && a.campanha_id === id)?.alcance ?? 0, est: false};
+  const todos = dash.data('diario').data.filter((d) => (id === 'conta' || d.campanha_id === id) && d.data <= '2026-11-16');
+  const soma = (l) => l.reduce((s, d) => s + d.alcance_dia, 0);
+  const base = linhas.find((a) => a.inicio === '2026-09-01' && a.fim === '2026-11-16' && a.campanha_id === id)?.alcance ?? 0;
+  return {v: Math.round(soma(dias) * div(base, soma(todos))), est: true};
+};
+const visao = () => {
+  const camp = dash.data('campanhas').data, dias = dash.data('diario').data.filter(noPeriodo), leads = dash.data('leads').data.filter(noPeriodo);
+  const linhas = camp.map((c) => {
+    const d = dias.filter((x) => x.campanha_id === c.id);
+    const s = (k) => d.reduce((t, x) => t + x[k], 0);
+    const invest = s('gasto') * IMPOSTO, imp = s('impressoes'), clq = s('cliques'), vis = s('vis_pagina');
+    const site = c.tipo === 'Site + Typebot', distrib = c.tipo === 'Distribuição';
+    const typebot = leads.filter((l) => l.campanha_id === c.id && l.origem !== 'form').length;
+    const conv = distrib ? null : s('conversoes');
+    const al = alcanceDe(c.id, d);
+    return {...c, invest, imp, clq, vis, typebot, conv, alcance: al.v, est: al.est, freq: div(imp, al.v), cpm: div(invest * 1000, imp), ctr: div(clq, imp), cpc: div(invest, clq),
+      custo_vis: site ? div(invest, vis) : null, connect: site ? div(vis, clq) : null, custo_conv: div(invest, conv), custo_tb: site ? div(invest, typebot) : null};
+  });
+  const {prog, ver} = filtro();
+  const vale = (l) => {
+    if (prog !== 'todos' && l.programa !== prog) return false;
+    if (prog === 'Distribuição') return true;
+    if (ver === 'todas') return true;
+    if (l.tipo === 'Distribuição') return false;
+    return ver === 'Formulário' ? l.tipo === 'Formulário' : l.tipo === 'Site + Typebot' || l.typebot > 0;
+  };
+  const filtradas = linhas.filter(vale);
+  const lf = leads.filter((l) => l.origem !== 'typebot_outros' && (prog === 'todos' || l.programa === prog));
+  const contados = lf.filter((l) => (ver === 'Formulário' ? l.origem === 'form' : ver === 'Typebot' ? l.origem !== 'form' : l.origem !== 'typebot_apos_form'));
+  const invCad = filtradas.filter((l) => l.tipo !== 'Distribuição' && (ver !== 'Typebot' || l.tipo === 'Site + Typebot')).reduce((s, l) => s + l.invest, 0);
+  const pagos = ver === 'Typebot' ? contados.filter((l) => l.origem === 'typebot').length : contados.length;
+  const invest = filtradas.reduce((s, l) => s + l.invest, 0), imp = filtradas.reduce((s, l) => s + l.imp, 0);
+  const tudo = prog === 'todos' && ver === 'todas', conta = alcanceDe('conta', dias);
+  const al = tudo ? conta.v : filtradas.reduce((s, l) => s + l.alcance, 0);
+  return {linhas: filtradas, leads: lf, contados, pessoas: contados.length, invest, custo: div(invCad, pagos), alcance: al, est: tudo ? conta.est : true, estTabela: conta.est, freq: div(imp, al)};
+};
+
+const aplicar = (ini, fim) => { if (ini && fim && ini <= fim) dash.setParams({inicio: ini, fim}); };
+document.querySelectorAll('.lf-per').forEach((b) => b.addEventListener('click', () => aplicar(b.dataset.i, b.dataset.f)));
+document.querySelectorAll('.lf-prog').forEach((b) => b.addEventListener('click', () => dash.setParams({programa: b.dataset.v})));
+document.querySelectorAll('.lf-ver').forEach((b) => b.addEventListener('click', () => dash.setParams({versao: b.dataset.v})));
+document.querySelectorAll('.lf-date').forEach((el) => el.addEventListener('change', () => {
+  const i = document.querySelector('.lf-inicio'), e = document.querySelector('.lf-fim');
+  if (i?.validity.valid && e?.validity.valid) aplicar(i.value, e.value);
+}));
+dash.onData(() => {
+  const p = dash.params();
+  document.querySelectorAll('.lf-inicio').forEach((el) => { if (el !== document.activeElement) el.value = p.inicio ?? ''; });
+  document.querySelectorAll('.lf-fim').forEach((el) => { if (el !== document.activeElement) el.value = p.fim ?? ''; });
+  document.querySelectorAll('.lf-per').forEach((b) => b.classList.toggle('on', b.dataset.i === p.inicio && b.dataset.f === p.fim));
+  const {prog, ver} = filtro();
+  document.querySelectorAll('.lf-prog').forEach((b) => b.classList.toggle('on', b.dataset.v === prog));
+  document.querySelectorAll('.lf-ver').forEach((b) => b.classList.toggle('on', b.dataset.v === ver));
+  const dist = prog === 'Distribuição';
+  const mostra = (sel, sim) => document.querySelectorAll(sel).forEach((el) => { el.hidden = !sim; el.classList.toggle('lf-hide', !sim); });
+  mostra('.lf-so-cad', !dist);
+  mostra('.lf-so-dist', dist);
+  mostra('.lf-grp-versao', !dist);
+  mostra('#visao', !dist);
+  mostra('.lf-funis', !dist);
+  mostra('.lf-f-form', !dist && ver !== 'Typebot' );
+  mostra('.lf-f-tb', !dist && ver !== 'Formulário' && prog !== 'Evento');
+  mostra('#anuncios', !dist);
+  mostra('#qualidade', !dist && prog !== 'Evento');
+  mostra('#evento', !dist && prog !== 'Sucessão' && ver !== 'Typebot');
+  mostra('#typebot', !dist && ver !== 'Formulário');
+  mostra('#distribuicao', (dist || prog === 'todos') && ver === 'todas');
+  const ok = pronto('diario', 'campanhas', 'alcance', 'leads');
+  document.querySelectorAll('.lf-nota-alc').forEach((el) => { el.hidden = !(ok && visao().estTabela); });
+});
+
+dash.draw('v', (el) => {
+  const k = el.dataset.k, p = dash.params();
+  if (k === 'ini') { el.textContent = dataBR(p.inicio); return; }
+  if (k === 'fim') { el.textContent = dataBR(p.fim); return; }
+  if (!pronto('diario', 'campanhas', 'alcance', 'leads')) { el.textContent = '—'; return; }
+  const v = visao(), pre = v.est ? '≈ ' : '';
+  el.textContent = {pessoas: f(int, v.pessoas), custo: f(brl, v.custo), invest: f(brl0, v.invest), alcance: pre + f(int, v.alcance), freq: pre + f(dec, v.freq)}[k] ?? '—';
+});
+
+dash.draw('tabela', (el) => {
+  el.replaceChildren();
+  if (!pronto('diario', 'campanhas', 'alcance', 'leads')) return;
+  const v = visao();
+  [['Formulário', 'Formulário no Meta'], ['Site + Typebot', 'Site + Typebot'], ['Distribuição', 'Distribuição de conteúdo']].forEach(([tipo, titulo]) => {
+    const linhas = v.linhas.filter((l) => l.tipo === tipo && l.invest > 0).sort((a, b) => b.invest - a.invest);
+    if (!linhas.length) return;
+    const g = el.insertRow(); g.className = 'lf-grp';
+    const c = g.insertCell(); c.colSpan = 13; c.textContent = titulo;
+    linhas.forEach((t) => {
+      const r = el.insertRow(), n = r.insertCell();
+      n.append(NOVO('span', 'lf-nome', t.nome), NOVO('span', 'lf-st' + (t.ativa ? ' on' : ''), t.ativa ? 'Ativa' : 'Encerrada'));
+      const pre = t.est ? '≈ ' : '';
+      [f(brl, t.invest), pre + f(int, t.alcance), pre + f(dec, t.freq), f(brl, t.cpm), f(pct, t.ctr), f(brl, t.cpc), f(brl, t.custo_vis), f(pct0, t.connect), f(int, t.conv), f(brl, t.custo_conv), t.tipo === 'Distribuição' ? '—' : f(int, t.typebot), f(brl, t.custo_tb)]
+        .forEach((x) => { r.insertCell().textContent = x; });
+    });
+  });
+});
+
+dash.draw('funil', (el) => {
+  el.replaceChildren();
+  if (!pronto('diario', 'campanhas', 'alcance', 'leads')) return;
+  const v = visao(), t = el.dataset.t, l = v.linhas.filter((x) => x.tipo === t);
+  const s = (k) => l.reduce((a, x) => a + (x[k] ?? 0), 0);
+  const etapas = t === 'Formulário'
+    ? [['Impressões', s('imp')], ['Cliques no anúncio', s('clq')], ['Cadastros no formulário', s('conv')]]
+    : [['Impressões', s('imp')], ['Cliques no anúncio', s('clq')], ['Chegaram na página', s('vis')], ['Entraram no Typebot', s('typebot')]];
+  etapas.forEach(([nome, n], i) => {
+    const b = NOVO('div', 'lf-fstep'), top = NOVO('div', 'lf-ftop');
+    top.append(NOVO('span', '', nome), NOVO('b', '', f(int, n)));
+    const tr = NOVO('div', 'lf-ftrack'), bar = NOVO('i');
+    bar.style.width = (i ? (div(n, etapas[0][1]) ?? 0) : 1) * 100 + '%';
+    tr.append(bar); b.append(top, tr);
+    if (i) b.append(NOVO('span', 'lf-frate', f(pct, div(n, etapas[i - 1][1])) + ' da etapa anterior'));
+    el.append(b);
+  });
+});
+
+dash.draw('anuncios', (el) => {
+  el.replaceChildren();
+  if (!pronto('anuncios', 'campanhas')) return;
+  const nomes = new Map(dash.data('campanhas').data.map((c) => [c.id, c]));
+  const g = new Map();
+  const {prog, ver} = filtro();
+  dash.data('anuncios').data.filter(noPeriodo).forEach((a) => {
+    const cc = nomes.get(a.campanha_id);
+    if (prog !== 'todos' && cc?.programa !== prog) return;
+    if (ver === 'Formulário' && cc?.tipo !== 'Formulário') return;
+    if (ver === 'Typebot' && cc?.tipo !== 'Site + Typebot') return;
+    const k = a.anuncio + '|' + a.campanha_id, x = g.get(k) ?? {a: a.anuncio, c: a.campanha_id, inv: 0, conv: 0};
+    x.inv += a.gasto * IMPOSTO; x.conv += a.conversoes; g.set(k, x);
+  });
+  [...g.values()].filter((x) => x.conv > 0).sort((a, b) => b.conv - a.conv || a.inv - b.inv).slice(0, 10).forEach((x) => {
+    const r = el.insertRow(), n = r.insertCell(), c = nomes.get(x.c);
+    n.append(NOVO('span', 'lf-nome', x.a), NOVO('span', 'lf-st', (c?.nome ?? '') + ' · ' + (c?.tipo ?? '')));
+    [f(brl, x.inv), f(int, x.conv), f(brl, div(x.inv, x.conv))].forEach((t) => { r.insertCell().textContent = t; });
+  });
+});
+
+dash.draw('qualidade', (el) => {
+  el.replaceChildren();
+  if (!pronto('diario', 'campanhas', 'alcance', 'leads')) return;
+  const v = visao();
+  caminhosAtivos().forEach(([caminho, origem]) => {
+    const g = v.leads.filter((l) => l.programa === 'Sucessão' && l.origem === origem);
+    const resp = g.filter((l) => l.faixa !== 'Não respondeu').length, q = g.filter((l) => ALTAS.includes(l.faixa)).length;
+    const inv = v.linhas.filter((l) => l.tipo === caminho && l.programa === 'Sucessão').reduce((s, l) => s + l.invest, 0);
+    const r = el.insertRow();
+    [caminho, f(int, g.length), f(int, resp), f(int, q), f(pct0, div(q, g.length)), f(pct0, div(q, resp)), f(brl, inv), f(brl, div(inv, q))].forEach((t) => { r.insertCell().textContent = t; });
+  });
+});
+
+const pilhas = (el, campo, ordem) => {
+  el.replaceChildren();
+  if (!pronto('leads')) return;
+  const leads = dash.data('leads').data.filter(noPeriodo);
+  const tip = NOVO('div', 'lf-tip'); tip.hidden = true;
+  caminhosAtivos().forEach(([caminho, origem]) => {
+    const g = leads.filter((l) => l.programa === 'Sucessão' && l.origem === origem);
+    if (!g.length) return;
+    const box = NOVO('div'), t = NOVO('div', 'lf-pt');
+    t.append(NOVO('span', '', caminho), NOVO('span', '', int.format(g.length) + ' cadastros'));
+    const bar = NOVO('div', 'lf-pilha');
+    ordem.forEach(([valor, cor]) => {
+      const n = g.filter((l) => l[campo] === valor).length;
+      if (!n) return;
+      const parte = n / g.length;
+      const s = NOVO('i', 'lf-c' + cor, parte >= .08 ? pct0.format(parte) : '');
+      s.style.width = parte * 100 + '%';
+      s.setAttribute('aria-label', valor + ': ' + int.format(n) + ', ' + pct0.format(parte));
+      const mostrar = (ev) => {
+        const b = el.getBoundingClientRect();
+        tip.hidden = false;
+        tip.replaceChildren(NOVO('small', '', caminho), NOVO('div', '', valor), NOVO('b', '', pct0.format(parte) + ' · ' + int.format(n) + (n === 1 ? ' pessoa' : ' pessoas')));
+        const w = tip.offsetWidth;
+        tip.style.left = Math.max(0, Math.min(ev.clientX - b.left + 12, b.width - w)) + 'px';
+        tip.style.top = Math.max(0, ev.clientY - b.top - tip.offsetHeight - 10) + 'px';
+      };
+      s.addEventListener('mousemove', mostrar);
+      s.addEventListener('click', mostrar);
+      s.addEventListener('mouseleave', () => { tip.hidden = true; });
+      bar.append(s);
+    });
+    box.append(t, bar); el.append(box);
+  });
+  el.append(tip);
+};
+dash.draw('faixas', (el) => pilhas(el, 'faixa', [['Não respondeu', 0], ['Sem renda ou faturamento', 1], ['Até R$ 10 mil', 2], ['R$ 10 mil a R$ 50 mil', 3], ['R$ 50 mil a R$ 100 mil', 4], ['Acima de R$ 100 mil', 5]]));
+dash.draw('perfis', (el) => pilhas(el, 'perfil', [['Membro de empresa familiar', 4], ['Profissional que atua com empresa familiar', 3], ['Não respondeu', 0]]));
+
+dash.draw('evento', (el) => {
+  el.replaceChildren();
+  if (!pronto('leads')) return;
+  const campo = el.dataset.d;
+  const ordem = campo === 'relacao' ? ['Sócio(a) ou dono(a)', 'CEO ou diretor(a)', 'Conselheiro(a)', 'Profissional que atende empresas familiares', 'Outro'] : ['Até 10', 'De 11 a 50', 'De 51 a 200', 'De 201 a 500', 'Mais de 500'];
+  const g = dash.data('leads').data.filter((l) => noPeriodo(l) && l.programa === 'Evento');
+  ordem.forEach((valor) => {
+    const n = g.filter((l) => l[campo] === valor).length;
+    const box = NOVO('div'), t = NOVO('div', 'lf-pt');
+    t.append(NOVO('span', '', valor), NOVO('span', '', int.format(n) + (g.length ? ' · ' + pct0.format(n / g.length) : '')));
+    const bar = NOVO('div', 'lf-pilha fina'), s = NOVO('i', 'lf-c4');
+    s.style.width = (g.length ? (n / g.length) * 100 : 0) + '%';
+    bar.append(s); box.append(t, bar); el.append(box);
+  });
+});
+
+dash.draw('semanas', (el) => {
+  el.replaceChildren();
+  if (!pronto('leads')) return;
+  const seg = (s) => { const d = new Date(s + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7)); return d.toISOString().slice(0, 10); };
+  const m = new Map();
+  dash.data('leads').data.filter(noPeriodo).forEach((l) => {
+    const {prog, ver} = filtro();
+    if (l.origem === 'typebot_outros' || (prog !== 'todos' && l.programa !== prog)) return;
+    if (ver === 'Formulário' ? l.origem !== 'form' : ver === 'Typebot' ? l.origem === 'form' : l.origem === 'typebot_apos_form') return;
+    const k = seg(l.data), x = m.get(k) ?? {s: k, form: 0, site: 0};
+    if (l.origem === 'form') x.form += 1; else x.site += 1;
+    m.set(k, x);
+  });
+  const dados = [...m.values()].sort((a, b) => (a.s < b.s ? -1 : 1));
+  if (!dados.length) return;
+  const w = el.clientWidth || 600, h = 230, mg = {t: 18, r: 8, b: 24, l: 28};
+  const x = d3.scaleBand(dados.map((d) => d.s), [mg.l, w - mg.r]).padding(.3);
+  const y = d3.scaleLinear([0, d3.max(dados, (d) => d.form + d.site)], [h - mg.b, mg.t]).nice();
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${w} ${h}`).attr('role', 'img');
+  svg.append('g').selectAll('line').data(y.ticks(4)).join('line').attr('x1', mg.l).attr('x2', w - mg.r).attr('y1', y).attr('y2', y).attr('stroke', '#E7E3EE');
+  svg.append('g').selectAll('text').data(y.ticks(4).filter(Number.isInteger)).join('text').attr('x', mg.l - 6).attr('y', (d) => y(d) + 4).attr('text-anchor', 'end').attr('fill', '#5B5566').attr('font-size', 11).text((d) => d);
+  const bw = Math.min(x.bandwidth(), 40), bx = (d) => x(d.s) + (x.bandwidth() - bw) / 2;
+  const salto = Math.ceil(dados.length / Math.max(1, Math.floor((w - mg.l) / 52)));
+  svg.append('g').selectAll('text').data(dados.filter((d, i) => i % salto === 0)).join('text').attr('x', (d) => x(d.s) + x.bandwidth() / 2).attr('y', h - 6).attr('text-anchor', 'middle').attr('fill', '#5B5566').attr('font-size', 11).text((d) => d.s.slice(8, 10) + '/' + d.s.slice(5, 7));
+  const tip = d3.select(el).append('div').attr('class', 'lf-tip').style('display', 'none');
+  const g = svg.append('g').selectAll('g').data(dados).join('g');
+  g.append('rect').attr('x', bx).attr('width', bw).attr('y', (d) => y(d.site)).attr('height', (d) => y(0) - y(d.site)).attr('fill', '#A78BFA');
+  g.append('rect').attr('x', bx).attr('width', bw).attr('y', (d) => y(d.site + d.form)).attr('height', (d) => y(d.site) - y(d.site + d.form)).attr('fill', '#7C3AED');
+  g.append('text').attr('x', (d) => bx(d) + bw / 2).attr('y', (d) => y(d.site + d.form) - 5).attr('text-anchor', 'middle').attr('fill', '#141018').attr('font-size', 11).attr('font-weight', 600).text((d) => d.site + d.form);
+  g.on('mousemove', (ev, d) => {
+    const [px, py] = d3.pointer(ev, el);
+    tip.style('display', null).style('left', Math.min(px + 12, w - 170) + 'px').style('top', Math.max(py - 40, 0) + 'px');
+    tip.selectAll('*').remove();
+    tip.append('small').text('Semana de ' + dataBR(d.s));
+    tip.append('div').text('Formulário: ' + d.form);
+    tip.append('div').text('Site + Typebot: ' + d.site);
+  }).on('mouseleave', () => tip.style('display', 'none'));
+});
+
+const distVisao = () => {
+  const d = dash.data('posts').data.filter(noPeriodo), s = (k) => d.reduce((a, x) => a + x[k], 0);
+  const invest = s('gasto') * IMPOSTO, seg = s('seguidores'), vis = s('visitas');
+  return {d, invest, seguidores: seg, visitas: vis, custo_seg: div(invest, seg), custo_vis: div(invest, vis)};
+};
+dash.draw('dv', (el) => {
+  if (!pronto('posts')) { el.textContent = '—'; return; }
+  const v = distVisao(), k = el.dataset.k;
+  el.textContent = {seguidores: f(int, v.seguidores), visitas: f(int, v.visitas), custo_seg: f(brl, v.custo_seg), custo_vis: f(brl, v.custo_vis), invest: f(brl0, v.invest)}[k] ?? '—';
+});
+dash.draw('posts', (el) => {
+  el.replaceChildren();
+  if (!pronto('posts')) return;
+  const g = new Map();
+  distVisao().d.forEach((p) => { const x = g.get(p.post) ?? {post: p.post, inv: 0, vis: 0, seg: 0}; x.inv += p.gasto * IMPOSTO; x.vis += p.visitas; x.seg += p.seguidores; g.set(p.post, x); });
+  [...g.values()].sort((a, b) => b.seg - a.seg || b.inv - a.inv).forEach((x) => {
+    const r = el.insertRow(), n = r.insertCell();
+    n.append(NOVO('span', 'lf-nome', x.post.replace(/^POST\d+_ADV\d+_IGLEF_[\d.]+_/, '')), NOVO('span', 'lf-st', x.post.split('_').slice(0, 2).join(' ')));
+    [f(brl, x.inv), f(int, x.vis), f(brl, div(x.inv, x.vis)), f(int, x.seg), f(brl, div(x.inv, x.seg)), f(pct0, div(x.seg, x.vis))].forEach((c) => { r.insertCell().textContent = c; });
+  });
+});
+dash.draw('tb_origens', (el) => {
+  el.replaceChildren();
+  if (!pronto('leads')) return;
+  const {prog} = filtro();
+  const ls = dash.data('leads').data.filter((l) => l.origem !== 'form' && (prog === 'todos' || l.programa === prog));
+  const nome = (l) => (l.origem === 'typebot' ? 'Meta · Site' : l.origem === 'typebot_apos_form' ? 'Meta · Depois do formulário' : l.canal);
+  const ordem = ['Meta · Site', 'Meta · Depois do formulário', 'Google Ads', 'LinkedIn', 'RD Station', 'Sem origem identificada'];
+  const mes = (m, x) => ls.filter((l) => nome(l) === x && l.data.slice(5, 7) === m).length;
+  const per = (x) => ls.filter((l) => nome(l) === x && noPeriodo(l)).length;
+  ordem.forEach((x) => {
+    if (!ls.some((l) => nome(l) === x)) return;
+    const r = el.insertRow();
+    [x, f(int, mes('09', x)), f(int, mes('10', x)), f(int, mes('11', x)), f(int, per(x))].forEach((c) => { r.insertCell().textContent = c; });
+  });
+});
+</script>
+
+</div>
+</body>
+</html>

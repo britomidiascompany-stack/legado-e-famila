@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LinkedIn Ads · Legado e Família</title>
+<style>html,body{margin:0;padding:0;background:#fff}[hidden]{display:none!important}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="data.js"></script>
+<script src="../dash.js"></script>
+</head>
+<body>
+<div id="dash-root">
+<meta name="dash-one-writer">
+<link rel="stylesheet" href="poppins.css">
+<style>
+#dash-root{--dash-gutter:0}
+.lf{--roxo:#7C3AED;--roxo-dark:#5B21B6;--roxo-deep:#3B0F73;--roxo-light:#A78BFA;--roxo-xlight:#EDE9FE;--ink:#141018;--cinza:#5B5566;--linha:#E7E3EE;--bg:#FFFFFF;--soft:#FAF9FC;--ok:#15803D;--bad:#B91C1C;
+  font-family:'Poppins',sans-serif;font-weight:300;font-size:15px;line-height:1.6;color:var(--ink);background:var(--bg);display:grid;font-variant-numeric:tabular-nums;color-scheme:light;--pad:max(24px,calc((100% - 1100px)/2))}
+.lf b{font-weight:600}
+.lf-head{position:relative;overflow:hidden;color:#fff;padding:44px var(--pad) 48px;display:grid;gap:14px;background:radial-gradient(1100px 500px at 78% -10%,rgba(124,58,237,.55),transparent 60%),linear-gradient(150deg,#0A0A0A 0%,#17111F 45%,#3B0F73 100%)}
+.lf-head::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%)}
+.lf-head>*{position:relative}
+.lf-brand{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.lf-brand svg{width:36px;height:36px;flex:none}
+.lf-word{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:300}
+.lf .lf-word b{font-weight:800}
+.lf-bar{width:2px;height:24px;background:rgba(255,255,255,.55)}
+.lf-word span{letter-spacing:.22em}
+.lf-eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo-light)}
+.lf-title{font-size:clamp(30px,5vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:0;text-wrap:balance}
+.lf-sub{margin:0;font-size:17px;max-width:68ch;color:#fff}
+.lf .lf-sub b{color:var(--roxo-light);font-weight:600}
+.lf-filters{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;background:var(--bg);border-bottom:1px solid var(--linha);padding:12px var(--pad)}
+.lf-group{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.lf-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo)}
+.lf-chip{font:inherit;font-size:12px;font-weight:500;padding:5px 13px;border:1px solid var(--roxo-light);border-radius:100px;background:transparent;color:var(--roxo-dark);cursor:pointer}
+.lf-chip:hover{background:var(--roxo-xlight)}
+.lf-chip.on{background:linear-gradient(90deg,#7C3AED,#5B21B6);color:#fff;border-color:transparent}
+.lf-chip:focus-visible,.lf-date:focus-visible,.lf-sel:focus-visible{outline:2px solid var(--roxo);outline-offset:2px}
+.lf-date,.lf-sel{font:inherit;font-size:12px;font-weight:400;padding:5px 9px;border:1px solid var(--linha);border-radius:10px;background:var(--bg);color:var(--ink)}
+.lf-sec{display:grid;gap:18px;padding:44px var(--pad);min-width:0}
+.lf-sec.soft{background:var(--soft)}
+.lf-seclabel{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo)}
+.lf-seclabel::before{content:"";width:34px;height:2px;background:var(--roxo);border-radius:2px}
+.lf-h2{font-size:clamp(22px,3vw,28px);font-weight:700;line-height:1.2;margin:-8px 0 0}
+.lf-note{font-size:13px;color:var(--cinza);margin:0;max-width:78ch}
+.lf-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10.5rem),1fr));gap:12px}
+.lf-kpi{background:var(--soft);border:1px solid var(--linha);border-radius:14px;padding:16px 18px;display:grid;gap:4px;align-content:start;min-width:0}
+.lf-kpi.lead{background:linear-gradient(135deg,#5B21B6 0%,#7C3AED 100%);border-color:transparent;color:#fff}
+.lf-kpi.lead .lf-label,.lf-kpi.lead .lf-delta{color:#EDE9FE}
+.lf-kpi.lead .lf-delta.good,.lf-kpi.lead .lf-delta.bad{color:#fff}
+.lf-kpi-n{font-size:clamp(22px,2.6vw,30px);font-weight:700;line-height:1.15;overflow-wrap:anywhere}
+.lf-delta{font-size:12px;font-weight:400;color:var(--cinza)}
+.lf-delta.good{color:var(--ok)}.lf-delta.bad{color:var(--bad)}
+.lf-card{background:var(--bg);border:1px solid var(--linha);border-radius:16px;padding:20px;display:grid;gap:12px;min-width:0;align-content:start}
+.lf-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:14px}
+.lf-scroll{overflow-x:auto}
+.lf-table{width:100%;border-collapse:collapse;font-size:13px}
+.lf-table th{text-align:right;color:var(--roxo);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-bottom:1px solid var(--linha);white-space:nowrap}
+.lf-table td{text-align:right;padding:12px 10px;border-bottom:1px solid var(--linha);white-space:nowrap;font-weight:400}
+.lf-table tr:last-child td{border-bottom:0}
+.lf-table th:first-child,.lf-table td:first-child{text-align:left;white-space:normal;font-weight:500}
+.lf-chart{position:relative;min-height:176px}
+.lf-chart svg{display:block}
+.lf-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--cinza)}
+.lf-sw{display:inline-block;width:.65rem;height:.65rem;border-radius:3px;margin-right:.4rem}
+.lf-tip{position:absolute;background:#fff;border:1px solid var(--linha);border-radius:10px;padding:6px 10px;font-size:12px;font-weight:400;pointer-events:none;white-space:nowrap;z-index:2}
+.lf-tip small{display:block;color:var(--cinza);font-size:inherit}
+.lf-funnel{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:16px}
+.lf-step{display:grid;gap:4px;align-content:start;padding-left:14px;border-left:3px solid var(--roxo-light)}
+.lf-step:last-child{border-left-color:var(--roxo)}
+.lf-steplabel{font-size:13px;font-weight:500}
+.lf-rate{color:var(--cinza);font-size:12px}
+.lf-pill{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:100px;border:1px solid var(--roxo-light);color:var(--roxo-dark)}
+.lf-pill.on{background:linear-gradient(90deg,#7C3AED,#5B21B6);color:#fff;border-color:transparent}
+.lf-pillrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.lf-dl{display:grid;grid-template-columns:7rem 1fr;gap:6px 14px;font-size:13px;margin:0}
+.lf-dl dt{color:var(--cinza)}.lf-dl dd{margin:0;min-width:0;font-weight:400}
+.lf-conjname{font-size:16px;font-weight:600;margin:0;overflow-wrap:anywhere;line-height:1.35}
+.lf-mini{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border-top:1px solid var(--linha);padding-top:12px}
+.lf-mini div{display:grid;gap:1px;min-width:0}
+.lf-mini span{font-size:11px;color:var(--cinza)}
+.lf-mini b{font-weight:600;font-size:14px;overflow-wrap:anywhere}
+.lf-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.lf-gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,18.5rem),1fr));gap:14px}
+.lf-cr{background:var(--bg);border:1px solid var(--linha);border-radius:14px;padding:14px;display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:14px;align-items:start;min-width:0}
+.lf-cr.top{border:2px solid var(--roxo)}
+.lf-cr.none{background:var(--roxo-xlight);border-color:var(--roxo-light)}
+.lf-th{width:5.5rem;aspect-ratio:4/5;object-fit:cover;border-radius:8px;background:var(--linha);display:block}
+.lf-cr.none .lf-th{background:rgba(124,58,237,.14)}
+.lf-crbody{display:grid;gap:6px;min-width:0}
+.lf-crname{font-size:13px;font-weight:600;overflow-wrap:anywhere;line-height:1.35}
+.lf-crm{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 10px;font-size:12.5px}
+.lf-crm span{color:var(--cinza)}
+.lf-crm b{font-weight:600;text-align:right}
+.lf-crtext{font-size:12.5px;color:var(--cinza);margin:0}
+.lf-recs{margin:0;padding-left:1.15rem;display:grid;gap:10px;font-size:14px}
+.lf .lf-recs b{font-weight:600}
+.lf-recs li::marker{color:var(--roxo);font-weight:700}
+.lf-refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:14px}
+.lf-test{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lf-testc{display:grid;grid-template-columns:4.5rem minmax(0,1fr);gap:10px;align-items:center;font-size:12.5px;font-weight:500;line-height:1.35;overflow-wrap:anywhere;min-width:0}
+.lf-testc img,.lf-testc div[data-draw]{width:4.5rem;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block}
+.lf-rule{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:10px}
+.lf-ruleb{border-radius:12px;padding:12px 14px;font-size:13.5px;display:grid;gap:2px}
+.lf-ruleb.a{background:var(--roxo-xlight)}
+.lf-ruleb.b{background:var(--soft);border:1px solid var(--linha)}
+.lf-ruleb strong{font-weight:700;color:var(--roxo-dark)}
+.lf-foot{background:#141018;color:#fff;padding:26px var(--pad);display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;font-size:12.5px}
+.lf-foot .lf-brand{margin:0}
+.lf-foot p{margin:0;color:#D6D0E0}
+[data-dash-source-state=refreshing]{opacity:.5;transition:opacity .2s}
+@media (max-width:560px){.lf-test{grid-template-columns:1fr}.lf-mini{grid-template-columns:repeat(2,minmax(0,1fr))}.lf-filters{position:static}}
+</style>
+<div class="lf">
+  <header class="lf-head">
+    <div class="lf-brand"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon><polygon points="50,33 65,59 35,59"></polygon><line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line><line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line><line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line><line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line><line x1="10" y1="27" x2="50" y2="33"></line></svg><span class="lf-word"><b>BM</b><i class="lf-bar"></i><span>MÍDIAS</span></span></div>
+    <div class="lf-eyebrow">Central de Estratégia e Resultados</div>
+    <h1 class="lf-title">LinkedIn Ads · Legado e Família</h1>
+    <p class="lf-sub"><b data-draw="tk" data-k="leads" data-source="leads">—</b> leads com <b data-draw="tk" data-k="inv" data-source="diario">—</b> investidos, de <b data-draw="tk" data-k="ini">—</b> a <b data-draw="tk" data-k="fim">—</b>. Custo médio de <b data-draw="tk" data-k="cpl" data-source="diario leads">—</b> por lead.</p>
+  </header>
+
+  <div class="lf-filters">
+    <div class="lf-group">
+      <span class="lf-label">Período</span>
+      <button class="lf-chip" data-preset="all">Tudo</button>
+      <button class="lf-chip" data-preset="set">Setembro</button>
+      <button class="lf-chip" data-preset="out">Outubro</button>
+      <button class="lf-chip" data-preset="nov">Novembro</button>
+      <button class="lf-chip" data-preset="d7">Últimos 7 dias</button>
+      <button class="lf-chip" data-preset="d30">Últimos 30 dias</button>
+    </div>
+    <div class="lf-group">
+      <label class="lf-label" for="lf-start">De</label>
+      <input class="lf-date" id="lf-start" type="date" min="2026-09-01" max="2026-11-16">
+      <label class="lf-label" for="lf-end">até</label>
+      <input class="lf-date" id="lf-end" type="date" min="2026-09-01" max="2026-11-16">
+    </div>
+    <div class="lf-group">
+      <span class="lf-label">Campanha</span>
+      <button class="lf-chip" data-camp="all">Todas</button>
+      <button class="lf-chip" data-camp="FMC">Mulheres em Conselhos</button>
+      <button class="lf-chip" data-camp="LMCE26">Evento Master Club</button>
+    </div>
+  </div>
+
+  <section class="lf-sec" id="visao-geral">
+    <div class="lf-seclabel">Visão consolidada</div>
+    <div class="lf-kpis">
+      <div class="lf-kpi lead"><span class="lf-label">Leads</span><span class="lf-kpi-n" data-draw="kpi" data-k="leads" data-source="leads">—</span><span class="lf-delta" data-draw="delta" data-k="leads" data-source="leads">—</span></div>
+      <div class="lf-kpi"><span class="lf-label">Investimento</span><span class="lf-kpi-n" data-draw="kpi" data-k="inv" data-source="diario">—</span><span class="lf-delta" data-draw="delta" data-k="inv" data-source="diario">—</span></div>
+      <div class="lf-kpi"><span class="lf-label">Custo por lead</span><span class="lf-kpi-n" data-draw="kpi" data-k="cpl" data-source="diario leads">—</span><span class="lf-delta" data-draw="delta" data-k="cpl" data-source="diario leads">—</span></div>
+      <div class="lf-kpi"><span class="lf-label">Impressões</span><span class="lf-kpi-n" data-draw="kpi" data-k="imp" data-source="diario">—</span><span class="lf-delta" data-draw="delta" data-k="imp" data-source="diario">—</span></div>
+      <div class="lf-kpi"><span class="lf-label">Cliques</span><span class="lf-kpi-n" data-draw="kpi" data-k="cli" data-source="diario">—</span><span class="lf-delta" data-draw="delta" data-k="cli" data-source="diario">—</span></div>
+      <div class="lf-kpi"><span class="lf-label">CTR</span><span class="lf-kpi-n" data-draw="kpi" data-k="ctr" data-source="diario">—</span><span class="lf-delta" data-draw="delta" data-k="ctr" data-source="diario">—</span></div>
+    </div>
+    <p class="lf-note">A variação compara com o período anterior de mesmo tamanho. Lead é a pessoa que entrou no Typebot vinda do LinkedIn, contada uma vez por dia. CTR é a parcela de impressões que virou clique.</p>
+  </section>
+
+  <section class="lf-sec soft" id="campanhas">
+    <div class="lf-seclabel">Por campanha</div>
+    <h2 class="lf-h2">Campanhas</h2>
+    <div class="lf-card lf-scroll" data-source="diario leads">
+      <table class="lf-table">
+        <thead><tr><th>Campanha</th><th>Investimento</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>CPC</th><th>Leads</th><th>Custo por lead</th></tr></thead>
+        <tbody data-draw="camps"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="lf-sec" id="evolucao">
+    <div class="lf-seclabel">Dia a dia</div>
+    <h2 class="lf-h2">Evolução no período</h2>
+    <div class="lf-grid2">
+      <div class="lf-card">
+        <p class="lf-conjname">Investimento por dia</p>
+        <p class="lf-note">Clique em uma barra para ver só aquele dia.</p>
+        <div class="lf-chart" data-draw="bars" data-k="inv" data-source="diario">—</div>
+      </div>
+      <div class="lf-card">
+        <p class="lf-conjname">Leads por dia</p>
+        <p class="lf-note">As barras claras estão fora do período escolhido.</p>
+        <div class="lf-chart" data-draw="bars" data-k="leads" data-source="leads">—</div>
+      </div>
+    </div>
+    <div class="lf-legend">
+      <span><i class="lf-sw" data-sw="0"></i>Mulheres em Conselhos</span>
+      <span><i class="lf-sw" data-sw="1"></i>Evento Master Club</span>
+    </div>
+  </section>
+
+  <section class="lf-sec soft" id="funil">
+    <div class="lf-seclabel">Caminho do lead</div>
+    <h2 class="lf-h2">Funil do período</h2>
+    <div class="lf-card">
+      <div class="lf-funnel">
+        <div class="lf-step"><span class="lf-steplabel">Pessoas viram o anúncio (impressões)</span><span class="lf-kpi-n" data-draw="kpi" data-k="imp" data-source="diario">—</span></div>
+        <div class="lf-step"><span class="lf-steplabel">Clicaram</span><span class="lf-kpi-n" data-draw="kpi" data-k="cli" data-source="diario">—</span><span class="lf-rate"><span data-draw="kpi" data-k="ctr" data-source="diario">—</span> das impressões</span></div>
+        <div class="lf-step"><span class="lf-steplabel">Entraram no Typebot</span><span class="lf-kpi-n" data-draw="kpi" data-k="leads" data-source="leads">—</span><span class="lf-rate"><span data-draw="kpi" data-k="conv" data-source="diario leads">—</span> dos cliques</span></div>
+        <div class="lf-step"><span class="lf-steplabel">Completaram o Typebot</span><span class="lf-kpi-n" data-draw="kpi" data-k="comp" data-source="leads">—</span><span class="lf-rate"><span data-draw="kpi" data-k="compr" data-source="leads">—</span> dos leads</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lf-sec" id="publicos">
+    <div class="lf-seclabel">Segmentação</div>
+    <h2 class="lf-h2">Conjuntos e públicos</h2>
+    <p class="lf-note">O que está configurado em cada conjunto. Os números abaixo de cada um seguem o período escolhido.</p>
+    <div class="lf-grid2">
+      <article class="lf-card" data-camp-card="FMC">
+        <div class="lf-pillrow"><span class="lf-pill on">Ativo</span><span class="lf-pill">Mulheres em Conselhos</span><span class="lf-pill">Imagem</span></div>
+        <p class="lf-conjname">Decisoras 35+ em 9 estados</p>
+        <dl class="lf-dl">
+          <dt>Onde</dt><dd>SP, RJ, MG, SC, PR, ES, GO, MT e Brasília</dd>
+          <dt>Quem</dt><dd>Mulheres de 35 anos ou mais</dd>
+          <dt>Cargos</dt><dd>Membro do conselho, CEO, diretora, diretora executiva, administrativa, financeira e de operações, executiva de contas</dd>
+          <dt>Fora do público</dt><dd>Cargos de vendas, publicidade, marketing e educação</dd>
+          <dt>Onde aparece</dt><dd>Feed do LinkedIn e rede de sites e apps parceiros</dd>
+          <dt>Objetivo</dt><dd>Conversão: lead no Typebot</dd>
+          <dt>Destino</dt><dd>Página da formação, depois Typebot de qualificação</dd>
+        </dl>
+        <div class="lf-mini" data-draw="conj" data-conj="00 | JOB TITLES SET DE DECISORES 1 | M | 34-55 | ESTADOS [SP-MG-RJ-SC-PR-ES-GO-MT-BRASILIA] | IMAGEM" data-source="diario leads">—</div>
+      </article>
+      <article class="lf-card" data-camp-card="FMC">
+        <div class="lf-pillrow"><span class="lf-pill">Encerrado em setembro</span><span class="lf-pill">Mulheres em Conselhos</span><span class="lf-pill">Vídeo</span></div>
+        <p class="lf-conjname">Decisoras 25+ em 9 estados</p>
+        <dl class="lf-dl">
+          <dt>Onde</dt><dd>SP, RJ, MG, SC, PR, ES, GO, MT e Brasília</dd>
+          <dt>Quem</dt><dd>Mulheres de 25 anos ou mais</dd>
+          <dt>Cargos</dt><dd>Membro do conselho, CEO, COO, CFO, diretora, diretora executiva, de operações e de desenvolvimento de negócios</dd>
+          <dt>Objetivo</dt><dd>Conversão: lead no Typebot</dd>
+          <dt>Destino</dt><dd>Página da formação, depois Typebot de qualificação</dd>
+        </dl>
+        <div class="lf-mini" data-draw="conj" data-conj="00 | JOB TITLES SET DE DECISORES 1 | M | 25-55 | ESTADOS [SP-MG-RJ-SC-PR-ES-GO-MT-BRASILIA] | VIDEO" data-source="diario leads">—</div>
+      </article>
+      <article class="lf-card" data-camp-card="LMCE26">
+        <div class="lf-pillrow"><span class="lf-pill on">Ativo</span><span class="lf-pill">Evento Master Club</span><span class="lf-pill">Imagem</span></div>
+        <p class="lf-conjname">Decisores de empresa familiar, Grande SP</p>
+        <dl class="lf-dl">
+          <dt>Onde</dt><dd>Grande São Paulo</dd>
+          <dt>Cargos</dt><dd>Sócio, sócio-administrador, proprietário, fundador, membro do conselho, presidente, vice-presidente, CEO, COO, CFO, diretor, diretor-geral</dd>
+          <dt>Empresas</dt><dd>A partir de 51 funcionários</dd>
+          <dt>Onde aparece</dt><dd>Feed do LinkedIn</dd>
+          <dt>Objetivo</dt><dd>Visitas ao site</dd>
+          <dt>Destino</dt><dd>Typebot simples, depois WhatsApp da Aline</dd>
+        </dl>
+        <div class="lf-mini" data-draw="conj" data-conj="02 | DECISORES EMPRESA FAMILIAR | CARGOS + NIVEL + TAMANHO | GRANDE SP | POST ORGANICO" data-source="diario leads">—</div>
+      </article>
+      <article class="lf-card" data-camp-card="LMCE26">
+        <div class="lf-pillrow"><span class="lf-pill on">Ativo</span><span class="lf-pill">Evento Master Club</span><span class="lf-pill">Vídeo</span></div>
+        <p class="lf-conjname">Decisores de empresa familiar, Grande SP</p>
+        <dl class="lf-dl">
+          <dt>Público</dt><dd>O mesmo do conjunto de imagem: Grande São Paulo, mesmos cargos e empresas a partir de 51 funcionários</dd>
+          <dt>Onde aparece</dt><dd>Feed do LinkedIn</dd>
+          <dt>Objetivo</dt><dd>Visitas ao site</dd>
+          <dt>Destino</dt><dd>Typebot simples, depois WhatsApp da Aline</dd>
+        </dl>
+        <div class="lf-mini" data-draw="conj" data-conj="02 | DECISORES EMPRESA FAMILIAR | CARGOS + NIVEL + TAMANHO | GRANDE SP | VIDEO" data-source="diario leads">—</div>
+      </article>
+    </div>
+    <p class="lf-note" data-draw="semid" data-source="leads">—</p>
+  </section>
+
+  <section class="lf-sec soft" id="criativos">
+    <div class="lf-seclabel">Anúncios</div>
+    <h2 class="lf-h2">Criativos</h2>
+    <div class="lf-toolbar">
+      <label class="lf-label" for="lf-sort">Ordenar por</label>
+      <select class="lf-sel" id="lf-sort">
+        <option value="leads">Leads</option>
+        <option value="inv">Investimento</option>
+        <option value="cli">Cliques</option>
+        <option value="ctr">CTR</option>
+        <option value="cpc">Menor CPC</option>
+      </select>
+      <span class="lf-note">Mostra os criativos com ao menos R$ 1 investido no período.</span>
+    </div>
+    <p class="lf-note" data-draw="crsum" data-source="leads">—</p>
+    <div class="lf-gal" data-draw="gal" data-source="diario leads">—</div>
+  </section>
+
+  <section class="lf-sec" id="referencia">
+    <div class="lf-seclabel">Mulheres em Conselhos</div>
+    <h2 class="lf-h2">Janelas de resultado</h2>
+    <p class="lf-note">Comparação fixa, que não muda com o filtro. A primeira janela é a de maior conversão da campanha até aqui.</p>
+    <div class="lf-refs">
+      <div class="lf-card">
+        <p class="lf-conjname">23 a 30 de setembro</p>
+        <div class="lf-mini" data-draw="ref" data-w="a" data-source="diario leads">—</div>
+      </div>
+      <div class="lf-card">
+        <p class="lf-conjname">De 1º de outubro até hoje</p>
+        <div class="lf-mini" data-draw="ref" data-w="b" data-source="diario leads">—</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lf-sec soft" id="recomendacoes">
+    <div class="lf-seclabel">Plano de ação</div>
+    <h2 class="lf-h2">Próximos passos recomendados</h2>
+    <div class="lf-grid2">
+      <div class="lf-card">
+        <div class="lf-pillrow"><span class="lf-pill">Mulheres em Conselhos</span></div>
+        <ol class="lf-recs">
+          <li><b>Concentrar a entrega no feed do LinkedIn</b>, retirando a rede de sites e apps parceiros, para falar com o público no contexto profissional.</li>
+          <li><b>Testar dois criativos lado a lado</b>, com a verba dividida por igual:</li>
+        </ol>
+        <div class="lf-test">
+          <div class="lf-testc"><div data-draw="thumb" data-n="ADI17_FMC9_PREPARE-SE CADEIRAS"></div><span>ADI17: Prepare-se para assumir cadeiras em conselhos</span></div>
+          <div class="lf-testc"><div data-draw="thumb" data-n="ADI13_FMC9_SUA EXPERIENCIA VALE"></div><span>ADI13: Sua experiência vale uma cadeira no conselho</span></div>
+        </div>
+        <ol class="lf-recs" start="3">
+          <li><b>Manter público e página iguais durante o teste</b>, para a leitura do resultado ser clara.</li>
+          <li><b>Avaliar em <span data-draw="meta" data-k="dias">—</span> dias</b>, com <span data-draw="meta" data-k="dia">—</span> por dia, somando <span data-draw="meta" data-k="total">—</span> no teste. A meta é de até <span data-draw="meta" data-k="cpl">—</span> por lead.</li>
+        </ol>
+        <div class="lf-rule">
+          <div class="lf-ruleb a"><strong><span data-draw="meta" data-k="min">—</span> leads ou mais</strong><span>Meta atingida. A entrega era o ponto principal, e seguimos com o criativo vencedor.</span></div>
+          <div class="lf-ruleb b"><strong>Até <span data-draw="meta" data-k="max">—</span> leads</strong><span>O LinkedIn não é o melhor canal para esta oferta agora. A verba vai para o Google até mais perto de janeiro.</span></div>
+        </div>
+        <p class="lf-note">Com a entrega só no feed, o número de cliques cai e cada clique fica mais caro, perto de R$ 3. Isso é esperado: o que vale no teste é o custo por lead.</p>
+      </div>
+      <div class="lf-card">
+        <div class="lf-pillrow"><span class="lf-pill">Evento Master Club</span><span class="lf-pill">10 e 11 de novembro</span></div>
+        <ol class="lf-recs">
+          <li><b>Concentrar a verba no ADI01</b>, a imagem que trouxe <span data-draw="evt" data-k="adiL" data-source="leads">—</span> dos <span data-draw="evt" data-k="totL" data-source="leads">—</span> leads da campanha, com CTR de <span data-draw="evt" data-k="adiC" data-source="diario">—</span>.</li>
+          <li><b>Pausar os vídeos ADV01 e ADV02 até o evento.</b> Juntos, eles usaram <span data-draw="evt" data-k="vidI" data-source="diario">—</span> e trouxeram <span data-draw="evt" data-k="vidL" data-source="leads">—</span> lead. Esse valor passa para o ADI01 na reta final.</li>
+          <li><b>Manter público e destino iguais até o evento</b>, sem novos testes, porque não há tempo para uma leitura confiável.</li>
+          <li><b>Acompanhar com a Aline quantos contatos viraram inscrição</b>, para medir o resultado até a sala do evento.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <footer class="lf-foot">
+    <div class="lf-brand"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon><polygon points="50,33 65,59 35,59"></polygon><line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line><line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line><line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line><line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line><line x1="10" y1="27" x2="50" y2="33"></line></svg><span class="lf-word"><b>BM</b><i class="lf-bar"></i><span>MÍDIAS</span></span></div>
+    <p>Dados da planilha de acompanhamento: investimento até <span data-draw="tk" data-k="dmax">—</span> e leads até <span data-draw="tk" data-k="lmax">—</span>.</p>
+  </footer>
+</div>
+<script src="thumbs.js"></script>
+<script>
+(() => {
+  const META = {dias: 7, dia: 30, cpl: 70, min: 3};
+  const COL = {FMC: '#7C3AED', LMCE26: '#A78BFA'};
+  const MIN = '2026-09-01';
+  const CAMP = {FMC: 'Mulheres em Conselhos', LMCE26: 'Evento Master Club'};
+  const rows = (id) => { const s = dash.data(id); return s.status === 'ok' ? s.data : []; };
+  const ok = () => dash.data('diario').status === 'ok' && dash.data('leads').status === 'ok';
+  const nf = (o) => new Intl.NumberFormat('pt-BR', o);
+  const brl = (v) => v == null ? 'sem lead' : 'R$ ' + nf({minimumFractionDigits: 2, maximumFractionDigits: 2}).format(v);
+  const int = (v) => nf({maximumFractionDigits: 0}).format(v);
+  const pct = (v) => v == null ? '—' : nf({minimumFractionDigits: 2, maximumFractionDigits: 2}).format(v * 100) + '%';
+  const dm = (d) => d ? d.slice(8, 10) + '/' + d.slice(5, 7) : '—';
+  const addDays = (d, n) => { const t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0, 10); };
+  const lastDay = () => { const a = [...rows('diario'), ...rows('leads')].map((r) => r.dia).sort(); return a[a.length - 1] || MIN; };
+  const dmax = (id) => { const a = rows(id).map((r) => r.dia).sort(); return a[a.length - 1]; };
+  const par = () => { const p = dash.params(); return {start: p.start || MIN, end: p.end || lastDay(), camp: p.camp || 'all'}; };
+  const sel = (rs, a, b, c) => rs.filter((r) => r.dia >= a && r.dia <= b && (c === 'all' || r.campanha === c));
+  const met = (d, l) => {
+    const m = {inv: 0, imp: 0, cli: 0, leads: 0, comp: 0, vv25: 0, vv100: 0};
+    d.forEach((r) => { m.inv += +r.investimento; m.imp += +r.impressoes; m.cli += +r.cliques; m.vv25 += +r.vv25; m.vv100 += +r.vv100; });
+    l.forEach((r) => { m.leads += +r.leads; m.comp += +r.completos; });
+    m.ctr = m.imp ? m.cli / m.imp : null;
+    m.cpc = m.cli ? m.inv / m.cli : null;
+    m.cpl = m.leads ? m.inv / m.leads : null;
+    m.conv = m.cli ? m.leads / m.cli : null;
+    m.compr = m.leads ? m.comp / m.leads : null;
+    return m;
+  };
+  const cur = () => { const p = par(); return met(sel(rows('diario'), p.start, p.end, p.camp), sel(rows('leads'), p.start, p.end, p.camp)); };
+  const prev = () => {
+    const p = par();
+    const n = Math.round((new Date(p.end) - new Date(p.start)) / 864e5) + 1;
+    const e = addDays(p.start, -1), s = addDays(p.start, -n);
+    if (s < MIN) return null;
+    return met(sel(rows('diario'), s, e, p.camp), sel(rows('leads'), s, e, p.camp));
+  };
+  const fmtK = {leads: int, inv: brl, cpl: brl, imp: int, cli: int, ctr: pct, conv: pct, compr: pct, comp: int};
+
+  dash.draw('tk', (el) => {
+    const k = el.dataset.k, p = par();
+    if (k === 'ini') { el.textContent = dm(p.start); return; }
+    if (k === 'fim') { el.textContent = dm(p.end); return; }
+    if (!ok()) { el.textContent = '—'; return; }
+    if (k === 'dmax') { el.textContent = dm(dmax('diario')); return; }
+    if (k === 'lmax') { el.textContent = dm(dmax('leads')); return; }
+    el.textContent = fmtK[k](cur()[k]);
+  });
+  dash.draw('kpi', (el) => { el.textContent = ok() ? fmtK[el.dataset.k](cur()[el.dataset.k]) : '—'; });
+  dash.draw('delta', (el) => {
+    el.classList.remove('good', 'bad');
+    if (!ok()) { el.textContent = '—'; return; }
+    const k = el.dataset.k, b = prev();
+    if (!b) { el.textContent = 'sem período anterior'; return; }
+    const now = cur()[k], was = b[k];
+    if (now == null || was == null || !was) { el.textContent = was == null || !was ? 'sem base anterior' : 'antes: ' + fmtK[k](was); return; }
+    const d = now / was - 1;
+    el.textContent = (d > 0 ? '+' : '') + nf({maximumFractionDigits: 0}).format(d * 100) + '% vs. período anterior';
+    if (k !== 'inv' && Math.abs(d) > 0.005) el.classList.add((k === 'cpl' ? d < 0 : d > 0) ? 'good' : 'bad');
+  });
+  dash.draw('camps', (el) => {
+    el.replaceChildren();
+    if (!ok()) return;
+    const p = par();
+    (p.camp === 'all' ? ['FMC', 'LMCE26'] : [p.camp]).forEach((c) => {
+      const m = met(sel(rows('diario'), p.start, p.end, c), sel(rows('leads'), p.start, p.end, c));
+      const tr = document.createElement('tr');
+      [CAMP[c], brl(m.inv), int(m.imp), int(m.cli), pct(m.ctr), m.cpc == null ? '—' : brl(m.cpc), int(m.leads), brl(m.cpl)].forEach((v) => { const td = document.createElement('td'); td.textContent = v; tr.append(td); });
+      el.append(tr);
+    });
+  });
+  dash.draw('bars', (el) => {
+    el.replaceChildren();
+    if (!ok()) { el.textContent = '—'; return; }
+    const k = el.dataset.k, p = par();
+    const days = []; for (let d = MIN; d <= lastDay(); d = addDays(d, 1)) days.push(d);
+    const cs = p.camp === 'all' ? ['FMC', 'LMCE26'] : [p.camp];
+    const src = rows(k === 'inv' ? 'diario' : 'leads');
+    const val = (d, c) => d3.sum(src.filter((r) => r.dia === d && r.campanha === c), (r) => +(k === 'inv' ? r.investimento : r.leads));
+    const data = days.map((d) => { const o = {d, t: 0}; cs.forEach((c) => { o[c] = val(d, c); o.t += o[c]; }); return o; });
+    const W = el.clientWidth || 320, H = 170, mb = 20, mt = 6;
+    const y = d3.scaleLinear([0, d3.max(data, (o) => o.t) || 1], [H - mb, mt]).nice();
+    const svg = d3.create('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('height', H);
+    el.append(svg.node());
+    const f = k === 'inv' ? (v) => 'R$ ' + int(v) : int;
+    const ticks = y.ticks(4).filter((t) => k === 'inv' || Number.isInteger(t));
+    const probe = svg.append('text').style('font-size', '12px').text(f(y.domain()[1]));
+    const ml = Math.ceil(probe.node().getComputedTextLength()) + 8; probe.remove();
+    const x = d3.scaleBand(days, [ml, W - 2]).paddingInner(0.2);
+    ticks.forEach((t) => {
+      svg.append('line').attr('x1', ml).attr('x2', W).attr('y1', y(t)).attr('y2', y(t)).style('stroke', '#E7E3EE');
+      svg.append('text').attr('x', ml - 6).attr('y', y(t) + 4).attr('text-anchor', 'end').style('fill', '#5B5566').style('font-size', '12px').text(f(t));
+    });
+    const step = Math.ceil(days.length / Math.max(2, Math.floor((W - ml) / 56)));
+    days.forEach((d, i) => { if (i % step === 0) svg.append('text').attr('x', x(d) + x.bandwidth() / 2).attr('y', H - 5).attr('text-anchor', 'middle').style('fill', '#5B5566').style('font-size', '12px').text(dm(d)); });
+    const tip = document.createElement('div'); tip.className = 'lf-tip'; tip.hidden = true; el.append(tip);
+    data.forEach((o) => {
+      const on = o.d >= p.start && o.d <= p.end;
+      let base = 0;
+      const g = svg.append('g').style('cursor', 'pointer').style('opacity', on ? 1 : 0.28);
+      g.append('rect').attr('x', x(o.d)).attr('y', mt).attr('width', x.bandwidth()).attr('height', H - mb - mt).style('fill', 'transparent');
+      cs.forEach((c) => {
+        const v = o[c]; if (!v) return;
+        const top = y(base + v);
+        g.append('rect').attr('x', x(o.d)).attr('y', top).attr('width', x.bandwidth()).attr('height', y(base) - top).attr('rx', 1).style('fill', COL[c]);
+        base += v;
+      });
+      g.on('click', () => dash.setParams({start: o.d, end: o.d}));
+      g.on('mouseenter', () => {
+        const head = document.createElement('small'); head.textContent = dm(o.d);
+        tip.replaceChildren(head);
+        cs.forEach((c) => { const l = document.createElement('div'); l.textContent = CAMP[c] + ': ' + (k === 'inv' ? brl(o[c]) : int(o[c])); tip.append(l); });
+        tip.hidden = false;
+        tip.style.top = '0px';
+        tip.style.left = Math.min(Math.max(0, x(o.d) - tip.offsetWidth / 2), W - tip.offsetWidth) + 'px';
+      });
+      g.on('mouseleave', () => { tip.hidden = true; });
+    });
+  });
+  const mini = (el, items) => {
+    el.replaceChildren();
+    items.forEach(([label, v]) => { const d = document.createElement('div'); const s = document.createElement('span'); s.textContent = label; const b = document.createElement('b'); b.textContent = v; d.append(s, b); el.append(d); });
+  };
+  dash.draw('conj', (el) => {
+    if (!ok()) { el.replaceChildren(); el.textContent = '—'; return; }
+    const p = par(), n = el.dataset.conj, f = (r) => r.conjunto === n;
+    const m = met(sel(rows('diario'), p.start, p.end, 'all').filter(f), sel(rows('leads'), p.start, p.end, 'all').filter(f));
+    mini(el, [['Investimento', brl(m.inv)], ['Cliques', int(m.cli)], ['Leads', int(m.leads)], ['Por lead', brl(m.cpl)]]);
+  });
+  dash.draw('semid', (el) => {
+    if (!ok()) { el.textContent = '—'; return; }
+    const p = par();
+    const n = d3.sum(sel(rows('leads'), p.start, p.end, p.camp).filter((r) => r.conjunto === 'Não identificado'), (r) => +r.leads);
+    el.textContent = n ? int(n) + ' lead(s) do início de setembro chegaram sem o nome do conjunto e do criativo no link. Eles entram nos totais, mas não em um conjunto específico.' : '';
+  });
+  dash.draw('gal', (el) => {
+    el.replaceChildren();
+    if (!ok()) { el.textContent = '—'; return; }
+    const p = par(), d = sel(rows('diario'), p.start, p.end, p.camp), l = sel(rows('leads'), p.start, p.end, p.camp);
+    const last = dmax('diario'), ativo = new Set(rows('diario').filter((r) => r.dia >= addDays(last, -2) && +r.investimento >= 1).map((r) => r.criativo));
+    const names = [...new Set(d.map((r) => r.criativo))];
+    const list = names.map((n) => ({n, t: d.find((r) => r.criativo === n).tipo, c: d.find((r) => r.criativo === n).campanha, m: met(d.filter((r) => r.criativo === n), l.filter((r) => r.criativo === n))})).filter((o) => o.m.inv >= 1);
+    const by = (document.querySelector('#lf-sort') || {}).value || 'leads';
+    list.sort((a, b) => by === 'cpc' ? (a.m.cpc ?? 1e9) - (b.m.cpc ?? 1e9) : (b.m[by] ?? 0) - (a.m[by] ?? 0) || b.m.inv - a.m.inv);
+    const un = l.filter((r) => r.criativo === 'Não identificado');
+    if (un.length) list.push({none: true, n: 'Sem criativo identificado', m: met([], un)});
+    list.sort((a, b) => by === 'leads' ? b.m.leads - a.m.leads : (a.none ? 1 : 0) - (b.none ? 1 : 0));
+    const best = d3.max(list.filter((o) => !o.none), (o) => o.m.leads) || 0;
+    list.forEach((o) => {
+      const c = document.createElement('article'); c.className = 'lf-cr' + (o.none ? ' none' : best && o.m.leads === best ? ' top' : '');
+      if (o.none) {
+        const ph = document.createElement('div'); ph.className = 'lf-th';
+        const bd = document.createElement('div'); bd.className = 'lf-crbody';
+        const nn = document.createElement('div'); nn.className = 'lf-crname'; nn.textContent = o.n;
+        const q = document.createElement('div'); q.className = 'lf-crm';
+        const s1 = document.createElement('span'); s1.textContent = 'Leads'; const b1 = document.createElement('b'); b1.textContent = int(o.m.leads); q.append(s1, b1);
+        const tx = document.createElement('p'); tx.className = 'lf-crtext'; tx.textContent = 'Entraram em 1 e 2 de setembro, quando o link do anúncio ainda não registrava o nome do criativo. Contam nos totais, sem criativo específico.';
+        bd.append(nn, q, tx); c.append(ph, bd); el.append(c); return;
+      }
+      const src = (window.__thumbs || {})[o.n];
+      const th = src ? new Image() : document.createElement('div'); th.className = 'lf-th'; if (src) { th.src = src; th.alt = o.n; th.loading = 'lazy'; }
+      const b = document.createElement('div'); b.className = 'lf-crbody';
+      const nm = document.createElement('div'); nm.className = 'lf-crname'; nm.textContent = o.n;
+      const pills = document.createElement('div'); pills.className = 'lf-pillrow';
+      const pill = (t, on) => { const s = document.createElement('span'); s.className = 'lf-pill' + (on ? ' on' : ''); s.textContent = t; pills.append(s); };
+      if (ativo.has(o.n)) pill('Ativo', true);
+      pill(o.t);
+      if (p.camp === 'all') pill(CAMP[o.c]);
+      const g = document.createElement('div'); g.className = 'lf-crm';
+      const kv = (a, v) => { const s = document.createElement('span'); s.textContent = a; const x = document.createElement('b'); x.textContent = v; g.append(s, x); };
+      kv('Investido', brl(o.m.inv)); kv('Impressões', int(o.m.imp)); kv('Cliques', int(o.m.cli)); kv('CTR', pct(o.m.ctr)); kv('CPC', o.m.cpc == null ? '—' : brl(o.m.cpc)); kv('Leads', int(o.m.leads)); kv('Por lead', brl(o.m.cpl));
+      if (o.m.vv25) kv('Viu até o fim', int(o.m.vv100) + ' de ' + int(o.m.vv25));
+      b.append(nm, pills, g); c.append(th, b); el.append(c);
+    });
+  });
+  dash.draw('ref', (el) => {
+    if (!ok()) { el.replaceChildren(); el.textContent = '—'; return; }
+    const a = el.dataset.w === 'a', s = a ? '2026-09-23' : '2026-10-01', e = a ? '2026-09-30' : lastDay();
+    const m = met(sel(rows('diario'), s, e, 'FMC'), sel(rows('leads'), s, e, 'FMC'));
+    mini(el, [['Investimento', brl(m.inv)], ['Cliques', int(m.cli)], ['Leads', int(m.leads)], ['Por lead', brl(m.cpl)]]);
+  });
+  dash.draw('meta', (el) => {
+    const v = {dias: int(META.dias), dia: 'R$ ' + int(META.dia), total: 'R$ ' + int(META.dia * META.dias), cpl: 'R$ ' + int(META.cpl), min: int(META.min), max: int(META.min - 1)};
+    el.textContent = v[el.dataset.k];
+  });
+  dash.draw('thumb', (el) => {
+    const src = (window.__thumbs || {})[el.dataset.n];
+    if (src) { const i = new Image(); i.src = src; i.alt = el.dataset.n; el.replaceChildren(i); }
+  });
+  dash.draw('evt', (el) => {
+    if (!ok()) { el.textContent = '—'; return; }
+    const d = rows('diario').filter((r) => r.campanha === 'LMCE26'), l = rows('leads').filter((r) => r.campanha === 'LMCE26');
+    const img = 'ADI01_LMCE26_EVENTO XP_TYPEBOT', isV = (r) => /^ADV/.test(r.criativo);
+    const a = met(d.filter((r) => r.criativo === img), l.filter((r) => r.criativo === img)), v = met(d.filter(isV), l.filter(isV)), m = met(d, l);
+    el.textContent = {adiL: int(a.leads), totL: int(m.leads), adiC: pct(a.ctr), vidI: brl(v.inv), vidL: int(v.leads)}[el.dataset.k];
+  });
+  dash.draw('crsum', (el) => {
+    if (!ok()) { el.textContent = '—'; return; }
+    const p = par(), l = sel(rows('leads'), p.start, p.end, p.camp);
+    const un = d3.sum(l.filter((r) => r.criativo === 'Não identificado'), (r) => +r.leads), tot = d3.sum(l, (r) => +r.leads);
+    el.textContent = un ? int(tot) + ' leads no período: ' + int(tot - un) + ' com o criativo identificado e ' + int(un) + ' sem identificação, mostrados no card roxo.' : '';
+  });
+
+  const presetRange = (k) => {
+    const e = lastDay();
+    return {all: [MIN, e], set: ['2026-09-01', '2026-09-30'], out: ['2026-10-01', '2026-10-31'], nov: ['2026-11-01', e], d7: [addDays(e, -6), e], d30: [addDays(e, -29), e]}[k];
+  };
+  document.querySelectorAll('[data-preset]').forEach((b) => b.addEventListener('click', () => { const [start, end] = presetRange(b.dataset.preset); dash.setParams({start, end}); }));
+  document.querySelectorAll('[data-camp]').forEach((b) => b.addEventListener('click', () => dash.setParams({camp: b.dataset.camp})));
+  [['#lf-start', 'start'], ['#lf-end', 'end']].forEach(([q, n]) => document.querySelectorAll(q).forEach((i) => {
+    i.addEventListener('change', () => { if (i.value && i.validity.valid) dash.setParams({[n]: i.value}); });
+    i.addEventListener('blur', () => { i.value = par()[n]; });
+  }));
+  document.querySelectorAll('#lf-sort').forEach((s) => s.addEventListener('change', () => dash.draw('gal')));
+  dash.onData(() => {
+    const p = par();
+    document.querySelectorAll('#lf-start').forEach((i) => { if (i !== document.activeElement) i.value = p.start; });
+    document.querySelectorAll('#lf-end').forEach((i) => { if (i !== document.activeElement) i.value = p.end; });
+    document.querySelectorAll('[data-camp]').forEach((b) => b.classList.toggle('on', b.dataset.camp === p.camp));
+    document.querySelectorAll('[data-preset]').forEach((b) => { const r = presetRange(b.dataset.preset); b.classList.toggle('on', r[0] === p.start && r[1] === p.end); });
+    document.querySelectorAll('[data-camp-card]').forEach((c) => { c.hidden = p.camp !== 'all' && c.dataset.campCard !== p.camp; });
+    document.querySelectorAll('[data-sw]').forEach((s) => { s.style.background = +s.dataset.sw ? COL.LMCE26 : COL.FMC; });
+  });
+})();
+</script>
+
+</div>
+</body>
+</html>
