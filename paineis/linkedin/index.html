@@ -216,7 +216,7 @@
     <div class="lf-card">
       <div class="lf-fx" data-draw="faixas_li" data-source="leads"></div>
     </div>
-    <p class="lf-note">Renda pessoal informada pela própria pessoa no Typebot da Formação Mulheres em Conselhos. As faixas em roxo são as acima de R$ 10 mil. O fluxo do Evento Master Club não pergunta renda, por isso os leads dele aparecem como sem a pergunta.</p>
+    <p class="lf-note">Renda pessoal informada pela própria pessoa no Typebot da Formação Mulheres em Conselhos. As duas primeiras faixas, em roxo, são a classificação acima de R$ 10 mil, as mesmas usadas no painel do Google. O fluxo do Evento Master Club não pergunta renda, por isso os leads dele aparecem como sem a pergunta.</p>
   </section>
 
   <section class="lf-sec" id="publicos">
@@ -422,10 +422,10 @@ window.CR_LINKS = {"ADI19_FMC9_SEJA CONSELHEIRA": "https://www.linkedin.com/feed
     if (!ok()) return;
     const p = par(), l = sel(rows('leads'), p.start, p.end, p.camp);
     const s = (f, c) => d3.sum(l.filter((r) => !c || r.campanha === c), (r) => +r[f] || 0);
-    const fx = [['Acima de R$ 50 mil', 'r50', 1], ['R$ 30 mil a R$ 50 mil', 'r30_50', 1], ['R$ 20 mil a R$ 30 mil', 'r20_30', 1], ['R$ 10 mil a R$ 20 mil', 'r10_20', 1], ['Até R$ 10 mil', 'ate10', 0], ['Sem renda no momento', 'sem', 0], ['Preferiu não informar', 'nao', 0]];
-    const vals = fx.map(([n, f, q]) => ({n, q, v: s(f)})).filter((o) => o.v > 0);
-    const semF = s('nresp', 'FMC'), ev = s('leads', 'LMCE26');
-    if (semF) vals.push({n: 'Não respondeu', q: 0, v: semF});
+    const fx = [['Acima de R$ 50 mil', ['r50'], 1], ['R$ 10 mil a R$ 50 mil', ['r10_20', 'r20_30', 'r30_50'], 1], ['Até R$ 10 mil', ['ate10'], 0], ['Sem renda no momento', ['sem'], 0], ['Prefere não informar', ['nao'], 0]];
+    const vals = fx.map(([n, fs, q]) => ({n, q, v: d3.sum(fs, (f) => s(f))}));
+    vals.push({n: 'Não chegou à pergunta', q: 0, v: s('nresp', 'FMC')});
+    const ev = s('leads', 'LMCE26');
     if (ev) vals.push({n: 'Evento (sem a pergunta)', q: 0, v: ev});
     const tot = d3.sum(vals, (o) => o.v), max = d3.max(vals, (o) => o.v) || 1;
     if (!tot) { const e = document.createElement('p'); e.className = 'lf-note'; e.textContent = 'Nenhum lead no período escolhido.'; el.append(e); return; }
