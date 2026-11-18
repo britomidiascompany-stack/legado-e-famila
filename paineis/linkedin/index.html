@@ -96,6 +96,7 @@
 .lf-crm span{color:var(--cinza)}
 .lf-crm b{font-weight:600;text-align:right}
 .lf-crtext{font-size:12.5px;color:var(--cinza);margin:0}
+.lf-crlink{font-size:12.5px;font-weight:600;color:var(--roxo-dark);text-decoration:none;justify-self:start}.lf-crlink:hover,.lf-crlink:focus-visible{text-decoration:underline}
 .lf-recs{margin:0;padding-left:1.15rem;display:grid;gap:10px;font-size:14px}
 .lf .lf-recs b{font-weight:600}
 .lf-recs li::marker{color:var(--roxo);font-weight:700}
@@ -339,6 +340,8 @@
 </div>
 <script src="thumbs.js"></script>
 <script>
+window.CR_LINKS = {"ADI19_FMC9_SEJA CONSELHEIRA": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7518406398817300480,urn:li:sponsoredCreative:1592237853)/", "ADI17_FMC9_PREPARE-SE CADEIRAS": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7518402857251860480,urn:li:sponsoredCreative:1592285943)/", "ADI18_FMC9_DE EXECUTIVA A CONSELHEIRA": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7518402864810070016,urn:li:sponsoredCreative:1592336133)/", "ADI15_FMC9_PROXIMO PASSO LIDERANCA": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7518402872854835200,urn:li:sponsoredCreative:1592336143)/", "ADI10_FMC6_SEJA CONSELHEIRA ADM": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7513969396944502784,urn:li:sponsoredCreative:1573177403)/", "ADI11_FMC7_SEJA CONSELHEIRA CON": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7513971071851859968,urn:li:sponsoredCreative:1573138663)/", "ADI13_FMC9_SUA EXPERIENCIA VALE": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7518402831884808192,urn:li:sponsoredCreative:1592374303)/", "ADI12_FMC8_VEM AI": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7513971932929863680,urn:li:sponsoredCreative:1573069533)/", "ADI14_FMC9_APRENDA COM CONSELHEIRAS": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7518402848985051138,urn:li:sponsoredCreative:1592336123)/", "ADI04_FMC_25Aug2026": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7498089189222088704,urn:li:sponsoredCreative:1501449353)/", "ADI09_FMC5_NOVA DATA_2": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7498086462094209024,urn:li:sponsoredCreative:1501600093)/", "ADI05_FMC_25Aug2026": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7498090022349324289,urn:li:sponsoredCreative:1501595113)/", "ADI06_FMC_25Aug2026": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:share:7498090869099655168,urn:li:sponsoredCreative:1501577733)/", "ADV01_FMC_VIDEO KATYA": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7500582125759459328,urn:li:sponsoredCreative:1515802013)/", "ADV02_FMC_VIDEO MONICA": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7500584074017783809,urn:li:sponsoredCreative:1515705243)/", "ADV03_FMC_VIDEO VALERIA": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7500584529091473408,urn:li:sponsoredCreative:1515810903)/", "ADV04_FMC_VIDEO ENEILE": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7500585050636431361,urn:li:sponsoredCreative:1515655473)/", "ADV05_FMC_VIDEO MICHELLE": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7500585600941461504,urn:li:sponsoredCreative:1515695053)/", "ADI01_LMCE26_EVENTO XP_TYPEBOT": "https://www.linkedin.com/feed/update/urn:li:share:7516963537647284224/", "ADV01_LMCE26_EVENTO_XP": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7519493904384253952,urn:li:sponsoredCreative:1593152973)/", "ADV02_LMCE26_EVENTO_XP": "https://www.linkedin.com/feed/update/urn:li:sponsoredContentV2:(urn:li:ugcPost:7519515276099346432,urn:li:sponsoredCreative:1593104983)/"};
+
 (() => {
   const META = {dias: 7, dia: 30, cpl: 70, min: 3};
   const COL = {FMC: '#7C3AED', LMCE26: '#A78BFA'};
@@ -510,7 +513,9 @@
       const kv = (a, v) => { const s = document.createElement('span'); s.textContent = a; const x = document.createElement('b'); x.textContent = v; g.append(s, x); };
       kv('Investido', brl(o.m.inv)); kv('Impressões', int(o.m.imp)); kv('Cliques', int(o.m.cli)); kv('CTR', pct(o.m.ctr)); kv('CPC', o.m.cpc == null ? '—' : brl(o.m.cpc)); kv('Leads', int(o.m.leads)); kv('Por lead', brl(o.m.cpl));
       if (o.m.vv25) kv('Viu até o fim', int(o.m.vv100) + ' de ' + int(o.m.vv25));
-      b.append(nm, pills, g); c.append(th, b); el.append(c);
+      const u = (window.CR_LINKS || {})[o.n];
+      if (u) { const a = document.createElement('a'); a.className = 'lf-crlink'; a.href = u; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Ver criativo no LinkedIn ↗'; b.append(nm, pills, g, a); } else b.append(nm, pills, g);
+      c.append(th, b); el.append(c);
     });
   });
   dash.draw('ref', (el) => {

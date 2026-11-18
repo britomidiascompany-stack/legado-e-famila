@@ -64,6 +64,8 @@
 .lf-table tfoot td{font-weight:600;border-top:2px solid var(--linha);border-bottom:0}
 .lf-grp td,.lf-table .lf-grp td:first-child{background:var(--roxo-xlight);color:var(--roxo-dark);text-align:left;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-bottom:0}
 .lf-nome{display:block;font-weight:500}
+.lf-link{color:inherit;text-decoration:none;border-bottom:1px solid var(--roxo-light)}.lf-link:hover,.lf-link:focus-visible{color:var(--roxo-dark);border-bottom-color:var(--roxo)}.lf-link::after{content:" ↗";font-size:.85em;color:var(--roxo)}
+
 .lf-st{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cinza)}
 .lf-st.on{color:var(--ok)}
 .lf-chart{position:relative;min-height:230px}
@@ -292,6 +294,8 @@ const ALTAS = ['R$ 10 mil a R$ 50 mil', 'R$ 50 mil a R$ 100 mil', 'Acima de R$ 1
 const CAMINHOS = [['Site + Typebot', 'typebot'], ['Formulário', 'form']];
 const caminhosAtivos = () => { const v = dash.params().versao ?? 'todas'; return CAMINHOS.filter(([c]) => v === 'todas' || (v === 'Formulário') === (c === 'Formulário')); };
 const NOVO = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt !== undefined) e.textContent = txt; return e; };
+const LINKS = {"AD01 - [VIDEO] LITIGIOS E INVENTARIOS": "https://www.instagram.com/p/Dd4-PwGAQd4/", "AD04 - [VIDEO] CAIXINHA": "https://www.instagram.com/p/DeZdhWHsgIf/", "AD06 - [VIDEO] CAIXINHA": "https://www.instagram.com/p/DceXhLgsyhm/", "AD30 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/Dd4-N-HAuYG/", "AD37 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/DceXsHUMgLx/", "ADC45_PSP_INSTRUTORES": "https://www.instagram.com/p/Dcv8hi9jMVt/", "AD09 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/Dd4-PmcAxPu/", "ADV08_PSP_PERGUNTA CRIAR HOLDING_0.22": "https://www.instagram.com/p/DeZdh6dsZxf/", "ADV09_PSP_PERGUNTA DOACAO EM VIDA_0.21": "https://www.instagram.com/p/DewkSA4Mgtu/", "ADV10_PSP_PERGUNTA COMO PASSAR PATRIMONIO_0.20": "https://www.instagram.com/p/DeZdjK-sobw/", "ADV11_PSP_ACESSO A FRAMEWORK_0.28": "https://www.instagram.com/p/Dc80J5FMcyO/", "POST003_ADV03_IGLEF_15.01.26_A Hermès tem 189 anos...": "https://www.instagram.com/p/DTk03cUgJDL/", "POST004_ADV04_IGLEF_12.08.26_Você sabia que a história...": "https://www.instagram.com/p/Dd2Qsz7M2Lk/", "POST005_ADV05_IGLEF_20.07.26_O império Matarazzo já foi...": "https://www.instagram.com/p/Dd33A8js-cW/", "POST006_ADV06_IGLEF_30.03.26_A Ford quase desapareceu por...": "https://www.instagram.com/p/DWg1wTvAEyr/", "AD25 - [VIDEO] PROCESSO DE SUCESSAO": "https://www.instagram.com/p/DceXhS-Moqy/", "ADI01_LMCE26_EVENTO_XP": "https://www.instagram.com/p/DezNe6QMLUj/", "ADV01_LMCE26_EVENTO_XP": "https://www.instagram.com/p/De2X4TQslTN/", "ADV02_LMCE26_EVENTO_XP": "https://www.instagram.com/p/De2X38WMEUf/", "POST007_ADV07_IGLEF_26.10.26_Os pais podem doar todos...": "https://www.instagram.com/p/DfFe3L5M0sx/", "POST008_ADV08_IGLEF_28.10.26_E se, um dia, você não...": "https://www.instagram.com/p/DfFewTrMUjl/", "ADI01_PSP_PROGRAMA EMPRESARIO": "https://www.instagram.com/p/DfISOBxsrs8/", "ADI02_PSP_FUNDADOR PARTE SEM PLANO": "https://www.instagram.com/p/DfISOGhMgQS/", "ADI03_PSP_PROGRAMA FAMILIA GERACOES": "https://www.instagram.com/p/DfISOUmMKO0/", "ADI05_PSP_PROGRAMA EMPRESARIA": "https://www.instagram.com/p/DfISOWwsbG1/"};
+const NOME = (chave, txt) => { const u = LINKS[chave]; if (!u) return NOVO('span', 'lf-nome', txt); const a = NOVO('a', 'lf-nome lf-link', txt); a.href = u; a.target = '_blank'; a.rel = 'noopener'; a.title = 'Abrir o criativo no Instagram'; return a; };
 
 const pronto = (...ids) => ids.every((id) => dash.data(id).status === 'ok');
 const filtro = () => { const p = dash.params(); return {prog: p.programa ?? 'todos', ver: p.versao ?? 'todas'}; };
@@ -434,7 +438,7 @@ dash.draw('anuncios', (el) => {
   });
   [...g.values()].filter((x) => x.conv > 0).sort((a, b) => b.conv - a.conv || a.inv - b.inv).slice(0, 10).forEach((x) => {
     const r = el.insertRow(), n = r.insertCell(), c = nomes.get(x.c);
-    n.append(NOVO('span', 'lf-nome', x.a), NOVO('span', 'lf-st', (c?.nome ?? '') + ' · ' + (c?.tipo ?? '')));
+    n.append(NOME(x.a, x.a), NOVO('span', 'lf-st', (c?.nome ?? '') + ' · ' + (c?.tipo ?? '')));
     [f(brl, x.inv), f(int, x.conv), f(brl, div(x.inv, x.conv))].forEach((t) => { r.insertCell().textContent = t; });
   });
 });
@@ -562,7 +566,7 @@ dash.draw('posts', (el) => {
   distVisao().d.forEach((p) => { const x = g.get(p.post) ?? {post: p.post, inv: 0, vis: 0, seg: 0}; x.inv += p.gasto * IMPOSTO; x.vis += p.visitas; x.seg += p.seguidores; g.set(p.post, x); });
   [...g.values()].sort((a, b) => b.seg - a.seg || b.inv - a.inv).forEach((x) => {
     const r = el.insertRow(), n = r.insertCell();
-    n.append(NOVO('span', 'lf-nome', x.post.replace(/^POST\d+_ADV\d+_IGLEF_[\d.]+_/, '')), NOVO('span', 'lf-st', x.post.split('_').slice(0, 2).join(' ')));
+    n.append(NOME(x.post, x.post.replace(/^POST\d+_ADV\d+_IGLEF_[\d.]+_/, '')), NOVO('span', 'lf-st', x.post.split('_').slice(0, 2).join(' ')));
     [f(brl, x.inv), f(int, x.vis), f(brl, div(x.inv, x.vis)), f(int, x.seg), f(brl, div(x.inv, x.seg)), f(pct0, div(x.seg, x.vis))].forEach((c) => { r.insertCell().textContent = c; });
   });
 });
