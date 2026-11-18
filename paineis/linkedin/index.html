@@ -71,6 +71,8 @@
 .lf-funnel{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:16px}
 .lf-step{display:grid;gap:4px;align-content:start;padding-left:14px;border-left:3px solid var(--roxo-light)}
 .lf-step:last-child{border-left-color:var(--roxo)}
+.lf-fx{display:grid;gap:10px}.lf-fxrow{display:grid;grid-template-columns:minmax(8rem,13rem) minmax(0,1fr) auto;gap:12px;align-items:center;font-size:13px}.lf-fxrow.q b{color:var(--roxo-dark)}.lf-fxbar{height:12px;background:var(--roxo-xlight);border-radius:6px;overflow:hidden}.lf-fxbar i{display:block;height:100%;border-radius:6px;background:#C9C3D4;min-width:2px}.lf-fxrow.q .lf-fxbar i{background:linear-gradient(90deg,#7C3AED,#5B21B6)}.lf-fxrow span:last-child{font-weight:600;white-space:nowrap}
+@media (max-width:520px){.lf-fxrow{grid-template-columns:minmax(0,1fr) auto}.lf-fxbar{grid-column:1/-1;grid-row:2}}
 .lf-steplabel{font-size:13px;font-weight:500}
 .lf-rate{color:var(--cinza);font-size:12px}
 .lf-pill{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:100px;border:1px solid var(--roxo-light);color:var(--roxo-dark)}
@@ -153,11 +155,13 @@
       <div class="lf-kpi lead"><span class="lf-label">Leads</span><span class="lf-kpi-n" data-draw="kpi" data-k="leads" data-source="leads">—</span><span class="lf-delta" data-draw="delta" data-k="leads" data-source="leads">—</span></div>
       <div class="lf-kpi"><span class="lf-label">Investimento</span><span class="lf-kpi-n" data-draw="kpi" data-k="inv" data-source="diario">—</span><span class="lf-delta" data-draw="delta" data-k="inv" data-source="diario">—</span></div>
       <div class="lf-kpi"><span class="lf-label">Custo por lead</span><span class="lf-kpi-n" data-draw="kpi" data-k="cpl" data-source="diario leads">—</span><span class="lf-delta" data-draw="delta" data-k="cpl" data-source="diario leads">—</span></div>
+      <div class="lf-kpi"><span class="lf-label">Renda acima de R$ 10 mil</span><span class="lf-kpi-n" data-draw="kpi" data-k="q10" data-source="leads">—</span><span class="lf-delta" data-draw="delta" data-k="q10" data-source="leads">—</span></div>
+      <div class="lf-kpi"><span class="lf-label">Custo por lead qualificado</span><span class="lf-kpi-n" data-draw="kpi" data-k="cpq" data-source="diario leads">—</span><span class="lf-delta" data-draw="delta" data-k="cpq" data-source="diario leads">—</span></div>
       <div class="lf-kpi"><span class="lf-label">Impressões</span><span class="lf-kpi-n" data-draw="kpi" data-k="imp" data-source="diario">—</span><span class="lf-delta" data-draw="delta" data-k="imp" data-source="diario">—</span></div>
       <div class="lf-kpi"><span class="lf-label">Cliques</span><span class="lf-kpi-n" data-draw="kpi" data-k="cli" data-source="diario">—</span><span class="lf-delta" data-draw="delta" data-k="cli" data-source="diario">—</span></div>
       <div class="lf-kpi"><span class="lf-label">CTR</span><span class="lf-kpi-n" data-draw="kpi" data-k="ctr" data-source="diario">—</span><span class="lf-delta" data-draw="delta" data-k="ctr" data-source="diario">—</span></div>
     </div>
-    <p class="lf-note">A variação compara com o período anterior de mesmo tamanho. Lead é a pessoa que entrou no Typebot vinda do LinkedIn, contada uma vez por dia. CTR é a parcela de impressões que virou clique.</p>
+    <p class="lf-note">A variação compara com o período anterior de mesmo tamanho. Lead é a pessoa que entrou no Typebot vinda do LinkedIn, contada uma vez por dia. Lead qualificado é quem informou renda acima de R$ 10 mil por mês no Typebot da Formação Mulheres em Conselhos; o custo por lead qualificado usa só o investimento dessa campanha, porque o fluxo do Evento não pergunta renda. CTR é a parcela de impressões que virou clique.</p>
   </section>
 
   <section class="lf-sec soft" id="campanhas">
@@ -201,8 +205,18 @@
         <div class="lf-step"><span class="lf-steplabel">Clicaram</span><span class="lf-kpi-n" data-draw="kpi" data-k="cli" data-source="diario">—</span><span class="lf-rate"><span data-draw="kpi" data-k="ctr" data-source="diario">—</span> das impressões</span></div>
         <div class="lf-step"><span class="lf-steplabel">Entraram no Typebot</span><span class="lf-kpi-n" data-draw="kpi" data-k="leads" data-source="leads">—</span><span class="lf-rate"><span data-draw="kpi" data-k="conv" data-source="diario leads">—</span> dos cliques</span></div>
         <div class="lf-step"><span class="lf-steplabel">Completaram o Typebot</span><span class="lf-kpi-n" data-draw="kpi" data-k="comp" data-source="leads">—</span><span class="lf-rate"><span data-draw="kpi" data-k="compr" data-source="leads">—</span> dos leads</span></div>
+        <div class="lf-step"><span class="lf-steplabel">Renda acima de R$ 10 mil</span><span class="lf-kpi-n" data-draw="kpi" data-k="q10" data-source="leads">—</span><span class="lf-rate"><span data-draw="kpi" data-k="qr" data-source="leads">—</span> de quem respondeu a renda</span></div>
       </div>
     </div>
+  </section>
+
+  <section class="lf-sec" id="qualificacao">
+    <div class="lf-seclabel">Qualificação</div>
+    <h2 class="lf-h2">Faixa de renda dos leads</h2>
+    <div class="lf-card">
+      <div class="lf-fx" data-draw="faixas_li" data-source="leads"></div>
+    </div>
+    <p class="lf-note">Renda pessoal informada pela própria pessoa no Typebot da Formação Mulheres em Conselhos. As faixas em roxo são as acima de R$ 10 mil. O fluxo do Evento Master Club não pergunta renda, por isso os leads dele aparecem como sem a pergunta.</p>
   </section>
 
   <section class="lf-sec" id="publicos">
@@ -360,14 +374,16 @@ window.CR_LINKS = {"ADI19_FMC9_SEJA CONSELHEIRA": "https://www.linkedin.com/feed
   const par = () => { const p = dash.params(); return {start: p.start || MIN, end: p.end || lastDay(), camp: p.camp || 'all'}; };
   const sel = (rs, a, b, c) => rs.filter((r) => r.dia >= a && r.dia <= b && (c === 'all' || r.campanha === c));
   const met = (d, l) => {
-    const m = {inv: 0, imp: 0, cli: 0, leads: 0, comp: 0, vv25: 0, vv100: 0};
-    d.forEach((r) => { m.inv += +r.investimento; m.imp += +r.impressoes; m.cli += +r.cliques; m.vv25 += +r.vv25; m.vv100 += +r.vv100; });
-    l.forEach((r) => { m.leads += +r.leads; m.comp += +r.completos; });
+    const m = {inv: 0, imp: 0, cli: 0, leads: 0, comp: 0, vv25: 0, vv100: 0, invF: 0, q10: 0, resp: 0};
+    d.forEach((r) => { if (r.campanha === 'FMC') m.invF += +r.investimento; m.inv += +r.investimento; m.imp += +r.impressoes; m.cli += +r.cliques; m.vv25 += +r.vv25; m.vv100 += +r.vv100; });
+    l.forEach((r) => { m.leads += +r.leads; m.comp += +r.completos; const q = (+r.r10_20 || 0) + (+r.r20_30 || 0) + (+r.r30_50 || 0) + (+r.r50 || 0); m.q10 += q; if (r.campanha === 'FMC') m.resp += q + (+r.ate10 || 0) + (+r.sem || 0); });
     m.ctr = m.imp ? m.cli / m.imp : null;
     m.cpc = m.cli ? m.inv / m.cli : null;
     m.cpl = m.leads ? m.inv / m.leads : null;
     m.conv = m.cli ? m.leads / m.cli : null;
     m.compr = m.leads ? m.comp / m.leads : null;
+    m.qr = m.resp ? m.q10 / m.resp : null;
+    m.cpq = m.q10 ? m.invF / m.q10 : null;
     return m;
   };
   const cur = () => { const p = par(); return met(sel(rows('diario'), p.start, p.end, p.camp), sel(rows('leads'), p.start, p.end, p.camp)); };
@@ -378,7 +394,7 @@ window.CR_LINKS = {"ADI19_FMC9_SEJA CONSELHEIRA": "https://www.linkedin.com/feed
     if (s < MIN) return null;
     return met(sel(rows('diario'), s, e, p.camp), sel(rows('leads'), s, e, p.camp));
   };
-  const fmtK = {leads: int, inv: brl, cpl: brl, imp: int, cli: int, ctr: pct, conv: pct, compr: pct, comp: int};
+  const fmtK = {q10: int, qr: pct, cpq: (v) => v == null ? 'sem qualificado' : brl(v), leads: int, inv: brl, cpl: brl, imp: int, cli: int, ctr: pct, conv: pct, compr: pct, comp: int};
 
   dash.draw('tk', (el) => {
     const k = el.dataset.k, p = par();
@@ -399,7 +415,27 @@ window.CR_LINKS = {"ADI19_FMC9_SEJA CONSELHEIRA": "https://www.linkedin.com/feed
     if (now == null || was == null || !was) { el.textContent = was == null || !was ? 'sem base anterior' : 'antes: ' + fmtK[k](was); return; }
     const d = now / was - 1;
     el.textContent = (d > 0 ? '+' : '') + nf({maximumFractionDigits: 0}).format(d * 100) + '% vs. período anterior';
-    if (k !== 'inv' && Math.abs(d) > 0.005) el.classList.add((k === 'cpl' ? d < 0 : d > 0) ? 'good' : 'bad');
+    if (k !== 'inv' && Math.abs(d) > 0.005) el.classList.add((k === 'cpl' || k === 'cpq' ? d < 0 : d > 0) ? 'good' : 'bad');
+  });
+  dash.draw('faixas_li', (el) => {
+    el.replaceChildren();
+    if (!ok()) return;
+    const p = par(), l = sel(rows('leads'), p.start, p.end, p.camp);
+    const s = (f, c) => d3.sum(l.filter((r) => !c || r.campanha === c), (r) => +r[f] || 0);
+    const fx = [['Acima de R$ 50 mil', 'r50', 1], ['R$ 30 mil a R$ 50 mil', 'r30_50', 1], ['R$ 20 mil a R$ 30 mil', 'r20_30', 1], ['R$ 10 mil a R$ 20 mil', 'r10_20', 1], ['Até R$ 10 mil', 'ate10', 0], ['Sem renda no momento', 'sem', 0], ['Preferiu não informar', 'nao', 0]];
+    const vals = fx.map(([n, f, q]) => ({n, q, v: s(f)})).filter((o) => o.v > 0);
+    const semF = s('nresp', 'FMC'), ev = s('leads', 'LMCE26');
+    if (semF) vals.push({n: 'Não respondeu', q: 0, v: semF});
+    if (ev) vals.push({n: 'Evento (sem a pergunta)', q: 0, v: ev});
+    const tot = d3.sum(vals, (o) => o.v), max = d3.max(vals, (o) => o.v) || 1;
+    if (!tot) { const e = document.createElement('p'); e.className = 'lf-note'; e.textContent = 'Nenhum lead no período escolhido.'; el.append(e); return; }
+    vals.forEach((o) => {
+      const r = document.createElement('div'); r.className = 'lf-fxrow' + (o.q ? ' q' : '');
+      const a = document.createElement('span'); a.textContent = o.n;
+      const bar = document.createElement('div'); bar.className = 'lf-fxbar'; const i = document.createElement('i'); i.style.width = (o.v / max * 100) + '%'; bar.append(i);
+      const b = document.createElement('span'); b.textContent = int(o.v) + (o.v === 1 ? ' lead' : ' leads') + ' · ' + nf({maximumFractionDigits: 0}).format(o.v / tot * 100) + '%';
+      r.append(a, bar, b); el.append(r);
+    });
   });
   dash.draw('camps', (el) => {
     el.replaceChildren();
@@ -511,7 +547,7 @@ window.CR_LINKS = {"ADI19_FMC9_SEJA CONSELHEIRA": "https://www.linkedin.com/feed
       if (p.camp === 'all') pill(CAMP[o.c]);
       const g = document.createElement('div'); g.className = 'lf-crm';
       const kv = (a, v) => { const s = document.createElement('span'); s.textContent = a; const x = document.createElement('b'); x.textContent = v; g.append(s, x); };
-      kv('Investido', brl(o.m.inv)); kv('Impressões', int(o.m.imp)); kv('Cliques', int(o.m.cli)); kv('CTR', pct(o.m.ctr)); kv('CPC', o.m.cpc == null ? '—' : brl(o.m.cpc)); kv('Leads', int(o.m.leads)); kv('Por lead', brl(o.m.cpl));
+      kv('Investido', brl(o.m.inv)); kv('Impressões', int(o.m.imp)); kv('Cliques', int(o.m.cli)); kv('CTR', pct(o.m.ctr)); kv('CPC', o.m.cpc == null ? '—' : brl(o.m.cpc)); kv('Leads', int(o.m.leads)); kv('Por lead', brl(o.m.cpl)); if (o.c === 'FMC') kv('Renda +R$ 10 mil', int(o.m.q10));
       if (o.m.vv25) kv('Viu até o fim', int(o.m.vv100) + ' de ' + int(o.m.vv25));
       const u = (window.CR_LINKS || {})[o.n];
       if (u) { const a = document.createElement('a'); a.className = 'lf-crlink'; a.href = u; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Ver criativo no LinkedIn ↗'; b.append(nm, pills, g, a); } else b.append(nm, pills, g);
