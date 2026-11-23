@@ -114,16 +114,16 @@
   <div class="lf-filters" id="filtros">
     <div class="lf-group">
       <span class="lf-label">Período</span>
-      <button class="lf-chip lf-per" type="button" data-i="2026-09-01" data-f="2026-11-17">Tudo</button>
+      <button class="lf-chip lf-per" type="button" data-i="2026-09-01" data-f="2026-11-23">Tudo</button>
       <button class="lf-chip lf-per" type="button" data-i="2026-09-01" data-f="2026-09-30">Setembro</button>
       <button class="lf-chip lf-per" type="button" data-i="2026-10-01" data-f="2026-10-31">Outubro</button>
-      <button class="lf-chip lf-per" type="button" data-i="2026-11-01" data-f="2026-11-17">Novembro</button>
+      <button class="lf-chip lf-per" type="button" data-i="2026-11-01" data-f="2026-11-23">Novembro</button>
     </div>
     <div class="lf-group">
       <label class="lf-label" for="lf-inicio">De</label>
-      <input class="lf-date lf-inicio" id="lf-inicio" type="date" min="2026-09-01" max="2026-11-17">
+      <input class="lf-date lf-inicio" id="lf-inicio" type="date" min="2026-09-01" max="2026-11-23">
       <label class="lf-label" for="lf-fim">até</label>
-      <input class="lf-date lf-fim" id="lf-fim" type="date" min="2026-09-01" max="2026-11-17">
+      <input class="lf-date lf-fim" id="lf-fim" type="date" min="2026-09-01" max="2026-11-23">
     </div>
     <div class="lf-group">
       <span class="lf-label">Campanha</span>
@@ -204,12 +204,12 @@
       <div class="lf-card">
         <h3 class="lf-h3">Faixa de renda ou faturamento</h3>
         <div class="lf-lista" data-draw="faixas" data-source="leads"></div>
-        <div class="lf-legend"><span><i class="lf-sw lf-c0"></i>Não respondeu</span><span><i class="lf-sw lf-c1"></i>Sem renda ou faturamento</span><span><i class="lf-sw lf-c2"></i>Até R$ 10 mil</span><span><i class="lf-sw lf-c3"></i>R$ 10 mil a R$ 50 mil</span><span><i class="lf-sw lf-c4"></i>R$ 50 mil a R$ 100 mil</span><span><i class="lf-sw lf-c5"></i>Acima de R$ 100 mil</span></div>
+        <div class="lf-legend"><span><i class="lf-sw lf-c0"></i>Não respondeu ou a confirmar</span><span><i class="lf-sw lf-c1"></i>Sem renda ou faturamento</span><span><i class="lf-sw lf-c2"></i>Até R$ 10 mil</span><span><i class="lf-sw lf-c3"></i>R$ 10 mil a R$ 50 mil</span><span><i class="lf-sw lf-c4"></i>R$ 50 mil a R$ 100 mil</span><span><i class="lf-sw lf-c5"></i>Acima de R$ 100 mil</span></div>
       </div>
       <div class="lf-card">
         <h3 class="lf-h3">Perfil</h3>
         <div class="lf-lista" data-draw="perfis" data-source="leads"></div>
-        <div class="lf-legend"><span><i class="lf-sw lf-c4"></i>Membro de empresa familiar</span><span><i class="lf-sw lf-c3"></i>Profissional que atua com empresa familiar</span><span><i class="lf-sw lf-c0"></i>Não respondeu</span></div>
+        <div class="lf-legend"><span><i class="lf-sw lf-c4"></i>Membro de empresa familiar</span><span><i class="lf-sw lf-c3"></i>Profissional que atua com empresa familiar</span><span><i class="lf-sw lf-c0"></i>Não respondeu ou a confirmar</span></div>
       </div>
     </div>
   </section>
@@ -275,7 +275,7 @@
 
   <footer class="lf-foot">
     <div class="lf-brand"><span class="lf-word"><b>BM</b><i class="lf-bar"></i><span>MÍDIAS</span></span></div>
-    <p>Dados da planilha de acompanhamento, dos formulários e do Meta, atualizados em 17/11/2026.</p>
+    <p>Dados da planilha de acompanhamento, dos formulários e do Meta, atualizados em 23/11/2026.</p>
   </footer>
 </div>
 
@@ -294,7 +294,7 @@ const ALTAS = ['R$ 10 mil a R$ 50 mil', 'R$ 50 mil a R$ 100 mil', 'Acima de R$ 1
 const CAMINHOS = [['Site + Typebot', 'typebot'], ['Formulário', 'form']];
 const caminhosAtivos = () => { const v = dash.params().versao ?? 'todas'; return CAMINHOS.filter(([c]) => v === 'todas' || (v === 'Formulário') === (c === 'Formulário')); };
 const NOVO = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt !== undefined) e.textContent = txt; return e; };
-const LINKS = {"AD01 - [VIDEO] LITIGIOS E INVENTARIOS": "https://www.instagram.com/p/Dd4-PwGAQd4/", "AD04 - [VIDEO] CAIXINHA": "https://www.instagram.com/p/DeZdhWHsgIf/", "AD06 - [VIDEO] CAIXINHA": "https://www.instagram.com/p/DceXhLgsyhm/", "AD30 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/Dd4-N-HAuYG/", "AD37 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/DceXsHUMgLx/", "ADC45_PSP_INSTRUTORES": "https://www.instagram.com/p/Dcv8hi9jMVt/", "AD09 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/Dd4-PmcAxPu/", "ADV08_PSP_PERGUNTA CRIAR HOLDING_0.22": "https://www.instagram.com/p/DeZdh6dsZxf/", "ADV09_PSP_PERGUNTA DOACAO EM VIDA_0.21": "https://www.instagram.com/p/DewkSA4Mgtu/", "ADV10_PSP_PERGUNTA COMO PASSAR PATRIMONIO_0.20": "https://www.instagram.com/p/DeZdjK-sobw/", "ADV11_PSP_ACESSO A FRAMEWORK_0.28": "https://www.instagram.com/p/Dc80J5FMcyO/", "POST003_ADV03_IGLEF_15.01.26_A Hermès tem 189 anos...": "https://www.instagram.com/p/DTk03cUgJDL/", "POST004_ADV04_IGLEF_12.08.26_Você sabia que a história...": "https://www.instagram.com/p/Dd2Qsz7M2Lk/", "POST005_ADV05_IGLEF_20.07.26_O império Matarazzo já foi...": "https://www.instagram.com/p/Dd33A8js-cW/", "POST006_ADV06_IGLEF_30.03.26_A Ford quase desapareceu por...": "https://www.instagram.com/p/DWg1wTvAEyr/", "AD25 - [VIDEO] PROCESSO DE SUCESSAO": "https://www.instagram.com/p/DceXhS-Moqy/", "ADI01_LMCE26_EVENTO_XP": "https://www.instagram.com/p/DezNe6QMLUj/", "ADV01_LMCE26_EVENTO_XP": "https://www.instagram.com/p/De2X4TQslTN/", "ADV02_LMCE26_EVENTO_XP": "https://www.instagram.com/p/De2X38WMEUf/", "POST007_ADV07_IGLEF_26.10.26_Os pais podem doar todos...": "https://www.instagram.com/p/DfFe3L5M0sx/", "POST008_ADV08_IGLEF_28.10.26_E se, um dia, você não...": "https://www.instagram.com/p/DfFewTrMUjl/", "ADI01_PSP_PROGRAMA EMPRESARIO": "https://www.instagram.com/p/DfISOBxsrs8/", "ADI02_PSP_FUNDADOR PARTE SEM PLANO": "https://www.instagram.com/p/DfISOGhMgQS/", "ADI03_PSP_PROGRAMA FAMILIA GERACOES": "https://www.instagram.com/p/DfISOUmMKO0/", "ADI05_PSP_PROGRAMA EMPRESARIA": "https://www.instagram.com/p/DfISOWwsbG1/"};
+const LINKS = {"ADV25_PSP_CONVITE MONIQUE_1.14": "https://www.instagram.com/p/DgBInlgMw4G/", "AD01 - [VIDEO] LITIGIOS E INVENTARIOS": "https://www.instagram.com/p/Dd4-PwGAQd4/", "AD04 - [VIDEO] CAIXINHA": "https://www.instagram.com/p/DeZdhWHsgIf/", "AD06 - [VIDEO] CAIXINHA": "https://www.instagram.com/p/DceXhLgsyhm/", "AD30 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/Dd4-N-HAuYG/", "AD37 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/DceXsHUMgLx/", "ADC45_PSP_INSTRUTORES": "https://www.instagram.com/p/Dcv8hi9jMVt/", "AD09 - [IMAGEM] INVENTARIO NAO E PLANEJAMENTO": "https://www.instagram.com/p/Dd4-PmcAxPu/", "ADV08_PSP_PERGUNTA CRIAR HOLDING_0.22": "https://www.instagram.com/p/DeZdh6dsZxf/", "ADV09_PSP_PERGUNTA DOACAO EM VIDA_0.21": "https://www.instagram.com/p/DewkSA4Mgtu/", "ADV10_PSP_PERGUNTA COMO PASSAR PATRIMONIO_0.20": "https://www.instagram.com/p/DeZdjK-sobw/", "ADV11_PSP_ACESSO A FRAMEWORK_0.28": "https://www.instagram.com/p/Dc80J5FMcyO/", "POST003_ADV03_IGLEF_15.01.26_A Hermès tem 189 anos...": "https://www.instagram.com/p/DTk03cUgJDL/", "POST004_ADV04_IGLEF_12.08.26_Você sabia que a história...": "https://www.instagram.com/p/Dd2Qsz7M2Lk/", "POST005_ADV05_IGLEF_20.07.26_O império Matarazzo já foi...": "https://www.instagram.com/p/Dd33A8js-cW/", "POST006_ADV06_IGLEF_30.03.26_A Ford quase desapareceu por...": "https://www.instagram.com/p/DWg1wTvAEyr/", "AD25 - [VIDEO] PROCESSO DE SUCESSAO": "https://www.instagram.com/p/DceXhS-Moqy/", "ADI01_LMCE26_EVENTO_XP": "https://www.instagram.com/p/DezNe6QMLUj/", "ADV01_LMCE26_EVENTO_XP": "https://www.instagram.com/p/De2X4TQslTN/", "ADV02_LMCE26_EVENTO_XP": "https://www.instagram.com/p/De2X38WMEUf/", "POST007_ADV07_IGLEF_26.10.26_Os pais podem doar todos...": "https://www.instagram.com/p/DfFe3L5M0sx/", "POST008_ADV08_IGLEF_28.10.26_E se, um dia, você não...": "https://www.instagram.com/p/DfFewTrMUjl/", "ADI01_PSP_PROGRAMA EMPRESARIO": "https://www.instagram.com/p/DfISOBxsrs8/", "ADI02_PSP_FUNDADOR PARTE SEM PLANO": "https://www.instagram.com/p/DfISOGhMgQS/", "ADI03_PSP_PROGRAMA FAMILIA GERACOES": "https://www.instagram.com/p/DfISOUmMKO0/", "ADI05_PSP_PROGRAMA EMPRESARIA": "https://www.instagram.com/p/DfISOWwsbG1/"};
 const NOME = (chave, txt) => { const u = LINKS[chave]; if (!u) return NOVO('span', 'lf-nome', txt); const a = NOVO('a', 'lf-nome lf-link', txt); a.href = u; a.target = '_blank'; a.rel = 'noopener'; a.title = 'Abrir o criativo no Instagram'; return a; };
 
 const pronto = (...ids) => ids.every((id) => dash.data(id).status === 'ok');
@@ -304,9 +304,9 @@ const alcanceDe = (id, dias) => {
   const p = dash.params(), linhas = dash.data('alcance').data;
   const exato = linhas.some((a) => a.inicio === p.inicio && a.fim === p.fim);
   if (exato) return {v: linhas.find((a) => a.inicio === p.inicio && a.fim === p.fim && a.campanha_id === id)?.alcance ?? 0, est: false};
-  const todos = dash.data('diario').data.filter((d) => (id === 'conta' || d.campanha_id === id) && d.data <= '2026-11-16');
+  const todos = dash.data('diario').data.filter((d) => (id === 'conta' || d.campanha_id === id) && d.data <= '2026-11-23');
   const soma = (l) => l.reduce((s, d) => s + d.alcance_dia, 0);
-  const base = linhas.find((a) => a.inicio === '2026-09-01' && a.fim === '2026-11-16' && a.campanha_id === id)?.alcance ?? 0;
+  const base = linhas.find((a) => a.inicio === '2026-09-01' && a.fim === '2026-11-23' && a.campanha_id === id)?.alcance ?? 0;
   return {v: Math.round(soma(dias) * div(base, soma(todos))), est: true};
 };
 const visao = () => {
@@ -449,7 +449,7 @@ dash.draw('qualidade', (el) => {
   const v = visao();
   caminhosAtivos().forEach(([caminho, origem]) => {
     const g = v.leads.filter((l) => l.programa === 'Sucessão' && l.origem === origem);
-    const resp = g.filter((l) => l.faixa !== 'Não respondeu').length, q = g.filter((l) => ALTAS.includes(l.faixa)).length;
+    const resp = g.filter((l) => l.faixa !== 'Não respondeu' && l.faixa !== 'A confirmar').length, q = g.filter((l) => ALTAS.includes(l.faixa)).length;
     const inv = v.linhas.filter((l) => l.tipo === caminho && l.programa === 'Sucessão').reduce((s, l) => s + l.invest, 0);
     const r = el.insertRow();
     [caminho, f(int, g.length), f(int, resp), f(int, q), f(pct0, div(q, g.length)), f(pct0, div(q, resp)), f(brl, inv), f(brl, div(inv, q))].forEach((t) => { r.insertCell().textContent = t; });
@@ -491,8 +491,8 @@ const pilhas = (el, campo, ordem) => {
   });
   el.append(tip);
 };
-dash.draw('faixas', (el) => pilhas(el, 'faixa', [['Não respondeu', 0], ['Sem renda ou faturamento', 1], ['Até R$ 10 mil', 2], ['R$ 10 mil a R$ 50 mil', 3], ['R$ 50 mil a R$ 100 mil', 4], ['Acima de R$ 100 mil', 5]]));
-dash.draw('perfis', (el) => pilhas(el, 'perfil', [['Membro de empresa familiar', 4], ['Profissional que atua com empresa familiar', 3], ['Não respondeu', 0]]));
+dash.draw('faixas', (el) => pilhas(el, 'faixa', [['Não respondeu', 0], ['A confirmar', 0], ['Sem renda ou faturamento', 1], ['Até R$ 10 mil', 2], ['R$ 10 mil a R$ 50 mil', 3], ['R$ 50 mil a R$ 100 mil', 4], ['Acima de R$ 100 mil', 5]]));
+dash.draw('perfis', (el) => pilhas(el, 'perfil', [['Membro de empresa familiar', 4], ['Profissional que atua com empresa familiar', 3], ['Não respondeu', 0], ['A confirmar', 0]]));
 
 dash.draw('evento', (el) => {
   el.replaceChildren();
