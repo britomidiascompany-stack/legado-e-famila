@@ -114,16 +114,16 @@
   <div class="lf-filters" id="filtros">
     <div class="lf-group">
       <span class="lf-label">Período</span>
-      <button class="lf-chip lf-per" type="button" data-i="2026-09-01" data-f="2026-11-23">Tudo</button>
+      <button class="lf-chip lf-per" type="button" data-i="2026-09-01" data-f="2026-11-24">Tudo</button>
       <button class="lf-chip lf-per" type="button" data-i="2026-09-01" data-f="2026-09-30">Setembro</button>
       <button class="lf-chip lf-per" type="button" data-i="2026-10-01" data-f="2026-10-31">Outubro</button>
-      <button class="lf-chip lf-per" type="button" data-i="2026-11-01" data-f="2026-11-23">Novembro</button>
+      <button class="lf-chip lf-per" type="button" data-i="2026-11-01" data-f="2026-11-24">Novembro</button>
     </div>
     <div class="lf-group">
       <label class="lf-label" for="lf-inicio">De</label>
-      <input class="lf-date lf-inicio" id="lf-inicio" type="date" min="2026-09-01" max="2026-11-23">
+      <input class="lf-date lf-inicio" id="lf-inicio" type="date" min="2026-09-01" max="2026-11-24">
       <label class="lf-label" for="lf-fim">até</label>
-      <input class="lf-date lf-fim" id="lf-fim" type="date" min="2026-09-01" max="2026-11-23">
+      <input class="lf-date lf-fim" id="lf-fim" type="date" min="2026-09-01" max="2026-11-24">
     </div>
     <div class="lf-group">
       <span class="lf-label">Campanha</span>
@@ -275,7 +275,7 @@
 
   <footer class="lf-foot">
     <div class="lf-brand"><span class="lf-word"><b>BM</b><i class="lf-bar"></i><span>MÍDIAS</span></span></div>
-    <p>Dados da planilha de acompanhamento, dos formulários e do Meta, atualizados em 23/11/2026.</p>
+    <p>Dados da planilha de acompanhamento, dos formulários e do Meta, atualizados em 24/11/2026.</p>
   </footer>
 </div>
 
@@ -304,9 +304,9 @@ const alcanceDe = (id, dias) => {
   const p = dash.params(), linhas = dash.data('alcance').data;
   const exato = linhas.some((a) => a.inicio === p.inicio && a.fim === p.fim);
   if (exato) return {v: linhas.find((a) => a.inicio === p.inicio && a.fim === p.fim && a.campanha_id === id)?.alcance ?? 0, est: false};
-  const todos = dash.data('diario').data.filter((d) => (id === 'conta' || d.campanha_id === id) && d.data <= '2026-11-23');
+  const todos = dash.data('diario').data.filter((d) => (id === 'conta' || d.campanha_id === id) && d.data <= '2026-11-24');
   const soma = (l) => l.reduce((s, d) => s + d.alcance_dia, 0);
-  const base = linhas.find((a) => a.inicio === '2026-09-01' && a.fim === '2026-11-23' && a.campanha_id === id)?.alcance ?? 0;
+  const base = linhas.find((a) => a.inicio === '2026-09-01' && a.fim === '2026-11-24' && a.campanha_id === id)?.alcance ?? 0;
   return {v: Math.round(soma(dias) * div(base, soma(todos))), est: true};
 };
 const visao = () => {
