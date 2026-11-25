@@ -55,17 +55,16 @@ footer{margin-top:40px;background:#141018;color:rgba(255,255,255,.7);font-size:1
   </div>
   <div class="eb">Legado e Família · Páginas dos programas</div>
   <h1>Ajustes finais nas páginas, turmas de janeiro de 2027</h1>
-  <p>As páginas novas ficaram ótimas e já estão prontas para receber os anúncios. Antes de começarmos o teste, faltam dois ajustes rápidos e um ponto que ainda vamos confirmar com o time.</p>
+  <p>As páginas novas ficaram ótimas e já estão prontas para receber os anúncios. Antes de começarmos o teste, falta um ajuste rápido e um ponto que ainda vamos confirmar com o time.</p>
 </header>
 
 <div class="resumo pad">
   <div class="rc"><span class="tag f">Fazer</span><b>1. Trocar o texto de um botão</b><span>Nas duas páginas de Sucessão.</span></div>
-  <div class="rc"><span class="tag f">Fazer</span><b>2. Tirar as duas páginas novas da busca do Google</b><span>Passo a passo no WordPress, sem plugin novo.</span></div>
-  <div class="rc"><span class="tag e">Aguardar</span><b>3. Texto "Programa completo em breve"</b><span>Vamos confirmar com o time antes de mexer.</span></div>
+  <div class="rc"><span class="tag e">Aguardar</span><b>2. Texto "Programa completo em breve"</b><span>Vamos confirmar com o time antes de mexer.</span></div>
 </div>
 
 <section class="pad">
-  <div class="label">Ajuste 1</div>
+  <div class="label">Ajuste</div>
   <h2>Trocar o botão "Matricule-se Já" por "Aplique já"</h2>
   <p>A pessoa não se matricula direto pela página: ela faz uma aplicação e o time entra em contato pelo WhatsApp. O botão do topo já diz "Aplicar para uma vaga na 9ª edição", então este precisa falar a mesma língua.</p>
   <div class="depara">
@@ -80,44 +79,6 @@ footer{margin-top:40px;background:#141018;color:rgba(255,255,255,.7);font-size:1
   <h3>Onde fica o botão</h3>
   <p>Logo abaixo da primeira dobra, no bloco que começa com "Programa para empresários, fundadores, sucessores e herdeiros de empresas familiares que querem". O botão vem depois do parágrafo "Estruture um plano de sucessão claro e estratégico..." e antes da seção de Depoimentos.</p>
   <div class="nota"><b>Só o texto muda.</b> O link do botão e a classe <code>btn-inscricao</code> precisam continuar como estão, porque é essa classe que leva os dados do anúncio até a página de inscrição.</div>
-</section>
-
-<section class="pad">
-  <div class="label">Ajuste 2</div>
-  <h2>Tirar as duas páginas novas da busca do Google</h2>
-  <p>As versões 2 são quase iguais às versões 1. Se o Google guardar as duas, ele pode entender como conteúdo repetido e mostrar a página de teste na busca gratuita. Para o teste dos anúncios ficar limpo, as páginas novas devem receber só quem vem de anúncio.</p>
-  <p>Isso se resolve marcando as duas como "não indexar". Para quem chega pelo anúncio nada muda.</p>
-  <h3>Páginas que recebem a marcação</h3>
-  <ul>
-    <li><code>/curso-planejamento-sucessorio-patrimonial/</code></li>
-    <li><code>/formacao-mulheres-em-conselhos-carreira/</code></li>
-  </ul>
-  <p>As versões 1 e as páginas de inscrição ficam como estão.</p>
-
-  <h3>Passo a passo no WordPress (Elementor Pro, que o site já tem)</h3>
-  <div class="card">
-  <ol>
-    <li>No painel do WordPress, abra <b>Elementor</b> e depois <b>Código personalizado</b> (Custom Code).</li>
-    <li>Clique em <b>Adicionar novo</b> e dê o nome <code>Noindex paginas de teste</code>.</li>
-    <li>Em <b>Localização</b>, escolha <code>&lt;head&gt;</code>.</li>
-    <li>Cole este código:
-      <pre>&lt;meta name="robots" content="noindex, follow"&gt;</pre></li>
-    <li>Clique em <b>Publicar</b>. Vai abrir a janela de <b>Condições</b>.</li>
-    <li>Clique em <b>Adicionar condição</b> e escolha <b>Incluir</b>, <b>Singular</b>, <b>Páginas</b>. No campo de busca, selecione a página <b>Curso Planejamento Sucessorio Patrimonial</b>.</li>
-    <li>Clique de novo em <b>Adicionar condição</b> e repita para a página <b>Formação Mulheres em Conselhos Carreira</b>.</li>
-    <li>Confira se ficaram só essas duas condições e clique em <b>Salvar e fechar</b>.</li>
-    <li>Limpe o cache: no menu do topo, <b>WP Rocket</b> e <b>Limpar cache</b>.</li>
-  </ol>
-  </div>
-  <div class="nota am"><b>Atenção na etapa 6.</b> A condição precisa ser por página. Se ficar "Todo o site", o site inteiro sai do Google.</div>
-
-  <h3>Como conferir se deu certo</h3>
-  <ol>
-    <li>Abra cada uma das duas páginas novas em uma janela anônima.</li>
-    <li>Clique com o botão direito, escolha <b>Exibir código-fonte da página</b> e procure por <code>noindex</code>. Tem que aparecer.</li>
-    <li>Faça o mesmo em <a href="https://programas.legadoefamilia.com/" target="_blank" rel="noopener">programas.legadoefamilia.com/</a> e em <a href="https://programas.legadoefamilia.com/formacao-mulheres-em-conselhos/" target="_blank" rel="noopener">/formacao-mulheres-em-conselhos/</a>. Nessas duas <b>não</b> pode aparecer.</li>
-  </ol>
-  <p>Os nomes dos menus podem variar um pouco conforme a versão do Elementor. Se a opção Código personalizado não aparecer, é só avisar que ajustamos o caminho.</p>
 </section>
 
 <section class="pad">
